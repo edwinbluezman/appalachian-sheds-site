@@ -142,6 +142,23 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
     </div>
   </section>
 
+  {model.morePhotos && (
+    <section class="band band--dark" aria-labelledby="views-title">
+      <div class="wrap">
+        <p class="eyebrow">More Views</p>
+        <h2 id="views-title" class="sec-title">More Views of the {model.shortName}</h2>
+        <div class="views">
+          {model.morePhotos.map((ph) => (
+            <figure class="views__item">
+              <Image src={ph.src} alt={ph.alt} widths={[480, 800, 1080]} sizes="(max-width: 900px) 94vw, 60vw" format="webp" quality={80} />
+              <figcaption>{ph.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- 04 WHAT'S INCLUDED -->
   <section class="band band--dark" aria-labelledby="inc-title">
     <div class="wrap">
@@ -321,6 +338,10 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
 
 <!-- Global so the calculator buttons and results created by the script are styled too. -->
 <style is:global>
+  .views { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 720px; }
+  .views__item { margin: 0; }
+  .views__item img { display: block; width: 100%; height: auto; border: 2px solid var(--bronze); }
+  .views__item figcaption { margin-top: 10px; font-size: 0.88rem; color: var(--stone); font-weight: 700; }
   .crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
   .crumbs a { color: var(--cashmere); text-decoration: none; }
   .crumbs a:hover { color: var(--bronze); }

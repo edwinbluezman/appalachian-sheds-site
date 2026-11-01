@@ -2,6 +2,7 @@
 import ModelPage from '../../components/ModelPage.astro';
 import prices from '../../data/saltbox-overhang-prices.csv?raw';
 import photo from '../../assets/appalachian-saltbox-overhang-shed.png';
+import frontPhoto from '../../assets/appalachian-saltbox-overhang-front.webp';
 import { signatureSeriesSpecs, commonFaqs } from '../../data/models.js';
 
 const name = 'Appalachian Saltbox Overhang Shed';
@@ -19,7 +20,14 @@ const model = {
   answer: 'The Appalachian Saltbox Overhang is a backyard building with covered storage at the rear under its extended roofline, plus a transom window over its double door and larger side windows. It is built on site at your property in Cincinnati and the Tri-State, in {count} sizes from {range}, with five siding choices and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
   photo,
   photoAlt: 'Appalachian Saltbox Overhang Shed in natural wood lap siding with a dark shingle roof extending over an open covered storage area stacked with firewood',
-  photoCaption: 'Shown with upgraded lap siding in a natural finish. The covered storage area is standard on every Saltbox Overhang; the standard siding is LP SmartSide Vertical Panel.',
+  photoCaption: 'Rear of the Saltbox Overhang, shown with upgraded lap siding in a natural finish. The covered storage area is standard on every Saltbox Overhang; the standard siding is LP SmartSide Vertical Panel.',
+  morePhotos: [
+    {
+      src: frontPhoto,
+      alt: 'Front of an Appalachian Saltbox Overhang Shed in natural wood lap siding with a green shingle roof, French doors and six-lite windows, set among autumn trees and fall plantings',
+      caption: 'Front of the Saltbox Overhang, shown with upgraded lap siding in a natural finish and optional French doors.',
+    },
+  ],
   specs: signatureSeriesSpecs(
     [['Rear covered storage', 'Covered storage area at the rear under the extended roofline, part of the standard design']],
     '23 sizes, from 8′ × 10′ to 14′ × 24′',

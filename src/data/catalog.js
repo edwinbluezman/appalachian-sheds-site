@@ -6,7 +6,6 @@ import laurel from './laurel-lean-to-prices.csv?raw';
 import cottage from './country-cottage-prices.csv?raw';
 import overhang from './saltbox-overhang-prices.csv?raw';
 import classicPhoto from '../assets/appalachian-classic-shed.webp';
-import antiquePhoto from '../assets/appalachian-antique-saltbox-shed.webp';
 import laurelPhoto from '../assets/appalachian-laurel-lean-to-shed.png';
 import cottagePhoto from '../assets/appalachian-country-cottage.jpg';
 import overhangPhoto from '../assets/appalachian-saltbox-overhang-shed.png';
@@ -17,7 +16,7 @@ export const series = [
     lead: 'Dependable storage buildings with straightforward rooflines, 2×4 kiln-dried Spruce framing at 16″ on center and full wall sheathing.',
     models: [
       { name: 'Appalachian Classic Shed', path: '/buildings/appalachian-classic/', blurb: 'A clean low-profile gable shed for everyday storage.', photo: classicPhoto, prices: readPrices(classic) },
-      { name: 'Appalachian Antique Saltbox Shed', path: '/buildings/appalachian-antique-saltbox/', blurb: 'A traditional asymmetrical saltbox roofline with historic character.', photo: antiquePhoto, prices: readPrices(antique) },
+      { name: 'Appalachian Antique Saltbox Shed', path: '/buildings/appalachian-antique-saltbox/', blurb: 'A traditional asymmetrical saltbox roofline with historic character.', prices: readPrices(antique) },
       { name: 'Appalachian Laurel Lean-To Shed', path: '/buildings/appalachian-laurel-lean-to/', blurb: 'A compact single-slope shed for smaller spaces.', photo: laurelPhoto, prices: readPrices(laurel) },
     ],
   },

@@ -1,0 +1,44 @@
+---
+import ModelPage from '../../components/ModelPage.astro';
+import prices from '../../data/saltbox-overhang-prices.csv?raw';
+import { signatureSeriesSpecs, commonFaqs } from '../../data/models.js';
+
+const name = 'Appalachian Saltbox Overhang Shed';
+
+const model = {
+  path: '/buildings/appalachian-saltbox-overhang/',
+  name,
+  shortName: 'Saltbox Overhang',
+  series: 'Signature Series',
+  prices,
+  effective: 'September 2026',
+  title: 'Appalachian Saltbox Overhang Shed | Sizes, Siding & Pricing | Appalachian Sheds',
+  description: 'Appalachian Saltbox Overhang: covered rear storage under an extended roofline, in {count} sizes from {range}, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
+  schemaDescription: 'A backyard building with standard covered rear storage under an extended roofline, transom glass and larger windows, built on site in {count} sizes from {range} and five siding systems.',
+  answer: 'The Appalachian Saltbox Overhang is a backyard building with covered storage at the rear under its extended roofline, plus a transom window over its double door and larger side windows. It is built on site at your property in Cincinnati and the Tri-State, in {count} sizes from {range}, with five siding choices and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  specs: signatureSeriesSpecs(
+    [['Rear covered storage', 'Covered storage area at the rear under the extended roofline, part of the standard design']],
+    '23 sizes, from 8′ × 10′ to 14′ × 24′',
+  ),
+  sidingLead: 'The Signature Series construction and the extended rear roofline stay the same. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',
+  fitLead: 'The Saltbox Overhang is for homeowners who want sheltered outdoor storage built in, along with a more finished architectural look. The rear covered area keeps firewood, tools and outdoor gear out of the weather without crowding the enclosed interior.',
+  fit: [
+    ['Sheltered storage for firewood or tools', 'Strong fit', 'The rear covered storage is standard on every Saltbox Overhang.'],
+    ['Storage visible from the house or patio', 'Strong fit', 'The extended eaves and larger windows are built for a visible spot.'],
+    ['Curb appeal near the home', 'Strong fit', 'Transom glass and the cottage vent are made for a property-facing position.'],
+    ['Practical storage that looks finished', 'Strong fit', 'Everyday storage, including covered rear storage, with a purposeful look.'],
+    ['Lowest-cost storage', 'Compare models', 'If architectural detail is not a priority, a simpler model costs less for a similar size.'],
+    ['More overhead or loft volume', 'Compare models', 'If upper interior volume is a priority, compare roof forms first.'],
+    ['Finished office or studio', 'Plan carefully', 'Plan electrical, insulation, interior finish and windows as one project.'],
+  ],
+  faqs: [
+    ...commonFaqs(name).slice(0, 1),
+    { q: 'Does the Saltbox Overhang include rear covered storage?', a: 'Yes. Rear covered storage is part of the standard Saltbox Overhang design. It provides sheltered space at the back of the building, under the extended roofline, for firewood, tools, hoses, ladders and other outdoor gear.' },
+    ...commonFaqs(name).slice(1, 3),
+    { q: 'What makes the Saltbox Overhang different from a standard shed?', a: 'It includes rear covered storage, which most sheds do not offer, plus extended eave overhangs on the gable ends, a cottage-style louver vent, a 5-foot transom window above the double door, and larger single-hung windows with added trim.' },
+    { q: 'How is the Saltbox Overhang floor supported?', a: 'The standard floor system uses heavy-duty 6×6 pressure-treated foundation beams, 2×6 pressure-treated floor joists installed 16 inches on center, and 3/4-inch exterior-grade plywood flooring.' },
+    ...commonFaqs(name).slice(3),
+  ],
+};
+---
+<ModelPage model={model} />

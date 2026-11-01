@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { business, link } from '../../data/site.js';
+import { series } from '../../data/catalog.js';
+import { money } from '../../data/models.js';
+
+const url = 'https://appalachiansheds.com/buildings/';
+const all = series.flatMap((s) => s.models);
+const low = Math.min(...all.map((m) => m.prices.low));
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: 'Appalachian Sheds Buildings & Pricing',
+    about: { '@id': business.id },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: all.map((m, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@id': 'https://appalachiansheds.com' + m.path + '#model' }, name: m.name, url: 'https://appalachiansheds.com' + m.path })),
+    },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Buildings & Pricing', item: url },
+    ],
+  },
+];
+---
+<Base
+  title="Buildings & Pricing | Appalachian Sheds"
+  description={`Five Appalachian Sheds models in the Classic and Signature Series, each built on site in Cincinnati and the Tri-State with transparent standard build pricing from ${money(low)}.`}
+  path="/buildings/"
+  schema={schema}
+>
+  <section class="band band--dark bp-hero" aria-labelledby="bp-title">
+    <div class="wrap">
+      <nav class="bp-crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Buildings &amp; Pricing</span></nav>
+      <p class="eyebrow">Appalachian Sheds · Buildings &amp; Pricing</p>
+      <h1 id="bp-title">Buildings &amp; Pricing</h1>
+      <p class="bp-lead">Appalachian Sheds builds five models in two series, each built on site at your property in Cincinnati and the Tri-State and backed by the 30-Year Structural Warranty. Every model page shows the standard build price for every size and siding, starting at {money(low)}.</p>
+    </div>
+  </section>
+
+  {series.map((s, i) => (
+    <section class={'band ' + (i % 2 ? 'band--cash' : 'band--light')} aria-labelledby={'series-' + i}>
+      <div class="wrap">
+        <p class="eyebrow">{s.name}</p>
+        <h2 id={'series-' + i} class="bp-series">{s.name}</h2>
+        <p class="bp-series-lead">{s.lead}</p>
+        <div class="bp-grid">
+          {s.models.map((m) => (
+            <a class="bp-card" href={link(m.path)}>
+              {m.photo
+                ? <Image src={m.photo} alt="" widths={[400, 700]} sizes="(max-width: 700px) 94vw, 30vw" format="webp" quality={78} class="bp-card__img" />
+                : <div class="bp-card__noimg" aria-hidden="true">Photo coming soon</div>}
+              <div class="bp-card__body">
+                <h3>{m.name}</h3>
+                <p>{m.blurb}</p>
+                <ul>
+                  <li><strong>{m.prices.sizes.length}</strong> sizes, {m.prices.sizeRange}</li>
+                  <li>Standard build from <strong>{money(m.prices.low)}</strong></li>
+                </ul>
+                <span class="bp-card__go">See sizes &amp; pricing →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="band band--dark" aria-labelledby="bp-cta">
+    <div class="wrap">
+      <h2 id="bp-cta" class="bp-series">Not Sure Which Model Fits?</h2>
+      <p class="bp-lead">Tell Edwin what you plan to store, where the building will sit and how it should look. He will point you to the right model and size.</p>
+      <div class="bp-ctas">
+        <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+        <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .bp-hero { padding-top: 40px; }
+  .bp-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
+  .bp-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .bp-hero h1 { margin: 0 0 18px; font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.1; }
+  .bp-lead { max-width: 72ch; margin: 0 0 8px; font-size: 1.06rem; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .bp-series { margin: 0 0 12px; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+  .bp-series-lead { max-width: 72ch; margin: 0 0 30px; font-weight: 700; }
+  .bp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .bp-card { display: flex; flex-direction: column; background: #fff; color: var(--steel); text-decoration: none; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); transition: border-color 0.2s ease; }
+  .bp-card:hover { border-color: var(--bronze); }
+  .bp-card__img { display: block; width: 100%; height: 220px; object-fit: cover; }
+  .bp-card__noimg { height: 220px; display: grid; place-items: center; background: var(--steel); color: var(--stone); font-weight: 800; font-size: 0.9rem; }
+  .bp-card__body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  .bp-card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+  .bp-card p { margin: 0 0 12px; font-weight: 700; }
+  .bp-card ul { margin: 0 0 16px; padding-left: 18px; font-weight: 700; font-size: 0.95rem; }
+  .bp-card__go { margin-top: auto; color: var(--bronze-dark); font-weight: 900; }
+  .bp-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+</style>

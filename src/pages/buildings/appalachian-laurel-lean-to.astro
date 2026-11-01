@@ -1,0 +1,59 @@
+---
+import ModelPage from '../../components/ModelPage.astro';
+import prices from '../../data/laurel-lean-to-prices.csv?raw';
+import { commonFaqs } from '../../data/models.js';
+
+const name = 'Appalachian Laurel Lean-To Shed';
+
+const model = {
+  path: '/buildings/appalachian-laurel-lean-to/',
+  name,
+  shortName: 'Laurel Lean-To',
+  series: 'Classic Series',
+  prices,
+  effective: 'September 2026',
+  title: 'Appalachian Laurel Lean-To Shed | Sizes, Siding & Pricing | Appalachian Sheds',
+  description: 'Appalachian Laurel Lean-To: a compact single-slope shed in {count} sizes from {range}, five siding choices, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
+  schemaDescription: 'A compact single-slope lean-to storage shed built on site, offered in {count} sizes from {range} and five siding systems.',
+  answer: 'The Appalachian Laurel Lean-To is a compact single-slope storage shed for smaller spaces, built on site at your property in Cincinnati and the Tri-State. It comes in {count} sizes from {range}, five siding choices, a double door, and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  specs: [
+    ['Foundation beams', '6×6 ground-contact pressure-treated'],
+    ['Floor joists', '2×6 pressure-treated, installed 16″ on center'],
+    ['Floor decking', '3/4″ 7-ply pressure-treated plywood'],
+    ['Wall framing', '2×4 kiln-dried Spruce, 16″ on center'],
+    ['Top plates', 'Double interlocking top plates for added strength'],
+    ['Roof-to-wall connections', 'Hurricane clips at all rafters'],
+    ['Wall sheathing', '1/2″ wall sheathing for added stability and siding backing'],
+    ['Roof profile', 'Compact single-slope lean-to roof'],
+    ['Roof pitch', '3/12'],
+    ['Lower front wall', '6′5″ high'],
+    ['Roof sheathing', '1/2″ exterior-grade plywood'],
+    ['Roof covering', '3-tab standard asphalt shingles, available in eight colors'],
+    ['Doors', 'Double door sized to suit the selected building size'],
+    ['Siding', 'Five siding systems, LP SmartSide Vertical Panel standard (see Siding Choices)'],
+    ['Sizes', 'Nine sizes, from 4′ × 6′ to 8′ × 12′'],
+    ['Construction', 'Built on site at your property'],
+    ['Warranty', 'Appalachian Sheds 30-Year Structural Warranty'],
+  ],
+  optionalNote: 'Windows, ramps, shelving and electrical work are not part of the standard Laurel Lean-To and are priced as options.',
+  sidingLead: 'The compact structure underneath stays the same. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',
+  fitLead: 'The Laurel Lean-To is built for practical storage where space is limited. Its single-slope 3/12 roofline and streamlined proportions suit garden tools, small lawn equipment, seasonal items and household overflow.',
+  fit: [
+    ['Limited-space storage', 'Strong fit', 'The central purpose of the Laurel Lean-To.'],
+    ['Garden tools and supplies', 'Strong fit', 'Choose a size with room for the tools, containers and supplies you will keep inside.'],
+    ['Household overflow', 'Strong fit', 'Frees up valuable garage or basement space.'],
+    ['Small lawn equipment', 'Strong fit', 'Confirm the building and double-door dimensions fit your equipment.'],
+    ['Residential exterior', 'Strong fit', 'Vinyl or LP SmartSide lap siding coordinates with a house or garage.'],
+    ['Substantial loft storage', 'Compare models', 'The low 3/12 roof is meant for a streamlined profile, not upper storage.'],
+    ['Large equipment access', 'Compare models', 'Large equipment may call for a larger model and a different door.'],
+    ['Finished office or studio', 'Plan carefully', 'Consider interior height, electrical, insulation and windows before choosing a model.'],
+  ],
+  faqs: [
+    ...commonFaqs(name).slice(0, 3),
+    { q: 'Does the Laurel Lean-To include windows?', a: 'No. The standard Laurel Lean-To includes a double door but no windows. Windows can be added as an option and are included in the final written price.' },
+    { q: 'How tall is the Laurel Lean-To?', a: 'The lower front wall is 6 feet 5 inches high, and the single-slope roof rises at a 3/12 pitch.' },
+    ...commonFaqs(name).slice(3),
+  ],
+};
+---
+<ModelPage model={model} />

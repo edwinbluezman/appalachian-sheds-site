@@ -1,0 +1,116 @@
+size,width_ft,length_ft,siding_code,siding_name,price_usd,approved
+8x10,8,10,vp,LP SmartSide Vertical Panel Siding,7750,YES
+8x10,8,10,dt,Roseburg DuraTemp Wood Siding,8578,YES
+8x10,8,10,bb,LP SmartSide Board & Batten Siding,9831,YES
+8x10,8,10,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,12488,YES
+8x10,8,10,lp,LP SmartSide Lap Siding,16859,YES
+8x12,8,12,vp,LP SmartSide Vertical Panel Siding,8900,YES
+8x12,8,12,dt,Roseburg DuraTemp Wood Siding,9843,YES
+8x12,8,12,bb,LP SmartSide Board & Batten Siding,11177,YES
+8x12,8,12,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,14132,YES
+8x12,8,12,lp,LP SmartSide Lap Siding,19078,YES
+8x14,8,14,vp,LP SmartSide Vertical Panel Siding,9774,YES
+8x14,8,14,dt,Roseburg DuraTemp Wood Siding,10797,YES
+8x14,8,14,bb,LP SmartSide Board & Batten Siding,12269,YES
+8x14,8,14,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,15535,YES
+8x14,8,14,lp,LP SmartSide Lap Siding,20972,YES
+8x16,8,16,vp,LP SmartSide Vertical Panel Siding,11257,YES
+8x16,8,16,dt,Roseburg DuraTemp Wood Siding,11947,YES
+8x16,8,16,bb,LP SmartSide Board & Batten Siding,13983,YES
+8x16,8,16,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,17099,YES
+8x16,8,16,lp,LP SmartSide Lap Siding,23084,YES
+10x10,10,10,vp,LP SmartSide Vertical Panel Siding,8946,YES
+10x10,10,10,dt,Roseburg DuraTemp Wood Siding,9820,YES
+10x10,10,10,bb,LP SmartSide Board & Batten Siding,11257,YES
+10x10,10,10,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,13948,YES
+10x10,10,10,lp,LP SmartSide Lap Siding,18830,YES
+10x12,10,12,vp,LP SmartSide Vertical Panel Siding,10153,YES
+10x12,10,12,dt,Roseburg DuraTemp Wood Siding,10970,YES
+10x12,10,12,bb,LP SmartSide Board & Batten Siding,12453,YES
+10x12,10,12,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,15685,YES
+10x12,10,12,lp,LP SmartSide Lap Siding,21175,YES
+10x14,10,14,vp,LP SmartSide Vertical Panel Siding,11188,YES
+10x14,10,14,dt,Roseburg DuraTemp Wood Siding,12154,YES
+10x14,10,14,bb,LP SmartSide Board & Batten Siding,13626,YES
+10x14,10,14,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,17180,YES
+10x14,10,14,lp,LP SmartSide Lap Siding,23193,YES
+10x16,10,16,vp,LP SmartSide Vertical Panel Siding,12856,YES
+10x16,10,16,dt,Roseburg DuraTemp Wood Siding,13776,YES
+10x16,10,16,bb,LP SmartSide Board & Batten Siding,15512,YES
+10x16,10,16,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,19365,YES
+10x16,10,16,lp,LP SmartSide Lap Siding,26143,YES
+10x18,10,18,vp,LP SmartSide Vertical Panel Siding,13868,YES
+10x18,10,18,dt,Roseburg DuraTemp Wood Siding,14868,YES
+10x18,10,18,bb,LP SmartSide Board & Batten Siding,16720,YES
+10x18,10,18,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,20860,YES
+10x18,10,18,lp,LP SmartSide Lap Siding,28161,YES
+10x20,10,20,vp,LP SmartSide Vertical Panel Siding,14868,YES
+10x20,10,20,dt,Roseburg DuraTemp Wood Siding,16237,YES
+10x20,10,20,bb,LP SmartSide Board & Batten Siding,17950,YES
+10x20,10,20,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,22378,YES
+10x20,10,20,lp,LP SmartSide Lap Siding,30210,YES
+12x12,12,12,vp,LP SmartSide Vertical Panel Siding,11395,YES
+12x12,12,12,dt,Roseburg DuraTemp Wood Siding,12292,YES
+12x12,12,12,bb,LP SmartSide Board & Batten Siding,13718,YES
+12x12,12,12,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,17226,YES
+12x12,12,12,lp,LP SmartSide Lap Siding,23255,YES
+12x14,12,14,vp,LP SmartSide Vertical Panel Siding,12568,YES
+12x14,12,14,dt,Roseburg DuraTemp Wood Siding,13810,YES
+12x14,12,14,bb,LP SmartSide Board & Batten Siding,15202,YES
+12x14,12,14,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,19031,YES
+12x14,12,14,lp,LP SmartSide Lap Siding,25692,YES
+12x16,12,16,vp,LP SmartSide Vertical Panel Siding,14339,YES
+12x16,12,16,dt,Roseburg DuraTemp Wood Siding,15708,YES
+12x16,12,16,bb,LP SmartSide Board & Batten Siding,17249,YES
+12x16,12,16,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,21366,YES
+12x16,12,16,lp,LP SmartSide Lap Siding,28844,YES
+12x18,12,18,vp,LP SmartSide Vertical Panel Siding,15535,YES
+12x18,12,18,dt,Roseburg DuraTemp Wood Siding,17030,YES
+12x18,12,18,bb,LP SmartSide Board & Batten Siding,18698,YES
+12x18,12,18,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,22976,YES
+12x18,12,18,lp,LP SmartSide Lap Siding,31018,YES
+12x20,12,20,vp,LP SmartSide Vertical Panel Siding,16639,YES
+12x20,12,20,dt,Roseburg DuraTemp Wood Siding,18272,YES
+12x20,12,20,bb,LP SmartSide Board & Batten Siding,20089,YES
+12x20,12,20,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,24655,YES
+12x20,12,20,lp,LP SmartSide Lap Siding,33284,YES
+12x22,12,22,vp,LP SmartSide Vertical Panel Siding,18054,YES
+12x22,12,22,dt,Roseburg DuraTemp Wood Siding,19871,YES
+12x22,12,22,bb,LP SmartSide Board & Batten Siding,21860,YES
+12x22,12,22,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,26219,YES
+12x22,12,22,lp,LP SmartSide Lap Siding,35396,YES
+12x24,12,24,vp,LP SmartSide Vertical Panel Siding,19307,YES
+12x24,12,24,dt,Roseburg DuraTemp Wood Siding,21711,YES
+12x24,12,24,bb,LP SmartSide Board & Batten Siding,23884,YES
+12x24,12,24,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,29105,YES
+12x24,12,24,lp,LP SmartSide Lap Siding,39292,YES
+14x14,14,14,vp,LP SmartSide Vertical Panel Siding,13960,YES
+14x14,14,14,dt,Roseburg DuraTemp Wood Siding,15466,YES
+14x14,14,14,bb,LP SmartSide Board & Batten Siding,17053,YES
+14x14,14,14,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,21216,YES
+14x14,14,14,lp,LP SmartSide Lap Siding,28642,YES
+14x16,14,16,vp,LP SmartSide Vertical Panel Siding,15903,YES
+14x16,14,16,dt,Roseburg DuraTemp Wood Siding,17617,YES
+14x16,14,16,bb,LP SmartSide Board & Batten Siding,19250,YES
+14x16,14,16,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,23643,YES
+14x16,14,16,lp,LP SmartSide Lap Siding,31918,YES
+14x18,14,18,vp,LP SmartSide Vertical Panel Siding,17168,YES
+14x18,14,18,dt,Roseburg DuraTemp Wood Siding,19204,YES
+14x18,14,18,bb,LP SmartSide Board & Batten Siding,20687,YES
+14x18,14,18,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,25391,YES
+14x18,14,18,lp,LP SmartSide Lap Siding,34278,YES
+14x20,14,20,vp,LP SmartSide Vertical Panel Siding,18583,YES
+14x20,14,20,dt,Roseburg DuraTemp Wood Siding,20756,YES
+14x20,14,20,bb,LP SmartSide Board & Batten Siding,22424,YES
+14x20,14,20,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,27277,YES
+14x20,14,20,lp,LP SmartSide Lap Siding,36824,YES
+14x22,14,22,vp,LP SmartSide Vertical Panel Siding,20135,YES
+14x22,14,22,dt,Roseburg DuraTemp Wood Siding,22378,YES
+14x22,14,22,bb,LP SmartSide Board & Batten Siding,23907,YES
+14x22,14,22,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,28956,YES
+14x22,14,22,lp,LP SmartSide Lap Siding,39091,YES
+14x24,14,24,vp,LP SmartSide Vertical Panel Siding,21550,YES
+14x24,14,24,dt,Roseburg DuraTemp Wood Siding,23953,YES
+14x24,14,24,bb,LP SmartSide Board & Batten Siding,25471,YES
+14x24,14,24,fv,Georgia-Pacific Forest Ridge Vinyl Lap Siding,30658,YES
+14x24,14,24,lp,LP SmartSide Lap Siding,41388,YES

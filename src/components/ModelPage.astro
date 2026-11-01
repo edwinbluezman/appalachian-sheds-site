@@ -34,7 +34,8 @@ const schema = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
-      { '@type': 'ListItem', position: 2, name: model.name, item: url },
+      { '@type': 'ListItem', position: 2, name: 'Buildings & Pricing', item: 'https://appalachiansheds.com/buildings/' },
+      { '@type': 'ListItem', position: 3, name: model.name, item: url },
     ],
   },
   {
@@ -50,7 +51,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
   <!-- 01 HERO -->
   <section class="band band--dark cl-hero" aria-labelledby="cl-title">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">{model.shortName}</span></nav>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <a href={link('/buildings/')}>Buildings</a> <span aria-hidden="true">/</span> <span aria-current="page">{model.shortName}</span></nav>
       <div class={model.photo ? 'cl-hero__grid' : 'cl-hero__single'}>
         <div>
           <p class="eyebrow">Appalachian Sheds · {model.series}</p>

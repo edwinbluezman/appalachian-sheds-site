@@ -1,0 +1,39 @@
+---
+import ModelPage from '../../components/ModelPage.astro';
+import prices from '../../data/country-cottage-prices.csv?raw';
+import { signatureSeriesSpecs, commonFaqs } from '../../data/models.js';
+
+const name = 'Appalachian Country Cottage';
+
+const model = {
+  path: '/buildings/appalachian-country-cottage/',
+  name,
+  shortName: 'Country Cottage',
+  series: 'Signature Series',
+  prices,
+  effective: 'August 2026',
+  title: 'Appalachian Country Cottage | Sizes, Siding & Pricing | Appalachian Sheds',
+  description: 'Appalachian Country Cottage: cottage-style storage with extended eaves and transom glass, in {count} sizes from {range}, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
+  schemaDescription: 'A cottage-style backyard building with extended eaves, transom glass and larger windows, built on site in {count} sizes from {range} and five siding systems.',
+  answer: 'The Appalachian Country Cottage is a cottage-style backyard building with extended eaves, a transom window over its double door and larger side windows, built on site at your property in Cincinnati and the Tri-State. It comes in {count} sizes from {range}, five siding choices, and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  specs: signatureSeriesSpecs([], '23 sizes, from 8′ × 10′ to 14′ × 24′'),
+  sidingLead: 'The Signature Series construction and cottage details stay the same. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',
+  fitLead: 'The Country Cottage is for storage that looks finished and belongs on the property, especially where the building is visible from the house, patio or garden. Adding one useful option does not require a different model.',
+  fit: [
+    ['Storage visible from the house or patio', 'Strong fit', 'The extended eaves and larger windows are built for a visible spot.'],
+    ['Curb appeal near the home', 'Strong fit', 'Transom glass and the cottage vent are made for a property-facing position.'],
+    ['Practical storage that looks finished', 'Strong fit', 'Everyday storage with a more purposeful look.'],
+    ['Lowest-cost storage', 'Compare models', 'If cottage detail is not a priority, the Appalachian Classic costs less for a similar size.'],
+    ['More overhead or loft volume', 'Compare models', 'If upper interior volume is a priority, compare roof forms first.'],
+    ['Very large specialty access', 'Compare models', 'Large openings may call for a different building configuration.'],
+    ['Finished office or studio', 'Plan carefully', 'Plan electrical, insulation, interior finish and windows as one project.'],
+  ],
+  faqs: [
+    ...commonFaqs(name).slice(0, 3),
+    { q: 'What makes the Country Cottage different from a standard shed?', a: 'Extended eave overhangs on the gable ends, a cottage-style louver vent, a 5-foot transom window above the double door, and two larger single-hung windows with added trim give the Country Cottage a more finished look than a plain utility shed. These are built into the structure, not decorative add-ons.' },
+    { q: 'How is the Country Cottage floor supported?', a: 'The standard floor system uses heavy-duty 6×6 pressure-treated foundation beams, 2×6 pressure-treated floor joists installed 16 inches on center, and 3/4-inch exterior-grade plywood flooring.' },
+    ...commonFaqs(name).slice(3),
+  ],
+};
+---
+<ModelPage model={model} />

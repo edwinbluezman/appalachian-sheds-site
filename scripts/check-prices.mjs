@@ -21,6 +21,27 @@ const MODELS = [
     page: 'dist/buildings/appalachian-antique-saltbox/index.html',
     fingerprint: '36aaf6ba3af7294f2bfd0cada1d15129f5647d37bc4cbf23925f3de03ff06f1f', // approved November 1, 2026
   },
+  {
+    name: 'Appalachian Laurel Lean-To',
+    csv: 'src/data/laurel-lean-to-prices.csv',
+    sizes: 9,
+    page: 'dist/buildings/appalachian-laurel-lean-to/index.html',
+    fingerprint: 'ea8e2b65f846840b03fb2fe848ed25c0ebbabff94b4a2d3040dacda025cf6cba', // approved November 1, 2026
+  },
+  {
+    name: 'Appalachian Country Cottage',
+    csv: 'src/data/country-cottage-prices.csv',
+    sizes: 23,
+    page: 'dist/buildings/appalachian-country-cottage/index.html',
+    fingerprint: 'd22d26f53f6a98ac39772a48a61ec7e77cfdf0a687afc0566ef0a96ace570bcc', // approved November 1, 2026
+  },
+  {
+    name: 'Appalachian Saltbox Overhang',
+    csv: 'src/data/saltbox-overhang-prices.csv',
+    sizes: 23,
+    page: 'dist/buildings/appalachian-saltbox-overhang/index.html',
+    fingerprint: 'f2f69a41a73ba13ef58c4aace5bb555d82e9e1fd17abc015ccef74a77fbe9029', // approved November 1, 2026
+  },
 ];
 
 const afterBuild = process.argv.includes('--after-build');

@@ -21,7 +21,7 @@ export const sizeLabel = (w, l) => `${w}′ × ${l}′`;
 export function readPrices(raw) {
   const rows = raw.trim().split(/\r?\n/).slice(1).map((line) => {
     const c = line.split(',');
-    return { width: Number(c[1]), length: Number(c[2]), code: c[3], price: Number(c[5]), approved: c[6] === 'YES' };
+    return { width: Number(c[1]), length: Number(c[2]), code: c[3], price: Number(c[5]), approved: c[6].trim() === 'YES' };
   });
   const sizes = [];
   for (const r of rows) {
@@ -41,7 +41,7 @@ export function readPrices(raw) {
   };
 }
 
-// Construction shared by the Classic Series models, as stated on their original pages.
+// Construction shared by the Classic Series gable and saltbox models, as stated on their original pages.
 export const classicSeriesSpecs = (roofProfile, sizesText) => [
   ['Foundation beams', '6×6 ground-contact pressure-treated'],
   ['Floor joists', '2×6 pressure-treated, installed 16″ on center'],
@@ -63,9 +63,29 @@ export const classicSeriesSpecs = (roofProfile, sizesText) => [
   ['Warranty', 'Appalachian Sheds 30-Year Structural Warranty'],
 ];
 
+// Construction shared by the Signature Series models, as stated on their original pages.
+export const signatureSeriesSpecs = (extraFirst, sizesText) => [
+  ...extraFirst,
+  ['Foundation beams', 'Heavy-duty 6×6 pressure-treated'],
+  ['Floor joists', '2×6 pressure-treated, installed 16″ on center'],
+  ['Floor decking', '3/4″ exterior-grade plywood'],
+  ['Roof framing', '2×6 engineered roof trusses'],
+  ['Roof sheathing', '1/2″ exterior-grade plywood'],
+  ['Roof covering', 'Architectural roof shingles, available in 16 colors'],
+  ['Overhang', 'Extended eave overhangs on the gable ends'],
+  ['Ventilation', 'Cottage-style louver vents'],
+  ['Door', 'Six-panel, low-maintenance 5-foot double door with heavy-duty hardware, keyed lock and steel sill plate'],
+  ['Transom', '5-foot transom window above the double door'],
+  ['Windows', 'Two 30″ × 40″ single-hung windows on the side wall with 1×3 white trim and removable screens'],
+  ['Siding', 'Five siding systems, LP SmartSide Vertical Panel standard (see Siding Choices)'],
+  ['Sizes', sizesText],
+  ['Construction', 'Built on site at your property'],
+  ['Warranty', 'Appalachian Sheds 30-Year Structural Warranty'],
+];
+
 export const notIncluded = 'Interior finishes, optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless identified in the final written price.';
 
-// FAQ answers that are the same on every model page; {name} is replaced with the model name.
+// FAQ answers that are the same on every model page.
 export const commonFaqs = (name) => [
   { q: 'What exactly does the pricing calculator show?', a: `The calculator shows the standard build price for the exact ${name} size and siding selected. Site conditions, access, placement and requested upgrades are reviewed before the final written project price is confirmed.` },
   { q: 'Does the price include any interior finishes?', a: 'No. The price covers the standard exterior structure only: foundation, framing, roofing, siding, exterior doors and windows. It does not include insulation, drywall or wall finish, flooring, electrical or lighting, HVAC, interior trim or interior paint. Interior finish work is priced separately as an option.' },

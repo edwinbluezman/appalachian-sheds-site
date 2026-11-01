@@ -1,0 +1,95 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/shelving-workbenches-storage/',
+  name: 'Shelving, Workbenches & Storage',
+  title: 'Shed Shelving, Workbenches, Tool Walls & Cabinets: Prices | Appalachian Sheds',
+  description: 'Built-in storage for Appalachian Sheds buildings: utility shelving from $45 per linear foot, tote shelving, workbenches, pegboard tool walls, cabinets and complete storage wall packages.',
+  h1: 'Shelving, Workbenches & Storage',
+  answer: 'Good storage starts with what the building has to hold and the work done inside it, not a set number of shelves. Utility shelving runs $45 to $130 per linear foot depending on the number of tiers, deep tote shelving $65 to $145, workbenches $80 to $180, and tool walls $35 to $65. Complete storage walls start at $900. Every loaded shelf and bench is fastened to the framing or planned blocking, not just to the interior finish.',
+  familyLabel: 'Storage System',
+  stepsTitle: 'Plan Storage Before the Walls Fill With Openings',
+  stepsLead: 'Doors, windows, the electrical panel, outlets, switches and loft access all compete for wall space. Shelving and benches are easiest to plan while those can still be coordinated.',
+  steps: [
+    ['What must be stored?', 'Totes, tools, garden supplies, hardware, equipment or household overflow.'],
+    ['How deep?', 'Shallow utility shelves, tote-depth storage or full workbench depth.'],
+    ['Where does work happen?', 'Bench height, lighting, outlets, tool wall and clear working area.'],
+    ['Coordinate the room', 'Doors, windows, loft access, walkways and future equipment.'],
+  ],
+  families: [
+    {
+      id: 'utility',
+      name: 'Wall-Mounted Utility Shelving',
+      intro: [
+        'The most efficient way to get boxes, bins, garden supplies and hardware off the floor. Shallow 12″ to 16″ shelves keep the aisle open and keep items visible instead of lost behind a second row.',
+        'These prices are above simple prefab shelf add-ons because they assume shelves built in on site and fastened to studs or purpose-installed blocking.',
+      ],
+      bestUses: ['Garden supplies and hand tools', 'Hardware, paint and small bins', 'Household overflow and seasonal items', 'Walls where floor space matters'],
+      prices: prices.storage.utility,
+    },
+    {
+      id: 'tote',
+      name: 'Deep Tote & Bulk Storage Shelving',
+      intro: [
+        'Large bins, coolers and bulky seasonal items need 20″ to 24″ shelves. Deeper shelves organize more, but they take walking width, so the depth is chosen around your actual containers and the aisle that remains.',
+      ],
+      planning: ['Keep door swings and mower paths clear', 'High shelves are often more useful when shallower', 'Dense or very heavy storage gets a framing review'],
+      prices: prices.storage.tote,
+    },
+    {
+      id: 'workbench',
+      name: 'Workbench Systems',
+      intro: [
+        'A workbench is a working surface, not a wide shelf. It gets a full-depth plywood top, structural support sized to the span, and height chosen for the main user and task. Outlets and task lighting are planned above or beside it before wiring is final.',
+      ],
+      prices: prices.storage.workbench,
+    },
+    {
+      id: 'walls',
+      name: 'Tool Walls & Cabinets',
+      intro: [
+        'Pegboard and tool walls keep everyday hand tools visible and within reach, best above a bench or in a garden-tool zone, installed over framing or backing. Cabinets keep small tools, chemicals and hardware behind doors where appearance matters, such as offices, studios and pool houses.',
+      ],
+      prices: prices.storage.walls,
+    },
+    {
+      id: 'packages',
+      name: 'Integrated Storage Packages',
+      intro: [
+        'A coordinated layout combines shelves, tote bays, a bench, tool wall, cabinets and open floor space into one plan. It starts with door access, equipment size and walkways before the walls are filled.',
+      ],
+      prices: prices.storage.packages,
+      after: 'Custom layouts are priced once the building size, storage goals, electrical plan and interior zones are set.',
+    },
+  ],
+  compare: {
+    title: 'Compare the Storage Systems',
+    head: ['System', 'Typical depth', 'Planning range', 'Main planning issue'],
+    rows: [
+      ['Utility shelving', '12–16″', '$45–$130 / LF by tiers', 'Stud attachment, tier count, aisle clearance'],
+      ['Tote / bulk shelving', '20–24″', '$65–$145 / LF', 'Building width and walking space'],
+      ['Workbench', '24–30″', '$80–$180 / LF', 'Height, rigidity, power and lighting'],
+      ['Pegboard / tool wall', 'Wall mounted', '$35–$65 / LF', 'Backing, outlets and lighting'],
+      ['Cabinets', 'Varies', '$700–$2,200+ each', 'Material, hardware and wall blocking'],
+      ['Custom layout', 'Mixed', 'Project-specific', 'Doors, windows, loft, electrical and walkways'],
+    ],
+    note: 'Appalachian Sheds does not quote load ratings for an assembly that has not been specifically designed and documented for that load.',
+  },
+  considerationsTitle: 'Plan Storage With These Options',
+  considerations: [
+    ['Electrical, Lighting & HVAC', 'Outlets and task lighting above benches and tool walls.', link('/options/electrical-lighting-hvac/')],
+    ['Lofts, Ladders & Stairs', 'Overhead storage, and access that storage must not block.', link('/options/lofts-ladders-stairs/')],
+    ['Interior Finish Packages', 'Wall finishes and blocking planned with the storage layout.', link('/options/interior-finish/')],
+  ],
+  faqs: [
+    { q: 'How much does shed shelving cost?', a: 'Built-in utility shelving runs $45 to $70 per linear foot for one tier, up to $85 to $130 for three tiers. A 6 to 10 foot utility storage wall is $900 to $1,600 or more.' },
+    { q: 'How deep should shed shelves be?', a: '12 to 16 inches for general storage, 20 to 24 inches for large totes, and 24 to 30 inches for a workbench.' },
+    { q: 'How tall should a workbench be?', a: 'It depends on the user and the task. Standing woodworking benches often fall in the mid-30-inch range, but Appalachian Sheds sets the height for the person who will use it.' },
+  ],
+  ctaTitle: 'Plan Your Storage Layout With Edwin',
+};
+---
+<OptionPage page={page} />

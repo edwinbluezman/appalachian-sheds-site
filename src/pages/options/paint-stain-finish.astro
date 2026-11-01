@@ -1,0 +1,76 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/paint-stain-finish/',
+  name: 'Paint, Stain & Finish Systems',
+  title: 'Shed Exterior Paint, Wood Stain & Finish Systems | Appalachian Sheds',
+  description: 'Exterior finish systems for Appalachian Sheds buildings: premium acrylic paint for LP SmartSide and DuraTemp, wood stains for cedar and pine, accent colors and caulking, with planning prices per square foot.',
+  h1: 'Paint, Stain & Exterior Finish Systems',
+  answer: 'The surface underneath decides the finish. LP SmartSide and DuraTemp take premium exterior paint, and LP SmartSide is never stained. Cedar and pine can take stain. Factory-colored vinyl normally stays factory-colored. Planning prices run $2.50 to $5.00 per exterior finish square foot for one-color paint and $3.25 to $6.50 for two colors, and finishes are priced by actual surface area, not floor area.',
+  familyLabel: 'Finish Topic',
+  stepsTitle: 'Protect the Exterior First, Then Choose the Color',
+  stepsLead: 'Paint and stain cannot make up for wet material, unprotected cuts, dirt or the wrong sealant. Clean, dry, compatible and properly detailed matters more than buying the most expensive coating.',
+  steps: [
+    ['Confirm the surface', 'Siding, trim, wood species, door material and factory finish.'],
+    ['Clean & dry', 'Remove construction residue; surfaces must be dry before finishing.'],
+    ['Protect cut edges', 'Seal or paint exposed cuts per the siding maker’s instructions.'],
+    ['Caulk the right joints', 'Compatible sealant only where the detail calls for it.'],
+    ['Prime where required', 'Bare wood, repairs and product-specific conditions.'],
+    ['Apply & maintain', 'Follow temperature and coat requirements; set a recoat plan.'],
+  ],
+  families: [
+    {
+      id: 'by-surface',
+      name: 'Finish Compatibility by Siding',
+      intro: [
+        'LP SmartSide is a paint path, not a stain path: LP’s instructions call for a high-quality exterior paint and say not to use stain. Roseburg DuraTemp takes an acrylic-latex paint system. Georgia-Pacific vinyl keeps its factory color unless a specific product and coating combination is reviewed.',
+        'Pine can be painted or stained depending on the application. Cedar can take solid, semi-solid, semi-transparent or transparent stain, tested on the actual wood first.',
+      ],
+    },
+    {
+      id: 'systems',
+      name: 'Finish Systems & Planning Prices',
+      intro: [
+        'Price is set by surface area, trim detail, prep and number of colors. Small custom buildings often carry a higher effective rate, because setup, trim and masking remain substantial even when the structure is small.',
+      ],
+      prices: prices.finish.systems,
+      after: 'Planning ranges only. Final pricing depends on actual finish surface, material compatibility, preparation, coating system and the weather window.',
+    },
+    {
+      id: 'stain',
+      name: 'Choosing a Wood Stain',
+      intro: [
+        'More pigment generally means more coverage and protection. The more natural grain you want to see, the more closely the finish needs watching.',
+      ],
+      bestUses: ['Transparent / clear: maximum grain, least protection, for select accents', 'Semi-transparent: strong grain with color, for cedar and pine', 'Semi-solid: some grain, stronger color and consistency', 'Solid stain: full color that keeps the wood texture'],
+    },
+    {
+      id: 'color',
+      name: 'Color Coordination',
+      intro: [
+        'One body color plus one controlled trim or door accent usually looks more intentional than several competing colors. Color is the last coordination step: siding, then roof, trim, doors and windows, then the accent color.',
+      ],
+      bestUses: ['Warm neutrals: ivory, cream, taupe, stone, warm gray', 'Earthy greens: sage, olive, deep forest', 'Charcoal accents on doors, trim or hardware', 'Cedar or stained-pine details to warm a painted exterior'],
+    },
+  ],
+  considerationsTitle: 'No Exterior Finish Is Maintenance-Free',
+  considerations: [
+    ['Paint needs inspection', 'Watch exposed cuts, peeling, impact damage, failed caulk and weathered edges.'],
+    ['Clear finishes need the most care', 'Minimal pigment hides less weathering and needs more frequent attention.'],
+    ['Dark colors need review', 'Heat limits matter, especially on vinyl.'],
+    ['Caulk is not flashing', 'Sealant helps selected joints; it does not replace drainage. Do not caulk every gap.'],
+    ['Wood moves', 'Cedar and pine expand, contract and weather differently from engineered siding.'],
+    ['Siding & Exterior Materials', 'Choose the siding first; it decides the finish path.', link('/options/siding-exterior-materials/')],
+  ],
+  faqs: [
+    { q: 'Can LP SmartSide be stained?', a: 'No. LP’s instructions call for a high-quality exterior paint and say not to use stain on LP SmartSide.' },
+    { q: 'How much does it cost to paint a shed?', a: 'Planning ranges are $2.50 to $5.00 per exterior finish square foot for one color and $3.25 to $6.50 for two colors, based on actual wall, gable and trim area.' },
+    { q: 'Can vinyl siding be painted?', a: 'Factory-colored vinyl normally stays factory-colored. Field coating is considered only after the exact product and coating are reviewed.' },
+  ],
+  ctaTitle: 'Choose Your Finish and Colors With Edwin',
+};
+---
+<OptionPage page={page} />

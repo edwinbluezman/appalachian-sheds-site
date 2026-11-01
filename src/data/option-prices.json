@@ -1315,5 +1315,259 @@
         "note": "Higher-grade wood, detailed fit and finishing"
       }
     ]
+  },
+  "storage": {
+    "utility": [
+      {
+        "item": "Single-Tier Utility Shelf",
+        "size": "12–16″",
+        "price": "$45–$70 / LF",
+        "bestFor": "Small boxes, hardware and garden supplies",
+        "note": "Depth, framing, finish and wall conditions"
+      },
+      {
+        "item": "Two-Tier Utility Shelving",
+        "size": "12–16″",
+        "price": "$65–$95 / LF",
+        "bestFor": "General shed storage and household overflow",
+        "note": "Shelf spacing, support framing and finish"
+      },
+      {
+        "item": "Three-Tier Utility Shelving",
+        "size": "12–16″",
+        "price": "$85–$130 / LF",
+        "bestFor": "Maximum wall organization without deep projections",
+        "note": "Number of tiers, material and wall length"
+      }
+    ],
+    "tote": [
+      {
+        "item": "Single-Tier Tote Shelf",
+        "size": "20–24″",
+        "price": "$65–$95 / LF",
+        "bestFor": "Large totes and bulky storage"
+      },
+      {
+        "item": "Two-Tier Tote Storage",
+        "size": "20–24″",
+        "price": "$95–$145 / LF",
+        "bestFor": "Seasonal storage walls and household overflow"
+      },
+      {
+        "item": "Custom Bulk-Storage Rack",
+        "size": "Varies",
+        "price": "Project-specific",
+        "bestFor": "Nonstandard containers, dense storage or equipment-specific layouts"
+      }
+    ],
+    "workbench": [
+      {
+        "item": "Utility Workbench",
+        "size": "24″",
+        "price": "$80–$120 / LF",
+        "bestFor": "Potting, household projects and general tool work",
+        "note": "Top material, support framing and finish"
+      },
+      {
+        "item": "Premium Workshop Bench",
+        "size": "24–30″",
+        "price": "$120–$180 / LF",
+        "bestFor": "Frequent hobby and workshop use",
+        "note": "Top thickness, finish, tool accommodation and electrical coordination"
+      },
+      {
+        "item": "Custom Built-In Workstation",
+        "size": "Project-specific",
+        "price": "$1,500–$6,000+ project range",
+        "bestFor": "Office, studio, craft or specialized workshop layouts",
+        "note": "Cabinetry, drawers, electrical, finish and custom dimensions"
+      }
+    ],
+    "walls": [
+      {
+        "item": "Pegboard & Tool Wall",
+        "size": "Wall mounted",
+        "price": "$35–$65 / LF installed",
+        "bestFor": "Hand tools above a workbench or in a garden-tool zone",
+        "note": "Specialty slatwall, metal panels or proprietary rail systems are priced separately"
+      },
+      {
+        "item": "Cabinet & Enclosed Storage",
+        "size": "Varies",
+        "price": "$700–$2,200+ per cabinet installed",
+        "bestFor": "Premium workshops, offices, studios and finished interiors",
+        "note": "Custom millwork, hardwood, drawer systems, specialty hardware and countertops can exceed this range"
+      }
+    ],
+    "packages": [
+      {
+        "item": "Utility Storage Wall",
+        "price": "$900–$1,600+",
+        "bestFor": "General storage sheds and garden buildings",
+        "note": "6–10 LF of multi-tier utility shelving"
+      },
+      {
+        "item": "Workshop Wall Package",
+        "price": "$1,600–$3,000+",
+        "bestFor": "Hobby shops and maintenance buildings",
+        "note": "Workbench, tool wall and selected shelf storage"
+      },
+      {
+        "item": "Premium Workshop / Storage Package",
+        "price": "$3,000–$6,500+",
+        "bestFor": "Frequent-use workshops and premium interiors",
+        "note": "Workbench, shelving, cabinets, tool organization and finish coordination"
+      },
+      {
+        "item": "Fully Custom Interior Storage Plan",
+        "price": "Project-specific",
+        "bestFor": "Custom multi-use buildings",
+        "note": "Mixed cabinetry, shelves, specialty storage and work surfaces"
+      }
+    ]
+  },
+  "finish": {
+    "systems": [
+      {
+        "item": "One-Color Premium Exterior Paint",
+        "price": "$2.50–$5.00 / exterior finish SF",
+        "bestFor": "New paint-ready siding and trim, normal prep, premium acrylic finish",
+        "note": "Surface area, wall height, gables, prep"
+      },
+      {
+        "item": "Two-Color Exterior Paint",
+        "price": "$3.25–$6.50 / exterior finish SF",
+        "bestFor": "Body color plus trim, door or accent color",
+        "note": "Masking, trim quantity, color transitions"
+      },
+      {
+        "item": "Solid-Color Natural-Wood Stain",
+        "price": "$3.00–$6.50 / finish SF",
+        "bestFor": "Prepared pine or cedar with higher pigment coverage",
+        "note": "Wood condition, absorption, prep, coats"
+      },
+      {
+        "item": "Semi-Transparent Natural-Wood Stain",
+        "price": "$3.50–$7.00 / finish SF",
+        "bestFor": "Prepared natural wood where grain should remain visible",
+        "note": "Wood species, sanding, color consistency, exposure"
+      },
+      {
+        "item": "Transparent / Clear Finish",
+        "price": "$3.50–$7.50 / finish SF",
+        "bestFor": "Natural-wood appearance with minimal color coverage",
+        "note": "Prep, sanding, product system, closer maintenance"
+      },
+      {
+        "item": "Selective Exterior Caulking",
+        "price": "$450–$2,500+",
+        "bestFor": "Approved trim joints, window and door transitions, vulnerable details",
+        "note": "Joint count, access, siding detail"
+      },
+      {
+        "item": "Cedar / Wood Accent Finish",
+        "price": "$650–$3,500+",
+        "bestFor": "Brackets, shutters, flower boxes, porch and gable accents",
+        "note": "Detail count, sanding, stain choice, masking"
+      },
+      {
+        "item": "Designer Door / Trim Accent",
+        "price": "$450–$2,500+",
+        "bestFor": "Doors, selected casing, fascia or accent components",
+        "note": "Number of components, colors, masking"
+      },
+      {
+        "item": "Recoat / Refresh",
+        "price": "Site review",
+        "bestFor": "Cleaning, scraping, caulk review, spot repair, repaint or restain",
+        "note": "Existing coating condition and access"
+      }
+    ]
+  },
+  "trim": {
+    "materials": [
+      {
+        "item": "LP SmartSide Trim",
+        "price": "$9–$18 / LF",
+        "bestFor": "Painted sheds, workshops, cottages and custom buildings",
+        "note": "Strong standard choice with compatible siding and finish"
+      },
+      {
+        "item": "Cellular PVC Trim",
+        "price": "$16–$30 / LF",
+        "bestFor": "Premium offices, studios, pool houses, porches and fascia-heavy elevations",
+        "note": "Needs correct expansion, fastening, joint and adhesive detailing"
+      },
+      {
+        "item": "Western Red Cedar Trim",
+        "price": "$18–$34 / LF",
+        "bestFor": "Natural Appalachian character, stained accents and premium cottage details",
+        "note": "Not maintenance-free; plan stain, sealer, paint or intentional weathering"
+      },
+      {
+        "item": "Fiber Cement / Primed Pine",
+        "price": "$8–$28 / LF",
+        "bestFor": "Selective projects where siding compatibility or budget makes sense",
+        "note": "Pine needs more upkeep; fiber cement only where the system is compatible"
+      }
+    ],
+    "packages": [
+      {
+        "item": "Simple Standard Trim Package",
+        "price": "$450–$1,250+",
+        "bestFor": "Smaller buildings with straightforward fascia, rake, corners and limited opening trim",
+        "note": "Varies with building size, roof shape and opening count"
+      },
+      {
+        "item": "Premium Exterior Trim Package",
+        "price": "$1,250–$3,500+",
+        "bestFor": "Wider trim, refined casing, upgraded fascia and added gable detailing",
+        "note": "Material and finish can move the package significantly"
+      },
+      {
+        "item": "Custom Architectural Trim Scope",
+        "price": "Scope priced",
+        "bestFor": "Custom gables, porches, brackets, cedar accents, PVC-heavy packages and complex elevations",
+        "note": "Requires a written scope and design review"
+      }
+    ],
+    "accents": [
+      {
+        "item": "Board-and-Batten Shutters",
+        "price": "$220–$650 / pair",
+        "bestFor": "Cottage, farmhouse, garden and Appalachian-inspired buildings",
+        "note": "Cedar costs more than composite or PVC; size to the window"
+      },
+      {
+        "item": "Cedar Flower Boxes",
+        "price": "$240–$650 / box",
+        "bestFor": "Garden buildings, cottage sheds, poolside structures",
+        "note": "Needs drainage, a liner and secure wall mounting"
+      },
+      {
+        "item": "Timber-Style Brackets",
+        "price": "$275–$850 / bracket",
+        "bestFor": "Gables, porch entries, deeper eaves, Appalachian-modern rooflines",
+        "note": "Cedar costs more; faux-timber reduces maintenance"
+      },
+      {
+        "item": "Gable Vents & Medallions",
+        "price": "$250–$1,500+",
+        "bestFor": "Gable faces that need a finished focal point",
+        "note": "Custom medallions, CNC profiles and large pieces need scope review"
+      },
+      {
+        "item": "Cottage Accent Package",
+        "price": "Scope review",
+        "bestFor": "Shutters, flower boxes, gable detail, soft colors and trim coordination",
+        "note": "Quantity, style, material and finish reviewed together"
+      },
+      {
+        "item": "Custom Full Exterior Accent Package",
+        "price": "Scope review",
+        "bestFor": "Highly visible buildings that need a complete character layer",
+        "note": "Specialty buildings, HOA-sensitive designs, custom elevations"
+      }
+    ]
   }
 }

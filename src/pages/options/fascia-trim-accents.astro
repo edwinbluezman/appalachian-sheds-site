@@ -1,0 +1,84 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/fascia-trim-accents/',
+  name: 'Fascia, Trim & Decorative Accents',
+  title: 'Shed Fascia, Trim, Shutters, Brackets & Exterior Accents | Appalachian Sheds',
+  description: 'Fascia, rake, corner and casing trim for Appalachian Sheds buildings in LP SmartSide, cellular PVC or cedar, plus shutters, flower boxes, timber brackets and gable medallions, with planning prices.',
+  h1: 'Fascia, Trim & Decorative Accents',
+  answer: 'Trim finishes the roof edges, corners, doors and windows and sets the color breaks that make a building look deliberate. LP SmartSide trim is the standard material, at $9 to $18 per linear foot; cellular PVC runs $16 to $30 and western red cedar $18 to $34. Decorative accents such as shutters ($220–$650 a pair), cedar flower boxes and timber brackets are layered on once the siding, trim, roofline and colors are settled.',
+  familyLabel: 'Exterior Detail',
+  stepsTitle: 'The Trim Goes On Late, but the Trim Plan Starts Early',
+  stepsLead: 'Trim affects siding layout, roof-edge depth, window and door balance, gable details, paint lines and caulking. Changing it late ripples through the rest of the exterior.',
+  steps: [
+    ['Confirm the style', 'Storage, workshop, cottage, office, studio or poolside.'],
+    ['Choose the material', 'LP, PVC, cedar, fiber cement, pine or a planned mix.'],
+    ['Set the widths', 'Fascia, rake, corners, casing and gable details.'],
+    ['Plan color breaks', 'Body, trim, door and accent colors.'],
+    ['Review water details', 'Caulking, flashing, drainage paths and cut-end protection.'],
+    ['Add accents last', 'Shutters, boxes, brackets and gable details, with blocking planned.'],
+  ],
+  families: [
+    {
+      id: 'materials',
+      name: 'Trim Materials',
+      intro: [
+        'LP SmartSide trim suits most painted buildings. Cellular PVC resists moisture and suits offices, studios, pool houses and fascia-heavy elevations, but needs correct expansion and fastening details. Western red cedar gives natural Appalachian character with a real stain, seal, paint or weathering plan.',
+        'Proportion matters as much as material: trim that is too narrow looks unfinished, and trim that is too wide overpowers a small building.',
+      ],
+      prices: prices.trim.materials,
+    },
+    {
+      id: 'packages',
+      name: 'Trim Packages',
+      intro: [
+        'Trim is priced by the linear foot or as a defined package once the building size, roofline, openings, material and finish are known. Taller walls, steep pitches, multiple gables and added openings all increase the scope.',
+      ],
+      prices: prices.trim.packages,
+      after: 'Planning ranges, not quotes. Trim planned with the original build is cleaner and less costly than modifying finished siding later.',
+    },
+    {
+      id: 'accents',
+      name: 'Decorative Exterior Accents',
+      intro: [
+        'Accents are the character layer: shutters sized to the window, flower boxes under the right window, brackets where the eye expects support, and gable details centered and sized to the gable face. A few correct accents look more premium than many unrelated ones.',
+        'Flower boxes, brackets and medallions are stronger and cleaner when wall blocking is planned before construction. Simple painted flower boxes are listed with the Windows options.',
+      ],
+      prices: prices.trim.accents,
+    },
+  ],
+  compare: {
+    title: 'Every Trim Position Has a Job',
+    head: ['Trim', 'Primary job', 'What it controls visually'],
+    rows: [
+      ['Fascia', 'Finishes the roof edge and covers framing', 'Roofline depth and visual weight'],
+      ['Rake boards', 'Finish the sloped gable edges', 'Gable outline'],
+      ['Frieze boards', 'Transition at the top of the wall', 'Horizontal definition below the roof'],
+      ['Corner boards', 'Protect siding edges at corners', 'Vertical strength and proportion'],
+      ['Window & door casing', 'Frame the openings', 'Window presence and entry emphasis'],
+      ['Band board', 'Breaks taller wall planes', 'Material and color transitions'],
+      ['Gable trim', 'Defines the gable area', 'Vents, brackets, medallions'],
+    ],
+  },
+  considerationsTitle: 'Trim & Accent Mistakes to Avoid',
+  considerations: [
+    ['Choosing trim too late', 'Trim should guide siding layout and color breaks.'],
+    ['Blind caulking', 'Seal approved joints; keep lap and drainage paths open.'],
+    ['Too many colors or accents', 'A disciplined body-and-trim palette looks more premium.'],
+    ['Undersized shutters or cupolas', 'Accents sized too small look like afterthoughts.'],
+    ['Flower boxes on siding alone', 'Wet soil is heavy; boxes need proper backing.'],
+    ['Paint, Stain & Finish Systems', 'Trim color, coating path and upkeep.', link('/options/paint-stain-finish/')],
+  ],
+  faqs: [
+    { q: 'What is the difference between fascia, rake and frieze trim?', a: 'Fascia runs along a roof edge, rake trim follows the sloped edge of a gable, and frieze trim is a horizontal transition near the top of the wall.' },
+    { q: 'Is PVC trim worth the upgrade?', a: 'It can be on offices, pool houses, porch details and fascia-heavy designs where moisture resistance and lower maintenance matter. It runs $16 to $30 per linear foot.' },
+    { q: 'Can trim or accents be added later?', a: 'Sometimes, but it is cleaner and less costly to plan them before siding, paint, windows and blocking are finalized.' },
+    { q: 'Should trim be a different color than the siding?', a: 'Often a disciplined body color and trim color works best. Too many competing colors make a small building feel busy.' },
+  ],
+  ctaTitle: 'Plan the Exterior Details With Edwin',
+};
+---
+<OptionPage page={page} />

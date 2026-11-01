@@ -1,0 +1,102 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '05',
+  subtitle: 'Gate Width, Side Yards, Slopes and Working Room',
+  description: 'Access planning for a built-on-site backyard building: what to measure, red flags like narrow gates, slopes and overhead wires, common myths, and what to clear before build day.',
+  intro: 'Building on site solves most of the problems of delivering a finished shed, but it does not make access irrelevant. Materials, tools, ladders, the crew and site-preparation materials still need a practical route from the street or driveway to the building spot.',
+  question: 'What Access Is Needed for a Built-On-Site Backyard Building?',
+  answer: [
+    'The building never has to pass through your yard in one piece, but everything needed to build it does. That means reviewing the narrowest gate or side yard, tight turns, steps, slope, ground conditions, overhead clearance, private utilities, a staging area and the working room around the footprint.',
+    'A tight yard is not automatically a problem. Many difficult residential lots can still take a built-on-site building. The key is finding the restrictions early enough to plan around them.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Recommended Access Sequence', title: 'Review the Route Before the Build Plan Is Final', nav: 'The Sequence',
+      items: [
+        { title: 'Confirm the Building Location', text: 'Settle the intended spot and use before working out how materials, tools and people reach it.' },
+        { title: 'Measure the Narrowest Points', text: 'Measure the usable gate opening, side-yard width, tight turns and every pinch point between the driveway and the site, after posts, hinges, latches and landscaping.' },
+        { title: 'Review Ground, Slope and Overhead', text: 'Note steps, retaining walls, soft or wet ground, steep grades, low branches, overhead wires and roof edges that could block long materials or ladders.' },
+        { title: 'Identify Utilities and Restrictions', text: 'Disclose private lines such as irrigation, pet fencing, septic, drainage, lighting, pool and propane, plus easements, HOA rules or access agreements.' },
+        { title: 'Finalize the Building and Construction Plan', text: 'Use what you learned to set the size, placement, foundation, staging, site preparation and timing before work begins.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'why', title: 'A Building Can Be Designed Right and Still Be Hard to Build', nav: 'Why Access Matters',
+      items: [
+        { title: 'Material flow', text: 'Lumber, siding, roofing, doors, windows, tools, ladders and foundation materials all need a workable route.' },
+        { title: 'Crew safety', text: 'Uneven ground, wet grass, slopes, loose steps and clutter make handling materials harder.' },
+        { title: 'Property protection', text: 'A defined route reduces lawn damage and conflicts with fences, patios and landscaping.' },
+        { title: 'Schedule protection', text: 'A locked gate, low branch or undisclosed line can delay the start.' },
+        { title: 'Site preparation', text: 'Stone, excavation and leveling for the pad may need more access than the building itself.' },
+        { title: 'Design decisions', text: 'A difficult route or work zone can change the size or placement.' },
+      ],
+      note: 'The widest part of the yard does not decide whether access works. The narrowest or most difficult point on the route usually controls the plan.',
+    },
+    {
+      type: 'table', id: 'advantage', dark: true, title: 'Built On Site Helps Tight Yards, but Access Still Matters', nav: 'The Built-On-Site Advantage',
+      head: ['Topic', 'What it means'],
+      rows: [
+        ['Finished-building delivery', 'A prebuilt shed must reach the spot whole, so narrow gates, fences, landscaping, walls and pools can stop it.'],
+        ['Built-on-site construction', 'Appalachian Sheds carries individual materials to the spot and builds there, instead of maneuvering a finished building through the yard.'],
+        ['Material movement', 'Lumber, siding, roofing, doors, windows, ladders and tools still need a practical path.'],
+        ['Working room', 'The crew needs room around the footprint: at least 3 feet on all sides for most buildings, 4 feet over 160 square feet.'],
+        ['Site conditions', 'Slope, steps, mud, walls, overhead obstacles and utilities can still affect the plan.'],
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Review These Before the Build Plan Is Final', nav: 'Access Red Flags',
+      items: [
+        { title: 'The gate is narrower than expected', text: 'Posts, hinges, latches and fence angles reduce the real opening.' },
+        { title: 'The side yard has equipment', text: 'Air conditioners, meters, downspouts, window wells and shrubs narrow the route.' },
+        { title: 'The route crosses a slope or wet ground', text: 'Steep, slippery, muddy or soft ground slows material movement.' },
+        { title: 'Steps, walls or tight turns', text: 'Elevation changes and sharp turns affect long materials and ladders.' },
+        { title: 'Low branches or overhead wires', text: 'Interfere with long materials, ladders and roofing work.' },
+        { title: 'Very little room around the building', text: 'Harder to build, finish, inspect and maintain.' },
+        { title: 'Private utilities not identified', text: 'Irrigation, pet fencing, septic and lighting need attention.' },
+        { title: 'Movable obstacles still in the yard', text: 'Furniture, firewood, planters, toys and debris delay the start.' },
+      ],
+    },
+    {
+      type: 'table', id: 'myths', title: 'Assumptions That Create Build-Day Problems', nav: 'Common Myths',
+      head: ['Common assumption', 'What actually matters'],
+      rows: [
+        ['Built on site means access doesn’t matter', 'Materials, tools, ladders, workers and foundation materials still need a workable route.'],
+        ['Gate width is the only question', 'Slope, turns, steps, overhead clearance, soft ground and working room matter just as much.'],
+        ['If a person can walk through, materials can too', 'Long framing, siding, trim, doors and ladders need far more clearance than an empty-handed person.'],
+        ['The crew can figure it out on build day', 'Late surprises slow construction and force decisions that should have been made earlier.'],
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Builder Planning and Homeowner Verification', nav: 'Who Handles What',
+      items: [
+        { title: 'Appalachian Sheds can help evaluate', list: ['Access from the driveway or street', 'Gate width, side yards, turns and staging', 'The route for long materials', 'Working room around the footprint', 'How slope, soft ground or steps affect work', 'Whether size or placement should change'] },
+        { title: 'The homeowner measures and clears', list: ['Measure the narrowest gate and side yard', 'Clear furniture, firewood, toys and debris', 'Unlock gates on construction days', 'Disclose private underground lines', 'Confirm HOA, setback or easement limits', 'Point out low limbs and overhead wires', 'Keep pets secured away from the work zone'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'What to Measure, Photograph and Clear', nav: 'Homeowner Checklist',
+      items: [
+        { title: 'Gate & side yard', list: ['Real gate opening after hinges and latches', 'Fence-to-house distance', 'AC unit, meter and downspout clearance', 'Tight turns and pinch points'] },
+        { title: 'Ground & overhead', list: ['Grass, mud, gravel, pavers or steps', 'Wet or soft areas after rain', 'Low branches and service lines', 'Awnings, gutters, decks and roof edges'] },
+        { title: 'Work zone', list: ['Room on all sides of the footprint', 'Nearby fences, shrubs and walls', 'Space for ladders and roofing', 'Maintenance access afterward'] },
+        { title: 'Before build day', list: ['Furniture, grills and planters moved', 'Stored materials and equipment cleared', 'Pet waste and debris removed', 'Gates unlocked and paths open'] },
+      ],
+      note: 'Properties across Greater Cincinnati, Northern Kentucky and Southeast Indiana include narrow side yards, mature landscaping, slopes, retaining walls, older fencing and overhead utilities. None of these automatically prevents construction, but each property is reviewed on its own.',
+    },
+  ],
+  faqs: [
+    { q: 'Can you build if my backyard has a narrow gate?', a: 'Often, yes. Appalachian Sheds builds on site rather than delivering a finished building, but the real gate opening, side-yard obstacles, slope, turns and working room still need review.' },
+    { q: 'What should I measure before discussing my site?', a: 'The narrowest gate opening, the tightest side-yard point, any sharp turns and the space around the proposed footprint. Photos of the whole route help too.' },
+    { q: 'What if the route goes down a slope?', a: 'A slope does not automatically prevent construction, but it changes material handling. Wet grass, soft ground, steps and retaining walls should be reviewed early.' },
+    { q: 'Do I need to clear the path before build day?', a: 'Yes. Furniture, grills, planters, firewood, toys, equipment, pet waste and stored items should be out of the route and work zone.' },
+    { q: 'How much room is needed around the building?', a: 'At least 3 feet on all sides for most buildings, and 4 feet for buildings over 160 square feet, with overhead branches cleared.' },
+  ],
+  related: ['01', '06', '13', '14'],
+  pages: [['Site & Foundation', 'The six checkpoints before our crew arrives.', '/options/site-foundation/']],
+  ctaTitle: 'Plan the Route Before You Finalize the Building',
+  ctaText: 'A tight yard can still be a workable site. Measure the narrowest openings, photograph difficult sections, note slopes and overhead limits, disclose private utilities and clear obstacles before construction begins.',
+};
+---
+<GuidePage page={page} />

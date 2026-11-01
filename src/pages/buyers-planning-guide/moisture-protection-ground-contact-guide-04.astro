@@ -1,0 +1,103 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '04',
+  subtitle: 'How Drainage, Ground Separation, Airflow and Maintenance Protect a Backyard Building',
+  description: 'How to protect a backyard building from moisture: drainage and grade, the foundation layers, lower-wall clearance, airflow, red flags to resolve before building, and what homeowners maintain afterward.',
+  intro: 'A backyard building spends every day outdoors. Rain, damp soil, splash-back, roof runoff, wet leaves, mulch, humidity and freeze-thaw cycles all affect the lower part of the structure, so moisture planning is a construction issue, not a cosmetic upgrade.',
+  question: 'How Should a Backyard Building Be Protected From Moisture?',
+  answer: [
+    'Move water away from the building, prepare a stable, well-drained foundation area, keep wood out of unnecessary contact with damp soil, keep clearance below siding and trim, control splash-back and runoff, and leave enough airflow for the lower structure to dry.',
+    'No single product does all of that. Pressure-treated lumber, washed stone and a moisture barrier each play a role, but none replaces sound grading, drainage, clearance and maintenance.',
+    'The goal is simple: water needs a path away from the building, and the building needs a way to dry after normal wetting.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Moisture-Protection Sequence', title: 'Protect the Building From the Ground Up', nav: 'The Sequence',
+      lead: 'A reliable moisture strategy starts before the structure is built. Each step supports the next.',
+      items: [
+        { title: 'Study Where Water Goes After Rain', text: 'Look at the spot after a real rainfall. Note low spots, standing water, swales, downspouts, patio and driveway runoff, and neighboring slopes. A spot that looks dry on a sunny afternoon can behave very differently in a storm.' },
+        { title: 'Correct Grade and Runoff', text: 'Shape the site so surface water moves away. A foundation should support the building, not make up for an unresolved drainage problem.' },
+        { title: 'Prepare the Subgrade', text: 'Grass, roots and loose topsoil hold moisture and settle. The prepared pad starts with excavation to firm soil, not decorative stone spread over the lawn.' },
+        { title: 'Install Geotextile Fabric', text: 'Fabric on the compacted soil keeps soil and stone separated so the stone base keeps draining. It is a different layer from the moisture barrier above the stone.' },
+        { title: 'Build the Washed-Stone Base', text: 'Six inches of 3/4″ washed limestone drains and supports far better than a thin layer of round landscape gravel.' },
+        { title: 'Add the 10-Mil Moisture Barrier', text: 'A 10-mil black barrier on top of the finished stone adds a separate moisture break below the foundation. It does not replace drainage, grading, stone or fabric.' },
+        { title: 'Set the Foundation on the Prepared Base', text: 'Concrete bearing pads and 6×6 pressure-treated foundation beams bear on a stable, level base. Soft pockets and concentrated water are corrected before the floor goes on.' },
+        { title: 'Protect Lower Siding and Trim', text: 'Siding, trim and doors should never disappear into soil, mulch or leaves. Clearance limits splash-back, helps drying and keeps the lower walls visible.' },
+        { title: 'Preserve Airflow and Access', text: 'Dense shrubs, firewood, planters, tarps and stored equipment trap moisture and hide problems. Keep the perimeter open.' },
+        { title: 'Keep Runoff Moving Away for Good', text: 'Downspouts, drainage paths, landscaping and grade need to keep sending water away for the life of the building.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'sources', title: 'Most Moisture Problems Are Repeated Small Exposures', nav: 'How Moisture Gets In',
+      lead: 'A building does not need a roof leak to develop moisture problems. Look above, beside, below and inside the building.',
+      items: [
+        { title: 'Surface water', text: 'Yard slope, driveways, patios and neighboring grades can send runoff toward the building.' },
+        { title: 'Ground moisture', text: 'Damp soil keeps the foundation and floor in a humid environment and slows drying.' },
+        { title: 'Splash-back', text: 'Rain hitting soil, mulch or hard surfaces splashes onto lower siding, trim and doors.' },
+        { title: 'Roof & downspout runoff', text: 'A nearby house or garage can put far more water at the site than rain on the shed alone.' },
+        { title: 'Wet organic material', text: 'Leaves, mulch, vines and dense planting hold moisture against the walls.' },
+        { title: 'Interior moisture', text: 'A future office, studio or conditioned space changes how the building handles moisture.' },
+      ],
+    },
+    {
+      type: 'table', id: 'layers', dark: true, title: 'What Each Foundation Layer Is Supposed to Do', nav: 'Foundation Layers',
+      head: ['Layer', 'Position', 'Purpose', 'What it does not replace'],
+      rows: [
+        ['Prepared subgrade', 'Bottom, after topsoil and organics are removed', 'A firm, shaped surface for everything above', 'It is not the finished foundation'],
+        ['Geotextile fabric', 'On the soil, below the stone', 'Keeps soil and stone separated', 'The moisture barrier above the stone'],
+        ['3/4″ washed stone', 'Above the fabric', 'A stable, free-draining layer', 'Not the same as decorative round gravel'],
+        ['10-mil moisture barrier', 'On top of the stone', 'A moisture break below the foundation', 'Grading, drainage, fabric or stone'],
+        ['6×6 PT foundation beams', 'On concrete bearing pads above the base', 'The structural support for the floor', 'Correcting a wet, soft or unstable site'],
+        ['Lower-wall clearance', 'Around the finished building', 'Keeps siding and trim clear of soil, mulch and splash', 'Homeowner inspection and upkeep'],
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Conditions Worth Resolving Before Construction', nav: 'Moisture Red Flags',
+      items: [
+        { title: 'Standing water after rain', text: 'The site may need drainage work, grading, more preparation or a different spot.' },
+        { title: 'Downspouts aimed at the site', text: 'Concentrated roof water can overwhelm an otherwise good location.' },
+        { title: 'Soft or recently filled soil', text: 'Affects both support and drainage.' },
+        { title: 'Mulch or soil against the walls', text: 'Moisture-holding material should never be piled against siding or doors.' },
+        { title: 'Very low siding clearance', text: 'Increases splash-back and makes inspection harder.' },
+        { title: 'Dense landscaping at the walls', text: 'Traps dampness and hides developing problems.' },
+        { title: 'Stored items against the building', text: 'Firewood, tarps and bins trap moisture like vegetation does.' },
+        { title: 'A future finished interior with no plan', text: 'Insulation or climate control plans should shape the foundation discussion now.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'The Builder and Homeowner Both Affect Moisture Performance', nav: 'Who Handles What',
+      lead: 'Good construction creates the starting conditions. Drainage and maintenance protect them afterward.',
+      items: [
+        { title: 'Appalachian Sheds can help evaluate', list: ['Site slope and visible runoff', 'Foundation preparation in the written scope', 'Structural materials for the foundation and floor', 'Lower-wall clearance and access', 'Downspout, landscaping and hard-surface conflicts', 'How the intended use affects planning'] },
+        { title: 'The homeowner maintains and verifies', list: ['Downspouts and drainage sending water away', 'No mulch or soil built up against siding', 'Leaves and debris cleared from the base', 'Stored items kept off the walls', 'Paint, stain and caulk inspected regularly', 'Known flooding, springs, wet areas or fill disclosed'] },
+      ],
+      note: 'Be cautious of vague answers like “treated wood means moisture isn’t a problem” or “the gravel will take care of it.” A good answer describes the complete drainage and foundation plan for your site.',
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Check These Conditions Before Final Placement', nav: 'Homeowner Checklist',
+      items: [
+        { title: 'After rain', list: ['Look for standing water', 'Photograph runoff paths', 'Note soft or saturated ground', 'Check water from neighboring areas'] },
+        { title: 'At the house', list: ['Where downspouts discharge', 'Roof runoff during storms', 'Sump or drain outlets', 'Hard surfaces shedding toward the yard'] },
+        { title: 'Landscaping', list: ['Leave clearance around the walls', 'Keep mulch below siding and trim', 'No vines on the building', 'Plan for shrub and tree growth'] },
+        { title: 'Future use', list: ['Insulation later?', 'Heating or cooling later?', 'Electric or plumbing needs', 'Finished-space plans before construction'] },
+      ],
+      note: 'Across the Tri-State, rain, humidity, leaf fall, winter moisture and freeze-thaw cycles change how a site behaves through the year. Pay special attention to low areas, shade, wooded edges and anywhere water concentrates.',
+    },
+  ],
+  faqs: [
+    { q: 'Does pressure-treated lumber eliminate moisture problems?', a: 'No. It is an important durability measure, but it does not replace drainage, foundation preparation, clearance, airflow or maintenance.' },
+    { q: 'Is geotextile fabric the same as a moisture barrier?', a: 'No. Fabric separates soil from stone below the gravel. The 10-mil moisture barrier sits on top of the stone and serves a different purpose.' },
+    { q: 'Does a gravel pad automatically solve drainage problems?', a: 'No. A properly built stone base supports drainage, but water still needs a sensible path away from the building.' },
+    { q: 'Why is mulch against the building a concern?', a: 'Mulch holds moisture and organic debris against siding and trim, slowing drying, increasing splash-back and hiding problems.' },
+    { q: 'Does moisture planning matter more for an office or studio?', a: 'It can. An insulated, heated or cooled building behaves differently from unconditioned storage, so discuss future use before the foundation and shell are final.' },
+    { q: 'What if my chosen spot stays wet after storms?', a: 'Address it before the location is final: move the building, correct drainage, adjust grade or revise the foundation preparation.' },
+  ],
+  related: ['01', '03', '05', '17'],
+  pages: [['Ventilation & Moisture Control', 'Roof venting, dehumidifiers and humidity control.', '/options/ventilation-moisture-control/'], ['Site & Foundation', 'The prepared pad and nine-layer foundation.', '/options/site-foundation/']],
+  ctaTitle: 'Plan for Water Before the Finishing Details',
+  ctaText: 'The best time to solve a moisture or drainage concern is before the foundation and location become permanent. Study the site after rain, understand the foundation layers and protect the lower structure from unnecessary exposure.',
+};
+---
+<GuidePage page={page} />

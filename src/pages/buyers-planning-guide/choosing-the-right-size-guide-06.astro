@@ -1,0 +1,119 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { series } from '../../data/catalog.js';
+
+// Size ranges come straight from each model's price list, so they always match the model pages.
+const sizeRows = series.flatMap((s) => s.models.map((m) => [m.name, s.name, m.prices.sizeRange, `${m.prices.sizes.length} sizes`]));
+
+const page = {
+  n: '06',
+  subtitle: 'Choosing the Right Size, Footprint & Placement',
+  description: 'How to choose the right backyard building size: start with the use, plan for doors, walkways, shelving and future upgrades, check the property fit, and measure before you commit.',
+  intro: 'Choosing a size is not just a square-foot decision. It affects daily usability, storage, furniture layout, access, foundation planning, visual balance, approvals and future flexibility. The right footprint gives the building’s purpose enough room once real life moves in.',
+  question: 'What Size Backyard Building Should You Choose?',
+  answer: [
+    'The smallest size that comfortably supports the real use without crowding the layout, blocking movement, limiting storage or ruling out future upgrades.',
+    'Account for the main purpose, door swing, walkways, shelf depth, furniture, work zones, equipment, maintenance room, placement, foundation, permit or HOA limits, and whether the building may later need power, HVAC, insulation or an interior finish.',
+    'A storage building is sized around equipment and shelves. A workshop needs room to stand, work and open drawers. An office or studio needs desk and chair clearance, useful wall space and comfort planning.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'why', eyebrow: 'Why Sizing Matters', title: 'A Size Mistake Becomes a Daily Frustration', nav: 'Why Sizing Matters',
+      items: [
+        { title: 'Daily use', text: 'A building used weekly or daily needs more careful sizing than seasonal storage.' },
+        { title: 'Movement', text: 'A mower, desk, bench or freezer needs approach space, not just its footprint.' },
+        { title: 'Future needs', text: 'Tools, hobbies, furniture and comfort expectations usually grow.' },
+        { title: 'Property fit', text: 'The right size inside can still overwhelm the yard or crowd maintenance space.' },
+        { title: 'Foundation & site prep', text: 'A larger footprint may cross more slope, drainage, roots or soft ground.' },
+        { title: 'Approvals', text: 'Size can affect permits, setbacks, HOA review and lot coverage.' },
+      ],
+      note: 'Do not choose a size because it is popular. Start with what the building must do, how people and equipment move inside it, and how it will sit on the property.',
+    },
+    {
+      type: 'cards', id: 'use', title: 'The Best Size Comes From the Job the Building Has to Do', nav: 'Start With the Use',
+      items: [
+        { title: 'Storage building', text: 'Plan around retrieval, not just storage: equipment, bins, bikes, shelves and reaching items without emptying the building.' },
+        { title: 'Garden building', text: 'Potting bench, soil, tools and seed trays need storage and working room.' },
+        { title: 'Workshop', text: 'Bench depth, tool storage, standing room, material handling, lighting and power.' },
+        { title: 'Backyard office', text: 'Desk placement, chair movement, wall space, outlets, windows, HVAC and lighting.' },
+        { title: 'Creative studio', text: 'Open floor, uninterrupted walls, storage, natural and task light.' },
+        { title: 'Pool building', text: 'Changing space, towels, seating and traffic flow to the pool and patio.' },
+        { title: 'Multi-use building', text: 'Size around distinct zones, not one rectangle expected to do everything.' },
+        { title: 'Future-ready shell', text: 'Insulation, wall finish, flooring, HVAC and cabinets all take space later.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'usable', title: 'Square Footage Alone Does Not Tell You How It Will Feel', nav: 'Real Usable Space',
+      items: [
+        { title: 'Door swing & entry', text: 'The entry should not collide with a mower, bench, desk or stored items.' },
+        { title: 'Walking clearance', text: 'If every step requires moving something, the layout is too tight.' },
+        { title: 'Storage depth', text: 'Shelves, bins and tool chests need their own depth plus room in front.' },
+        { title: 'Furniture & work zones', text: 'Desks, benches and tables need clearance around them, not just a spot they fit.' },
+        { title: 'Useful wall space', text: 'Windows and doors add character but reduce wall for shelves and desks.' },
+        { title: 'Finished interior thickness', text: 'Insulation, wall finish, outlets, trim and flooring reduce usable room.' },
+      ],
+    },
+    {
+      type: 'table', id: 'sizes', dark: true, title: 'Sizes Available by Model', nav: 'Sizes by Model',
+      lead: 'Every Appalachian Sheds model is offered in a range of standard sizes. Each model page has a calculator showing the price for every size and siding.',
+      head: ['Model', 'Series', 'Size range', 'Standard sizes'],
+      rows: sizeRows,
+      links: [['Compare all buildings and prices', '/buildings/']],
+    },
+    {
+      type: 'cards', id: 'property', title: 'The Right Size Must Fit the Property, Not Just the Wish List', nav: 'Property Fit',
+      items: [
+        { title: 'Visual proportion', text: 'Too large can dominate the property; too small can look disconnected from the home.' },
+        { title: 'Setbacks & easements', text: 'Property lines, easements, HOA limits and utility zones may trim the footprint.' },
+        { title: 'Exterior clearance', text: 'At least 3 feet around most buildings, 4 feet over 160 square feet, for building and upkeep.' },
+        { title: 'Drainage & grade', text: 'A bigger building crosses more ground and more potential water paths.' },
+        { title: 'Access path', text: 'Built on site, the finished building never travels the route, but materials still do.' },
+        { title: 'Outdoor living', text: 'The building should support patios, gardens and play areas, not crowd them.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Signs the Footprint Deserves a Closer Look', nav: 'Sizing Red Flags',
+      items: [
+        { title: 'It only works if perfectly organized', text: 'Then it is probably too small for real life.' },
+        { title: 'No clear walkway after equipment', text: 'Fits on paper, feels cramped in use.' },
+        { title: 'The door opens into the only work area', text: 'Plan door swing before the footprint.' },
+        { title: 'Shelf depth counted, approach space ignored', text: 'Items must be reachable without moving everything.' },
+        { title: 'It may become an office or workshop', text: 'Future use needs more room for comfort and utilities.' },
+        { title: 'It overwhelms the yard', text: 'Useful inside, poorly proportioned outside.' },
+      ],
+    },
+    {
+      type: 'table', id: 'myths', title: 'Sizing Assumptions That Lead to Regret', nav: 'Sizing Myths',
+      head: ['Assumption', 'Reality', 'Evaluate instead'],
+      rows: [
+        ['Bigger is always better', 'Too large can dominate the property, raise approval issues and complicate site prep', 'Interior needs balanced with scale, setbacks, drainage and access'],
+        ['Square footage tells the whole story', 'Doors, walls, walkways, furniture and future finish decide how it feels', 'Lay out the interior before choosing the footprint'],
+        ['Size only for what you own today', 'Tools, hobbies and storage grow over time', 'Realistic future growth and changes in use'],
+        ['If it fits the lot, it’s the right size', 'It also needs access, maintenance room, drainage and visual balance', 'The interior plan and the whole site together'],
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'What to Measure Before Choosing the Footprint', nav: 'What to Measure',
+      items: [
+        { title: 'Large items', list: ['Largest mower or equipment', 'Tool chest, freezer, bench', 'Bikes, carts, patio furniture', 'Items that roll, turn or open'] },
+        { title: 'Interior layout', list: ['Walkway width', 'Door swing and entry', 'Shelf depth plus approach space', 'Desk, chair or cabinet footprint'] },
+        { title: 'Walls & future finish', list: ['Wall needed for shelves or cabinets', 'Preferred window and door spots', 'Outlet and lighting needs', 'Insulation, flooring and HVAC later'] },
+        { title: 'Yard & limits', list: ['Site dimensions and clearance', 'Access path and gate width', 'Setback and HOA limits', 'Easements, drainage and utilities'] },
+      ],
+      note: 'Rule of thumb: if the building only works when it is perfectly organized, it is probably too small. Real life includes extra bins, a new hobby and doors that need room to open.',
+    },
+  ],
+  faqs: [
+    { q: 'Should I choose the biggest building I can fit?', a: 'Not automatically. A building that overwhelms the yard, raises approval issues, crosses drainage problems or leaves no maintenance room may not be the right footprint.' },
+    { q: 'How do I know if a shed is too small?', a: 'If the layout only works when everything is perfectly organized, there is no walkway, or shelves and equipment crowd the door, it is probably too small.' },
+    { q: 'How much extra room should I plan for future use?', a: 'It depends on whether the building may become a workshop, office, studio or finished space. Insulation, power, HVAC, furniture, cabinets and wall finish all reduce usable room.' },
+    { q: 'Does building size affect permits or HOA approval?', a: 'It can affect zoning, setbacks, lot coverage, height limits, HOA review and easements, depending on the property.' },
+    { q: 'Why does door placement matter when choosing size?', a: 'A door can take one of the most useful parts of a wall or floor. Plan swing, approach and traffic flow before the footprint is final.' },
+  ],
+  related: ['05', '07', '08', '02'],
+  pages: [['Buildings & Pricing', 'All five models, every size and siding, with calculators.', '/buildings/'], ['Shelving, Workbenches & Storage', 'Plan storage depth and layout with the size.', '/options/shelving-workbenches-storage/']],
+  ctaTitle: 'Choose the Size After You Understand the Use, the Yard and the Future',
+  ctaText: 'The right size is not the biggest building you can fit or the smallest you can tolerate. It is the footprint that supports the real use, leaves room to move, fits the property and keeps working as your needs change.',
+};
+---
+<GuidePage page={page} />

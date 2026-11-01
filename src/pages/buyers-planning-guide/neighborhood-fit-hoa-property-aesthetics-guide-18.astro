@@ -1,0 +1,103 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '18',
+  subtitle: 'Plan a Building That Looks Intentional, Respects Approvals and Belongs on the Property',
+  description: 'How to plan a backyard building that fits the neighborhood and passes HOA review: approval layers, sightlines, scale, exterior coordination, common mistakes and a homeowner checklist.',
+  intro: 'A backyard building becomes part of the property. Its placement, roofline, siding, trim, color, windows, landscaping and visibility affect how it looks and how smoothly it moves through municipal or HOA review.',
+  question: 'How Do You Plan a Backyard Building That Fits the Property?',
+  answer: [
+    'Treat it as an architectural addition to the property, not an object dropped onto open lawn.',
+    'Before construction, confirm the requirements for your exact address: zoning, setbacks, easements, utilities, permits, HOA or architectural review and private restrictions. Then look at the building from the important views and coordinate its roof, siding, trim, openings, color and landscape setting with the home.',
+    'Good planning answers three separate questions: Is it allowed? Is it privately approved? Does it belong visually?',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Decision Sequence', title: 'Check the Rules and the Visual Fit Before Finalizing the Location', nav: 'Planning Sequence',
+      items: [
+        { title: 'Confirm the Exact Address', text: 'The property sets the jurisdiction, zoning, setbacks, easements and any HOA restrictions. Don’t rely on a neighbor’s rules.' },
+        { title: 'Check Public Requirements', text: 'Zoning, setbacks, lot coverage, permits, height, foundations, utilities and intended use, depending on the project.' },
+        { title: 'Check HOA and Private Restrictions', text: 'HOAs, review committees and deed restrictions may regulate the building even when the city allows it.' },
+        { title: 'Study the Sightlines', text: 'View the spot from the kitchen, patio, porch, driveway, street, pool and neighboring properties.' },
+        { title: 'Coordinate the Exterior', text: 'Roof pitch and color, siding direction, trim, doors, windows, porch and palette, compatible without copying the house.' },
+        { title: 'Settle Into the Landscape', text: 'Paths, gravel edges, planting beds, steps, screening and lighting help the building look permanent.' },
+      ],
+      note: 'Ask not only “Will it fit?” but also “Will it look like it belongs?”',
+    },
+    {
+      type: 'cards', id: 'visual', title: 'Three Decisions That Make a Building Look Permanent', nav: 'Visual Fit',
+      items: [
+        { title: 'Scale & proportion', list: ['Large enough to feel substantial', 'Small enough to respect the yard', 'Roof mass proportionate to the site', 'Doors and windows sized to the architecture'] },
+        { title: 'Sightlines', list: ['Views from the home and patio', 'Street and driveway visibility', 'Neighbor-facing walls', 'Pool and entertaining views'] },
+        { title: 'Architectural relationship', list: ['Compatible roof color or character', 'Related trim', 'Intentional siding choice', 'Consistent material quality'] },
+      ],
+      note: 'A well-placed building should feel settled rather than dropped, substantial rather than bulky, and coordinated rather than copied.',
+    },
+    {
+      type: 'cards', id: 'exterior', title: 'Exterior Choices Should Relate to the Property’s Best Features', nav: 'Exterior Coordination',
+      items: [
+        { title: 'Roof material & color', text: 'A roof related to the home’s often creates the strongest connection, within any HOA rules.' },
+        { title: 'Roof pitch', text: 'A substantial home may call for a stronger roofline, subject to height limits.' },
+        { title: 'Siding direction', text: 'Vertical siding suits Appalachian board-and-batten character; lap siding reads as a residential companion.' },
+        { title: 'Trim', text: 'Window trim, corner boards, fascia and door trim can echo the home’s trim.' },
+        { title: 'Doors & windows', text: 'Random windows can solve an interior need but leave a visible wall unresolved.' },
+        { title: 'Color palette', text: 'Body, trim, roof and one deliberate accent age better than competing colors.' },
+        { title: 'Entry details', text: 'Face entries toward useful paths and views; porches and lighting should serve the architecture.' },
+        { title: 'Landscape transition', text: 'Paths, gravel edges and planting connect the building to the property.' },
+      ],
+    },
+    {
+      type: 'table', id: 'layers', dark: true, title: 'Public Approval, Private Approval and Property Fit Are Different', nav: 'Approval Layers',
+      head: ['Layer', 'What it may affect', 'Common mistake', 'Better approach'],
+      rows: [
+        ['Building & trade rules', 'Structure, foundation, utilities and inspections', 'Assuming a small building avoids all review', 'Confirm for the exact address, size, use and utilities'],
+        ['Zoning & setbacks', 'Location, property-line distance, easements, height', 'Choosing the spot for convenience alone', 'Check zoning, boundaries, easements and utilities first'],
+        ['HOA / architectural review', 'Roof, siding, color, trim, location, screening', 'Checking the city but not the HOA', 'Get the documents and submit what the committee requires'],
+        ['Neighborhood fit', 'Relation to surrounding homes and shared views', 'A temporary utility look in a visible setting', 'Coordinate roof, siding, trim, openings and color'],
+        ['Property aesthetics', 'Scale, orientation, views, entry, landscape', 'Treating it as a standalone catalog object', 'Design it as a companion to the home and site'],
+      ],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Neighborhood-Fit Problems Usually Begin Before Construction', nav: 'Common Mistakes',
+      items: [
+        { title: 'Checking the city but not the HOA', text: 'Private documents may still control size, color, roof, siding and location.' },
+        { title: 'Choosing the spot before checking setbacks', text: 'It may conflict with property lines, easements or drainage areas.' },
+        { title: 'Ignoring the view from the house', text: 'You will see it every day from the kitchen, porch or patio.' },
+        { title: 'Utility proportions in a premium setting', text: 'Weak doors, minimal trim and a low roof can look temporary.' },
+        { title: 'Overdecorating', text: 'Too many shutters, brackets, colors and accents look busy.' },
+        { title: 'Forgetting long-term appearance', text: 'Finishes, plants and drainage need upkeep to keep it looking right.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Which Decisions Need Homeowner Verification', nav: 'Who Handles What',
+      items: [
+        { title: 'Homeowner', list: ['Identify HOA, deed or architectural requirements', 'Obtain private approvals before construction', 'Confirm property boundaries when placement depends on them', 'Review HOA-approved colors, materials and screening', 'Keep written approvals'] },
+        { title: 'Appalachian Sheds', list: ['Discuss size, orientation, exterior selections and visible walls', 'Provide building information for HOA submissions when available', 'Explain how siding, trim, roof and openings affect appearance', 'Encourage approval before construction', 'Never represent city approval as HOA approval or promise a third party’s decision'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Before You Finalize the Building', nav: 'Planning Checklist',
+      items: [
+        { title: 'Rules & approvals', list: ['Jurisdiction confirmed', 'Placement rules reviewed', 'Easements considered', 'HOA status and documents confirmed', 'Required written approvals identified'] },
+        { title: 'Building design', list: ['Size fits the yard visually', 'Roofline complements the property', 'Siding direction deliberate', 'Trim relates to the house', 'Colors coordinated'] },
+        { title: 'Site appearance', list: ['Views from the house reviewed', 'Neighbor-facing walls considered', 'Street visibility considered', 'Path and landscape transition planned', 'Maintenance access preserved'] },
+      ],
+      note: 'Screen without suffocating the building. Landscaping can soften views, but plants should not trap moisture against siding, block vents or hide maintenance problems.',
+    },
+  ],
+  disclaimer: 'This guide is general planning education. Your HOA, architectural review body and local jurisdiction control their own approval decisions.',
+  faqs: [
+    { q: 'Does municipal approval mean my HOA has approved the building?', a: 'No. Public and private requirements are separate. A project can satisfy the city and still need HOA approval.' },
+    { q: 'If similar sheds exist in my neighborhood, will mine be approved?', a: 'Not necessarily. They may predate current rules or have been approved under different circumstances. Use the current written requirements for your address.' },
+    { q: 'What does an HOA usually ask for?', a: 'Often the location, dimensions, height, elevations or images, siding, roof, trim, colors, setbacks and any landscaping or screening.' },
+    { q: 'Should the shed exactly match the house?', a: 'Not necessarily. A strong companion building coordinates selected elements, like roof tone, trim, siding character or color, without becoming a miniature copy.' },
+    { q: 'Can Appalachian Sheds guarantee HOA approval?', a: 'No builder can guarantee a decision made by an independent HOA or authority. Appalachian Sheds can help you organize the building information and make informed exterior choices.' },
+  ],
+  related: ['02', '08', '09', '22'],
+  pages: [['Siding & Exterior Materials', 'Siding systems and exterior character.', '/options/siding-exterior-materials/'], ['Fascia, Trim & Decorative Accents', 'Trim and accents that tie the building to the home.', '/options/fascia-trim-accents/']],
+  ctaTitle: 'Make Sure the Building Belongs on the Property',
+  ctaText: 'Confirm the approval path, then choose the location and exterior as one coordinated decision. Appropriate proportions, purposeful placement, coordinated materials and a restrained palette let the architecture speak for itself.',
+};
+---
+<GuidePage page={page} />

@@ -1,0 +1,98 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '17',
+  subtitle: 'Protecting Your Building Through Its First Seasons and for Years to Come',
+  description: 'How the Appalachian Sheds 30-Year Structural Warranty and homeowner maintenance work together: what to do at completion, the first rain and each year, warranty vs. maintenance, records to keep and when to call.',
+  intro: 'A backyard building should be built to last, but long-term performance does not end on completion day. Warranty coverage, exterior finish care, drainage, caulking, vegetation control, roof runoff, door and window operation and good records all protect the building over time.',
+  question: 'How Do the Warranty and Maintenance Work Together?',
+  answer: [
+    'Every Appalachian Sheds building includes the 30-Year Structural Warranty, which covers qualifying structural defects in covered work under its written terms. It does not replace homeowner maintenance, site drainage, exterior finish care, normal wear or responsible use.',
+    'The safest approach: read the warranty, keep water and vegetation away from the lower walls, keep up any paint, stain and caulk, maintain doors and windows, watch roof runoff and document concerns early.',
+    'A strong warranty is valuable, but the best protection is a building that is built well, maintained consistently and used as designed.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'first-steps', eyebrow: 'After Completion', title: 'The First Maintenance Decisions Happen Right Away', nav: 'First Steps',
+      items: [
+        { title: 'Completion Walkthrough', text: 'Review the finished building, included scope, warranty documents and maintenance expectations before final acceptance.' },
+        { title: 'Exterior Finish Timing', text: 'If you selected paint, stain or sealer, or your written warranty sets a finish timeline for exposed wood, complete it on time.' },
+        { title: 'Site and Drainage Review', text: 'Watch how water moves after the first heavy rains. Keep soil, mulch, gravel and plants clear of the lower walls.' },
+        { title: 'Door, Window and Trim Check', text: 'Monitor door and window operation, trim joints, caulk lines and splash zones as the building meets real weather.' },
+        { title: 'Seasonal Maintenance', text: 'Clean surfaces, trim vegetation, inspect roof edges, maintain finishes and drainage, and note concerns early.' },
+        { title: 'Warranty Communication', text: 'If something looks structural or unusual, photograph and date it, then contact Appalachian Sheds before attempting a repair or change.' },
+      ],
+      note: 'Unsure whether an issue is maintenance or warranty? Document it first and ask before altering the structure.',
+    },
+    {
+      type: 'cards', id: 'coverage', title: 'Warranty Coverage and Maintenance Protect Different Things', nav: 'Warranty & Maintenance',
+      items: [
+        { title: 'What a structural warranty does', list: ['Sets a defined coverage period', 'Covers qualifying structural workmanship or material defects', 'Explains how to report a concern', 'Clarifies exclusions and owner responsibilities'] },
+        { title: 'What a structural warranty does not do', list: ['Make an outdoor building immune to weather', 'Replace routine maintenance', 'Replace homeowners insurance', 'Excuse drainage or vegetation problems'] },
+        { title: 'Why the written terms matter', list: ['Read the warranty before a problem appears', 'Keep it with your property records', 'Follow required maintenance timelines', 'Ask when a provision is unclear'] },
+      ],
+    },
+    {
+      type: 'table', id: 'timeline', dark: true, title: 'What to Do at Completion, the First Rain, the First Year and Beyond', nav: 'Ownership Timeline',
+      head: ['When', 'What to do'],
+      rows: [
+        ['At completion', 'Review scope, warranty, finish requirements, doors, windows, trim and drainage clearances.'],
+        ['First 30 days', 'Complete any required or selected caulk, paint, stain or sealer work. Keep receipts and photos.'],
+        ['After the first heavy rain', 'Look for standing water, splash-back, concentrated roof runoff, wet thresholds and mulch or soil touching siding.'],
+        ['First season', 'Watch water, finish condition, vegetation, grade, door and window operation and caulk lines.'],
+        ['First year', 'Inspect finishes and caulk, clear debris, maintain drainage, control vegetation and note anything unusual.'],
+        ['Every year', 'A deliberate exterior inspection: finishes, base area, leaves, drainage and roof edges.'],
+        ['Before modifications', 'Ask before cutting openings, altering framing, changing the roof, modifying the foundation or adding heavy loads.'],
+      ],
+    },
+    {
+      type: 'table', id: 'categories', title: 'Warranty, Maintenance and Property Risk Are Different', nav: 'Warranty vs. Maintenance',
+      head: ['Condition', 'Typical category', 'What to do'],
+      rows: [
+        ['Qualifying structural defect in covered work', 'Potential warranty matter under the written terms', 'Document it and contact Appalachian Sheds before repairs'],
+        ['Paint, stain, sealer or caulk upkeep', 'Routine homeowner maintenance', 'Inspect regularly and renew when needed'],
+        ['Standing water or drainage toward the building', 'Site maintenance', 'Correct drainage and restore clearance'],
+        ['Mulch, soil, leaves or plants against siding', 'Routine maintenance', 'Remove moisture-trapping material'],
+        ['Finish fading or normal weathering', 'Normal exposure', 'Maintain the finish per its care guidance'],
+        ['Major storm, flood, lightning or falling tree', 'Insurance matter, not workmanship warranty', 'Prevent further damage; contact your insurer and builder'],
+        ['Structural change made after completion', 'Owner modification', 'Discuss before work begins'],
+        ['Seasonal door or window movement', 'Observe and document', 'Contact the builder if it seems unusual or persists'],
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Most Long-Term Problems Start Small', nav: 'Maintenance Red Flags',
+      items: [
+        { title: 'Assuming warranty means no maintenance', text: 'Paint, caulk, drainage and vegetation control still matter.' },
+        { title: 'Letting mulch or soil touch siding', text: 'It holds moisture against the lower walls.' },
+        { title: 'Ignoring drainage after rain', text: 'Standing water and runoff under the building should be fixed early.' },
+        { title: 'Vegetation trapping moisture', text: 'Keep shrubs, vines and tall grass off the walls and doors.' },
+        { title: 'Structural changes without asking', text: 'New openings, framing changes or heavy loads can affect coverage.' },
+        { title: 'Repairing a structural concern first', text: 'Photograph it and call before work hides the original condition.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'records', title: 'Good Records Make Warranty Questions Easier', nav: 'Records to Keep',
+      lead: 'A simple folder with dates, photos, receipts and documents makes a real difference.',
+      items: [
+        { title: 'Written documents', list: ['Original written proposal', 'Warranty documents', 'Approved change orders', 'Completion information'] },
+        { title: 'Exterior care', list: ['Paint, stain, sealer and caulk receipts', 'Dates finish work was done', 'Annual maintenance dates', 'Any later drainage or grading work'] },
+        { title: 'Photos', list: ['Completion photos', 'Lower-wall and clearance photos', 'Photos after unusual weather', 'Dated photos of any concern before repairs'] },
+      ],
+      note: 'Tri-State buildings face humid summers, cold winters, freeze-thaw cycles, heavy rain, clay soils, shade and wet leaves. Maintenance does not mean the building is fragile; it means it lives outdoors and deserves care like any serious exterior improvement.',
+    },
+  ],
+  faqs: [
+    { q: 'What warranty comes with an Appalachian Sheds building?', a: 'Every building includes the Appalachian Sheds 30-Year Structural Warranty. Full terms, coverage, exclusions and the claim process are provided with your final written project documents.' },
+    { q: 'Does a warranty mean I don’t have to maintain the building?', a: 'No. Finish care, caulk, drainage, vegetation control, cleaning and responsible use protect the structure and may be required by the warranty terms.' },
+    { q: 'Does the warranty cover storm damage?', a: 'A structural warranty is not homeowners insurance. Storms, floods, falling trees and lightning are generally handled through insurance, not as construction defects.' },
+    { q: 'Can I modify the building after completion?', a: 'Non-structural additions are often simple, but discuss structural changes first. Openings, framing changes, roof or foundation changes and heavy loads can affect performance and coverage.' },
+    { q: 'What is normal wear versus a warranty issue?', a: 'Weathering, finish fading, minor seasonal movement and routine caulk or paint upkeep differ from qualifying structural defects. If unsure, document it and ask before repairing.' },
+  ],
+  related: ['04', '11', '16', '22'],
+  pages: [['Paint, Stain & Finish Systems', 'Finish options, compatibility and upkeep.', '/options/paint-stain-finish/'], ['Ventilation & Moisture Control', 'Keep humidity in check inside the building.', '/options/ventilation-moisture-control/']],
+  ctaTitle: 'Protect the Building Like a Long-Term Property Improvement',
+  ctaText: 'Understand your warranty terms, finish responsibilities, maintenance expectations and records before the building’s first full season, and call early if something seems wrong.',
+};
+---
+<GuidePage page={page} />

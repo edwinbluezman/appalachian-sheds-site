@@ -1,0 +1,107 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import prices from '../../data/option-prices.json';
+
+// Package prices come from the Interior Finish Packages options page, so they always match it.
+const packageRows = prices.interior.packages.map((p) => [p.item, p.price, p.bestFor, p.note]);
+
+const page = {
+  n: '16',
+  subtitle: 'Turning a Weather-Tight Shell Into a Finished Backyard Space',
+  description: 'How to plan a finished interior for a backyard building: the right sequence, three finish levels, what belongs behind the walls, surface choices, package prices, red flags and what to settle before the walls close.',
+  intro: 'A backyard building can stay simple, durable storage or become a workshop, studio, office, hobby room or pool-support space. The right interior depends on what the building needs to do, and the best finished interiors are planned as complete systems, not cosmetic upgrades added afterward.',
+  question: 'Can a Backyard Building Have a Finished Interior?',
+  answer: [
+    'Yes. The smartest time to decide the level of finish is before construction closes the walls, floor and ceiling.',
+    'Storage may need nothing beyond a durable exposed interior. A workshop benefits from strong wall surfaces, power, task lighting and backing. An office or studio may need insulation, air sealing, power, heating and cooling, finished walls and ceilings, trim and flooring.',
+    'Wall coverings and flooring alone do not create a comfortable, properly planned or approved occupied room. The envelope, utilities, moisture strategy, insulation, use and local requirements are considered together.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'The Right Order', title: 'The Finished Surface Comes Near the End', nav: 'Planning Sequence',
+      lead: 'Paint, wood walls, trim and flooring are easy to see. The most important decisions disappear behind them.',
+      items: [
+        { title: 'Define the Intended Use', text: 'Storage, workshop, office, studio, hobby room, garden room, pool support or multipurpose. Use sets the comfort, power and finish needed.' },
+        { title: 'Confirm Approval Questions', text: 'A finished look does not decide whether a building is approved for a particular use. Check zoning, building, electrical and occupancy rules.' },
+        { title: 'Plan Electrical, Lighting & HVAC Paths', text: 'Outlets, switches, lighting, circuits, data, HVAC equipment and condensate, while framing is open.' },
+        { title: 'Resolve Moisture and Air Control', text: 'Penetrations, air leaks, floor moisture and ventilation are addressed before insulation hides them.' },
+        { title: 'Develop the Insulation Strategy', text: 'Floor, wall and roof insulation that works with the air and moisture plan.' },
+        { title: 'Add Wall and Ceiling Backing', text: 'Blocking for cabinets, shelves, TVs, workbenches and tool storage, easy now and hard later.' },
+        { title: 'Select Wall and Ceiling Finishes', text: 'Drywall, plywood, tongue-and-groove, beadboard or utility panels chosen for use and environment.' },
+        { title: 'Select the Floor Finish', text: 'Leave it exposed, seal or coat it, or install flooring suited to the building’s temperature and humidity.' },
+        { title: 'Complete Trim and Final Details', text: 'Baseboard, casing, transitions, paint or stain, hardware and shelving.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'levels', title: 'Not Every Building Needs the Same Interior', nav: 'Three Finish Levels',
+      items: [
+        { title: 'Weather-tight utility shell', text: 'For lawn equipment, tools, bikes and seasonal storage.', list: ['Exposed framing', 'Durable structural floor', 'No decorative wall finish', 'Easy access for future changes'] },
+        { title: 'Workshop or utility finish', text: 'For woodworking, maintenance, gardening and crafts.', list: ['Utility wall finish where useful', 'Power and task lighting', 'Backing for shelves and tools', 'Durable, cleanable surfaces'] },
+        { title: 'Studio, office or retreat', text: 'A performance-focused finished space.', list: ['Coordinated insulation and air control', 'Planned power and lighting', 'Heating and cooling readiness', 'Finished walls, ceilings, flooring and trim'] },
+      ],
+    },
+    {
+      type: 'table', id: 'prices', dark: true, title: 'Interior Finish Package Prices', nav: 'Package Prices',
+      lead: 'Installed planning ranges from the Interior Finish Packages options page. Finishes are priced by actual wall and ceiling area, not floor area.',
+      head: ['Package', 'Planning range', 'Best for', 'Typical scope'],
+      rows: packageRows,
+      links: [['Full interior finish pricing by surface', '/options/interior-finish/']],
+    },
+    {
+      type: 'cards', id: 'behind', title: 'A Finished-Looking Room Is Not the Same as a Planned Finished Space', nav: 'Behind the Finish',
+      items: [
+        { title: 'Electrical & lighting', text: 'Outlets, switches, task lighting, equipment circuits and chargers placed while framing is open.' },
+        { title: 'Wall backing', text: 'Cabinets, shelves, workbenches and TVs mount easily when blocking is planned first.' },
+        { title: 'Comfort-system paths', text: 'HVAC needs power, wall penetrations, clearance, condensate routing and service access.' },
+        { title: 'Air & moisture control', text: 'Joints, openings and floor conditions handled before they are hidden.' },
+        { title: 'Insulation', text: 'One part of comfort, working with air control, doors, windows and HVAC.' },
+        { title: 'Future flexibility', text: 'Conduit, wiring routes and blocking preserve options without installing everything now.' },
+      ],
+    },
+    {
+      type: 'table', id: 'surfaces', title: 'Choose the Surface for How the Room Will Be Used', nav: 'Surface Comparison',
+      head: ['Surface', 'Common use', 'Main advantage', 'Planning considerations'],
+      rows: [
+        ['Drywall', 'Offices, studios, hobby rooms', 'A familiar residential look that takes paint', 'Needs framing support, joint finishing, moisture protection and planned backing'],
+        ['Plywood utility panels', 'Workshops, equipment spaces', 'Durable; shelves and organizers attach anywhere', 'More utilitarian look; finish requirements vary'],
+        ['Pine tongue-and-groove', 'Studios, garden buildings, retreats', 'Warm Appalachian character', 'Wood moves with temperature and humidity; acclimate first'],
+        ['Painted wood panel', 'Cottage-style rooms and studios', 'Durable with a tailored look', 'Panel type, joints and fastening planned ahead'],
+        ['Exposed framing', 'Storage and utility buildings', 'Simple, economical, easy to change', 'Little cosmetic refinement'],
+      ],
+      note: 'Choose flooring for moisture, temperature swings, point loads, rolling equipment and the manufacturer’s requirements, not appearance alone. For storage, the exposed structural floor may be the most practical answer.',
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Be Cautious When Finishing Is Treated as Decoration', nav: 'Red Flags',
+      items: [
+        { title: '“We can figure out the wiring later.”', text: 'Adding outlets or lighting after walls are finished means demolition and repair.' },
+        { title: '“Just add insulation.”', text: 'Comfort also depends on air leaks, moisture, openings, HVAC and ventilation.' },
+        { title: '“Any flooring will work.”', text: 'Some products require tightly controlled temperature and humidity.' },
+        { title: '“Finished means approved living space.”', text: 'Finishes and HVAC do not by themselves establish a permitted habitable use.' },
+        { title: '“Backing can wait for the cabinets.”', text: 'Blocking is cheap during framing and costly after.' },
+        { title: '“The package includes everything.”', text: 'Define walls, ceiling, insulation, electric, HVAC, flooring, trim, paint and permits.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'before-close', title: 'Decisions That Are Easier While the Framing Is Open', nav: 'Before the Walls Close',
+      items: [
+        { title: 'Electrical & lighting', list: ['Outlet and switch locations', 'General, task and exterior lighting', 'Dedicated equipment circuits', 'Computer, TV and charging spots'] },
+        { title: 'Backing & equipment', list: ['Cabinets and shelving', 'Workbenches and tool organizers', 'TV mounts', 'Heavy wall-mounted equipment'] },
+        { title: 'Comfort & envelope', list: ['HVAC location and power', 'Condensate routing and penetrations', 'Air-sealing and moisture details', 'Insulation strategy'] },
+      ],
+      note: 'An unconditioned building sees wider temperature and humidity swings than the house. That affects wood movement, flooring choice, coatings and condensation, so check each product’s requirements for the real conditions.',
+    },
+  ],
+  faqs: [
+    { q: 'What should be done before finishing the walls?', a: 'Confirm the use and any approvals, complete electrical and utility rough-ins, add backing, handle moisture and air sealing, set the insulation strategy and plan any HVAC.' },
+    { q: 'Is insulation enough to make a building comfortable year-round?', a: 'No. Comfort also depends on air leakage, moisture, doors and windows, floor and roof assemblies, heating and cooling, and ventilation.' },
+    { q: 'What is a good interior wall finish?', a: 'It depends on use: drywall for a residential look, pine tongue-and-groove for character, plywood panels for workshop practicality.' },
+    { q: 'Should I finish now if I might use it as an office later?', a: 'You don’t have to finish everything now, but plan electrical paths, backing, insulation and HVAC locations while the framing is open.' },
+    { q: 'Does finishing the interior make it legal living space?', a: 'No. Finish materials alone do not approve a building for habitation. Zoning, building, electrical and occupancy rules vary by jurisdiction and use.' },
+  ],
+  related: ['15', '07', '17', '22'],
+  pages: [['Interior Finish Packages', 'Package and per-surface finish prices.', '/options/interior-finish/'], ['Wall & Ceiling Insulation', 'Insulation, air sealing and vapor control.', '/options/wall-ceiling-insulation/'], ['Floor Insulation', 'Underfloor comfort by building size.', '/options/floor-insulation/']],
+  ctaTitle: 'Decide What the Interior Needs to Do First',
+  ctaText: 'Once you know whether the building will be storage, a workshop, studio, office or retreat, the right level of power, comfort, insulation, wall finish, flooring and trim becomes easy to define. Bring those expectations to the project conversation before construction.',
+};
+---
+<GuidePage page={page} />

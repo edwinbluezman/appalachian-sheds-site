@@ -4,9 +4,9 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const CSV = 'src/data/classic-prices.csv';
-// Fingerprint of the price file as extracted from the old Appalachian Classic page.
+// Fingerprint of the price list Edwin approved on November 1, 2026.
 // Change this only when Edwin approves a new price list.
-const APPROVED_FINGERPRINT = 'a75dcab351c639c12079308a48848ba8d15b42a8872a664f64bf22b9dc813619';
+const APPROVED_FINGERPRINT = 'd2e6f169aa36fd0f7630216f7cb7fa2c78279c7441e893b96ba1e32d9fe66ea6';
 const SIDINGS = ['vp', 'dt', 'bb', 'fv', 'lp'];
 
 const fail = (msg) => { console.error('PRICE CHECK FAILED: ' + msg); process.exit(1); };

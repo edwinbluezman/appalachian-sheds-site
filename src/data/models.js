@@ -71,7 +71,7 @@ export const signatureSeriesSpecs = (extraFirst, sizesText) => [
   ...extraFirst,
   ['Foundation beams', 'Heavy-duty 6×6 pressure-treated'],
   ['Floor joists', '2×6 pressure-treated, installed 16″ on center'],
-  ['Floor decking', '3/4″ exterior-grade plywood'],
+  ['Floor decking', '3/4″ pressure-treated plywood'],
   ['Roof framing', '2×6 engineered roof trusses'],
   ['Roof sheathing', '1/2″ exterior-grade plywood'],
   ['Roof covering', 'Architectural roof shingles, available in 16 colors'],

@@ -1,0 +1,74 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { notIncluded } from '../data/models.js';
+
+const page = {
+  path: '/faqs/',
+  name: 'FAQs',
+  title: 'Frequently Asked Questions About Appalachian Sheds Buildings | Appalachian Sheds',
+  description: 'Answers to the most common questions about Appalachian Sheds: pricing, what is included, building on site, site preparation, permits, options, the 30-Year Structural Warranty and the build process.',
+  eyebrow: 'Frequently Asked Questions',
+  h1: 'Frequently Asked Questions',
+  intro: ['Straight answers to the questions homeowners ask most. Each section links to the page or guide with the full details.'],
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      type: 'faq', id: 'pricing', eyebrow: 'Pricing', title: 'Pricing & What’s Included', nav: 'Pricing',
+      items: [
+        { q: 'Are your prices published?', a: 'Yes. Every model page has a calculator with the standard price for every size and siding, and the Options & Upgrades pages list installed planning prices for every option.' },
+        { q: 'What does the standard price include?', a: 'The complete weather-tight exterior building: 6×6 ground-contact pressure-treated foundation beams, 2×6 pressure-treated floor joists 16″ on center, 3/4″ pressure-treated plywood decking, framed walls, roof, LP SmartSide Vertical Panel siding, roofing, standard doors and windows, standard trim, vents and the 30-Year Structural Warranty.' },
+        { q: 'What is not included?', a: notIncluded },
+        { q: 'Which siding is standard?', a: 'LP SmartSide Vertical Panel is standard on every model and has the lowest price. Board & Batten, Georgia-Pacific vinyl lap, LP SmartSide lap and Roseburg DuraTemp are also offered.' },
+      ],
+      links: [['Buildings & Pricing', '/buildings/'], ['Standard Features vs Optional Upgrades', '/buyers-planning-guide/standard-features-vs-optional-upgrades-guide-10/']],
+    },
+    {
+      type: 'faq', id: 'building', eyebrow: 'Building on Site', title: 'Building on Your Property', nav: 'Building on Site',
+      items: [
+        { q: 'Do you deliver pre-built sheds?', a: 'No. Every Appalachian Sheds building is built on site at your property, so it can go where it works best, even behind a narrow gate.' },
+        { q: 'How long does construction take?', a: 'Many small and medium sheds are finished in a single day. Larger buildings or projects with many options can take several days. Your expected duration is set before the build date.' },
+        { q: 'Do I need to be home on build day?', a: 'You or a trusted adult should be there at arrival to confirm placement, orientation and door swing. After that, just stay reachable.' },
+        { q: 'What happens if it rains?', a: 'Light showers may cause short pauses. Heavy rain, lightning, high winds, deep mud, snow or ice can require rescheduling.' },
+      ],
+      links: [['Built-On-Site Construction Guide', '/buyers-planning-guide/built-on-site-construction-guide-14/'], ['Scheduling & Build Day Guide', '/buyers-planning-guide/scheduling-build-day-guide-13/']],
+    },
+    {
+      type: 'faq', id: 'site', eyebrow: 'Site & Permits', title: 'Site Preparation & Permits', nav: 'Site & Permits',
+      items: [
+        { q: 'How should I prepare my yard?', a: 'Clear the footprint and keep it level within 6 inches, leave 3 feet of working room (4 feet over 160 square feet), stake the corners and door center, keep a clear path, and have power within 150 feet if possible.' },
+        { q: 'Do I need a gravel pad?', a: 'The prepared gravel pad is optional and recommended wherever drainage, soft soil or moisture is a concern. Every building sits on 6×6 pressure-treated foundation beams either way.' },
+        { q: 'Do I need a permit?', a: 'Possibly. It depends on your exact address, building size, use and utilities. Check the rules for your address, along with any HOA or deed restrictions.' },
+        { q: 'Who calls 811?', a: 'Utility marking is coordinated before any digging, and private lines like irrigation, pet fencing or landscape lighting should be pointed out, since 811 does not mark them.' },
+      ],
+      links: [['Site & Foundation', '/options/site-foundation/'], ['Permits, Zoning & Setbacks Guide', '/buyers-planning-guide/permits-zoning-setbacks-guide-02/']],
+    },
+    {
+      type: 'faq', id: 'options', eyebrow: 'Options', title: 'Options & Upgrades', nav: 'Options',
+      items: [
+        { q: 'Can I add windows, doors, a loft, electrical or insulation?', a: 'Yes. Every option is listed with an installed planning price, and your selections go into your written project price.' },
+        { q: 'Can I upgrade the roof pitch?', a: 'Yes. Roof pitch upgrades are available and are settled before roof framing.' },
+        { q: 'Who does electrical, HVAC and plumbing work?', a: 'Licensed trade partners, with the permits and inspections your location requires. Edwin coordinates them so you have one point of contact.' },
+        { q: 'Does finishing the interior make it legal living space?', a: 'No. Finishes, power or HVAC do not by themselves make a building an approved dwelling, bedroom or rental unit.' },
+      ],
+      links: [['All Options & Upgrades', '/options/'], ['Top 10 Most Requested Upgrades', '/options/top-10-upgrades/']],
+    },
+    {
+      type: 'faq', id: 'warranty', eyebrow: 'Warranty & Care', title: 'Warranty & Long-Term Care', nav: 'Warranty',
+      items: [
+        { q: 'What warranty comes with my building?', a: 'Every building includes the Appalachian Sheds 30-Year Structural Warranty. Full terms are provided with your written project documents.' },
+        { q: 'Does my building need to be painted?', a: 'Yes. The warranty requires the exterior to be painted within 30 days of completion. Buildings with factory-colored vinyl siding are exempt. Paint can be added to your project as an option.' },
+        { q: 'Does the warranty cover storm damage?', a: 'No. A structural warranty is not homeowners insurance; storms, floods and falling trees are insurance matters.' },
+        { q: 'What maintenance does a building need?', a: 'Keep water moving away, keep mulch and soil off the siding, keep plants off the walls, and inspect paint and caulk each year.' },
+      ],
+      links: [['Warranty, Maintenance & Long-Term Care Guide', '/buyers-planning-guide/warranty-maintenance-long-term-care-guide-17/']],
+    },
+  ],
+  ctaTitle: 'Still Have a Question?',
+  ctaText: 'Call or text Edwin directly. No question is too small, and a quick conversation often settles what a page can’t.',
+  ctaLink: ['Expanded Buyer FAQ', '/buyers-planning-guide/expanded-buyer-faq-guide-23/'],
+};
+// The page itself is the FAQPage, so its questions feed the structured data.
+page.faqs = undefined;
+page.schemaExtra = { mainEntity: page.sections.flatMap((s) => s.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))) };
+---
+<ContentPage page={page} />

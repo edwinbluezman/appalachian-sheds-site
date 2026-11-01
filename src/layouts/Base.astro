@@ -132,6 +132,14 @@ const graph = {
         <p><a href={`sms:${business.phoneLink}`}>Text Edwin</a></p>
         <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
       </div>
+      <div class="site-footer__links" role="navigation" aria-label="Company">
+        <a href={link('/about/')}>About</a>
+        <a href={link('/faqs/')}>FAQs</a>
+        <a href={link('/service-area/')}>Service Area</a>
+        <a href={link('/start-your-project/')}>Start Your Project</a>
+        <a href={link('/buyers-planning-guide/')}>Planning Guides</a>
+        <a href={link('/privacy-policy/')}>Privacy Policy</a>
+      </div>
     </div>
   </footer>
 
@@ -160,6 +168,8 @@ const graph = {
     .site-footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .site-footer p { margin: 0 0 8px; }
     .site-footer__name { color: var(--ivory); font-weight: 900; }
+    .site-footer__links { display: flex; flex-direction: column; gap: 8px; }
+    .site-footer__links a { color: var(--cashmere); font-weight: 700; font-size: 0.95rem; padding: 0; border: 0; }
     .site-footer a { text-decoration: none; }
     .site-footer a:hover { color: var(--bronze); }
   </style>

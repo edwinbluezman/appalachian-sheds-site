@@ -1,0 +1,52 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { business } from '../data/site.js';
+
+const page = {
+  path: '/service-area/',
+  name: 'Service Area',
+  title: 'Service Area: Cincinnati, Northern Kentucky & Southeast Indiana | Appalachian Sheds',
+  description: 'Appalachian Sheds builds backyard sheds on site across Cincinnati and the Tri-State area: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana.',
+  eyebrow: 'Where We Build',
+  h1: 'Service Area',
+  subtitle: 'Built on Site Across Cincinnati and the Tri-State',
+  intro: [
+    'Appalachian Sheds Inc. is based in Milford, Ohio, and builds on site across Cincinnati and the Tri-State area: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana.',
+    'Not sure whether your property is in range? Call or text Edwin with your address and he’ll let you know.',
+  ],
+  heroCtas: true,
+  schemaExtra: { mainEntity: { '@id': business.id } },
+  sections: [
+    {
+      type: 'cards', id: 'regions', eyebrow: 'The Tri-State', title: 'Three States, One Builder', nav: 'Regions',
+      items: [
+        { title: 'Greater Cincinnati & Southwest Ohio', text: 'Cincinnati and the surrounding Ohio communities, from established neighborhoods to rural acreage.' },
+        { title: 'Northern Kentucky', text: 'Communities just across the river, where hillside lots and tight side yards are common.' },
+        { title: 'Southeast Indiana', text: 'The Indiana side of the Tri-State, including more rural properties with long driveways and open sites.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'local', title: 'Local Conditions We Plan For', nav: 'Local Conditions',
+      lead: 'Building across three states means no two sites are alike. These are the conditions that shape most Tri-State projects.',
+      items: [
+        { title: 'Many jurisdictions', text: 'Cities, villages, townships, counties and HOAs each set their own rules, and they can change within a few miles. Rules are checked for your exact address.' },
+        { title: 'Clay soils & drainage', text: 'Clay-heavy soil and runoff call for careful site preparation, which is why the optional prepared gravel pad exists.' },
+        { title: 'Slopes & tight access', text: 'Hillside lots, retaining walls and narrow side yards are where building on site pays off.' },
+        { title: 'Two climate zones', text: 'Much of the area is mixed-humid, while Butler County is cold-humid, which matters when insulating a finished building.' },
+        { title: 'Freeze-thaw & humidity', text: 'Humid summers and freezing winters make drainage, moisture control and paint upkeep important.' },
+        { title: 'Mature trees & landscaping', text: 'Established yards bring roots, low limbs and finished landscaping to plan around.' },
+      ],
+      links: [['Permits, Zoning & Setbacks Guide', '/buyers-planning-guide/permits-zoning-setbacks-guide-02/'], ['Site Preparation Guide', '/buyers-planning-guide/site-preparation-guide-01/']],
+    },
+  ],
+  faqs: [
+    { q: 'Do you build outside Cincinnati?', a: 'Yes. Appalachian Sheds builds across the Tri-State: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana. Call or text Edwin with your address to confirm.' },
+    { q: 'Do permit rules differ across the Tri-State?', a: 'Yes. Ohio, Kentucky and Indiana communities each set their own zoning, setback and permit rules, and HOAs add their own. Check the rules for your exact address.' },
+    { q: 'Where is Appalachian Sheds based?', a: 'Milford, Ohio.' },
+  ],
+  ctaTitle: 'Check Whether Your Property Is in Range',
+  ctaText: 'Send Edwin your address and a few photos of the spot you have in mind. He’ll confirm the service area and talk through your site.',
+  ctaLink: ['Start Your Project', '/start-your-project/'],
+};
+---
+<ContentPage page={page} />

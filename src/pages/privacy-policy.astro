@@ -1,0 +1,130 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { business } from '../data/site.js';
+
+const page = {
+  path: '/privacy-policy/',
+  name: 'Privacy Policy',
+  title: 'Privacy Policy | Appalachian Sheds',
+  description: 'How Appalachian Sheds Inc. collects, uses, shares and protects information, including text messaging, pricing calculators, project photos and your privacy choices.',
+  eyebrow: 'Appalachian Sheds Inc. · Cincinnati Tri-State',
+  h1: 'Privacy Policy',
+  subtitle: 'Effective September 29, 2026 · Last updated November 1, 2026',
+  intro: [
+    'Your privacy matters to us. This policy explains what information Appalachian Sheds Inc. collects, why we use it, when it may be shared, how long we keep it and the choices available to you.',
+    'Our basic approach: we collect information reasonably needed to answer your questions, prepare and complete your project, operate our website, provide service, maintain business records and honor our warranty obligations. We do not sell your personal information, and we do not share mobile opt-in or text-message consent information with third parties or affiliates for their marketing or promotional purposes.',
+  ],
+  jump: false,
+  sections: [
+    {
+      type: 'cards', id: 'glance', eyebrow: 'Privacy at a Glance', title: 'The Short Version',
+      items: [
+        { title: 'What we collect', text: 'Contact and project information you choose to send us, plus limited technical information created when you visit our website.' },
+        { title: 'Why we use it', text: 'To answer questions, prepare quotes, plan and complete projects, provide service, keep things secure and meet business and legal obligations.' },
+        { title: 'What we don’t do', text: 'We do not sell your personal information or share mobile opt-in or text-message consent information for third-party marketing.' },
+        { title: 'Your choices', text: 'Contact us to request access, correction, deletion or other privacy choices. Legal rights vary by state.' },
+      ],
+    },
+    {
+      type: 'text', id: 'collect', eyebrow: 'Sections 1–3', title: 'Who We Are and What We Collect',
+      paras: [
+        '1. Who we are. This policy is published by Appalachian Sheds Inc. (“Appalachian Sheds,” “we,” “us” or “our”), a veteran- and family-owned builder serving Cincinnati and the surrounding Tri-State area. It applies to information collected through appalachiansheds.com and information you provide to us by phone, text, email, project communication or in person.',
+        '2. Information you give us. Depending on how you contact us, you may provide:',
+      ],
+      list: [
+        'Name, telephone number and email address.',
+        'Property or project location and other information reasonably needed to evaluate a building site.',
+        'Building size, style, options, site conditions, access information, preferences and timing.',
+        'Site photos, survey plats, HOA information, permit paperwork, drawings or other documents you choose to send.',
+        'Information in calls, texts, emails or other communications with us.',
+      ],
+      after: [
+        'Information collected automatically. Like most websites, our hosting provider may record limited technical information when you visit, such as your IP address, browser and device type, pages requested and the date and time, to deliver the site and keep it secure. This website does not currently use Google Analytics, advertising cookies or tracking pixels. If that changes, we will update this policy first.',
+        '3. Pricing calculators. Our pricing calculators work entirely in your web browser. Using a calculator does not send us your name, phone number, email, address or other contact information, and your selections are not recorded. We receive your information only when you choose to send it, for example by calling, emailing or sending a text. Calculator prices are planning tools; final pricing, specifications, scope, site conditions, taxes, permits and construction terms are set by your written quote, proposal or contract.',
+      ],
+    },
+    {
+      type: 'text', id: 'use', eyebrow: 'Sections 4–5', title: 'How We Use and Share Information',
+      paras: ['4. How we use information. We use personal information for legitimate business purposes related to your inquiry, project, our website or our legal obligations, including to:'],
+      list: [
+        'Respond to questions and prepare quotes or proposals.',
+        'Schedule and conduct site evaluations.',
+        'Plan and build your building.',
+        'Communicate about an inquiry, order, project or service request.',
+        'Provide warranty service, including support under our 30-Year Structural Warranty.',
+        'Maintain customer, project, accounting and business records.',
+        'Operate, maintain and protect our website.',
+        'Detect or prevent fraud, misuse or security problems.',
+        'Comply with legal, tax, permitting, regulatory and recordkeeping obligations.',
+      ],
+      after: [
+        'We do not use automated decision-making that by itself produces legal or similarly significant effects concerning you.',
+        '5. How information may be shared. We do not sell your personal information. We may disclose information when reasonably necessary to run the business or complete your project, including to: website hosting, email, communications, data-storage and software providers that perform functions for us; crews, trade partners and suppliers involved in your project, limited to what they need for their work; permit authorities, utility locators, HOAs or similar organizations when needed for your project or when you ask us to help; and government authorities, courts, attorneys, insurers or law enforcement when required or permitted by law or reasonably necessary to protect rights, property or safety. If Appalachian Sheds Inc. is reorganized, merged or sold, relevant business records may transfer as part of that transaction, subject to applicable law.',
+        'We do not provide information you send us, or your mobile opt-in and text-message consent information, to third parties for their own marketing or promotional purposes.',
+      ],
+    },
+    {
+      type: 'text', id: 'texting', eyebrow: 'Sections 6–7', title: 'Text Messaging and Cookies',
+      paras: [
+        '6. Text messaging. If you text us or agree to receive text messages from Appalachian Sheds Inc., we may use your mobile number to respond and to communicate about the service or project you contacted us about. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Message frequency varies, and message and data rates may apply. Consent to receive marketing texts is never a condition of purchase. Reply STOP to opt out, where supported, or contact us using the information below. Reply HELP, where supported, or call ' + business.phoneDisplay + ' for assistance.',
+        '7. Cookies. This website does not set advertising or analytics cookies. Your browser may store basic files needed to display the site. You can restrict or delete cookies in your browser settings at any time.',
+      ],
+    },
+    {
+      type: 'text', id: 'choices', eyebrow: 'Sections 8–9', title: 'Your Choices and How Long We Keep Information',
+      paras: ['8. Your privacy choices. You may contact us to ask that we:'],
+      list: [
+        'Tell you whether we keep personal information about you.',
+        'Give you access to qualifying personal information we keep.',
+        'Correct inaccurate information.',
+        'Delete qualifying information, subject to legitimate business and legal retention needs.',
+        'Provide a portable copy where required by law and technically feasible.',
+        'Stop marketing emails or text messages.',
+      ],
+      after: [
+        'Additional rights may be available to residents of states whose privacy laws apply to us and to the processing involved. We may need to verify your identity before completing a request, and we will respond within the period required by law, or promptly where no period applies. We will not unlawfully discriminate against you for exercising a privacy right.',
+        '9. How long we keep information. We keep information only as long as reasonably necessary for the purpose it was collected, for business and warranty records, and for legal, accounting, security and dispute-resolution needs. Uncompleted inquiries are ordinarily kept up to 24 months. Core customer and project records may be kept through the warranty period. Tax, accounting, contract, permit, insurance and legal records are kept as reasonably required. When information is no longer needed, we may delete, destroy or de-identify it.',
+      ],
+    },
+    {
+      type: 'text', id: 'handling', eyebrow: 'Sections 10–13', title: 'Photos, Security, Children and Other Websites',
+      paras: [
+        '10. Project photos. We may photograph completed projects for documentation, quality review, our portfolio, education or marketing. Before publishing photos that identify a customer’s private property, we will get permission where appropriate and make reasonable efforts to avoid showing house numbers, license plates or other details that identify your address. You may tell us if you don’t want photos of your project used publicly.',
+        '11. How we protect information. We use reasonable administrative, technical and physical safeguards suited to the information and the size of our business, such as access limits, account controls, secure website connections and backups. No system can be guaranteed completely secure. If a security incident requires notice under applicable law, we will provide it.',
+        '12. Children’s privacy. Our website and services are intended for adults. They are not directed to children under 13, and we do not knowingly collect personal information online from a child under 13. If you believe a child has sent us personal information, please contact us.',
+        '13. Links and third-party services. Our website may link to manufacturers, suppliers, mapping services or other websites. They operate under their own terms and privacy practices, which we do not control. Please review their privacy information before giving them personal information.',
+      ],
+    },
+    {
+      type: 'text', id: 'terms', eyebrow: 'Sections 14–16', title: 'Website Information, Governing Law and Changes',
+      paras: [
+        '14. Website information. Website content, including pricing calculators, planning guides, photos, prices, dimensions and specifications, is provided for general information and planning. Final price, scope, specifications, options, scheduling, warranty coverage and other project terms are set by your written quote, proposal, warranty document or contract. To the fullest extent permitted by law, Appalachian Sheds Inc. is not responsible for indirect, incidental, special or consequential damages arising solely from reliance on general website information, use of third-party websites, or unauthorized access that occurs despite reasonable safeguards. Nothing in this policy limits a right or remedy that cannot lawfully be limited.',
+        '15. Governing law. Appalachian Sheds Inc. is based in Ohio. Except where applicable law provides otherwise, this policy is governed by the laws of the State of Ohio, without regard to conflict-of-law principles. This does not remove privacy or consumer rights that the law of another jurisdiction requires.',
+        '16. Changes to this policy. We may update this policy as our website, technology, business practices or legal requirements change, and we will revise the “Last updated” date above. Where the law requires additional notice or consent for a material change, we will provide it.',
+      ],
+    },
+    {
+      type: 'text', id: 'contact', eyebrow: 'Section 17', title: 'Contact Us About Your Privacy',
+      paras: ['Contact Appalachian Sheds Inc. with a privacy question, to exercise a privacy right, or if information about you needs correcting.'],
+      list: [
+        'Call or text: ' + business.phoneDisplay,
+        'Email: ' + business.email,
+        'Mail: Appalachian Sheds Inc., 5627 Flagstone Way, Milford, Ohio 45150',
+      ],
+      after: ['Applicable rights, verification requirements, exceptions and response periods may vary depending on your location, the information involved and the law that applies.'],
+    },
+  ],
+  faqs: [
+    { q: 'Will Appalachian Sheds sell my phone number or email address?', a: 'No. We do not sell your personal information, and we do not share mobile opt-in or text-message consent information for third-party marketing.' },
+    { q: 'Why do you need my property address?', a: 'To evaluate site conditions, access, setbacks, permit considerations and construction logistics so we can prepare an accurate project.' },
+    { q: 'Does the pricing calculator save my information?', a: 'No. The calculator runs entirely in your browser and records nothing. We receive your information only when you choose to contact us.' },
+    { q: 'Does this website use Google Analytics?', a: 'Not currently. If we add analytics, we will update this policy first.' },
+    { q: 'Will photos of my property appear on your website?', a: 'Only with reasonable care to avoid identifying your home or address, and you can tell us not to use photos of your project publicly.' },
+    { q: 'How do I stop text messages?', a: 'Reply STOP where supported, or contact us directly. We will honor reasonable opt-out requests as required by law.' },
+  ],
+  ctaTitle: 'Questions About Your Information?',
+  ctaText: `Call or text ${business.phoneDisplay} or email ${business.email}.`,
+  ctaLink: ['Start Your Project', '/start-your-project/'],
+};
+---
+<ContentPage page={page} />

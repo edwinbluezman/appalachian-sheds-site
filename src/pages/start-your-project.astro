@@ -1,0 +1,76 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { business } from '../data/site.js';
+
+// Pre-written text and email so a homeowner can start the conversation in one tap.
+const smsBody = 'Hi Edwin, I’m interested in an Appalachian Sheds building. Model: ___ Size: ___ My address or town: ___';
+const mailBody = [
+  'Hi Edwin,',
+  '',
+  'I’m interested in an Appalachian Sheds building.',
+  '',
+  'Main use of the building:',
+  'Model and size I’m considering (if known):',
+  'Siding preference (if known):',
+  'Property address or town:',
+  'Where on the property it would go:',
+  'Gate width or access notes:',
+  'Anything about drainage, slope or utilities:',
+  'HOA? (yes / no / not sure):',
+  'Power, insulation or other options I’m interested in:',
+  'Best way and time to reach me:',
+  '',
+  'I’ll attach photos of the spot and the path from the driveway.',
+].join('\n');
+const smsHref = `sms:${business.phoneLink}?&body=${encodeURIComponent(smsBody)}`;
+const mailHref = `mailto:${business.email}?subject=${encodeURIComponent('New building project')}&body=${encodeURIComponent(mailBody)}`;
+
+const page = {
+  path: '/start-your-project/',
+  name: 'Start Your Project',
+  title: 'Start Your Project: Call, Text or Email Edwin | Appalachian Sheds',
+  description: 'Start your Appalachian Sheds project: call, text or email Edwin directly, what to send, and what happens next, from the first conversation to the written scope and build day.',
+  eyebrow: 'Start Your Project',
+  h1: 'Start Your Project',
+  subtitle: 'Talk Directly With Edwin',
+  intro: [
+    `Call or text Edwin at ${business.phoneDisplay}, or email ${business.email}. You don’t need drawings or every detail decided. Tell him what the building needs to do and where it might go, and he’ll help with the rest.`,
+    'The email and text buttons open a short pre-written message you can fill in.',
+  ],
+  heroCtas: true,
+  smsHref,
+  mailHref,
+  schemaType: 'ContactPage',
+  schemaExtra: { mainEntity: { '@id': business.id } },
+  sections: [
+    {
+      type: 'cards', id: 'send', eyebrow: 'Helpful to Send', title: 'What to Send (If You Have It)', nav: 'What to Send',
+      lead: 'None of this is required to start. Each item just makes the first conversation more useful.',
+      items: [
+        { title: 'Photos', list: ['The spot you have in mind', 'The path from the driveway', 'Gates, fences, slopes or tight side yards', 'The spot after a rain, if water collects'] },
+        { title: 'Your goals', list: ['What the building is for', 'A model, size and siding, if you’ve used a calculator', 'Must-have and nice-to-have options'] },
+        { title: 'Site notes', list: ['Narrowest gate or path width', 'Known private lines (irrigation, pet fence, lighting)', 'HOA or property-line questions', 'Power, insulation or HVAC plans'] },
+      ],
+      links: [['Price a building first', '/buildings/'], ['What to bring: Guide 20', '/buyers-planning-guide/project-readiness-roadmap-guide-20/']],
+    },
+    {
+      type: 'steps', id: 'next', title: 'What Happens Next', nav: 'What Happens Next',
+      items: [
+        { title: 'First Conversation', text: 'Edwin learns what the building needs to do, where it might go and what matters most to you.' },
+        { title: 'Site Review', text: 'Access, drainage, slope, utilities and working room are reviewed for your spot.' },
+        { title: 'Written Scope & Price', text: 'Model, size, siding, options, exclusions and responsibilities, in writing, with your project price.' },
+        { title: 'Scheduling', text: 'Once the design, options and deposit are confirmed, your build date is set.' },
+        { title: 'Build Day & Walkthrough', text: 'Your building is built on site, then you walk through it together.' },
+      ],
+    },
+  ],
+  faqs: [
+    { q: 'Do I need to know the exact model first?', a: 'No. A model direction helps, but what the building needs to do and where it might go matter more to start.' },
+    { q: 'Can I start by text or email?', a: 'Yes. The Text Edwin and Email Edwin buttons open a short pre-written message. Fill in what you know and attach photos if you have them.' },
+    { q: 'Who will I be talking with?', a: 'Edwin himself. He leads every Appalachian Sheds project, so you talk with the person responsible for your building.' },
+  ],
+  ctaTitle: 'Ready When You Are',
+  ctaText: 'Call or text Edwin, or price a building first with the calculators on each model page.',
+};
+---
+<ContentPage page={page} />

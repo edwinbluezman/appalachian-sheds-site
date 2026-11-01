@@ -1,0 +1,164 @@
+---
+// One template for the company pages (About, FAQs, Service Area, Start Your Project, Privacy).
+// Each page supplies its words as sections; this file handles layout and schema.
+import Base from '../layouts/Base.astro';
+import { business, link } from '../data/site.js';
+
+const { page } = Astro.props;
+const url = 'https://appalachiansheds.com' + page.path;
+const bands = ['band--light', 'band--cash'];
+
+const schema = [
+  { '@type': page.schemaType ?? 'WebPage', '@id': url, url, name: page.title, description: page.description, about: { '@id': business.id }, ...(page.schemaExtra ?? {}) },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: page.name, item: url },
+    ],
+  },
+  ...(page.faqs?.length
+    ? [{ '@type': 'FAQPage', '@id': url + '#faq', mainEntity: page.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }]
+    : []),
+];
+---
+<Base title={page.title} description={page.description} path={page.path} schema={schema}>
+  <section class="band band--dark gd-hero" aria-labelledby="cp-title">
+    <div class="wrap">
+      <nav class="gd-crumbs" aria-label="Breadcrumb">
+        <a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">{page.name}</span>
+      </nav>
+      <p class="eyebrow">{page.eyebrow}</p>
+      <h1 id="cp-title">{page.h1}</h1>
+      {page.subtitle && <p class="gd-sub">{page.subtitle}</p>}
+      {page.intro.map((p) => <p class="gd-intro">{p}</p>)}
+      {page.heroCtas && (
+        <div class="gd-ctas">
+          <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+          <a class="btn btn--secondary" href={page.smsHref ?? `sms:${business.phoneLink}`}>Text Edwin</a>
+          <a class="btn btn--secondary" href={page.mailHref ?? `mailto:${business.email}`}>Email Edwin</a>
+        </div>
+      )}
+      {page.jump !== false && page.sections.length > 2 && (
+        <ul class="gd-jump" aria-label="On this page">
+          {page.sections.map((s) => <li><a href={'#' + s.id}>{s.nav ?? s.title}</a></li>)}
+          {page.faqs?.length > 0 && <li><a href="#faq">Common Questions</a></li>}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  {page.sections.map((s, i) => (
+    <section id={s.id} class={'band ' + (s.dark ? 'band--dark' : bands[i % 2])} aria-labelledby={s.id + '-t'}>
+      <div class="wrap">
+        {s.eyebrow && <p class="eyebrow">{s.eyebrow}</p>}
+        <h2 id={s.id + '-t'} class="gd-h2">{s.title}</h2>
+        {s.lead && <p class="gd-lead">{s.lead}</p>}
+
+        {s.type === 'steps' && (
+          <ol class="gd-steps">
+            {s.items.map((it) => <li><h3>{it.title}</h3><p>{it.text}</p>{it.list && <ul>{it.list.map((x) => <li>{x}</li>)}</ul>}</li>)}
+          </ol>
+        )}
+
+        {s.type === 'cards' && (
+          <div class="gd-cards">
+            {s.items.map((it) => it.href
+              ? <a class="gd-card gd-card--link" href={link(it.href)}>{it.kicker && <span class="gd-num">{it.kicker}</span>}<h3>{it.title}</h3>{it.text && <p>{it.text}</p>}</a>
+              : <article class="gd-card">{it.kicker && <span class="gd-num">{it.kicker}</span>}<h3>{it.title}</h3>{it.text && <p>{it.text}</p>}{it.list && <ul>{it.list.map((x) => <li>{x}</li>)}</ul>}</article>)}
+          </div>
+        )}
+
+        {s.type === 'table' && (
+          <div class="gd-table">
+            <table>
+              <thead><tr>{s.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+              <tbody>{s.rows.map((r) => <tr><th scope="row">{r[0]}</th>{r.slice(1).map((c) => <td>{c}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+        )}
+
+        {s.type === 'text' && (
+          <div class="gd-text">
+            {s.paras?.map((p) => <p>{p}</p>)}
+            {s.list && <ul>{s.list.map((x) => <li>{x}</li>)}</ul>}
+            {s.after?.map((p) => <p>{p}</p>)}
+          </div>
+        )}
+
+        {s.type === 'faq' && (
+          <div class="gd-faq">{s.items.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+        )}
+
+        {s.note && <p class="gd-note">{s.note}</p>}
+        {s.links && <p class="gd-links">{s.links.map(([t, href]) => <a href={href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel') || href.startsWith('sms') ? href : link(href)}>{t} →</a>)}</p>}
+      </div>
+    </section>
+  ))}
+
+  {page.faqs?.length > 0 && (
+    <section id="faq" class="band band--cash" aria-labelledby="cp-faq">
+      <div class="wrap">
+        <p class="eyebrow">{page.name} FAQ</p>
+        <h2 id="cp-faq" class="gd-h2">Common Questions</h2>
+        <div class="gd-faq">{page.faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="band band--dark" aria-labelledby="cp-cta">
+    <div class="wrap">
+      <p class="eyebrow">Next Step</p>
+      <h2 id="cp-cta" class="gd-h2">{page.ctaTitle}</h2>
+      <p class="gd-intro">{page.ctaText}</p>
+      <div class="gd-ctas">
+        <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+        <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
+        <a class="btn btn--secondary" href={link(page.ctaLink?.[1] ?? '/buildings/')}>{page.ctaLink?.[0] ?? 'Buildings & Pricing'}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .gd-hero { padding-top: 40px; }
+  .gd-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
+  .gd-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .gd-crumbs a:hover { color: var(--bronze); }
+  .gd-hero h1 { margin: 0 0 8px; font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.12; }
+  .gd-sub { margin: 0 0 18px; color: var(--bronze); font-weight: 900; font-size: clamp(1.1rem, 2vw, 1.35rem); }
+  .gd-intro { max-width: 74ch; margin: 0 0 20px; font-size: 1.05rem; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .gd-hero .gd-ctas { margin: 8px 0 24px; }
+  .gd-jump { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .gd-jump a { display: inline-block; padding: 10px 16px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; font-weight: 800; font-size: 0.9rem; }
+  .gd-jump a:hover { background: var(--bronze); color: var(--steel); }
+  .gd-h2 { margin: 0 0 14px; font-size: clamp(1.55rem, 2.9vw, 2.2rem); }
+  .gd-lead { max-width: 72ch; margin: 0 0 26px; font-weight: 700; }
+  .gd-steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .gd-steps > li { counter-increment: s; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; color: var(--steel); }
+  .gd-steps > li::before { content: 'Step ' counter(s, decimal-leading-zero); display: block; font-weight: 900; color: var(--bronze-dark); font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .gd-steps h3, .gd-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .gd-steps p, .gd-card p { margin: 0 0 8px; font-weight: 700; font-size: 0.95rem; }
+  .gd-steps ul, .gd-card ul { margin: 6px 0 0; padding-left: 20px; font-weight: 700; font-size: 0.92rem; }
+  .gd-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .gd-card { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; color: var(--steel); }
+  .gd-card--link { display: block; text-decoration: none; }
+  .gd-card--link:hover { border-color: var(--bronze); }
+  .gd-num { display: block; color: var(--bronze-dark); font-weight: 900; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .gd-table { overflow-x: auto; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); color: var(--steel); }
+  .gd-table table { border-collapse: collapse; width: 100%; min-width: 640px; }
+  .gd-table th, .gd-table td { padding: 11px 16px; border-top: 1px solid var(--cashmere); text-align: left; vertical-align: top; font-size: 0.93rem; font-weight: 700; }
+  .gd-table thead th { background: var(--steel); color: var(--ivory); font-weight: 900; font-size: 0.85rem; }
+  .gd-text p, .gd-text ul { max-width: 78ch; font-weight: 700; margin: 0 0 14px; }
+  .gd-text ul { padding-left: 20px; }
+  .gd-text li { margin-bottom: 6px; }
+  .gd-text a { color: inherit; }
+  .gd-note { margin: 18px 0 0; max-width: 80ch; font-weight: 800; border-left: 4px solid var(--bronze); padding-left: 14px; }
+  .gd-links { display: flex; flex-wrap: wrap; gap: 18px; margin: 18px 0 0; }
+  .gd-links a { color: var(--bronze-dark); font-weight: 900; text-decoration: none; }
+  .band--dark .gd-links a { color: var(--bronze); }
+  .gd-faq details { background: #fff; border: 1px solid var(--stone); margin-bottom: 10px; color: var(--steel); }
+  .gd-faq summary { cursor: pointer; padding: 18px 22px; font-weight: 900; }
+  .gd-faq p { margin: 0; padding: 0 22px 20px; font-weight: 700; }
+  .gd-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+</style>

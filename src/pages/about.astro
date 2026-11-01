@@ -1,0 +1,66 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { business } from '../data/site.js';
+
+const page = {
+  path: '/about/',
+  name: 'About',
+  title: 'About Appalachian Sheds: Veteran-Owned, Family-Operated, Built on Site | Appalachian Sheds',
+  description: 'Appalachian Sheds Inc. is a veteran-owned, family-operated builder led by Edwin R. Shackelford, a U.S. Army veteran with three decades of senior property and construction leadership. Every building is built on site in the Cincinnati Tri-State.',
+  eyebrow: 'About Appalachian Sheds Inc.',
+  h1: 'About Appalachian Sheds',
+  subtitle: 'Veteran-Owned. Family-Operated. Built on Your Property.',
+  intro: [
+    'Appalachian Sheds Inc. builds backyard sheds and outbuildings on site across Cincinnati and the Tri-State area. The company is led by Edwin R. Shackelford, a U.S. Army veteran with three decades of senior property and construction leadership, who builds alongside his sons Randall and Travis.',
+    'Every building is constructed where it will stand, on a foundation planned for your site, and backed by the Appalachian Sheds 30-Year Structural Warranty.',
+  ],
+  schemaType: 'AboutPage',
+  schemaExtra: { mainEntity: { '@id': business.id } },
+  sections: [
+    {
+      type: 'text', id: 'story', eyebrow: 'Who We Are', title: 'A Small Construction Company, Run Like One', nav: 'Who We Are',
+      paras: [
+        'A backyard building is still a construction project on private property. Edwin approaches every Appalachian Sheds project the way he approached decades of property and construction work: understand the use, study the site, put the scope in writing, then build it right.',
+        'Appalachian Sheds is veteran-owned and family-operated. Edwin leads every project, and his sons Randall and Travis build alongside him. When you call, you talk with the person responsible for your building.',
+      ],
+    },
+    {
+      type: 'cards', id: 'standards', title: 'What We Stand Behind', nav: 'Our Standards',
+      items: [
+        { title: 'Built on site', text: 'Every building is constructed at your property, not delivered as a finished box, so placement, foundation and details fit your yard.' },
+        { title: 'A real foundation', text: '6×6 ground-contact pressure-treated beams under every building, with an optional nine-layer prepared pad where drainage or soil calls for it.' },
+        { title: 'Published prices', text: 'Every model, size and siding is priced on our website, and every option has an installed planning price. No guessing before you call.' },
+        { title: 'Written scope', text: 'What is included, what is optional, what is excluded and what belongs to you, in writing before construction begins.' },
+        { title: '30-Year Structural Warranty', text: 'Every building includes it, with clear terms, including painting the exterior within 30 days of completion (vinyl excepted).' },
+        { title: 'Honest guidance', text: 'We won’t promise resale returns, HOA approvals or a legal use a building doesn’t have. We would rather you decide with clear information.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'lineup', title: 'Five Models, Two Series', nav: 'Our Buildings',
+      lead: 'The Classic Series covers dependable storage; the Signature Series adds extended eaves, transom glass and architectural shingles. LP SmartSide Vertical Panel siding is standard on every model, with four other siding systems available.',
+      items: [
+        { kicker: 'Classic Series', title: 'Appalachian Classic Shed', text: 'A clean low-profile gable shed for everyday storage.', href: '/buildings/appalachian-classic/' },
+        { kicker: 'Classic Series', title: 'Appalachian Antique Saltbox Shed', text: 'A traditional asymmetrical saltbox roofline.', href: '/buildings/appalachian-antique-saltbox/' },
+        { kicker: 'Classic Series', title: 'Appalachian Laurel Lean-To Shed', text: 'A compact single-slope shed for smaller spaces.', href: '/buildings/appalachian-laurel-lean-to/' },
+        { kicker: 'Signature Series', title: 'Appalachian Country Cottage', text: 'Cottage-style storage built to look at home near the house.', href: '/buildings/appalachian-country-cottage/' },
+        { kicker: 'Signature Series', title: 'Appalachian Saltbox Overhang Shed', text: 'Covered rear storage under an extended roofline.', href: '/buildings/appalachian-saltbox-overhang/' },
+      ],
+    },
+    {
+      type: 'steps', id: 'process', title: 'How We Work', nav: 'How We Work',
+      items: [
+        { title: 'Talk Through the Use', text: 'What the building needs to do, now and later.' },
+        { title: 'Review the Site', text: 'Access, drainage, slope, utilities and working room.' },
+        { title: 'Write the Scope', text: 'Model, size, siding, options, exclusions and responsibilities.' },
+        { title: 'Build on Site', text: 'An organized build at your property, with clear communication.' },
+        { title: 'Walk Through Together', text: 'Review the finished building, the warranty and the care plan.' },
+      ],
+      links: [['The full process: Guide 24', '/buyers-planning-guide/the-building-process-guide-24/'], ['All 24 planning guides', '/buyers-planning-guide/']],
+    },
+  ],
+  ctaTitle: 'Talk With Edwin About Your Building',
+  ctaText: 'Call or text Edwin directly. Tell him what the building needs to do and where it might go, and he’ll help you sort out the rest.',
+  ctaLink: ['Start Your Project', '/start-your-project/'],
+};
+---
+<ContentPage page={page} />

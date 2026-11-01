@@ -1,0 +1,93 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '07',
+  subtitle: 'Choose the Purpose Before You Choose the Model',
+  description: 'Plan a backyard building around its use: primary, secondary and future use; how storage, workshop, office, studio, garden and pool buildings differ; common mistakes; and the questions to answer before choosing a model.',
+  intro: 'A well-planned backyard building starts with the life it needs to support. Storage, workshop, office, studio, garden, pool-support and hobby uses call for very different decisions about size, doors, windows, wall space, utilities and placement. The right building is the one whose size, layout and features solve the right problem on the right property.',
+  question: 'What Should You Decide Before Choosing a Backyard Building?',
+  answer: [
+    'Name three things: the primary use, the secondary use and the realistic future use. The primary use is what the building must do from day one. The secondary use is what it should also support without becoming awkward. The future use is a direction you can reasonably see coming in the next several years.',
+    'Storage is planned around access, shelves, bins and retrieval. A workshop needs working room, wall space, lighting and power. An office or studio needs comfort, privacy, daylight, internet and daily occupancy. Garden and pool buildings respond to the outdoor areas they serve.',
+    'Because Appalachian Sheds builds on your property, the conversation can include your actual yard, access route, drainage, views, setbacks and how you expect to use the building.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'framework', eyebrow: 'Purpose Before Model', title: 'The Three-Use Framework', nav: 'Primary, Secondary & Future Use',
+      items: [
+        { title: 'Primary use', text: 'The building’s main job from the first day.', list: ['What problem must it solve first?', 'What will happen inside most often?', 'Which features are essential?'] },
+        { title: 'Secondary use', text: 'An added purpose that should not interfere with the main job.', list: ['Storage plus workshop', 'Office plus creative studio', 'Garden use plus seasonal storage', 'Pool support plus outdoor hosting'] },
+        { title: 'Future use', text: 'A realistic direction the building may need to support later.', list: ['Future electrical or lighting', 'Insulation or HVAC readiness', 'Interior finish', 'Changing storage or work needs'] },
+      ],
+      note: 'Future flexibility is not the same as vagueness. Build around the use you know, but do not ignore the use you can already see coming. Decisions that are hard to change later deserve attention before construction.',
+    },
+    {
+      type: 'cards', id: 'types', title: 'Different Uses Change the Building Decisions', nav: 'Planning by Use',
+      items: [
+        { title: 'Storage & organization', text: 'Shelves, bins, mower access, wall hooks, seasonal items, door width and a clear path to reach things.' },
+        { title: 'Workshop & maker space', text: 'Bench depth, tool clearance, wall storage, lighting, outlets, ventilation and room for projects left set up.' },
+        { title: 'Backyard office', text: 'Desk position, daylight, privacy, sound, insulation, HVAC readiness, internet and year-round comfort.' },
+        { title: 'Creative studio', text: 'Natural light balanced with wall space, storage, work surfaces, privacy and power.' },
+        { title: 'Garden building', text: 'Near the beds, with potting surfaces, tool storage, water access, ventilation and mud control.' },
+        { title: 'Pool-support building', text: 'Towels, floats, wet-use storage, changing privacy, ventilation and pool-area access.' },
+        { title: 'Hobby room', text: 'Tables, cabinets, lighting, wall storage, cleanup and project staging planned before openings are fixed.' },
+        { title: 'Retreat-style structure', text: 'Privacy, daylight, seating, finishes, views and comfort, with the approved legal use kept clear.' },
+      ],
+      note: 'Do not size a working building only around what you store. Workshops, offices and studios also need room for people to walk, turn, sit, work and open cabinets.',
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Common Use-Planning Mistakes', nav: 'Common Mistakes',
+      items: [
+        { title: 'Choosing from a photo alone', text: 'It can look great and still have the wrong size, doors or layout for the job.' },
+        { title: 'Undersizing', text: 'Fitting the objects is not enough; people need room to move and work.' },
+        { title: 'Ignoring the secondary use', text: 'Plan the second function before the layout is final.' },
+        { title: 'Too many openings', text: 'Every door and window removes wall for shelves, tools or furniture.' },
+        { title: 'Waiting to discuss utilities', text: 'Power, insulation, HVAC and internet are easier to plan before construction.' },
+        { title: 'Overstating future use', text: 'An office or studio does not automatically become approved sleeping space, a dwelling or a rental.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Model-First Thinking vs. Use-First Planning', nav: 'Use-First vs. Model-First',
+      head: ['Decision', 'Model-first thinking', 'Use-first planning', 'Why it matters'],
+      rows: [
+        ['Starting point', '“I like this model.”', '“This building must solve a specific need.”', 'The use decides whether the model works'],
+        ['Size', '“That size looks about right.”', 'Sized by furniture, equipment, shelves and walkways', 'It can hold the items and still be too small to use'],
+        ['Windows', '“Windows look good there.”', 'Placed for daylight, privacy, wall storage and furniture', 'More glass can mean less usable wall'],
+        ['Doors', '“A front door seems standard.”', 'Sized and placed for equipment, furniture and traffic', 'Door placement drives daily usability'],
+        ['Interior', '“I’ll decide the inside later.”', 'Desk, bench, shelves and walkways considered early', 'A good shell can still make an awkward interior'],
+        ['Utilities', '“Power or HVAC can come later.”', 'Future electric, insulation, internet and HVAC paths discussed early', 'Some changes are cleaner when anticipated'],
+        ['Budget', 'Spend on the most visible options', 'Protect the features that support the use', 'Money goes where it matters every day'],
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'What the Homeowner Defines and What the Plan Must Address', nav: 'Planning Responsibilities',
+      items: [
+        { title: 'The homeowner defines', list: ['The primary and secondary purpose', 'The largest equipment, furniture or work zones', 'How often the building will be used', 'Which walls must stay free', 'Comfort and utility priorities now and later', 'How it relates to the house, garden, pool or patio'] },
+        { title: 'The building plan addresses', list: ['Footprint and usable interior area', 'Door size, location and equipment access', 'Window placement and usable wall area', 'Walkways and storage zones', 'Future electrical or comfort pathways', 'Site access, drainage and written scope'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Clarify the Use Before Finalizing the Building', nav: 'Use-Case Checklist',
+      items: [
+        { title: 'Purpose & capacity', list: ['Primary use named', 'Secondary use identified', 'Realistic future use considered', 'Largest items measured', 'Growth and seasonal storage considered'] },
+        { title: 'Layout & access', list: ['Main walkway understood', 'Door width suits the largest items', 'Windows protect usable walls', 'Furniture or work zones considered', 'Site access supports the use'] },
+        { title: 'Comfort & future', list: ['Lighting needs discussed', 'Electrical needs considered', 'Insulation or HVAC readiness, if relevant', 'Internet or equipment needs', 'Intended legal use kept accurate'] },
+      ],
+      note: 'Office, studio, hobby or retreat-style use does not by itself make a backyard building an approved bedroom, dwelling, rental unit or guest house. When the use, utilities or interior could affect code or approvals, confirm the requirements for your exact property.',
+    },
+  ],
+  faqs: [
+    { q: 'What is the first question to ask before choosing a backyard building?', a: 'What the building needs to help you do. Once the purpose is clear, choices about model, size, doors, windows, utilities and layout become easier.' },
+    { q: 'What is the difference between primary and secondary use?', a: 'Primary use is the building’s main job. Secondary use is an added function it supports without interfering, such as a workshop that also holds seasonal storage.' },
+    { q: 'Should I consider future use if I am not finishing the interior now?', a: 'Yes, when it is realistic. Future electric, insulation, HVAC or interior plans can shape today’s decisions about openings, wall space and layout.' },
+    { q: 'Can one building serve more than one purpose?', a: 'Yes. Multi-use buildings work best when the primary purpose stays clear and the second function is deliberately planned into the footprint and layout.' },
+    { q: 'Does a backyard office or studio count as living space?', a: 'No. That use alone does not establish approval as a bedroom, dwelling, rental or guest house. Property-specific rules and approvals control.' },
+  ],
+  related: ['06', '08', '15', '16'],
+  pages: [['Top 10 Most Requested Upgrades', 'The upgrades that turn a shell into a year-round space.', '/options/top-10-upgrades/'], ['Buildings & Pricing', 'Compare models once the use is clear.', '/buildings/']],
+  ctaTitle: 'Choose the Use, Then Choose the Building',
+  ctaText: 'Bring five answers into the planning conversation: the primary use, secondary use, realistic future use, largest items or work zones, and the comfort or utility features that matter now or later.',
+};
+---
+<GuidePage page={page} />

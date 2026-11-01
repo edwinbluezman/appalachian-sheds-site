@@ -1,0 +1,115 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '08',
+  subtitle: 'Customize Without Making the Building Harder to Build, Use or Maintain',
+  description: 'How to customize a backyard building in the right order: use, site, size, openings, materials, roofline and future readiness, plus cosmetic vs. construction-smart choices, maintenance trade-offs and questions to ask.',
+  intro: 'A backyard building should not be customized by randomly adding attractive features. The best choices start with use, site, access, weather exposure, maintenance, interior planning and architectural balance, so the finished building looks intentional, works properly and stays practical to own.',
+  question: 'How Should You Customize a Backyard Building?',
+  answer: [
+    'Customize from the inside out and the ground up: use first, then site and access, size and layout, doors and windows, exterior materials, roof and porch character, and finally future utility and interior-finish readiness.',
+    'The most successful custom buildings are not the ones with the most upgrades. They are the ones where every choice supports a clear purpose.',
+    'If a choice affects framing, weather protection, maintenance, utilities, drainage, door swing, wall space or a future interior finish, decide it before construction begins.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'The Right Order', title: 'Make the Hard-to-Change Decisions First', nav: 'Decision Sequence',
+      lead: 'Most customization mistakes happen when visual features are chosen before confirming how the building will be used, reached, maintained and upgraded.',
+      items: [
+        { title: 'Intended Use', text: 'Storage, workshop, garden building, office, studio or pool house. Use drives every later decision.' },
+        { title: 'Site, Access & Placement', text: 'Grade, drainage, walkways, gate access, staging, views, sun and how the building relates to the house.' },
+        { title: 'Size, Layout & Clearances', text: 'Size for real use, door swing, equipment, furniture, porch depth and wall space, not square footage alone.' },
+        { title: 'Doors, Windows & Openings', text: 'Openings affect access, light, ventilation, security, privacy, shelving, wall strength and future finishes.' },
+        { title: 'Siding, Roof & Weather', text: 'Choose siding, roof, overhangs and trim for weather exposure, maintenance and architectural fit.' },
+        { title: 'Utilities, Comfort & Finish', text: 'Electric, insulation, HVAC, plumbing readiness, lofts and built-ins are planned before walls close.' },
+      ],
+      note: 'Do not finalize appearance before the use, site, layout, shell, openings and future utility needs are understood. Style matters; construction sequence matters more.',
+    },
+    {
+      type: 'table', id: 'compare', title: 'Cosmetic vs. Construction-Smart Customization', nav: 'Cosmetic vs. Smart',
+      head: ['Choice', 'Cosmetic-only thinking', 'Construction-smart thinking', 'Why it matters'],
+      rows: [
+        ['Size', 'The largest footprint the budget allows', 'The size that supports use, clearances, wall space and property scale', 'Oversizing crowds the yard; undersizing creates regret'],
+        ['Doors', 'The style that looks best from the front', 'Width, swing, threshold, access path, ramp, security and weather', 'Doors affect movement, equipment access and water entry'],
+        ['Windows', 'More glass for charm', 'Light balanced with privacy, ventilation, wall storage and symmetry', 'Too many windows reduce usable walls'],
+        ['Siding', 'Whatever matches a photo', 'Appearance, exposure, maintenance and paint or stain path', 'Material choice decides how the building ages'],
+        ['Porch', 'Added because it looks premium', 'Depth, entry direction, roof coverage, steps, drainage and upkeep', 'A shallow porch can look good but fail as an entry'],
+        ['Roofline', 'The most dramatic profile', 'Pitch, overhangs, dormers, cupolas, material and runoff', 'Roof character affects water, scale and volume'],
+      ],
+    },
+    {
+      type: 'table', id: 'categories', dark: true, title: 'What Each Design Choice Affects', nav: 'Customization Categories',
+      head: ['Category', 'Key decisions', 'Construction or maintenance impact', 'Best decided'],
+      rows: [
+        ['Intended use', 'Storage, workshop, office, studio, garden, pool house', 'Size, layout, doors, windows, utilities, insulation and finish', 'First conversation'],
+        ['Size & proportion', 'Footprint, wall height, roof pitch, porch depth', 'Cost, clearance, visual balance and interior comfort', 'Before pricing and layout'],
+        ['Doors & access', 'Single, double, house or carriage door; hardware; threshold; ramp', 'Daily use, security, water protection and equipment movement', 'Before wall framing'],
+        ['Windows & daylight', 'Quantity, size, placement, privacy, views', 'Comfort, airflow, shelving, benches and exterior balance', 'Before wall framing'],
+        ['Siding & materials', 'Vertical panel, board-and-batten, lap, vinyl, cedar or metal', 'Maintenance, moisture performance, trim and repainting', 'Before materials are ordered'],
+        ['Porch & entry', 'Depth, roof coverage, posts, railings, steps, decking', 'Weather protection, entry comfort and upkeep', 'Before roof and wall planning'],
+        ['Roofline & character', 'Pitch, gables, dormers, overhangs, cupolas, roofing', 'Water shedding, height, scale and interior volume', 'Before roof framing'],
+        ['Interior layout', 'Storage zones, benches, lofts, partitions', 'Framing, openings, wiring, insulation and finishes', 'Before framing and rough-ins'],
+        ['Finish & hardware', 'Paint, stain, trim, shutters, flower boxes, locks', 'Maintenance, identity and touch-up frequency', 'During exterior design'],
+      ],
+    },
+    {
+      type: 'cards', id: 'paths', title: 'Customization Paths by How You’ll Use the Building', nav: 'Planning Paths',
+      lead: 'These are not rigid packages. They help you avoid overcustomizing one area while forgetting a more important construction decision.',
+      items: [
+        { title: 'Essential storage', text: 'Practical door width, ramp planning, durable floor, ventilation, simple windows and a low-maintenance exterior.' },
+        { title: 'Garden & hobby', text: 'Daylight-focused windows, trim, flower boxes, a potting or work surface, ventilation and water-resistant finishes.' },
+        { title: 'Workshop-ready', text: 'Wider doors, wall storage, a stronger floor, electrical readiness, ventilation, lighting and fewer windows.' },
+        { title: 'Office / studio-ready', text: 'Daylight control, insulation readiness, electrical planning, an HVAC path, privacy and furniture walls kept free.' },
+        { title: 'Architectural character', text: 'Stronger roof pitch, upgraded siding, deeper trim, gable details, a porch and balanced windows.' },
+        { title: 'Future finished space', text: 'Insulation, electric, HVAC, plumbing readiness, floor upgrades and layout planned before the shell is built.' },
+      ],
+      links: [['See prices for every option', '/options/'], ['Top 10 Most Requested Upgrades', '/options/top-10-upgrades/']],
+    },
+    {
+      type: 'cards', id: 'maintenance', title: 'Some Beautiful Choices Require More Care', nav: 'Maintenance Trade-Offs',
+      items: [
+        { title: 'Lower-maintenance tendencies', list: ['Simpler rooflines with fewer intersections', 'Proper overhangs and drip edges', 'Durable engineered siding with well-detailed trim', 'Finishes chosen for exposure, not just color', 'Doors and windows out of splash zones'] },
+        { title: 'Higher-maintenance tendencies', list: ['Natural wood accents that need stain or sealer', 'Complex trim layers and exposed brackets', 'Very dark colors in full sun', 'Porches with many rails, steps and corners', 'Valleys, dormers and extra roof penetrations'] },
+      ],
+      note: 'Low maintenance does not mean no maintenance. It means the design avoids unnecessary exposure and complexity and uses materials that match the property and your willingness to care for the building.',
+    },
+    {
+      type: 'table', id: 'mistakes', title: 'Customization Mistakes Are Usually Sequence Mistakes', nav: 'Common Mistakes',
+      head: ['Mistake', 'Why it causes problems', 'Better approach'],
+      rows: [
+        ['Choosing doors before confirming use', 'Wrong width, swing or threshold frustrates daily access', 'Start with what must move in and out'],
+        ['Adding too many windows', 'Less wall for storage, benches and privacy', 'Place windows where they serve light, view, airflow and balance'],
+        ['Choosing porch depth by looks', 'A shallow porch fails as a real entry or sitting space', 'Decide how the porch will be used first'],
+        ['Ignoring drainage at the entry', 'Water collects at the threshold or path', 'Coordinate the entry with grade, runoff and steps'],
+        ['Designing only the front elevation', 'Looks awkward from the house, patio or side yard', 'Review every visible side and path'],
+        ['Forgetting future utilities', 'Harder after framing and wall closure', 'Discuss future use before walls and openings are final'],
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Better Questions Lead to Better Custom Buildings', nav: 'Questions to Ask',
+      items: [
+        { title: 'What will I actually do inside?', text: 'Listen for a builder who starts with use before suggesting options.' },
+        { title: 'Where should it sit?', text: 'Expect a discussion of grade, access, orientation and the house.' },
+        { title: 'Which openings affect framing?', text: 'Door and window placement should be confirmed before construction.' },
+        { title: 'Which materials need more care?', text: 'Expect honest answers on paint, stain, caulk and inspection.' },
+        { title: 'Will this porch or roof work in rain and snow?', text: 'Look for practical weather talk, not just style language.' },
+        { title: 'What goes in the written scope?', text: 'Size, layout, materials, upgrades, exclusions and change orders, in writing.' },
+      ],
+      note: 'Tri-State properties often bring slope, clay soils, freeze-thaw cycles, mature trees, tight side yards and neighborhood expectations. A design that looks perfect in a flat catalog photo may need adjustment for a sloped yard, shaded tree line or HOA-visible side yard.',
+    },
+  ],
+  faqs: [
+    { q: 'What should I decide first when customizing?', a: 'The intended use. Storage, workshop, office, garden, pool house and studio each call for different decisions about size, doors, windows, floor, wall layout, utilities and maintenance.' },
+    { q: 'Can I add more windows without causing problems?', a: 'Yes, with careful placement. Windows add light and airflow but reduce wall storage, bench space, privacy and finish flexibility.' },
+    { q: 'How deep should a porch be?', a: 'Deep enough for how it will be used. A functional entry or sitting porch needs room to move, steps, roof coverage and weather protection.' },
+    { q: 'Should I plan electrical and insulation before construction?', a: 'Yes. They are easier and cleaner to plan before framing, openings, walls and floors are final.' },
+    { q: 'How do I avoid overcustomizing?', a: 'Ask whether each feature improves use, durability, weather protection, maintenance, comfort, appearance or future readiness. If it only adds visual complexity, it may not be worth the cost or upkeep.' },
+  ],
+  related: ['07', '09', '10', '18'],
+  pages: [['Options & Upgrades', 'All 20 option categories with installed planning prices.', '/options/'], ['Doors & Entry', 'Door types, sizes and prices.', '/options/doors-entry/'], ['Windows & Natural Light', 'Window types, accents and skylights.', '/options/windows-natural-light/']],
+  ctaTitle: 'Make Sure the Customization Plan Fits the Property',
+  ctaText: 'The best custom building is the one where size, layout, doors, windows, siding, porch, roof, trim and future readiness all support the way it will be used. Connect your ideas to the site, access, drainage, upkeep and budget before construction begins.',
+};
+---
+<GuidePage page={page} />

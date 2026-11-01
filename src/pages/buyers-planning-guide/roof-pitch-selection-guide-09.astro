@@ -1,0 +1,117 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+// Roof angle and ridge rise are calculated, so the table is always exact.
+// Rise is measured above the wall plate on a 12-foot-wide symmetrical gable (6 feet of run each side).
+const feet = (inches) => {
+  const ft = Math.floor(inches / 12), inch = Math.round(inches % 12);
+  return inch ? `${ft}′ ${inch}″` : `${ft}′`;
+};
+const pitches = [
+  [4, 'Low, clean, restrained', 'Limited', 'Keeps total height controlled'],
+  [6, 'Traditional, balanced', 'Moderate; limited for a loft', 'Sits naturally beside most houses'],
+  [9, 'Strong cottage character', 'Useful light storage', 'The step from conventional to steep'],
+  [10, 'Visually close to 9/12', 'Better center headroom', 'Choose it for the added loft volume'],
+  [12, 'Classic steep cottage roof', 'Substantial', 'Overall height and loft planning matter more'],
+  [14, 'Very steep and distinctive', 'The most of these six', 'Coordinate height, roof area and use carefully'],
+];
+const rows = pitches.map(([r, look, vol, note]) => [
+  `${r}/12`,
+  `${(Math.atan(r / 12) * 180 / Math.PI).toFixed(1)}°`,
+  feet(r * 6),
+  look,
+  vol,
+  note,
+]);
+
+const page = {
+  n: '09',
+  subtitle: 'How Roof Angle Changes Height, Loft Space, Weather Shedding and Character',
+  description: 'Compare roof pitches for a backyard building: 4/12, 6/12, 9/12, 10/12, 12/12 and 14/12, with roof angle, ridge rise, loft volume, character, planning mistakes and questions to ask.',
+  intro: 'Roof pitch is one of the most influential design decisions on a backyard building. It changes overall height, interior volume, loft potential, roof surface area, how weather moves off the roof, and how naturally the building relates to your home. This guide compares six reference pitches so you understand the differences before your specifications are final.',
+  question: 'What Roof Pitch Should You Choose?',
+  answer: [
+    'Start with the architecture of your home and how you will use the building. A 4/12 or 6/12 keeps the profile restrained. A 9/12 or 10/12 adds architectural character and useful overhead volume. A 12/12 or 14/12 creates a steep cottage roofline with much more interior roof volume.',
+    'The steepest roof is not automatically the best. The right pitch gives you the look and usable volume you need without unnecessary height, cost or complexity.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'decisions', eyebrow: 'Planning Principles', title: 'Three Decisions Should Drive the Roofline', nav: 'Three Decisions',
+      items: [
+        { title: 'Start with the house', text: 'A building often looks most intentional when its roof repeats or complements the house pitch.' },
+        { title: 'Define the interior need', text: 'For ground-level storage, extra roof volume adds little. For overhead storage, a loft or studio use, a steeper pitch matters much more.' },
+        { title: 'Check the site', text: 'Height can be limited by zoning, neighborhood rules, trees, views, overhead lines, placement and building width.' },
+      ],
+      note: 'Roof pitch is settled before roof framing begins and written into the project scope with the model, width, wall height and loft plans.',
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'How Six Roof Pitches Compare', nav: 'Pitch Comparison',
+      lead: 'Pitch is inches of rise for every 12 inches of horizontal run. Ridge rise is shown above the wall plate on a 12-foot-wide symmetrical gable building.',
+      head: ['Pitch', 'Roof angle', 'Rise on a 12′ width', 'Character', 'Overhead volume', 'Planning note'],
+      rows,
+      note: 'These figures explain roof geometry only. Finished height and usable space also depend on wall height, framing, the roof system, loft construction, building width and the written specifications. The Laurel Lean-To uses a single-slope 3/12 roof, and each model’s roof is confirmed in your written scope.',
+    },
+    {
+      type: 'cards', id: 'profiles', title: 'Six Roof Pitches, Six Building Personalities', nav: 'The Six Pitches',
+      items: [
+        { title: '4/12: Low & restrained', text: 'Keeps overall height controlled and suits a lower profile, with little loft volume.' },
+        { title: '6/12: Familiar & balanced', text: 'Traditional residential proportion; comfortable for workshops and storage and easy to match to a house.' },
+        { title: '9/12: Architectural presence', text: 'The roof becomes part of the architecture and begins to create practical overhead storage.' },
+        { title: '10/12: The loft step', text: 'Looks nearly the same as 9/12 but adds about 6 inches of ridge height on a 12-foot width for more loft headroom.' },
+        { title: '12/12: Classic 45 degrees', text: 'Strong cottage and traditional character with substantial volume, well suited to loft designs.' },
+        { title: '14/12: Steep & distinctive', text: 'The roof dominates the look, with carriage-house character and the most volume, needing careful height planning.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'changes', title: 'As Pitch Increases, the Roof Gets Taller, Larger and More Useful', nav: 'What Changes',
+      items: [
+        { title: 'Overall height', text: 'Same walls and width, steeper pitch, higher ridge.' },
+        { title: 'Interior volume', text: 'More usable space above the wall plates, especially at the center.' },
+        { title: 'Loft potential', text: 'Overhead space becomes progressively more useful from 9/12 upward.' },
+        { title: 'Roof surface area', text: 'More rafter, sheathing, underlayment, shingles, trim and labor on the same footprint.' },
+        { title: 'Weather movement', text: 'Greater slope helps rain, melting snow and leaves move off a properly built roof.' },
+        { title: 'Character', text: 'The roof carries more visual weight, moving from utility toward cottage or carriage-house style.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Avoid Choosing the Roof in Isolation', nav: 'Common Mistakes',
+      items: [
+        { title: 'Ignoring overall height', text: 'The same pitch makes a taller ridge on a wider building.' },
+        { title: 'Buying loft height you won’t use', text: 'A steep roof adds material and labor that unused volume does not repay.' },
+        { title: 'Designing the loft too late', text: 'Floor framing, access, headroom, ventilation and loads need early coordination.' },
+        { title: 'Forgetting the house', text: 'A conflicting roofline makes a well-built building look disconnected.' },
+        { title: 'Assuming steeper is better', text: 'More pitch is an architectural choice, not automatically an upgrade.' },
+        { title: 'Deciding at framing', text: 'Pitch sets rafters, ridge height and roof area. It belongs in the scope first.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'What the Homeowner Confirms and What the Builder Defines', nav: 'Responsibilities',
+      items: [
+        { title: 'The homeowner confirms', list: ['Zoning and neighborhood height limits', 'Visibility from the house and street', 'Whether overhead storage or a loft matters', 'Trees, utilities and neighboring views', 'Future interior-use plans'] },
+        { title: 'The builder defines', list: ['The selected pitch in the written specifications', 'Pitch coordinated with width and wall height', 'Changes in roof volume and overall height', 'Loft and roof-framing expectations', 'Roofing, ventilation, trim and framing details'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'A Simple Roof Pitch Checklist', nav: 'Selection Checklist',
+      items: [
+        { title: 'Architecture', list: ['House roofline considered', 'Building proportions reviewed', 'Cottage or low-profile character chosen', 'Street and yard visibility considered'] },
+        { title: 'Use & interior', list: ['Loft need identified', 'Storage type considered', 'Future finished interior discussed', 'Overhead headroom understood'] },
+        { title: 'Site & scope', list: ['Height limits checked', 'Tree and utility conflicts reviewed', 'Pitch written into the scope', 'Final building height understood'] },
+      ],
+      note: 'Wooded lots, hillsides, established neighborhoods and rural acreage across the Tri-State each change the answer. A roof that looks right on one property can be needlessly tall or dominant on another.',
+    },
+  ],
+  faqs: [
+    { q: 'What is the difference between a 9/12 and a 10/12 roof?', a: 'On a 12-foot-wide gable, a 9/12 rises about 4 feet 6 inches above the wall plate and a 10/12 about 5 feet. The outside difference is subtle, but the extra 6 inches improves loft headroom at the center.' },
+    { q: 'What makes a 12/12 pitch different?', a: 'It rises 12 inches for every 12 inches of run, a 45-degree slope, giving about 6 feet of rise on a 12-foot width and a distinctly steep cottage look.' },
+    { q: 'Does a steeper roof require more material?', a: 'Yes. On the same footprint, a steeper pitch increases rafter length and roof surface, and with it framing, sheathing, underlayment, shingles, trim and labor.' },
+    { q: 'Which pitches are best for loft space?', a: 'Overhead volume becomes noticeably more useful through 9/12 and 10/12, and 12/12 and 14/12 give much more center height. The loft itself still needs proper floor framing, access and ventilation.' },
+    { q: 'Can the pitch be changed after framing?', a: 'Not practically. Pitch sets the rafter geometry, ridge height and roof area, so it is finalized before roof framing begins.' },
+  ],
+  related: ['08', '06', '18', '11'],
+  pages: [['Roofing & Rooflines', 'Shingles, metal roofing, soffit and ventilation prices.', '/options/roofing-rooflines/'], ['Lofts, Ladders & Stairs', 'Loft platforms, guards and access.', '/options/lofts-ladders-stairs/']],
+  ctaTitle: 'Choose the Roof That Fits the Whole Building',
+  ctaText: 'Roof pitch should work with your home, property, building width, wall height, storage needs and loft plans. Considered together, the right pitch usually becomes clear.',
+};
+---
+<GuidePage page={page} />

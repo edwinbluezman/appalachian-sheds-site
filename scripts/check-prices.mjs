@@ -49,8 +49,8 @@ const afterBuild = process.argv.includes('--after-build');
 // Options price list: fingerprint plus every price must appear on its options page.
 const OPTIONS = {
   file: 'src/data/option-prices.json',
-  fingerprint: 'a9b78c02b869632211567b1f57970922e6589c0906b9c7083c188b2fc8435064',
-  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html', materials: 'dist/options/siding-exterior-materials/index.html', roofing: 'dist/options/roofing-rooflines/index.html', porches: 'dist/options/porches-awnings-dormers/index.html', lofts: 'dist/options/lofts-ladders-stairs/index.html', floors: 'dist/options/floor-systems/index.html', ramps: 'dist/options/ramps-steps-access/index.html', electrical: 'dist/options/electrical-lighting-hvac/index.html', insulation: 'dist/options/wall-ceiling-insulation/index.html', floorInsulation: 'dist/options/floor-insulation/index.html' },
+  fingerprint: 'e5ee468532a82867a98b3d23ce0d2be17ddd1532e5a5e21d081c8e038670a7d6',
+  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html', materials: 'dist/options/siding-exterior-materials/index.html', roofing: 'dist/options/roofing-rooflines/index.html', porches: 'dist/options/porches-awnings-dormers/index.html', lofts: 'dist/options/lofts-ladders-stairs/index.html', floors: 'dist/options/floor-systems/index.html', ramps: 'dist/options/ramps-steps-access/index.html', electrical: 'dist/options/electrical-lighting-hvac/index.html', insulation: 'dist/options/wall-ceiling-insulation/index.html', floorInsulation: 'dist/options/floor-insulation/index.html', plumbing: 'dist/options/plumbing-water/index.html', ventilation: 'dist/options/ventilation-moisture-control/index.html', interior: 'dist/options/interior-finish/index.html' },
 };
 const fail = (model, msg) => { console.error(`PRICE CHECK FAILED (${model}): ${msg}`); process.exit(1); };
 

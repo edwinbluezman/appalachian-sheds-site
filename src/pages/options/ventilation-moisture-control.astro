@@ -1,0 +1,68 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/ventilation-moisture-control/',
+  name: 'Ventilation & Moisture Control',
+  title: 'Shed Ventilation, Dehumidification & Moisture Control | Appalachian Sheds',
+  description: 'Ventilation and moisture control for Appalachian Sheds buildings: roof venting, gable vents, exhaust fans, dehumidifiers, ERVs and humidity monitors, with planning prices.',
+  h1: 'Ventilation & Moisture Control',
+  answer: 'Ventilation is not one fan or one vent. Start with passive moisture protection, then add mechanical control only where the building’s use calls for it. The prepared pad already includes a 10-mil ground-moisture barrier. Options range from a gable vent pair ($150–$500+) to dehumidifiers ($250–$3,000+) and fresh-air ERVs ($1,200–$5,500+). Indoors, relative humidity should stay below 60 percent, ideally around 30 to 50 percent.',
+  familyLabel: 'Moisture Topic',
+  stepsTitle: 'Control Water First, Then Humidity and Fresh Air',
+  stepsLead: 'A durable building handles rain, ground vapor, roof moisture, indoor humidity and fresh air as separate problems. The simplest system that correctly manages the building is the right one: do not overbuild a storage shed, and do not underbuild an office.',
+  steps: [
+    ['Ground moisture', 'The 10-mil barrier in the prepared pad.'],
+    ['Roof strategy', 'Either a vented roof or a properly designed unvented roof.'],
+    ['Indoor humidity', 'Dehumidification where the use requires it.'],
+    ['Fresh air & monitoring', 'An ERV and a humidity monitor for tight, occupied buildings.'],
+  ],
+  families: [
+    {
+      id: 'roof-venting',
+      name: 'Vented or Unvented Roof',
+      intro: [
+        'Balanced ridge-and-soffit ventilation suits a roof built with a clear air channel from low intake to high exhaust. Spray foam applied under the roof deck creates an unvented roof instead. The two approaches should not be combined casually, and vents should not be mixed at random.',
+        'Ventilation must match where the insulation is: insulation at the ceiling allows a vented roof space; insulation at the roof deck may call for an unvented design.',
+      ],
+    },
+    {
+      id: 'systems',
+      name: 'Ventilation & Moisture Systems',
+      intro: [
+        'Dehumidifiers remove moisture directly and work even when little cooling is needed, which matters in humid summers. An ERV exchanges stale indoor air with fresh air while recovering some heat and moisture, but it does not replace a dehumidifier. Every exhaust fan needs a path for replacement air.',
+      ],
+      prices: prices.ventilation.systems,
+      after: 'Ranges include small-building setup and ordinary installation. Roof shape, access, electrical work and drain routing set the final cost.',
+    },
+  ],
+  compare: {
+    title: 'Moisture Control by Building Use',
+    head: ['Building use', 'Roof & passive airflow', 'Indoor humidity', 'Fresh air & monitoring'],
+    rows: [
+      ['Storage', 'Gable or passive ventilation', 'Usually not needed', 'Basic hygrometer optional'],
+      ['Workshop', 'Vented or unvented roof per insulation design', 'Portable dehumidifier when needed', 'Humidity monitor recommended'],
+      ['Backyard office', 'Roof coordinated with insulation', 'Dehumidification often helpful in summer', 'ERV when the building is tight and used for long hours'],
+      ['Creative or recording studio', 'Designed for the assembly; noise matters', 'Quiet dehumidification', 'Controlled fresh air and monitoring'],
+      ['Pool house or wet use', 'Designed for the assembly', 'Higher moisture load may justify dehumidification', 'Exhaust and fresh air based on actual wet use'],
+    ],
+    note: 'Mini-splits control temperature; dehumidifiers control moisture; ERVs bring in fresh air. A small efficient mini-split may cool the room before it removes enough summer humidity.',
+  },
+  considerationsTitle: 'Moisture Mistakes to Avoid',
+  considerations: [
+    ['Random vent mixing', 'Adding ridge, gable and powered vents without a plan can short-circuit the airflow.'],
+    ['Venting an unvented roof', 'Spray foam at the roof deck changes the roof; do not add vents casually.'],
+    ['Fan without makeup air', 'Every exhaust system needs replacement air.'],
+    ['Blanket interior plastic', 'Vapor control is chosen for the actual wall assembly and climate.'],
+    ['Skipping monitoring', 'A low-cost humidity sensor can catch a problem before finishes or contents are damaged.'],
+  ],
+  faqs: [
+    { q: 'Does my shed need a dehumidifier?', a: 'Storage sheds usually do not. Offices, studios and workshops in humid summers often benefit; a portable unit is $250 to $550 or more and can be added later.' },
+    { q: 'Is the ground moisture barrier extra?', a: 'No. The 10-mil barrier is part of the prepared pad. Only an enhanced reinforced barrier ($350 to $900 or more) is an added option.' },
+    { q: 'What humidity should a finished building stay at?', a: 'Below 60 percent relative humidity, ideally around 30 to 50 percent.' },
+  ],
+  ctaTitle: 'Plan Your Moisture Strategy With Edwin',
+};
+---
+<OptionPage page={page} />

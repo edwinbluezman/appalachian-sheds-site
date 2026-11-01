@@ -1,0 +1,79 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/interior-finish/',
+  name: 'Interior Finish Packages',
+  title: 'Shed Interior Finish Packages: Drywall, Plywood & Pine T&G | Appalachian Sheds',
+  description: 'Turn a weather-tight Appalachian Sheds shell into a finished space: utility, office and studio, and Appalachian wood interior packages from $4,000, plus drywall, plywood, pine T&G and trim prices.',
+  h1: 'Interior Finish Packages',
+  answer: 'Every Appalachian Sheds price covers the weather-tight exterior shell; interior finishes are priced separately. Three packages cover most needs: a Durable Utility Interior ($4,000–$9,000+), a Finished Office & Studio Interior ($6,500–$15,000+) and a Premium Character Appalachian Wood Interior ($10,000–$25,000+). Finishes are priced by actual wall and ceiling area, not floor area.',
+  familyLabel: 'Interior Topic',
+  stepsTitle: 'Rough-In First, Finish Last',
+  stepsLead: 'The finished surface comes near the end. The most expensive interior mistakes are sequencing mistakes: closing walls before wiring, blocking and insulation are settled.',
+  steps: [
+    ['Confirm the use', 'Workshop, office, studio, retreat, pool house or utility space.'],
+    ['Complete the shell', 'Roof, siding, windows, doors and moisture control.'],
+    ['Rough-ins & backing', 'Wiring, lighting, data, HVAC paths and blocking for shelves and cabinets.'],
+    ['Insulate', 'Wall, ceiling and floor comfort systems.'],
+    ['Walls & ceiling', 'Drywall, plywood, T&G, beadboard or another finish.'],
+    ['Trim & finish', 'Casing, baseboards, paint or clear finish, and flooring.'],
+  ],
+  families: [
+    {
+      id: 'packages',
+      name: 'Interior Finish Packages',
+      intro: [
+        'Choose the package by what the building needs to do. A storage building may need nothing more than its durable exposed interior; a workshop needs strong, fastenable walls; an office or studio needs a smooth, room-like finish coordinated with insulation, lighting and comfort systems.',
+      ],
+      prices: prices.interior.packages,
+    },
+    {
+      id: 'components',
+      name: 'Finish Materials by Surface',
+      intro: [
+        'The most accurate way to price a finished interior is by each wall and ceiling surface, then trim and finish details separately. A 10×12 building has far more than 120 square feet of finish surface once four walls, the gables and the ceiling are counted.',
+        'Small buildings can cost more per square foot, because corners, window and door casing, gable cuts and ceiling work do not shrink with the footprint.',
+      ],
+      prices: prices.interior.components,
+      after: 'Finish square feet means the actual wall or ceiling area covered, not the building footprint.',
+    },
+    {
+      id: 'levels',
+      name: 'Three Interior Finish Levels',
+      intro: [
+        'Weather-tight utility shell: exposed framing and a durable structural floor, simple and easy to change later. Workshop or utility finish: durable, cleanable surfaces, task lighting and backing for tools and shelves. Studio, office or retreat: insulation, air control, HVAC readiness, finished walls and ceilings, flooring and trim, planned together.',
+      ],
+    },
+  ],
+  compare: {
+    title: 'Interior Direction by Building Use',
+    head: ['Building use', 'Walls', 'Ceiling', 'Key planning issue'],
+    rows: [
+      ['Storage', 'Exposed framing, sealed plywood or utility panel', 'Open or simple utility finish', 'Humidity, hooks, shelving'],
+      ['Workshop', 'Plywood or durable panel', 'Bright simple ceiling or sealed open framing', 'Tool mounting, outlets, lighting, impact'],
+      ['Backyard office', 'Painted drywall or smooth panel', 'Painted drywall or smooth ceiling', 'Sound, lighting, HVAC, data, glare'],
+      ['Creative studio', 'Drywall, plywood or mixed', 'Sound-aware finished ceiling', 'Lighting, acoustics, storage'],
+      ['Pool house', 'Moisture-aware panel or wood', 'Beadboard or moisture-tolerant finish', 'Wet traffic, ventilation, humidity'],
+      ['Premium retreat', 'Pine T&G, shiplap or mixed wood', 'Pine T&G, beadboard or refined ceiling', 'Wood movement, finish quality, lighting'],
+    ],
+  },
+  considerationsTitle: 'Interior Finish Mistakes to Avoid',
+  considerations: [
+    ['Pricing by floor area', 'Walls and ceilings create far more finish area than the footprint.'],
+    ['Closing walls before rough-in', 'Settle wiring, HVAC, plumbing, blocking and data first.'],
+    ['Drywall in the wrong place', 'Drywall needs an insulated, ventilated, moisture-aware interior.'],
+    ['Ignoring wood movement', 'T&G, shiplap and beadboard need acclimation and careful fastening.'],
+    ['Choosing flooring too soon', 'Floor insulation, stiffness and moisture come first.'],
+    ['Finished means approved', 'A finished interior does not by itself create legal dwelling or ADU status.'],
+  ],
+  faqs: [
+    { q: 'Does the building price include an interior finish?', a: 'No. Model prices cover the standard exterior structure only. Insulation, wall and ceiling finishes, flooring, electrical and HVAC are priced as options.' },
+    { q: 'How much does it cost to finish the inside of a shed?', a: 'A durable utility interior is $4,000 to $9,000 or more, a finished office or studio interior $6,500 to $15,000 or more, and a premium Appalachian wood interior $10,000 to $25,000 or more.' },
+    { q: 'Drywall or wood walls?', a: 'Drywall suits offices and studios ($2.00 to $4.00 per finish square foot before paint). Plywood suits workshops. Pine tongue-and-groove ($7.00 to $14.00 or more) gives warm Appalachian character.' },
+  ],
+  ctaTitle: 'Plan Your Interior With Edwin',
+};
+---
+<OptionPage page={page} />

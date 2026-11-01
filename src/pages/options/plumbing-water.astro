@@ -1,0 +1,77 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/plumbing-water/',
+  name: 'Plumbing & Water',
+  title: 'Shed Plumbing, Water Lines & Utility Sinks: Options & Prices | Appalachian Sheds',
+  description: 'Plan water and drains for an Appalachian Sheds building: plumbing readiness from $650, garden water from $1,500, utility sinks from $2,500, half-baths and water heaters. Planning prices for Cincinnati and the Tri-State.',
+  h1: 'Plumbing, Water & Utility Readiness',
+  answer: 'Plumbing is one of the most site-dependent options. The fixture is often the inexpensive part; distance, trenching, where the drain goes, frost protection, permits and licensed plumbing set the price. Planning ranges start at $650 for future plumbing readiness, $1,500 for exterior garden water and $2,500 for a cold-water utility sink. Before pricing, three questions matter: where the water comes from, where the wastewater legally goes, and how far the building is from both.',
+  familyLabel: 'Plumbing Topic',
+  stepsTitle: 'Water Supply Is Only Half the Decision',
+  stepsLead: 'Drainage usually controls the project. A water line can often reach a building, but wastewater needs an approved destination with the right slope, venting and access. Do not plan a sink, shower or toilet until the drain destination is known.',
+  steps: [
+    ['Define the use', 'Exterior water, sink, rinse station, toilet, shower or future readiness.'],
+    ['Find the water source', 'Source, pressure, shutoff and route.'],
+    ['Find the drain destination', 'An approved sanitary sewer, septic system or permitted graywater system.'],
+    ['Measure distance & slope', 'Trench length and drain slope often cost more than the fixture.'],
+  ],
+  families: [
+    {
+      id: 'route',
+      name: 'Utility Distance: The Major Cost Driver',
+      intro: [
+        'Utility distance matters more than building size. An 8×8 building farther from the house or sewer can cost more to plumb than a 14×16 close by, so plumbing is never priced from a size table.',
+        'These allowances cover the trench and route only. They are not complete plumbing prices and exclude sewer tap fees, septic changes, concrete or asphalt replacement, retaining walls and rock.',
+      ],
+      prices: prices.plumbing.route,
+    },
+    {
+      id: 'scope',
+      name: 'Plumbing Options by Scope',
+      intro: [
+        'Budget each option as: fixture price plus underground route plus licensed plumbing plus permit plus site restoration. These ranges assume a practical nearby utility source and normal access.',
+        'Appalachian Sheds coordinates layout, sleeves, blocking, fixture locations and sequencing. Final plumbing is done by licensed plumbers with the permits and inspections your location requires.',
+      ],
+      prices: prices.plumbing.scope,
+      after: 'Ranges are intentionally broad because detached-building plumbing depends heavily on the site. Final pricing follows a site review and a licensed plumber’s estimate.',
+    },
+    {
+      id: 'wastewater',
+      name: 'Water Is Usually Easier Than Wastewater',
+      intro: [
+        'A backyard sink or bathroom should never be planned on the assumption that wastewater can simply drain outside. Wastewater must go to an approved sanitary sewer or treatment system, and graywater systems are regulated and permitted.',
+        'Ohio, Kentucky and Indiana each regulate plumbing differently, and sewer and septic authorities add their own review. New sewer connections or septic changes can require separate permits.',
+      ],
+      bestUses: ['Sanitary sewer: distance, depth and slope decide feasibility', 'Septic: existing capacity and health-department approval', 'Pumps: needed when gravity drainage does not work, adding power and upkeep'],
+    },
+    {
+      id: 'winter',
+      name: 'Freeze Protection & Seasonal Use',
+      intro: [
+        'Pipe insulation alone is not a winter plan. Buried line depth, heated or unheated use, shutoffs, drain-down points and faucet type all matter. If a garden building or pool house will not be heated all winter, accessible shutoffs and a simple drain-down plan should be part of the original design.',
+      ],
+    },
+  ],
+  compare: {
+    title: 'Plumbing Mistakes to Avoid',
+    head: ['Mistake', 'Why it matters'],
+    rows: [
+      ['Pricing by fixture alone', 'A $200 sink can lead to thousands in trench, sewer, vent and restoration work.'],
+      ['Adding water before solving drainage', 'Confirm where the drain goes before planning a sink, shower or bathroom.'],
+      ['Draining into the yard', 'Wastewater must go to an approved system.'],
+      ['Ignoring winter use', 'Unheated buildings need shutoffs and drain-down planning.'],
+      ['Closing the floor too soon', 'Sleeves and penetrations are set before flooring and insulation hide the route.'],
+    ],
+  },
+  faqs: [
+    { q: 'How much does it cost to add water to a shed?', a: 'Exterior garden water runs $1,500 to $3,500 or more with a nearby source and a normal trench. A cold-water utility sink is $2,500 to $5,000 or more.' },
+    { q: 'Can I add a bathroom to my backyard building?', a: 'Possibly, but it needs a feasibility review first: sewer or septic access, venting, hot water, permits and approved use. A half-bath rough-in starts around $7,500.' },
+    { q: 'Do you do the plumbing yourselves?', a: 'Appalachian Sheds plans the layout and prepares the building. Final plumbing is done by licensed plumbers with the required permits and inspections.' },
+  ],
+  ctaTitle: 'Review Water and Drains With Edwin',
+};
+---
+<OptionPage page={page} />

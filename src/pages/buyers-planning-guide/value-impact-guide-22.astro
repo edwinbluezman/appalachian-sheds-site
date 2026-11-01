@@ -1,0 +1,90 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '22',
+  subtitle: 'Property Use, Marketability, Buyer Confidence and Long-Term Appeal',
+  description: 'How a backyard building can add value without a promised resale number: the kinds of value it creates, what strengthens or weakens it, value vs. sales hype, and the records that build future buyer confidence.',
+  intro: 'A well-built backyard building can improve how a property works, looks and feels. But the honest value conversation is broader than a promised resale number. Usefulness, visual fit, construction quality, legal use, maintenance and documentation all shape how the building is perceived.',
+  question: 'Can a Backyard Building Improve Property Value?',
+  answer: [
+    'It may improve usefulness, marketability, buyer confidence and long-term appeal, but no honest builder can guarantee a specific resale return or appraisal result.',
+    'The real impact depends on the property, neighborhood, market, construction quality, approved use, placement, visual fit, maintenance and how clearly a future buyer understands the building’s purpose.',
+    'A workshop that solves a real storage problem, an office that supports daily work or a garden building that organizes outdoor living can create meaningful value even when no future sale price can be predicted.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'types', eyebrow: 'Understanding Value', title: 'A Building Can Create Several Kinds of Value at Once', nav: 'Types of Value',
+      items: [
+        { title: 'Functional value', text: 'It solves a practical problem: storage, workshop, gardening, hobbies, work from home or pool support.' },
+        { title: 'Lifestyle value', text: 'Space that makes daily life easier or more enjoyable without adding onto the house.' },
+        { title: 'Visual value', text: 'Good proportions, roofline, siding, trim and placement make the yard feel complete.' },
+        { title: 'Marketability', text: 'A useful, attractive, easy-to-understand improvement gives future buyers another reason to like the property.' },
+        { title: 'Buyer confidence', text: 'Quality construction, proper approvals, records and maintenance reduce uncertainty.' },
+        { title: 'Long-term flexibility', text: 'A well-designed building can shift from storage to hobbies, work or gardening as needs change.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'strengthen', title: 'The Building Should Look Planned, Useful and Right for the Property', nav: 'What Strengthens Value',
+      items: [
+        { title: 'Clear purpose', list: ['Workshop', 'Backyard office', 'Garden building', 'Studio', 'Pool-support building', 'Organized storage'] },
+        { title: 'Property fit', list: ['Appropriate size', 'Compatible roof form', 'Coordinated siding and trim', 'Thoughtful placement', 'Useful paths', 'Landscape integration'] },
+        { title: 'Construction quality', list: ['Stable foundation', 'Durable floor', 'Sound framing', 'Proper roof construction', 'Weather-resistant exterior', 'Maintainable details'] },
+      ],
+      note: 'Usefulness comes before a resale promise. The building should first improve the property for the homeowner paying for it. If it later supports stronger marketability, that is a bonus, not a guarantee.',
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Conditions That Weaken the Building’s Value Story', nav: 'Value Red Flags',
+      items: [
+        { title: 'Guaranteed-return claims', text: 'Be cautious of anyone promising a specific increase in selling price.' },
+        { title: 'Unclear permits or approvals', text: 'Unresolved zoning, setback, HOA or easement questions create later uncertainty.' },
+        { title: 'Overstated legal use', text: 'A finished building is not a legal bedroom, dwelling or rental unless it qualifies.' },
+        { title: 'Poor property fit', text: 'Oversized or awkwardly placed buildings feel like obstructions.' },
+        { title: 'Temporary appearance', text: 'Weak foundations, poor trim or roof problems make even a new building feel disposable.' },
+        { title: 'Deferred maintenance', text: 'Neglected roofing, paint, caulk, drainage or doors erode buyer confidence quickly.' },
+      ],
+    },
+    {
+      type: 'table', id: 'hype', dark: true, title: 'Trustworthy Guidance Avoids Promises No Builder Can Control', nav: 'Value vs. Sales Hype',
+      head: ['Weak claim', 'Better planning language', 'Why it matters'],
+      rows: [
+        ['“This will increase your property value.”', 'A well-planned building may improve usefulness, marketability and buyer confidence.', 'Markets and appraisals can’t be guaranteed'],
+        ['“You will get your money back.”', 'Judge it by current usefulness, enjoyment, quality, fit and possible appeal.', 'General examples can’t predict one property'],
+        ['“Any shed adds value.”', 'Impact varies with quality, placement, purpose, appearance and upkeep.', 'A poorly planned building can hurt presentation'],
+        ['“Finished means living space.”', 'Interior finish does not establish dwelling, bedroom or rental status.', 'Legal use depends on local zoning, code and permits'],
+        ['“Higher price guarantees more value.”', 'Value comes from usefulness, design, quality, fit, records and upkeep.', 'Expensive features that don’t fit may not help'],
+        ['“Every buyer will want it.”', 'A clear purpose, good condition and good fit make it easier to market.', 'Buyers value offices, workshops and storage differently'],
+      ],
+    },
+    {
+      type: 'cards', id: 'records', title: 'Future Confidence Is Stronger When the Improvement Is Easy to Explain', nav: 'Documentation',
+      lead: 'Good records don’t guarantee appreciation, but they reduce uncertainty for future owners, agents and appraisers.',
+      items: [
+        { title: 'Project records', list: ['Proposal and written scope', 'Approved change orders', 'Material and option selections', 'Foundation and structural information', 'Warranty and care guidance'] },
+        { title: 'Property records', list: ['Permit records when applicable', 'HOA or architectural approvals', 'Setback and placement information', 'Maintenance records, including the 30-day paint', 'Photos of condition and improvements'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Questions That Keep the Value Decision Grounded', nav: 'Questions Before You Invest',
+      items: [
+        { title: 'About use', list: ['What problem will this building solve for us?', 'Will the purpose still make sense in 5 or 10 years?', 'Could a future buyer quickly understand the space?', 'Do the doors, windows and layout fit the function?', 'Is the size proportional to the need?'] },
+        { title: 'About the property', list: ['Does it visually fit the home and yard?', 'Have zoning, setbacks, permits and HOA rules been reviewed?', 'Does the location protect drainage and access?', 'Does the investment level suit this property?', 'Can we maintain it properly over time?'] },
+      ],
+      note: 'Home types, lot sizes and buyer expectations vary widely across Greater Cincinnati, Northern Kentucky and Southeast Indiana. A building that fits one suburban lot may dominate another, so confirm the project suits your exact property before assuming any financial benefit.',
+    },
+  ],
+  disclaimer: 'This guide is general planning education, not real estate, appraisal, tax or financial advice. No builder can guarantee how a future buyer, market, appraiser, lender, insurer or taxing authority will treat a backyard building.',
+  faqs: [
+    { q: 'Will a backyard building automatically increase my home value?', a: 'No. The impact depends on quality, usefulness, placement, condition, approvals, the market and whether future buyers see it as a benefit.' },
+    { q: 'Why say “value impact” instead of promising a return?', a: 'It recognizes real benefits, like usefulness, organization, appeal and buyer confidence, without pretending anyone can predict a future appraisal or sale price.' },
+    { q: 'Can a finished backyard building be marketed as living space?', a: 'Not automatically. That depends on property-specific zoning, building code, permits, utilities and occupancy rules.' },
+    { q: 'Does building on site help the value story?', a: 'It can. On-site building supports property-specific placement, foundation planning, roof proportions and exterior coordination, which help the building look intentionally integrated.' },
+    { q: 'Should I design for myself or a future buyer?', a: 'Start with a real use that benefits your household now, but avoid choices so specialized that someone else couldn’t understand the building.' },
+  ],
+  related: ['07', '17', '18', '16'],
+  pages: [['Buildings & Pricing', 'Every model, size and siding with published prices.', '/buildings/']],
+  ctaTitle: 'Choose the Building Around the Use, the Property and the Long-Term Plan',
+  ctaText: 'Define how the building will be used, confirm it fits the property, understand approvals and site conditions, and choose durable, maintainable construction. Handled well, those fundamentals give the building its best chance to add lasting value.',
+};
+---
+<GuidePage page={page} />

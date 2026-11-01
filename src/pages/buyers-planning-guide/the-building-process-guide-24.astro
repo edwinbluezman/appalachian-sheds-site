@@ -1,0 +1,84 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '24',
+  subtitle: 'From First Conversation to Site Review, Written Scope, Built-On-Site Construction and Final Walkthrough',
+  description: 'The Appalachian Sheds building process in eight steps, from the first conversation and site review to written scope, scheduling, on-site construction and the final walkthrough, plus responsibilities and a readiness checklist.',
+  intro: 'A backyard building is not simply ordered and delivered. It is planned, placed, scoped, scheduled, built, reviewed and maintained. Because Appalachian Sheds builds on your property, the process accounts for use, site, access, drainage, approvals, utilities, written scope, scheduling, construction, communication and long-term ownership.',
+  question: 'What Should a Professional Backyard Building Process Include?',
+  answer: [
+    'Understand the use, study the property, define the scope, then build. A professional process learns what the building must do, reviews the property and access, identifies approval and utility responsibilities, documents the scope and selections, confirms readiness, builds on site, communicates throughout and finishes with a final walkthrough.',
+    'The purpose is to reduce surprises. Construction should never start with vague pricing, unclear exclusions, unconfirmed access or a homeowner who doesn’t know what is included.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'process', eyebrow: 'The Built-On-Site Process', title: 'Eight Steps From First Conversation to Final Walkthrough', nav: 'The Eight Steps',
+      items: [
+        { title: 'Discovery and Use Review', text: 'Intended use, size direction, layout, future flexibility, appearance and budget priorities. The right building can’t be recommended until its purpose is clear.' },
+        { title: 'Site Review and Access Planning', text: 'Access, drainage, slope, working room, utilities, trees, fences, gates and maintenance space. The property shapes the project as much as the model.' },
+        { title: 'Approval and Responsibility Review', text: 'Permit, zoning, HOA, easement, setback and utility-marking responsibilities identified for your property.' },
+        { title: 'Written Scope and Price', text: 'Model, size, materials, options, exclusions, homeowner responsibilities, payments and the change process, documented before scheduling.' },
+        { title: 'Scheduling and Pre-Build Readiness', text: 'Material and site readiness, weather, access, utility marking and homeowner preparation. A build date follows readiness.' },
+        { title: 'Built-On-Site Construction', text: 'The building is constructed on your property in an organized sequence, coordinated around your actual site.' },
+        { title: 'Communication During Construction', text: 'Weather, site discoveries, schedule and requested changes are communicated as work progresses.' },
+        { title: 'Final Walkthrough and Ownership', text: 'The finished building is reviewed against the written scope, with maintenance, the 30-day paint requirement, warranty and records explained.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'principles', title: 'A Better Building Requires a Better Sequence', nav: 'What Makes It Work',
+      items: [
+        { title: 'Use comes before model', text: 'Storage, workshop, office and studio uses need different layouts and features.' },
+        { title: 'Site comes before schedule', text: 'Access, drainage, grade, utilities and setbacks are reviewed before the project is ready.' },
+        { title: 'Scope comes before commitment', text: 'You know what is included, excluded, optional and yours to handle.' },
+        { title: 'Approvals come before assumptions', text: 'Permit, zoning, HOA and utility questions depend on your exact property.' },
+        { title: 'Communication comes before confusion', text: 'You know what happens next and how changes are handled.' },
+        { title: 'Completion comes with aftercare', text: 'Maintenance, drainage, painting and warranty responsibilities continue.' },
+      ],
+      note: 'The process is part of the product. It is what turns a backyard building idea into a structure properly planned for the property, the use and the homeowner.',
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Disorganized Project vs. Organized Built-On-Site Process', nav: 'Organized vs. Disorganized',
+      head: ['Area', 'Disorganized project', 'Organized process', 'Why it matters'],
+      rows: [
+        ['First conversation', 'Starts with price alone', 'Starts with use, property, priorities and constraints', 'Price without context can hide the wrong scope'],
+        ['Site review', 'An afterthought', 'Access, drainage, slope, utilities and setbacks reviewed early', 'The property shapes the plan'],
+        ['Written scope', 'Verbal promises', 'Materials, options, exclusions and responsibilities documented', 'Reduces misunderstandings'],
+        ['Approvals', 'Assumed or postponed', 'Identified before construction', 'Affects placement, timing and scope'],
+        ['Scheduling', 'A date before readiness', 'Scheduling follows scope, site and approval readiness', 'A date only helps when the project is ready'],
+        ['Changes', 'Handled casually', 'Documented for scope, price, materials and schedule', 'Unwritten changes cause confusion'],
+        ['Completion', 'Ends when the crew leaves', 'Walkthrough, maintenance, painting and warranty review', 'Ownership begins when construction ends'],
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Clear Responsibilities on Both Sides', nav: 'Responsibilities',
+      lead: 'The written agreement for your project controls. This is where builder and homeowner responsibilities typically meet.',
+      items: [
+        { title: 'Appalachian Sheds', list: ['Understand the intended use and requested scope', 'Explain standard features, options and exclusions', 'Coordinate materials and the construction sequence', 'Communicate access and work-zone needs', 'Document approved changes', 'Build to the final written scope', 'Review completion, maintenance and warranty'] },
+        { title: 'Homeowner', list: ['Provide accurate property, access and use information', 'Disclose private utilities and site conditions', 'Handle approvals as defined in the agreement', 'Prepare access and the site for build day', 'Review selections, exclusions and owner work before approving', 'Approve changes before work proceeds', 'Paint within 30 days (vinyl excepted) and maintain the building'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Confirm the Project Is Ready Before the Crew Arrives', nav: 'Readiness Checklist',
+      items: [
+        { title: 'Site ready', list: ['Location confirmed', 'Access route clear', 'Working room available', 'Drainage concerns discussed', 'Known utilities disclosed and 811 marked'] },
+        { title: 'Scope ready', list: ['Model and size confirmed', 'Doors and windows confirmed', 'Siding and roofing selected', 'Options identified', 'Exclusions and owner responsibilities understood'] },
+        { title: 'Project ready', list: ['Approval questions addressed', 'Payment expectations understood', 'Schedule and weather expectations understood', 'Change procedure understood', 'Final walkthrough expectations understood'] },
+      ],
+      note: 'We don’t assume every site is simple, promise approvals controlled by outside authorities, treat verbal changes as enough, or suggest maintenance ends when construction does.',
+    },
+  ],
+  faqs: [
+    { q: 'What makes the Appalachian Sheds process different?', a: 'Every building is constructed on your property, so site conditions, access, drainage, placement, written scope, sequencing and communication are part of the project from the start.' },
+    { q: 'Why does the first conversation focus on how I’ll use the building?', a: 'Use drives size, layout, doors, windows, placement, storage, electrical, insulation, HVAC readiness and budget priorities.' },
+    { q: 'Does Appalachian Sheds control permits and HOA approval?', a: 'No. Responsibility depends on your property, jurisdiction, HOA and written agreement. Requirements are identified before the project is treated as ready.' },
+    { q: 'What happens at the final walkthrough?', a: 'The finished work is reviewed against the written scope, and maintenance, the 30-day exterior painting requirement, warranty and records are explained.' },
+    { q: 'Does the process end when construction is complete?', a: 'Construction ends and ownership begins. Keep an eye on drainage, vegetation, finishes and roof runoff, and keep your project and warranty documents.' },
+  ],
+  related: ['20', '21', '13', '14'],
+  pages: [['Buildings & Pricing', 'Start with a model, size and siding.', '/buildings/'], ['Options & Upgrades', 'Every option with installed planning prices.', '/options/']],
+  ctaTitle: 'Turn the Planning Into a Well-Organized Project',
+  ctaText: 'When the purpose is clear, the property has been considered, the scope is written and the process is understood, the next step is a property-specific conversation with Edwin about what should be built and how the project should proceed.',
+};
+---
+<GuidePage page={page} />

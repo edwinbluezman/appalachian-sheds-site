@@ -1,0 +1,85 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '23',
+  subtitle: 'Tough Questions Serious Homeowners Should Ask Before Committing',
+  description: 'Direct answers to the tough questions to ask any backyard building company: price, inclusions, exclusions, deposits, changes, site readiness, permits, construction standards, warranty and maintenance.',
+  intro: 'A serious buyer should not be afraid to ask difficult questions, and a serious builder should not be afraid to answer them. Price, deposits, written scope, permits, HOA rules, site conditions, references, construction standards, warranty limits and maintenance all deserve clear discussion before work begins.',
+  question: 'What Tough Questions Should a Serious Buyer Ask?',
+  answer: [
+    'Who is building it, exactly what the price includes and excludes, what the deposit reserves, when payments are due, how changes are documented, what site preparation is needed, whether permits or HOA approval apply, what the warranty actually says, what maintenance is required, and how the building compares with cheaper alternatives.',
+    'A strong answer makes the project easier to understand: it separates facts from assumptions, defines responsibilities and puts important terms in writing. If a conversation creates confusion or pressure, keep asking before you commit.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'areas', eyebrow: 'Questions That Matter Most', title: 'Six Areas Every Serious Buyer Should Understand', nav: 'Six Key Areas',
+      items: [
+        { title: 'Trust', text: 'Who is the company, who will work on your property, and what experience, references and insurance support the project?' },
+        { title: 'Money', text: 'What the price includes and excludes, what the deposit does, when payments are due and what can change the total.' },
+        { title: 'Scope', text: 'What exactly is being built, which features are standard or optional, and what site assumptions were made.' },
+        { title: 'Approvals', text: 'Whether zoning, permits, setbacks, easements, utilities or HOA rules affect your exact address.' },
+        { title: 'Construction', text: 'How the foundation, floor, framing, roof, siding and moisture details are built, with what materials.' },
+        { title: 'Ownership', text: 'What the warranty covers and excludes, and what painting, drainage and records it requires of you.' },
+      ],
+      note: 'Tough questions are normal in a professional construction relationship. Clear questions produce clearer scope, realistic expectations and fewer expensive surprises.',
+    },
+    {
+      type: 'cards', id: 'construction', title: 'Understand What Is Behind the Exterior', nav: 'Construction Questions',
+      items: [
+        { title: 'Foundation & moisture', text: 'How the building is supported, how ground moisture is handled, what site prep is needed and how drainage should be maintained.' },
+        { title: 'Floor system', text: 'Beam size, joist size and spacing, pressure treatment, decking thickness and intended loads.' },
+        { title: 'Wall & roof framing', text: 'How walls and roof are framed, what pitch is included and how openings are supported.' },
+        { title: 'Siding & exterior finish', text: 'Which siding is included, the clearances, the trim system, and what painting or finish upkeep is required.' },
+        { title: 'Materials vs. installation', text: 'Premium materials don’t guarantee a premium building; poor detailing undermines good products.' },
+      ],
+      note: 'Ask for model-specific written specifications. Not every style, size or roof uses identical details. Appalachian Sheds publishes each model’s specifications on its page.',
+    },
+    {
+      type: 'cards', id: 'red-flags', dark: true, title: 'Warning Signs Serious Buyers Should Not Ignore', nav: 'Builder Red Flags',
+      items: [
+        { title: 'No written scope', text: 'Features, exclusions, options, site assumptions and payments should be documented.' },
+        { title: 'Pressure to pay immediately', text: 'You should have time to understand the proposal first.' },
+        { title: 'Full payment before work', text: 'Ask how deposits, progress and completion payments are structured.' },
+        { title: 'No insurance discussion', text: 'A contractor on your property should discuss insurance and accountability.' },
+        { title: 'Vague permit or HOA answers', text: 'Requirements vary by property; don’t accept them being waved away.' },
+        { title: 'No change-order process', text: 'Changes should not depend on memory or casual conversation.' },
+        { title: 'No references or project history', text: 'You should be able to evaluate the company’s experience and work.' },
+        { title: 'A price that seems too good', text: 'It may omit work, materials or protections others include.' },
+      ],
+    },
+    {
+      type: 'table', id: 'any-builder', title: 'Ask Every Builder the Same Questions, Even If You Don’t Hire Us', nav: 'Questions for Any Builder',
+      head: ['Question', 'Why it matters', 'A clear answer covers'],
+      rows: [
+        ['What exactly is in the base price?', 'Stops incomplete quotes looking cheaper', 'Model, size, foundation, floor, walls, roof, siding, doors, windows, trim, installation, warranty'],
+        ['What is excluded?', 'Exclusions cause budget surprises', 'Site prep, permits, HOA, utilities, electric, insulation, HVAC, paint, finishes'],
+        ['What is the floor system?', 'Affects durability and use', 'Beams, joist size and spacing, treatment, decking thickness, loads'],
+        ['What if my site isn’t ready?', 'Access, drainage and grade can delay work and change cost', 'Access, grade, drainage, readiness and how changes are priced'],
+        ['What does the deposit reserve?', 'Payment should follow clarity', 'Amount, purpose, how it applies, later payment timing'],
+        ['How are changes approved?', 'Unwritten changes create disputes', 'A written change order before changed work proceeds'],
+        ['What does the warranty require of me?', 'Coverage depends on owner duties', 'Coverage, exclusions, maintenance and finish requirements, claim process'],
+      ],
+    },
+  ],
+  faqs: [
+    { q: 'Why does a built-on-site building cost more than a basic prefab shed?', a: 'Compare complete scope, not the first number. Construction method, site preparation, foundation and floor systems, materials, customization, on-site labor, warranty and property fit all affect cost.' },
+    { q: 'What exactly is included in an Appalachian Sheds price?', a: 'The complete weather-tight exterior building for the model, size and siding you choose: 6×6 foundation beams, 2×6 pressure-treated floor joists, 3/4″ pressure-treated plywood decking, framed walls, roof, siding, roofing, standard doors and windows, standard trim, vents and the 30-Year Structural Warranty.' },
+    { q: 'What is not included?', a: 'Interior finishes, exterior paint, stain and caulking, optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless they are identified in your final written price.' },
+    { q: 'Are Appalachian Sheds prices published?', a: 'Yes. Every model page lists the standard price for each size and siding, and the Options & Upgrades pages list installed planning prices for every option.' },
+    { q: 'What does my deposit reserve?', a: 'The deposit’s purpose, amount, how it applies to the price and when later payments are due are explained in writing before any money changes hands.' },
+    { q: 'How are changes handled?', a: 'Any change affecting price, schedule, materials, responsibilities or scope is documented in a written change order before the changed work proceeds.' },
+    { q: 'Who builds my building?', a: 'Appalachian Sheds builds on your property, and Edwin is your point of contact from planning through the final walkthrough. Electrical, HVAC and plumbing are done by licensed trade partners.' },
+    { q: 'Do I need a permit or HOA approval?', a: 'Possibly. It depends on your exact address, building size, use, utilities and any HOA or deed restrictions. Who handles each approval is stated in the written agreement.' },
+    { q: 'What if my site isn’t ready on build day?', a: 'Construction may need to be adjusted or postponed. Access, drainage and grade problems found early are far easier and less costly to solve.' },
+    { q: 'What does the warranty require of me?', a: 'Normal maintenance, drainage and vegetation care, and painting the exterior within 30 days of completion. Buildings with factory-colored vinyl siding are exempt from the painting requirement.' },
+    { q: 'Does the warranty cover storm damage?', a: 'No. A structural warranty is not homeowners insurance. Storms, floods, falling trees and lightning are generally insurance matters.' },
+    { q: 'Can a finished building be used as a bedroom or rental?', a: 'Not automatically. Interior finishes, power or HVAC do not by themselves make a building an approved dwelling, bedroom or rental unit.' },
+  ],
+  related: ['19', '12', '21', '17'],
+  pages: [['Buildings & Pricing', 'Published prices for every model, size and siding.', '/buildings/'], ['Options & Upgrades', 'Installed planning prices for every option.', '/options/']],
+  ctaTitle: 'Ask Edwin the Tough Questions',
+  ctaText: 'Bring every question on this page to the conversation. A clear answer to each one is the best way to know exactly what you are buying, what belongs to you and whether the project fits your property, priorities and budget.',
+};
+---
+<GuidePage page={page} />

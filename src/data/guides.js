@@ -1,7 +1,7 @@
 // The 24 Buyer's Planning Guides, numbered as the guides number themselves.
 // Name, H1, page title and web address all follow "[Topic] Guide-NN".
 // A guide appears as a link on the hub only once its page is listed in `live`.
-export const live = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
+export const live = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
 
 const list = [
   ['01', 'Site Preparation', 'What the building area needs before construction, and which site conditions deserve attention early.'],

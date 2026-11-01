@@ -1,8 +1,14 @@
 {
-  "name": "appalachian-sheds-test",
+  "name": "appalachian-sheds-site",
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
-  "dependencies": { "astro": "^5" }
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/check-prices.mjs && astro build && node scripts/check-prices.mjs --after-build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5"
+  }
 }

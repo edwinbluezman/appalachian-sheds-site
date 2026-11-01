@@ -1,0 +1,130 @@
+---
+import { business, link } from '../data/site.js';
+
+const { title, description, path = '/', schema = [] } = Astro.props;
+const canonical = new URL(path, 'https://appalachiansheds.com').href;
+
+// The business and founder are declared once here, on every page.
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': business.id,
+      name: business.name,
+      url: business.url,
+      telephone: business.phoneSchema,
+      email: business.email,
+      description: `Veteran-owned, family-operated builder of premium site-built backyard sheds and buildings serving ${business.serviceArea}.`,
+      areaServed: [
+        { '@type': 'City', name: 'Cincinnati' },
+        { '@type': 'State', name: 'Ohio' },
+        { '@type': 'State', name: 'Kentucky' },
+        { '@type': 'State', name: 'Indiana' },
+      ],
+      founder: { '@id': business.founder.id },
+    },
+    {
+      '@type': 'Person',
+      '@id': business.founder.id,
+      name: business.founder.name,
+      jobTitle: business.founder.role,
+      worksFor: { '@id': business.id },
+    },
+    ...schema,
+  ],
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Montserrat:ital,wght@1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <style is:global>
+    :root {
+      --ivory: #F8F7F4;
+      --cashmere: #E4E1DB;
+      --stone: #C8C3BA;
+      --steel: #2A2A2A;
+      --bronze: #A68A6A;
+      --bronze-dark: #7A6249;
+    }
+    *, *::before, *::after { box-sizing: border-box; border-radius: 0; }
+    html, body { margin: 0; padding: 0; background: var(--steel); }
+    body { font-family: 'Montserrat', Arial, sans-serif; font-style: italic; font-weight: 700; color: var(--ivory); line-height: 1.6; }
+    h1 { font-family: 'Merriweather', Georgia, serif; font-style: italic; font-weight: 900; }
+    h2, h3, h4 { font-family: 'Montserrat', Arial, sans-serif; font-style: italic; font-weight: 900; line-height: 1.2; }
+    a { color: inherit; }
+    .wrap { width: 94%; max-width: 1440px; margin: 0 auto; }
+    .band { padding: 72px 0; }
+    .band--dark { background: var(--steel); color: var(--ivory); }
+    .band--light { background: var(--ivory); color: var(--steel); }
+    .band--cash { background: var(--cashmere); color: var(--steel); }
+    .eyebrow { margin: 0 0 14px; color: var(--bronze); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .band--light .eyebrow, .band--cash .eyebrow { color: var(--bronze-dark); }
+    .btn { display: inline-block; padding: 15px 24px; font-family: 'Montserrat', Arial, sans-serif; font-style: italic; font-weight: 900; font-size: 1rem; text-decoration: none; border: 2px solid var(--bronze); cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
+    .btn--primary { background: var(--bronze); color: var(--steel); }
+    .btn--primary:hover { background: var(--ivory); border-color: var(--ivory); }
+    .btn--secondary { background: transparent; color: inherit; }
+    .btn--secondary:hover { background: var(--bronze); color: var(--steel); }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 12px; top: 12px; z-index: 10; background: var(--ivory); color: var(--steel); padding: 10px 14px; }
+    :focus-visible { outline: 3px solid var(--bronze); outline-offset: 2px; }
+    @media (max-width: 560px) { .band { padding: 52px 0; } .btn { width: 100%; text-align: center; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href={link('/')}>Appalachian Sheds</a>
+      <nav aria-label="Main">
+        <a href={link('/')}>Home</a>
+        <a href={link('/buildings/appalachian-classic/')}>Appalachian Classic</a>
+        <a class="nav-call" href={`tel:${business.phoneLink}`}>Call Edwin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div>
+        <p class="site-footer__name">{business.name}</p>
+        <p>Veteran-owned and family-operated. Built on site across {business.serviceArea}.</p>
+      </div>
+      <div>
+        <p><a href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a></p>
+        <p><a href={`sms:${business.phoneLink}`}>Text Edwin</a></p>
+        <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .site-header { background: #1F1F1F; border-bottom: 3px solid var(--bronze); }
+    .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; flex-wrap: wrap; }
+    .brand { font-weight: 900; font-size: 1.15rem; text-decoration: none; color: var(--ivory); letter-spacing: 0.02em; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    nav a { text-decoration: none; font-weight: 800; font-size: 0.95rem; color: var(--cashmere); }
+    nav a:hover { color: var(--bronze); }
+    .nav-call { color: var(--bronze) !important; }
+    .site-footer { background: #1F1F1F; border-top: 3px solid var(--bronze); padding: 40px 0; color: var(--cashmere); font-size: 0.95rem; }
+    .site-footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .site-footer p { margin: 0 0 8px; }
+    .site-footer__name { color: var(--ivory); font-weight: 900; }
+    .site-footer a { text-decoration: none; }
+    .site-footer a:hover { color: var(--bronze); }
+  </style>
+</body>
+</html>

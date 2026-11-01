@@ -1,200 +1,80 @@
 ---
 import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
 import hero from '../assets/asi-hero.jpg';
+import { business, link } from '../data/site.js';
 
-const phoneDisplay = '(513) 379-2421';
-const phoneLink = '5133792421';
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'HomeAndConstructionBusiness',
-      '@id': 'https://appalachiansheds.com/#business',
-      name: 'Appalachian Sheds Inc.',
-      url: 'https://appalachiansheds.com/',
-      telephone: '+1-513-379-2421',
-      email: 'ed@appalachiansheds.com',
-      description:
-        'Veteran-owned, family-operated builder of premium site-built backyard sheds and buildings serving Cincinnati and the Tri-State area.',
-      areaServed: [
-        { '@type': 'City', name: 'Cincinnati' },
-        { '@type': 'State', name: 'Ohio' },
-        { '@type': 'State', name: 'Kentucky' },
-        { '@type': 'State', name: 'Indiana' }
-      ],
-      founder: { '@id': 'https://appalachiansheds.com/#edwin' },
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Shed Series',
-        itemListElement: [
-          { '@type': 'OfferCatalog', name: 'Classic Series' },
-          { '@type': 'OfferCatalog', name: 'Signature Series' }
-        ]
-      }
-    },
-    {
-      '@type': 'Person',
-      '@id': 'https://appalachiansheds.com/#edwin',
-      name: 'Edwin R. Shackelford',
-      jobTitle: 'Founder',
-      worksFor: { '@id': 'https://appalachiansheds.com/#business' }
-    },
-    {
-      '@type': 'WebPage',
-      '@id': 'https://appalachiansheds.com/#home',
-      url: 'https://appalachiansheds.com/',
-      name: 'Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State',
-      about: { '@id': 'https://appalachiansheds.com/#business' }
-    }
-  ]
-};
+const schema = [
+  {
+    '@type': 'WebPage',
+    '@id': 'https://appalachiansheds.com/#home',
+    url: 'https://appalachiansheds.com/',
+    name: 'Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State',
+    about: { '@id': business.id },
+  },
+];
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State</title>
-  <meta name="description" content="Veteran-owned, family-operated builder of premium site-built sheds for Cincinnati and the Tri-State. Built on a 9-layer foundation and backed by a 30-Year Structural Warranty." />
-  <link rel="canonical" href="https://appalachiansheds.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Montserrat:ital,wght@1,600;1,800;1,900&display=swap" rel="stylesheet" />
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  <style is:global>
-    :root {
-      --ivory: #F8F7F4;
-      --cashmere: #E4E1DB;
-      --stone: #C8C3BA;
-      --steel: #2A2A2A;
-      --bronze: #A68A6A;
-    }
-    *, *::before, *::after { box-sizing: border-box; border-radius: 0; }
-    html, body { margin: 0; padding: 0; background: var(--steel); }
-    body { font-family: 'Montserrat', Arial, sans-serif; font-style: italic; font-weight: 800; color: var(--ivory); }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__inner">
-        <div class="hero__copy">
-          <p class="hero__eyebrow">Appalachian Sheds · Cincinnati &amp; the Tri-State</p>
-          <h1 id="hero-title" class="hero__title">Premium Site-Built Sheds, Built to Outlast the Neighborhood</h1>
-          <p class="hero__answer">
-            Appalachian Sheds is a veteran-owned, family-operated builder of premium backyard
-            buildings for Cincinnati and the Tri-State. Every building is framed on site, set on
-            a 9-layer engineered foundation, and backed by a 30-Year Structural Warranty.
-          </p>
-          <div class="hero__ctas">
-            <a class="btn btn--primary" href={`tel:${phoneLink}`}>Call Edwin&nbsp;·&nbsp;{phoneDisplay}</a>
-            <a class="btn btn--secondary" href={`sms:${phoneLink}`}>Text Edwin</a>
-          </div>
-          <ul class="hero__trust" aria-label="Why homeowners choose Appalachian Sheds">
-            <li>Veteran-Owned</li>
-            <li>30-Year Structural Warranty</li>
-            <li>Built On Site</li>
-          </ul>
-          <p class="hero__byline">Three decades of senior property and construction leadership</p>
+<Base
+  title="Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State"
+  description="Veteran-owned, family-operated builder of premium site-built sheds for Cincinnati and the Tri-State. Built on site and backed by a 30-Year Structural Warranty."
+  path="/"
+  schema={schema}
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Appalachian Sheds · Cincinnati &amp; the Tri-State</p>
+        <h1 id="hero-title" class="hero__title">Premium Site-Built Sheds, Built to Outlast the Neighborhood</h1>
+        <p class="hero__answer">
+          Appalachian Sheds is a veteran-owned, family-operated builder of premium backyard
+          buildings for Cincinnati and the Tri-State. Every building is framed on site, set on
+          a 9-layer engineered foundation, and backed by a 30-Year Structural Warranty.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin&nbsp;·&nbsp;{business.phoneDisplay}</a>
+          <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
         </div>
-        <figure class="hero__media">
-          <Image
-            src={hero}
-            alt="Board-and-batten Appalachian Sheds building with a dark standing-seam metal roof, covered entry porch and French doors in an autumn woodland setting"
-            widths={[480, 800, 1200, 1600]}
-            sizes="(max-width: 900px) 94vw, 50vw"
-            format="webp"
-            quality={82}
-            loading="eager"
-            fetchpriority="high"
-          />
-        </figure>
+        <p class="hero__more"><a href={link('/buildings/appalachian-classic/')}>See Appalachian Classic pricing →</a></p>
+        <ul class="hero__trust" aria-label="Why homeowners choose Appalachian Sheds">
+          <li>Veteran-Owned</li>
+          <li>30-Year Structural Warranty</li>
+          <li>Built On Site</li>
+        </ul>
+        <p class="hero__byline">{business.experience}</p>
       </div>
-    </section>
-  </main>
+      <figure class="hero__media">
+        <Image
+          src={hero}
+          alt="Board-and-batten Appalachian Sheds building with a dark standing-seam metal roof, covered entry porch and French doors in an autumn woodland setting"
+          widths={[480, 800, 1200, 1600]}
+          sizes="(max-width: 900px) 94vw, 50vw"
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+    </div>
+  </section>
+</Base>
 
-  <style>
-    .hero {
-      background: var(--steel);
-      border-top: 3px solid var(--bronze);
-      padding: 72px 0 80px;
-    }
-    .hero__inner {
-      width: 94%;
-      max-width: 1440px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 56px;
-      align-items: center;
-    }
-    .hero__eyebrow {
-      margin: 0 0 18px;
-      color: var(--bronze);
-      font-weight: 800;
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .hero__title {
-      margin: 0 0 22px;
-      font-family: 'Merriweather', Georgia, serif;
-      font-style: italic;
-      font-weight: 900;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.12;
-      color: var(--ivory);
-    }
-    .hero__answer {
-      margin: 0 0 30px;
-      font-weight: 600;
-      font-size: 1.08rem;
-      line-height: 1.7;
-      color: var(--cashmere);
-      max-width: 60ch;
-    }
-    .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
-    .btn {
-      display: inline-block;
-      padding: 16px 26px;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-style: italic;
-      font-weight: 900;
-      font-size: 1rem;
-      text-decoration: none;
-      border: 2px solid var(--bronze);
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .btn--primary { background: var(--bronze); color: var(--steel); }
-    .btn--primary:hover { background: var(--ivory); border-color: var(--ivory); }
-    .btn--secondary { background: transparent; color: var(--ivory); }
-    .btn--secondary:hover { background: var(--bronze); color: var(--steel); }
-    .hero__trust {
-      list-style: none;
-      margin: 0 0 22px;
-      padding: 18px 0 0;
-      border-top: 1px solid rgba(200, 195, 186, 0.35);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 28px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      color: var(--ivory);
-    }
-    .hero__trust li::before { content: '■'; color: var(--bronze); margin-right: 8px; font-size: 0.7em; vertical-align: 2px; }
-    .hero__byline { margin: 0; font-weight: 800; font-size: 0.9rem; color: var(--stone); }
-    .hero__media { margin: 0; border: 2px solid var(--bronze); }
-    .hero__media img { display: block; width: 100%; height: auto; }
-
-    @media (max-width: 900px) {
-      .hero { padding: 48px 0 56px; }
-      .hero__inner { grid-template-columns: 1fr; gap: 36px; }
-      .hero__media { order: -1; }
-    }
-    @media (max-width: 480px) {
-      .btn { width: 100%; text-align: center; }
-    }
-  </style>
-</body>
-</html>
+<style>
+  .hero { background: var(--steel); padding: 72px 0 80px; }
+  .hero__inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+  .hero__title { margin: 0 0 22px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.12; color: var(--ivory); }
+  .hero__answer { margin: 0 0 30px; font-weight: 600; font-size: 1.08rem; line-height: 1.7; color: var(--cashmere); max-width: 60ch; }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 18px; }
+  .hero__more { margin: 0 0 26px; }
+  .hero__more a { color: var(--bronze); font-weight: 900; text-decoration: none; }
+  .hero__more a:hover { color: var(--ivory); }
+  .hero__trust { list-style: none; margin: 0 0 22px; padding: 18px 0 0; border-top: 1px solid rgba(200, 195, 186, 0.35); display: flex; flex-wrap: wrap; gap: 10px 28px; font-weight: 800; font-size: 0.9rem; color: var(--ivory); }
+  .hero__trust li::before { content: '■'; color: var(--bronze); margin-right: 8px; font-size: 0.7em; vertical-align: 2px; }
+  .hero__byline { margin: 0; font-weight: 800; font-size: 0.9rem; color: var(--stone); }
+  .hero__media { margin: 0; border: 2px solid var(--bronze); }
+  .hero__media img { display: block; width: 100%; height: auto; }
+  @media (max-width: 900px) {
+    .hero { padding: 48px 0 56px; }
+    .hero__inner { grid-template-columns: 1fr; gap: 36px; }
+    .hero__media { order: -1; }
+  }
+</style>

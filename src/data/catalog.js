@@ -13,7 +13,7 @@ import overhangPhoto from '../assets/appalachian-saltbox-overhang-shed.png';
 export const series = [
   {
     name: 'Classic Series',
-    lead: 'Dependable storage buildings with straightforward rooflines, 2×4 kiln-dried Spruce framing at 16″ on center and full wall sheathing.',
+    lead: 'Dependable storage buildings with straightforward rooflines, 2×4 kiln-dried Spruce framing at 16″ on center and reinforced roof-to-wall connections.',
     models: [
       { name: 'Appalachian Classic Shed', path: '/buildings/appalachian-classic/', blurb: 'A clean low-profile gable shed for everyday storage.', photo: classicPhoto, prices: readPrices(classic) },
       { name: 'Appalachian Antique Saltbox Shed', path: '/buildings/appalachian-antique-saltbox/', blurb: 'A traditional asymmetrical saltbox roofline with historic character.', prices: readPrices(antique) },

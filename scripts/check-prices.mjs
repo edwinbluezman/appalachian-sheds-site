@@ -49,8 +49,8 @@ const afterBuild = process.argv.includes('--after-build');
 // Options price list: fingerprint plus every price must appear on its options page.
 const OPTIONS = {
   file: 'src/data/option-prices.json',
-  fingerprint: 'ef8fe15ac11edc78508d8cb0e4653fecf554df09b0d556534e7b83a8caa070a9',
-  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html' },
+  fingerprint: '2a089452fb18a6493198beae7e2c516d30f17ae4371f8ab58474c26bc525836f',
+  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html', materials: 'dist/options/siding-exterior-materials/index.html' },
 };
 const fail = (model, msg) => { console.error(`PRICE CHECK FAILED (${model}): ${msg}`); process.exit(1); };
 

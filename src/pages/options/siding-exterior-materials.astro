@@ -3,6 +3,7 @@ import OptionPage from '../../components/OptionPage.astro';
 import { link } from '../../data/site.js';
 import { series } from '../../data/catalog.js';
 import { money } from '../../data/models.js';
+import prices from '../../data/option-prices.json';
 
 // Model cards read their prices from the same price files as the model pages.
 const modelCards = series.flatMap((s) => s.models).map((m) => [
@@ -15,9 +16,9 @@ const page = {
   path: '/options/siding-exterior-materials/',
   name: 'Siding & Exterior Materials',
   title: 'Shed Siding Options | LP SmartSide, DuraTemp & Vinyl | Appalachian Sheds',
-  description: 'Compare the five Appalachian Sheds siding systems: LP SmartSide Vertical Panel (standard), Roseburg DuraTemp, LP SmartSide Board & Batten, Georgia-Pacific Forest Ridge Vinyl Lap and LP SmartSide Lap.',
+  description: 'Compare the five Appalachian Sheds siding systems, from LP SmartSide Vertical Panel (standard) to LP SmartSide Lap, plus natural cedar, metal, T1-11 and more vinyl choices with installed prices per square foot.',
   h1: 'Siding & Exterior Materials',
-  answer: 'Every Appalachian Sheds model is offered in five siding systems: LP SmartSide Vertical Panel (the standard siding), Roseburg DuraTemp Wood, LP SmartSide Board & Batten, Georgia-Pacific Forest Ridge Vinyl Lap, and LP SmartSide Lap. Siding is priced by building size on each model page, where the calculator shows all five prices side by side. Exterior trim is LP SmartSide Trim & Fascia.',
+  answer: 'Every Appalachian Sheds model is offered in five siding systems: LP SmartSide Vertical Panel (the standard siding), Roseburg DuraTemp Wood, LP SmartSide Board & Batten, Georgia-Pacific Forest Ridge Vinyl Lap, and LP SmartSide Lap. Siding is priced by building size on each model page, where the calculator shows all five prices side by side. Natural cedar, metal, T1-11 and additional LP and vinyl profiles are also available, priced per square foot of wall. Exterior trim is LP SmartSide Trim & Fascia.',
   familyLabel: 'Siding Option',
   stepsTitle: 'Start With the Look, Then the Construction',
   stepsLead: 'There is no single best siding. Start with the exterior character you want, then consider maintenance and how the wall is built behind it.',
@@ -35,6 +36,7 @@ const page = {
       intro: [
         'The standard siding on every Appalachian Sheds model. It gives the straightforward character of traditional vertical wood siding with the consistency of an engineered exterior panel.',
         'Its clean lines let the roofline, doors, windows and trim stay the main features, which suits classic sheds, garden buildings, workshops and barns.',
+        'It is a structural siding panel: the panel itself forms the exterior wall skin, so no separate sheathing is installed behind it.',
       ],
       character: 'Traditional, clean, understated and versatile.',
       bestUses: ['Classic sheds', 'Garden buildings', 'Workshops', 'Barn-style buildings'],
@@ -45,6 +47,7 @@ const page = {
       name: 'Roseburg DuraTemp Wood Siding',
       intro: [
         'A plywood siding panel with a durable hardboard face and the textured look of rough-sawn cedar. It suits traditional sheds, barns and workshops where genuine wood character matters.',
+        'Like the vertical panel, DuraTemp is a structural siding panel that forms the exterior wall skin itself, with no separate sheathing behind it.',
       ],
       character: 'Authentic, traditional and textured: the look of a traditional wood shed or barn.',
       bestUses: ['Classic sheds', 'Barns and equipment buildings', 'Workshops', 'Traditional wood-style buildings'],
@@ -82,6 +85,60 @@ const page = {
       character: 'Residential, refined and warm.',
       bestUses: ['Cottages and studios', 'Backyard offices', 'Pool houses', 'Custom buildings that complement the home'],
       planning: ['Painted engineered-wood exterior', 'Field painting is separate unless included in the Turnkey Exterior Finish Package'],
+    },
+    {
+      id: 'more-lp',
+      name: 'More LP SmartSide Choices',
+      intro: [
+        'Beyond the five standard siding systems, LP SmartSide is available in a shake profile and with ExpertFinish, a factory-applied color that removes the separate painting cycle.',
+        'These and the materials below are priced per square foot of wall, installed, and are quoted for your specific building.',
+      ],
+      prices: prices.materials.lp,
+    },
+    {
+      id: 'cedar',
+      name: 'Natural Western Red Cedar',
+      intro: [
+        'Genuine natural wood grain and Appalachian mountain character, for homeowners who accept the maintenance that comes with real wood. Cedar’s natural oils resist decay and moisture better than other natural siding woods.',
+        'Cedar must be sealed, stained or painted within a few weeks of installation, every cut end sealed, and restained or resealed every 3 to 5 years in the Ohio climate.',
+      ],
+      character: 'Authentic, warm and natural: a building that ages gracefully into the landscape.',
+      bestUses: ['Premium cottage retreats', 'Garden rooms seen from the house', 'Showcase buildings'],
+      planning: ['Decide before framing: cedar needs its own flashing and ventilation details', 'Plan for restaining every 3–5 years', 'South- and west-facing walls need the most attention'],
+      prices: prices.materials.cedar,
+    },
+    {
+      id: 'metal',
+      name: 'Metal Siding',
+      intro: [
+        'The most durable, lowest-maintenance exterior: no rot, no insect damage and no painting. Factory-painted finishes are included in every range below.',
+        'Corrugated and R-panel metal gives an honest barn or agricultural look; standing seam and metal board and batten give a cleaner, more refined profile.',
+      ],
+      character: 'Durable and maintenance-free: modern barn, agricultural and contemporary rural styles.',
+      bestUses: ['Workshops', 'Modern barn-style buildings', 'Long-term ownership with minimal upkeep'],
+      planning: ['Exposed versus concealed fasteners', 'Color choice with the roof and trim', 'Inspect fasteners periodically'],
+      prices: prices.materials.metal,
+    },
+    {
+      id: 't1-11',
+      name: 'T1-11 Panel Siding (Economy)',
+      intro: [
+        'The lowest-cost siding, for basic seasonal storage where budget comes first. T1-11 is a grooved plywood or OSB sheet that imitates individual boards.',
+        'It must be primed, painted and caulked at installation and repainted every 3 to 5 years. Over 15 years, those repaint cycles can cost more than starting with LP SmartSide.',
+      ],
+      character: 'Economy utility: basic storage where the owner will keep up the painting.',
+      bestUses: ['Basic seasonal storage', 'Budget-first utility buildings'],
+      planning: ['Plan the repainting schedule before choosing it', 'Plywood is more stable than OSB'],
+      prices: prices.materials.economy,
+    },
+    {
+      id: 'more-vinyl',
+      name: 'More Vinyl Choices',
+      intro: [
+        'In addition to the standard Georgia-Pacific Forest Ridge Vinyl Lap, vinyl is available in thicker premium profiles, insulated vinyl and a board-and-batten style. Vinyl color is built in and never needs painting, staining or sealing.',
+      ],
+      bestUses: ['Low-maintenance buildings', 'Matching a vinyl-sided home', 'Board-and-batten look without painting'],
+      prices: prices.materials.vinyl,
     },
     {
       id: 'trim',

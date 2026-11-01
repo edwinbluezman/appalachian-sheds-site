@@ -41,6 +41,9 @@ export function readPrices(raw) {
   };
 }
 
+// How the wall skin is built depends on the siding chosen (confirmed by Edwin, November 1, 2026).
+export const wallSheathing = 'LP SmartSide Vertical Panel and Roseburg DuraTemp are structural panels that form the wall skin; Board & Batten, vinyl lap and LP lap are installed over 1/2″ exterior-grade plywood sheathing';
+
 // Construction shared by the Classic Series gable and saltbox models, as stated on their original pages.
 export const classicSeriesSpecs = (roofProfile, sizesText) => [
   ['Foundation beams', '6×6 ground-contact pressure-treated'],
@@ -49,7 +52,7 @@ export const classicSeriesSpecs = (roofProfile, sizesText) => [
   ['Wall framing', '2×4 kiln-dried Spruce, 16″ on center'],
   ['Top plates', 'Double interlocking top plates for added strength'],
   ['Roof-to-wall connections', 'Hurricane clips at all rafters'],
-  ['Wall sheathing', '1/2″ wall sheathing for added stability and siding backing'],
+  ['Wall sheathing', wallSheathing],
   ['Roof profile', roofProfile],
   ['Roof framing', '2×6 engineered roof trusses'],
   ['Roof sheathing', '1/2″ exterior-grade plywood'],

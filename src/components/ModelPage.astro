@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { business, link } from '../data/site.js';
 import { sidings, readPrices, money, sizeLabel, notIncluded } from '../data/models.js';
+import optionPrices from '../data/option-prices.json';
 
 const { model } = Astro.props;
 const p = readPrices(model.prices);
@@ -44,6 +45,11 @@ const schema = [
     mainEntity: model.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   },
 ];
+
+// Lowest door and window prices, read from the same file as the options pages.
+const lowest = (groups) => Math.min(...Object.values(groups).flat().map((r) => Number((r.price.match(/^\$([\d,]+)/) || [])[1]?.replace(/,/g, '') ?? Infinity)));
+const doorFrom = money(lowest(optionPrices.doors));
+const windowFrom = money(lowest({ a: optionPrices.windows.barnSash, b: optionPrices.windows.aluminum, c: optionPrices.windows.vinyl }));
 
 const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ code, slug, name }) => ({ code, slug, name })), phone: business.phoneLink };
 ---
@@ -226,6 +232,21 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
     </div>
   </section>
 
+  <!-- 06b OPTIONS -->
+  <section class="band band--dark" aria-labelledby="opts-title">
+    <div class="wrap">
+      <p class="eyebrow">Options &amp; Upgrades</p>
+      <h2 id="opts-title" class="sec-title">Make the {model.shortName} Your Own</h2>
+      <p class="sec-lead sec-lead--dark">Doors, windows and siding are the most common choices. Each page lists installed planning prices and the order to decide in.</p>
+      <div class="opt-links">
+        <a href={link('/options/doors-entry/')}><strong>Doors &amp; Entry</strong><span>Doors from {doorFrom}</span></a>
+        <a href={link('/options/windows-natural-light/')}><strong>Windows &amp; Skylights</strong><span>Windows from {windowFrom}</span></a>
+        <a href={link('/options/siding-exterior-materials/')}><strong>Siding &amp; Exterior</strong><span>Five siding systems compared</span></a>
+        <a href={link('/options/')}><strong>All Options &amp; Upgrades</strong><span>Every category, in decision order</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- 07 FAQ -->
   <section class="band band--light" aria-labelledby="faq-title">
     <div class="wrap">
@@ -342,6 +363,11 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
   .views__item { margin: 0; }
   .views__item img { display: block; width: 100%; height: auto; border: 2px solid var(--bronze); }
   .views__item figcaption { margin-top: 10px; font-size: 0.88rem; color: var(--stone); font-weight: 700; }
+  .opt-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .opt-links a { display: block; padding: 18px 20px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; }
+  .opt-links a:hover { background: var(--bronze); color: var(--steel); }
+  .opt-links strong { display: block; font-weight: 900; margin-bottom: 4px; }
+  .opt-links span { font-weight: 700; font-size: 0.92rem; color: inherit; opacity: 0.85; }
   .crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
   .crumbs a { color: var(--cashmere); text-decoration: none; }
   .crumbs a:hover { color: var(--bronze); }

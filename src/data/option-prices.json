@@ -1,0 +1,78 @@
+{
+  "_note": "Installed planning prices carried over word-for-word from the October 2026 Appalachian Sheds pages (Door & Entry Options, Windows & Natural Light Options, Skylights & Overhead Daylight). Final prices are confirmed in the written project scope.",
+  "doors": {
+    "wood": [
+      { "item": "36\" Single Wood Door", "price": "$390", "bestFor": "Basic storage and simple garden buildings", "note": "Most economical traditional door" },
+      { "item": "Double Wood Doors", "price": "$690", "bestFor": "Mowers, carts, tools and wider storage access", "note": "Good value where equipment movement matters" },
+      { "item": "Double Colonial Wood Doors", "price": "$930", "bestFor": "More finished traditional elevations", "note": "Stronger front-facing appearance" },
+      { "item": "Double Wood Doors with Transom Windows", "price": "$1,110", "bestFor": "Storage or workshop with added daylight", "note": "Transoms add light without fully glazed doors" },
+      { "item": "Double Colonial Wood Doors with Transom Windows", "price": "$1,380", "bestFor": "Cottage and garden-building character", "note": "Traditional detailing with added light" },
+      { "item": "Single Arched Wood Door 36\"", "price": "$1,020", "bestFor": "Cottage, garden and specialty buildings", "note": "Best when the entry is intentionally featured" }
+    ],
+    "slab": [
+      { "item": "Single Fiberglass Slab Door", "price": "$630", "bestFor": "Workshops and upgraded utility buildings", "note": "Solid door, lower maintenance than wood" },
+      { "item": "4-Lite Glass Slab Door", "price": "$750", "bestFor": "Utility or garden rooms needing modest daylight", "note": "Light increases while privacy decreases" },
+      { "item": "6-Lite Glass Slab Door", "price": "$750", "bestFor": "Workshops and hobby spaces", "note": "Moderate daylight without a highly glazed look" },
+      { "item": "9-Lite Glass Slab Door", "price": "$780", "bestFor": "Garden buildings, studios and hobby spaces", "note": "More inviting entry; review privacy" },
+      { "item": "11-Lite Glass Slab Door", "price": "$810", "bestFor": "Brighter hobby and studio spaces", "note": "Good visual upgrade for a front-facing wall" },
+      { "item": "15-Lite Glass Slab Door", "price": "$930", "bestFor": "Studios, garden rooms and light-focused spaces", "note": "Most daylight in the slab-door group" },
+      { "item": "Double Fiberglass Slab Doors", "price": "$1,260", "bestFor": "Wide access with durable door faces", "note": "Useful where wood character is not the priority" },
+      { "item": "Double Colonial Fiberglass Doors", "price": "$1,500", "bestFor": "Premium garden, workshop and visible elevations", "note": "More finished than plain double slabs" }
+    ],
+    "prehung": [
+      { "item": "Solid House Door", "price": "$1,500", "bestFor": "Offices, studios and privacy-focused rooms", "note": "Residential feel without glass" },
+      { "item": "House Door — 9-Lite Glass", "price": "$1,740", "bestFor": "Backyard offices and studios", "note": "Balanced daylight and entry presence" },
+      { "item": "House Door — 11-Lite Glass", "price": "$1,740", "bestFor": "Studios, garden rooms and poolside spaces", "note": "Light-forward residential look" },
+      { "item": "House Door — 15-Lite Glass", "price": "$1,860", "bestFor": "Bright studios and garden retreats", "note": "Review privacy and security" },
+      { "item": "Double Solid House Doors", "price": "$2,754", "bestFor": "Premium finished spaces needing wide access", "note": "Strong entry without glass" },
+      { "item": "Double House Doors — 9-Lite", "price": "$3,114", "bestFor": "Studios, retreats and visible elevations", "note": "French-style feel with controlled glazing" },
+      { "item": "Double House Doors — 11-Lite", "price": "$3,114", "bestFor": "Finished flex spaces and poolside buildings", "note": "High curb appeal and daylight" },
+      { "item": "Double House Doors — 15-Lite", "price": "$3,354", "bestFor": "Premium light-focused spaces", "note": "Most glass; privacy planning matters" },
+      { "item": "Craftsman Style — Factory White", "price": "$2,154", "bestFor": "Backyard offices and refined cottage buildings", "note": "Architectural entry without excess decoration" },
+      { "item": "Farmhouse Style — Factory White", "price": "$2,154", "bestFor": "Farmhouse, cottage and garden buildings", "note": "Pairs naturally with board and batten" },
+      { "item": "Modern Spotlight — Factory White", "price": "$3,660", "bestFor": "Modern studios, offices and specialty buildings", "note": "Most design-forward house door" }
+    ],
+    "carriage": [
+      { "item": "Carriage Wood Doors", "price": "$1,500", "bestFor": "Premium visible elevations, barn-style and carriage-style buildings", "note": "Strongest when siding, trim and roofline support the design" }
+    ]
+  },
+  "windows": {
+    "barnSash": [
+      { "item": "Small Pine Barn Sash with Grids", "size": "18\" × 27\"", "price": "$235", "bestFor": "Small vintage elevations and garden sheds" },
+      { "item": "Medium Pine Barn Sash with Grids", "size": "24\" × 29\"", "price": "$295", "bestFor": "Cottage buildings, workshops and balanced sidewall daylight" },
+      { "item": "Large Pine Barn Sash with Grids", "size": "31\" × 29\"", "price": "$335", "bestFor": "Stronger vintage character and larger wall presence" },
+      { "item": "Custom Barn Sash with Grids", "size": "Varies", "price": "Inquire", "bestFor": "Special proportions and model-specific layouts" }
+    ],
+    "aluminum": [
+      { "item": "Standard Aluminum Single-Hung with Screen", "size": "18\" × 27\"", "price": "$225", "bestFor": "Compact daylight and ventilation for storage and smaller buildings" },
+      { "item": "Medium Aluminum Single-Hung with Screen", "size": "24\" × 40\"", "price": "$300", "bestFor": "Workshops, garden sheds and general-purpose buildings" },
+      { "item": "Large Aluminum Single-Hung with Screen", "size": "30\" × 40\"", "price": "$375", "bestFor": "More daylight, ventilation and exterior presence" }
+    ],
+    "vinyl": [
+      { "item": "Medium Vinyl Insulated Window", "size": "24\" × 36\"", "price": "$395", "bestFor": "Comfort-focused buildings, offices and hobby rooms" },
+      { "item": "Large Vinyl Insulated Window", "size": "30\" × 36\"", "price": "$425", "bestFor": "More daylight for offices and studios" },
+      { "item": "Wide Vinyl Insulated Window", "size": "36\" × 36\"", "price": "$495", "bestFor": "Larger comfort-focused openings in premium spaces" }
+    ],
+    "feature": [
+      { "item": "5-Foot Transom Window", "price": "$400–$850+", "bestFor": "Studios, offices, poolside rooms and privacy-conscious walls", "note": "Daylight placed higher on the wall" },
+      { "item": "6-Foot Transom Window", "price": "$500–$1,095+", "bestFor": "Wider elevations, studios and feature walls", "note": "Needs early framing and trim coordination" },
+      { "item": "Bar Window / Countertop Opening", "price": "$700–$1,095+", "bestFor": "Entertaining sheds, poolside buildings and concession-style use", "note": "Needs counter, sill, weather and security review" },
+      { "item": "Insulated Transom or Specialty Window Package", "price": "Inquire", "bestFor": "Custom comfort, appearance or performance needs", "note": "Depends on glass, size, operation and installation" }
+    ],
+    "accents": [
+      { "item": "1×3 Trim — Standard Window", "price": "$50 per window", "bestFor": "Sharpens standard openings" },
+      { "item": "1×3 Trim — Larger Window", "price": "$75 per window", "bestFor": "Helps larger openings look integrated" },
+      { "item": "Standard Flower Box", "price": "$75 each", "bestFor": "Garden, cottage and home-facing elevations" },
+      { "item": "Large Flower Box", "price": "$105 each", "bestFor": "Larger windows; requires finish maintenance" }
+    ],
+    "skylights": [
+      { "item": "Fixed Skylight", "price": "$1,400–$3,000+", "bestFor": "Steady overhead daylight when ventilation is handled elsewhere" },
+      { "item": "Manual Venting Skylight", "price": "$1,900–$3,800+", "bestFor": "Opens to release warm air and support natural airflow" },
+      { "item": "Solar / Powered Venting Skylight", "price": "$2,800–$5,500+", "bestFor": "Vaulted ceilings or finished spaces where manual operation is inconvenient" },
+      { "item": "Tubular Daylight System", "price": "$900–$1,900+", "bestFor": "Daylight through a reflective tube with a much smaller roof opening" },
+      { "item": "Curb-Mounted Skylight", "price": "$1,600–$4,000+", "bestFor": "Raised-curb installation where roof slope or roofing requires it" },
+      { "item": "Glass, Shades & Controls", "price": "$200–$1,200+", "bestFor": "Low-E glass, safety glazing, shades and powered controls" },
+      { "item": "Finished Light Shaft", "price": "$700–$2,500+", "bestFor": "Framed, insulated and finished shaft for finished ceilings" }
+    ]
+  }
+}

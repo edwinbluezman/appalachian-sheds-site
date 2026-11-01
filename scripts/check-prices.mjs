@@ -45,6 +45,13 @@ const MODELS = [
 ];
 
 const afterBuild = process.argv.includes('--after-build');
+
+// Options price list: fingerprint plus every price must appear on its options page.
+const OPTIONS = {
+  file: 'src/data/option-prices.json',
+  fingerprint: 'ef8fe15ac11edc78508d8cb0e4653fecf554df09b0d556534e7b83a8caa070a9',
+  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html' },
+};
 const fail = (model, msg) => { console.error(`PRICE CHECK FAILED (${model}): ${msg}`); process.exit(1); };
 
 for (const m of MODELS) {
@@ -74,4 +81,23 @@ for (const m of MODELS) {
     if (missing.length) fail(m.name, `${missing.length} prices missing from the built page, e.g. ${missing[0][0]} ${missing[0][3]}.`);
   }
   console.log(`Price check passed: ${m.name}, ${rows.length} prices${afterBuild ? ', all on the built page' : ''}.`);
+}
+
+{
+  const text = readFileSync(OPTIONS.file, 'utf8');
+  const fingerprint = createHash('sha256').update(text).digest('hex');
+  if (fingerprint !== OPTIONS.fingerprint) fail('Options', `${OPTIONS.file} has changed from the recorded option price list (fingerprint ${fingerprint}).`);
+  const data = JSON.parse(text);
+  let count = 0;
+  for (const [cat, page] of Object.entries(OPTIONS.pages)) {
+    const rows = Object.values(data[cat]).flat();
+    count += rows.length;
+    if (afterBuild) {
+      if (!existsSync(page)) fail('Options', `${page} was not built.`);
+      const html = readFileSync(page, 'utf8').replace(/&amp;/g, '&');
+      const missing = rows.filter((r) => !html.includes(r.price));
+      if (missing.length) fail('Options', `${missing.length} option prices missing from ${page}, e.g. ${missing[0].item}.`);
+    }
+  }
+  console.log(`Price check passed: Options, ${count} prices${afterBuild ? ', all on the built pages' : ''}.`);
 }

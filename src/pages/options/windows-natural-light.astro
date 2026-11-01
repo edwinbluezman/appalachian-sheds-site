@@ -1,0 +1,123 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/windows-natural-light/',
+  name: 'Windows, Skylights & Natural Light',
+  title: 'Shed Window & Skylight Options & Prices | Appalachian Sheds',
+  description: 'Compare Appalachian Sheds window options: pine barn sash from $235, aluminum single-hung from $225, vinyl insulated from $395, transoms and skylights. Installed planning prices for Cincinnati and the Tri-State.',
+  h1: 'Windows, Skylights & Natural Light',
+  answer: 'Appalachian Sheds offers four window families plus skylights: pine barn sash windows with grids, aluminum single-hung windows with screens, vinyl insulated windows, and feature transoms. Installed planning prices start at $225 for an 18-by-27-inch aluminum window. The best plan uses the fewest windows that fully support how the building will be used.',
+  familyLabel: 'Window Option',
+  stepsTitle: 'More Windows Is Not Automatically Better',
+  stepsLead: 'The right window plan brings light where it helps, keeps privacy where it matters, protects useful wall space and makes the outside look intentional. Choose windows before the walls are framed.',
+  steps: [
+    ['Intended use', 'Storage, office, studio, workshop, garden building or retreat.'],
+    ['Interior layout', 'Desk, bench, shelves, storage, seating and equipment.'],
+    ['Light & privacy', 'Views, sightlines, glare, wall use and security.'],
+    ['Window system', 'Family, size, operation, flashing, trim and final scope.'],
+  ],
+  families: [
+    {
+      id: 'barn-sash',
+      name: 'Pine Barn Sash Windows with Grids',
+      intro: [
+        'Pine barn sash windows give the strongest vintage and Appalachian character in the window lineup. Their divided-lite proportions suit cottage, garden, carriage and barn-inspired buildings where the window is part of the architecture.',
+        'The tradeoff is upkeep: wood sash needs paint, stain or sealing and periodic inspection.',
+      ],
+      character: 'Vintage, warm and handcrafted: best when character matters more than lowest maintenance.',
+      bestUses: ['Garden buildings and cottage-style sheds', 'Barn-inspired and carriage-style structures', 'Home-facing walls where detail matters', 'Traditional workshops'],
+      planning: ['Coordinate grid pattern and trim with the siding', 'Size the window in proportion to the wall', 'Protect wall space for shelving', 'Plan the exterior finish and upkeep'],
+      prices: prices.windows.barnSash,
+    },
+    {
+      id: 'aluminum',
+      name: 'Aluminum Single-Hung Windows with Screens',
+      intro: [
+        'The practical everyday choice for storage buildings, workshops, hobby buildings and garden sheds. They give useful daylight and airflow without the upkeep of wood sash.',
+        'The main question is placement: a larger window brings more light and air, but uses wall space that could hold shelves or a workbench.',
+      ],
+      character: 'Practical, operable and low maintenance: the best general-purpose window for everyday shed use.',
+      bestUses: ['Storage buildings', 'Workshops and hobby buildings', 'Garden sheds that need airflow', 'Buildings where low maintenance comes first'],
+      planning: ['Place around shelving and workbenches', 'Consider what can be seen from outside', 'Size the opening before framing'],
+      prices: prices.windows.aluminum,
+    },
+    {
+      id: 'vinyl-insulated',
+      name: 'Vinyl Insulated Windows',
+      intro: [
+        'The comfort-focused upgrade for backyard offices, studios and hobby rooms used often. Insulated glass, operable sash and low-maintenance vinyl give a more residential, finished feel.',
+        'Coordinate them with insulation, interior finish, privacy, glare, furniture placement and any future heating or cooling.',
+      ],
+      character: 'Insulated, residential and refined: best where daily comfort matters more than basic storage.',
+      bestUses: ['Backyard offices', 'Creative studios', 'Hobby rooms', 'Premium finished spaces'],
+      planning: ['Plan for glare and sun exposure', 'Plan privacy from neighbors and the street', 'Keep desk and electrical layout in mind'],
+      prices: prices.windows.vinyl,
+      after: 'Insulated windows help comfort, but the building’s insulation, air sealing and climate control are planned as a separate system.',
+    },
+    {
+      id: 'transoms',
+      name: 'Feature Transoms & Specialty Windows',
+      intro: [
+        'Transoms bring light in high on the wall, protecting privacy and keeping the lower wall free for storage or furniture. They suit studios, offices, poolside buildings and feature walls.',
+        'This group also covers custom sizes and specialty glazing, which need early coordination with framing and trim.',
+      ],
+      character: 'High light with privacy: more daylight without giving up the lower wall.',
+      bestUses: ['Studios and backyard offices', 'Poolside buildings and changing areas', 'Privacy-conscious walls', 'Custom specialty buildings'],
+      planning: ['Set length and height before framing', 'Review headers and wall proportions', 'Allow for specialty-glass lead times'],
+      prices: prices.windows.feature,
+      after: 'Door glass is planned with the Doors & Entry options rather than as a separate window type.',
+    },
+    {
+      id: 'skylights',
+      name: 'Skylights & Overhead Daylight',
+      intro: [
+        'Skylights bring daylight down from the roof, where it reaches deep into a building without using wall space. They are planned with the roof, since flashing, framing and the ceiling finish all depend on them.',
+        'Adding a skylight during construction usually costs less than cutting into a finished roof later.',
+      ],
+      character: 'Overhead daylight that keeps every wall free for storage or furniture.',
+      bestUses: ['Workshops and studios needing even light', 'Buildings with little free wall space', 'Vaulted or finished ceilings'],
+      planning: ['Decide before roofing', 'A venting skylight needs a lower air inlet to move air', 'Finished ceilings need a framed, insulated light shaft'],
+      prices: prices.windows.skylights,
+      after: 'Skylight prices are new-build planning ranges; size, roof type, glazing and shaft depth set the final price.',
+    },
+    {
+      id: 'accents',
+      name: 'Window Trim & Flower Boxes',
+      intro: [
+        'Trim and flower boxes finish a window opening; they do not create the window system. They work best used selectively on the walls people see most.',
+      ],
+      bestUses: ['Garden and cottage buildings', 'Home-facing elevations'],
+      prices: prices.windows.accents,
+    },
+  ],
+  compare: {
+    title: 'Four Window Families, Four Different Priorities',
+    head: ['Window family', 'Main strength', 'Light & airflow', 'Maintenance', 'Planning range'],
+    rows: [
+      ['Pine barn sash with grids', 'Strongest vintage character', 'Good light with divided-lite character', 'Highest upkeep', '$235–$335 per window'],
+      ['Aluminum single-hung', 'Practical daylight and ventilation', 'Operable sash and screens', 'Lower than wood', '$225–$375 per window'],
+      ['Vinyl insulated', 'Comfort-focused upgrade', 'Insulated glass, operable sash, screens', 'Lower than wood', '$395–$495 per window'],
+      ['Feature transoms', 'High light with privacy', 'High-level light', 'Depends on material', '$400–$1,095+'],
+    ],
+  },
+  considerationsTitle: 'Every Opening Changes More Than the Light',
+  considerations: [
+    ['Wall function', 'Every window reduces space for shelves, benches, cabinets and equipment.'],
+    ['Privacy & security', 'High windows and transoms bring in light while reducing direct sightlines.'],
+    ['Glare', 'South- and west-facing windows can add glare and heat if not planned carefully.'],
+    ['Ventilation', 'Operable windows help airflow, but overall ventilation depends on the whole building.'],
+    ['Weather', 'Windows are weather openings first: sill, head and jamb flashing must work with the siding.'],
+    ['Exterior rhythm', 'Window size and spacing should support the siding, doors, roofline and trim.'],
+  ],
+  faqs: [
+    { q: 'What is the least expensive window?', a: 'A standard 18-by-27-inch aluminum single-hung window with screen is $225 installed.' },
+    { q: 'Which window is best for a backyard office?', a: 'Vinyl insulated windows, from $395, are the comfort-focused choice. Pair them with insulation and plan desk placement around glare and privacy.' },
+    { q: 'How much does a skylight cost?', a: 'New-build planning ranges run from $900 for a tubular daylight system and $1,400 for a fixed skylight, up to $5,500 or more for a large powered venting skylight.' },
+    { q: 'Are window prices final?', a: 'They are installed planning prices. Sizes and availability vary by model, and your final price is confirmed in your written project scope.' },
+  ],
+  ctaTitle: 'Plan Your Windows With Edwin',
+};
+---
+<OptionPage page={page} />

@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import { business, link } from '../../data/site.js';
+
+const url = 'https://appalachiansheds.com/options/';
+
+// The 20 option categories from the site blueprint. Categories without a path are still being built.
+const groups = [
+  {
+    name: 'Site & Floor',
+    when: 'Decide before site work and floor framing',
+    items: [
+      { name: 'Site & Foundation Options', text: 'Placement, drainage, building pad and support.' },
+      { name: 'Floor Systems & Flooring', text: 'Structural floor upgrades and heavy-use floors.' },
+      { name: 'Floor Insulation', text: 'Underfloor comfort for finished buildings.' },
+    ],
+  },
+  {
+    name: 'Openings & Access',
+    when: 'Decide before the walls are framed',
+    items: [
+      { name: 'Doors & Entry', path: '/options/doors-entry/', text: 'Wood, fiberglass slab, house and carriage-style doors.' },
+      { name: 'Windows, Skylights & Natural Light', path: '/options/windows-natural-light/', text: 'Barn sash, aluminum, vinyl insulated, transoms and skylights.' },
+      { name: 'Lofts, Ladders & Stairs', text: 'Overhead storage and access.' },
+      { name: 'Ramps, Steps & Access', text: 'Ramps, steps and landings matched to the door.' },
+    ],
+  },
+  {
+    name: 'Roof & Exterior',
+    when: 'Decide before roofing and siding',
+    items: [
+      { name: 'Siding & Exterior Materials', path: '/options/siding-exterior-materials/', text: 'The five siding systems and LP SmartSide trim.' },
+      { name: 'Roofing & Rooflines', text: 'Roofing materials, pitch and roof details.' },
+      { name: 'Porches, Awnings & Dormers', text: 'Entry awnings, porch roofs and dormers.' },
+      { name: 'Paint, Stain & Finish Systems', text: 'Exterior finish packages and upkeep.' },
+      { name: 'Fascia, Trim & Decorative Accents', text: 'Trim upgrades and decorative details.' },
+      { name: 'Cupolas & Weathervanes', text: 'Rooftop character and ventilation.' },
+    ],
+  },
+  {
+    name: 'Comfort & Utilities',
+    when: 'Decide before the walls are closed in',
+    items: [
+      { name: 'Electrical, Lighting & HVAC', text: 'Power, lighting, heating and cooling.' },
+      { name: 'Plumbing & Water', text: 'Water and utility readiness.' },
+      { name: 'Wall & Ceiling Insulation', text: 'Insulation for comfort-focused buildings.' },
+      { name: 'Ventilation & Moisture Control', text: 'Airflow and moisture management.' },
+    ],
+  },
+  {
+    name: 'Interior',
+    when: 'Decide before interior finish',
+    items: [
+      { name: 'Interior Finish Packages', text: 'Turning a weather-tight shell into a finished room.' },
+      { name: 'Shelving, Workbenches & Storage', text: 'Organized storage and work surfaces.' },
+      { name: 'Top 10 Most Requested Upgrades', text: 'The options buyers choose most often.' },
+    ],
+  },
+];
+
+const timing = [
+  ['Before site work', 'Placement, drainage, pad, foundation, buried utilities and access.'],
+  ['Before framing', 'Floor system, doors, windows, lofts, porches and structural roof features.'],
+  ['Before roofing', 'Roof material, skylights, dormers, cupolas and ventilation.'],
+  ['Before wall closure', 'Electrical, HVAC, plumbing readiness, insulation and moisture control.'],
+  ['Before interior finish', 'Wall and ceiling finishes, trim, storage and lighting locations.'],
+  ['Often addable later', 'Selected shelving, accessories, decorative details and some finishes.'],
+];
+
+const live = groups.flatMap((g) => g.items).filter((i) => i.path);
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: 'Options & Upgrades',
+    about: { '@id': business.id },
+    mainEntity: { '@type': 'ItemList', itemListElement: live.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: 'https://appalachiansheds.com' + i.path })) },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Options & Upgrades', item: url },
+    ],
+  },
+];
+---
+<Base
+  title="Shed Options & Upgrades | Appalachian Sheds"
+  description="Options and upgrades for Appalachian Sheds buildings: doors, windows, skylights, siding and more, with installed planning prices and the order to decide them in."
+  path="/options/"
+  schema={schema}
+>
+  <section class="band band--dark oh-hero" aria-labelledby="oh-title">
+    <div class="wrap">
+      <nav class="oh-crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Options &amp; Upgrades</span></nav>
+      <p class="eyebrow">Appalachian Sheds · Options &amp; Upgrades</p>
+      <h1 id="oh-title">Options &amp; Upgrades</h1>
+      <p class="oh-lead">The best building is not the one with the most upgrades. It is the one where the site, structure, openings, comfort systems and finishes were chosen in the right order for how you will use it. Start with your intended use, decide the hard-to-change items first, and open only the categories that apply to your project.</p>
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="oh-timing">
+    <div class="wrap">
+      <p class="eyebrow">When Should I Decide?</p>
+      <h2 id="oh-timing" class="oh-h2">Upgrade Mistakes Are Usually Timing Mistakes</h2>
+      <p class="oh-sub">The most expensive change is a good option chosen after its best installation point has passed. Use this order.</p>
+      <ol class="oh-timing">
+        {timing.map(([t, d]) => <li><strong>{t}</strong><span>{d}</span></li>)}
+      </ol>
+    </div>
+  </section>
+
+  {groups.map((g, i) => (
+    <section class={'band ' + (i % 2 ? 'band--light' : 'band--cash')} aria-labelledby={'g' + i}>
+      <div class="wrap">
+        <p class="eyebrow">{g.when}</p>
+        <h2 id={'g' + i} class="oh-h2">{g.name}</h2>
+        <div class="oh-grid">
+          {g.items.map((it) => it.path
+            ? <a class="oh-card" href={link(it.path)}><h3>{it.name}</h3><p>{it.text}</p><span class="oh-go">See options &amp; prices →</span></a>
+            : <div class="oh-card oh-card--soon"><h3>{it.name}</h3><p>{it.text}</p><span class="oh-soon">Coming soon</span></div>)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="band band--dark" aria-labelledby="oh-cta">
+    <div class="wrap">
+      <h2 id="oh-cta" class="oh-h2">Not Sure Which Options Are Worth It?</h2>
+      <p class="oh-lead">Tell Edwin how you plan to use the building. He will help you pick the options that solve a real need and skip the ones that do not.</p>
+      <div class="oh-ctas">
+        <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+        <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .oh-hero { padding-top: 40px; }
+  .oh-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
+  .oh-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .oh-hero h1 { margin: 0 0 18px; font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.1; }
+  .oh-lead { max-width: 74ch; margin: 0; font-size: 1.05rem; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .oh-h2 { margin: 0 0 12px; font-size: clamp(1.55rem, 2.9vw, 2.2rem); }
+  .oh-sub { max-width: 72ch; margin: 0 0 26px; font-weight: 700; }
+  .oh-timing { list-style: none; counter-reset: t; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .oh-timing li { counter-increment: t; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 18px; }
+  .oh-timing li::before { content: counter(t, decimal-leading-zero); display: block; font-weight: 900; color: var(--bronze-dark); margin-bottom: 6px; }
+  .oh-timing strong { display: block; margin-bottom: 4px; }
+  .oh-timing span { font-weight: 700; font-size: 0.93rem; }
+  .oh-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+  .oh-card { display: flex; flex-direction: column; background: #fff; color: var(--steel); text-decoration: none; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; }
+  a.oh-card:hover { border-color: var(--bronze); }
+  .oh-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+  .oh-card p { margin: 0 0 14px; font-weight: 700; font-size: 0.95rem; }
+  .oh-go { margin-top: auto; color: var(--bronze-dark); font-weight: 900; }
+  .oh-card--soon { border-top-color: var(--stone); }
+  .oh-soon { margin-top: auto; color: #5f5a52; font-weight: 800; font-size: 0.88rem; }
+  .oh-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+</style>

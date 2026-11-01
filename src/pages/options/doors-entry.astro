@@ -1,0 +1,104 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/doors-entry/',
+  name: 'Doors & Entry',
+  title: 'Shed Door Options & Prices | Doors & Entry | Appalachian Sheds',
+  description: 'Compare Appalachian Sheds door options: wood doors from $390, fiberglass slab doors from $630, residential prehung house doors from $1,500 and carriage-style doors. Installed planning prices for Cincinnati and the Tri-State.',
+  h1: 'Doors & Entry Options',
+  answer: 'Appalachian Sheds offers four door families: wood doors, fiberglass slab doors with exterior hinges, prehung fiberglass house doors, and architectural carriage-style double doors. Installed planning prices range from $390 for a 36-inch single wood door to $3,660 for a Modern Spotlight house door. Choose the door family by how the building will be used, then choose the style.',
+  familyLabel: 'Door Option',
+  stepsTitle: 'Start With What the Building Must Do',
+  stepsLead: 'A storage building, workshop, garden building and backyard office do not need the same entry. Start with the intended use and the largest item that must pass through the opening, and settle the door before the wall is framed.',
+  steps: [
+    ['Intended use', 'Storage, workshop, office, studio, garden building or specialty use.'],
+    ['Access need', 'Everyday walk-in entry, mower, cart, tools, workbench or other equipment.'],
+    ['Door family', 'Wood, fiberglass slab, prehung fiberglass or carriage-style.'],
+    ['Opening & finish', 'Rough opening, threshold, swing, ramp, hardware, flashing, trim and finish.'],
+  ],
+  families: [
+    {
+      id: 'wood-doors',
+      name: 'Wood Doors',
+      intro: [
+        'Wood doors give the most traditional shed, cottage and Appalachian character in the lineup. They suit Classic Series sheds, garden buildings and barn-inspired structures where the entry should feel part of the siding and trim rather than a house door added to a shed.',
+        'Exterior wood doors must be properly finished and maintained so the door, joints, edges and hardware stay protected from the weather.',
+      ],
+      character: 'Traditional, crafted and warm: the strongest fit for authentic shed or barn character.',
+      bestUses: ['Basic and premium storage buildings', 'Garden buildings and cottages', 'Wide double-door storage access', 'Barn-inspired structures', 'Front-facing buildings where the door is part of the design'],
+      planning: ['Single or double configuration based on access needs', 'Exterior hinges sized for the door weight and width', 'Threshold, sill and water details coordinated with the opening', 'Paint, stain or protective finish maintained over time'],
+      prices: prices.doors.wood,
+      after: 'Carriage-style double doors are listed separately below as a premium architectural category.',
+    },
+    {
+      id: 'fiberglass-slab-doors',
+      name: 'Fiberglass Slab Doors with Exterior Hinges',
+      intro: [
+        'A fiberglass slab hung in a shed-style opening with exterior hinges, rather than a residential prehung frame. It gives a cleaner, more stable, lower-maintenance door face while keeping the straightforward operation of a shed door.',
+        'The exterior hinges stay visible, and the opening, trim, threshold and latch are built into the building wall. Glass-lite versions add daylight.',
+      ],
+      character: 'Durable, practical and clean: fiberglass durability without making the building look like a house.',
+      bestUses: ['Workshops and hobby buildings', 'Upgraded utility and storage buildings', 'Garden rooms', 'Owners wanting less maintenance than wood', 'Double-door access for mowers and equipment'],
+      planning: ['Hinge sizing matched to the door', 'Threshold, swing and ramp width', 'More glass means more light and less privacy'],
+      prices: prices.doors.slab,
+    },
+    {
+      id: 'prehung-house-doors',
+      name: 'Prehung Fiberglass Entry Doors (House Doors)',
+      intro: [
+        'A complete residential-style entry: the door comes with its frame, threshold, weatherstripping, hinges and latch preparation as one assembly. It is the closest option to a conventional exterior house door.',
+        'Best for backyard offices, studios, finished interiors and poolside rooms where the entry should feel like a small residential room rather than a utility shed.',
+      ],
+      character: 'Residential, finished and secure: the strongest choice when comfort and weather sealing matter most.',
+      bestUses: ['Backyard offices and studios', 'Finished interiors', 'Poolside rooms', 'Buildings used every day'],
+      planning: ['Rough opening framed for the complete unit', 'Flashing and trim integrated around the opening', 'Keyed lockset and deadbolt where selected', 'Door swing and landing space'],
+      prices: prices.doors.prehung,
+      after: 'A residential-style door changes the entry experience, but it does not by itself change the legal use or classification of the building.',
+    },
+    {
+      id: 'carriage-doors',
+      name: 'Architectural Carriage-Style Double Doors',
+      intro: [
+        'The premium choice when the entry should become a defining part of the exterior. Traditional proportions, substantial trim and selected hardware reinforce Appalachian, barn, cottage or farmhouse character while still giving wide access.',
+        'Because carriage doors are designed with each building, the final material, glass, hardware and finish are confirmed with your selected design.',
+      ],
+      character: 'Crafted, traditional and distinctive: a door that contributes as much as the roofline and siding.',
+      bestUses: ['Premium Classic and Signature Series buildings', 'Barn-inspired sheds and workshops', 'Garden buildings facing the home or patio', 'Wide-access storage where plain doors would underserve the design'],
+      planning: ['Paired wide-access configuration', 'Cross-bracing or other detailing where specified', 'Optional glass or transom', 'Threshold and ramp matched to the equipment you will move'],
+      prices: prices.doors.carriage,
+      after: 'More elaborate custom carriage-style doors are priced by their final material, glass, hardware, finish and construction.',
+    },
+  ],
+  compare: {
+    title: 'Four Door Families, Four Different Entries',
+    head: ['Door family', 'Main purpose', 'Character', 'Typical uses', 'Key planning issue'],
+    rows: [
+      ['Wood doors', 'Traditional shed and wide-access entry', 'Most traditional and Appalachian', 'Storage, garden, cottage and barn-inspired buildings', 'Finish maintenance, hinge support and moisture protection'],
+      ['Fiberglass slab doors', 'Durable shed-style access with lower maintenance', 'Clean and practical, not house-like', 'Workshops, hobby, storage and utility buildings', 'Hinge sizing, threshold, swing and ramp width'],
+      ['Prehung house doors', 'Residential everyday entry', 'Most residential and finished', 'Studios, offices, pool houses and garden rooms', 'Rough opening, flashing, threshold and swing'],
+      ['Carriage-style doors', 'Wide access plus architectural presence', 'Appalachian, barn or cottage focal point', 'Premium sheds, workshops and Signature buildings', 'Material, hardware, finish and threshold'],
+    ],
+    note: 'Need weather protection over the door? Entry awnings, canopies and porch roofs are planned with the Porches, Awnings & Dormers options.',
+  },
+  considerationsTitle: 'Door Decisions Affect More Than the Opening',
+  considerations: [
+    ['Opening width', 'Measure the largest mower, cart, workbench or equipment that must pass through, with comfortable clearance.'],
+    ['Swing & clearance', 'Check the outside approach, inside wall use, shelving and nearby landscaping before choosing the swing.'],
+    ['Threshold & ramp', 'Coordinate threshold height, ramp width, slope and landing so the path matches the door opening.'],
+    ['Glass & privacy', 'More glass improves daylight and curb appeal but changes privacy and security.'],
+    ['Flashing & sealing', 'Head, jamb and sill flashing, sweeps and weatherstripping keep water and air out.'],
+    ['Finish', 'Wood doors need a protective finish and upkeep; fiberglass may come primed or factory-finished.'],
+  ],
+  faqs: [
+    { q: 'What is the least expensive door upgrade?', a: 'A 36-inch single wood door is $390 installed, the lowest planning price in the door lineup. Double wood doors are $690.' },
+    { q: 'What is the difference between a fiberglass slab door and a prehung house door?', a: 'A slab door hangs in a shed-style opening with visible exterior hinges and costs from $630. A prehung house door is a complete residential assembly with its own frame, threshold and weatherstripping, from $1,500, and is better for offices, studios and finished rooms.' },
+    { q: 'Which door is best for a mower or equipment?', a: 'Double doors, in wood ($690), fiberglass slab ($1,260) or carriage-style ($1,500). Measure the largest item you will move and coordinate the threshold and ramp with the opening.' },
+    { q: 'Do glass doors reduce security?', a: 'More glass brings in daylight but makes the interior more visible from outside. Glass amount, door location and lighting should be planned together.' },
+    { q: 'Are door prices final?', a: 'They are installed planning prices. Door sizes, availability and standard-versus-upgrade status vary by model, and your final price is confirmed in your written project scope.' },
+  ],
+  ctaTitle: 'Talk Through Your Door With Edwin',
+};
+---
+<OptionPage page={page} />

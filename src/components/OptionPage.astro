@@ -1,0 +1,214 @@
+---
+// One template for every Options & Upgrades category page.
+// Each category supplies its words and its option families; prices come from option-prices.json.
+import Base from '../layouts/Base.astro';
+import { business, link } from '../data/site.js';
+
+const { page } = Astro.props;
+const url = 'https://appalachiansheds.com' + page.path;
+
+const schema = [
+  {
+    '@type': 'WebPage',
+    '@id': url,
+    url,
+    name: page.title,
+    about: { '@id': business.id },
+    isPartOf: { '@id': 'https://appalachiansheds.com/options/' },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Options & Upgrades', item: 'https://appalachiansheds.com/options/' },
+      { '@type': 'ListItem', position: 3, name: page.name, item: url },
+    ],
+  },
+  ...(page.faqs?.length
+    ? [{ '@type': 'FAQPage', '@id': url + '#faq', mainEntity: page.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }]
+    : []),
+];
+---
+<Base title={page.title} description={page.description} path={page.path} schema={schema}>
+  <section class="band band--dark op-hero" aria-labelledby="op-title">
+    <div class="wrap">
+      <nav class="op-crumbs" aria-label="Breadcrumb">
+        <a href={link('/')}>Home</a> <span aria-hidden="true">/</span>
+        <a href={link('/options/')}>Options &amp; Upgrades</a> <span aria-hidden="true">/</span>
+        <span aria-current="page">{page.name}</span>
+      </nav>
+      <p class="eyebrow">Options &amp; Upgrades · {page.name}</p>
+      <h1 id="op-title">{page.h1}</h1>
+      <p class="op-answer">{page.answer}</p>
+      {page.families && (
+        <ul class="op-jump" aria-label="On this page">
+          {page.families.map((f, i) => <li><a href={'#' + f.id}><span>{String(i + 1).padStart(2, '0')}</span> {f.name}</a></li>)}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  {page.steps && (
+    <section class="band band--light" aria-labelledby="op-steps">
+      <div class="wrap">
+        <p class="eyebrow">Decide in This Order</p>
+        <h2 id="op-steps" class="op-h2">{page.stepsTitle}</h2>
+        <p class="op-lead">{page.stepsLead}</p>
+        <ol class="op-steps">
+          {page.steps.map(([t, d]) => <li><strong>{t}</strong><span>{d}</span></li>)}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  {page.families?.map((f, i) => (
+    <section id={f.id} class={'band ' + (i % 2 ? 'band--light' : 'band--cash')} aria-labelledby={f.id + '-t'}>
+      <div class="wrap">
+        <p class="eyebrow">{page.familyLabel} {String(i + 1).padStart(2, '0')}</p>
+        <h2 id={f.id + '-t'} class="op-h2">{f.name}</h2>
+        <div class="op-fam">
+          <div class="op-fam__text">
+            {f.intro.map((p) => <p>{p}</p>)}
+            {f.character && <p class="op-char"><strong>{f.character}</strong></p>}
+          </div>
+          <div class="op-fam__lists">
+            {f.bestUses && (<><h3>Best uses</h3><ul>{f.bestUses.map((x) => <li>{x}</li>)}</ul></>)}
+            {f.planning && (<><h3>Planning notes</h3><ul>{f.planning.map((x) => <li>{x}</li>)}</ul></>)}
+          </div>
+        </div>
+        {f.prices && (
+          <div class="op-table">
+            <table>
+              <caption>{f.name}: installed planning prices</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Option</th>
+                  {f.prices.some((r) => r.size) && <th scope="col">Size</th>}
+                  <th scope="col">Installed planning price</th>
+                  <th scope="col">Best for</th>
+                  {f.prices.some((r) => r.note) && <th scope="col">Planning note</th>}
+                </tr>
+              </thead>
+              <tbody>
+                {f.prices.map((r) => (
+                  <tr>
+                    <th scope="row">{r.item}</th>
+                    {f.prices.some((x) => x.size) && <td>{r.size ?? ''}</td>}
+                    <td class="op-price">{r.price}</td>
+                    <td>{r.bestFor}</td>
+                    {f.prices.some((x) => x.note) && <td>{r.note ?? ''}</td>}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {f.after && <p class="op-after">{f.after}</p>}
+      </div>
+    </section>
+  ))}
+
+  {page.compare && (
+    <section class="band band--dark" aria-labelledby="op-compare">
+      <div class="wrap">
+        <p class="eyebrow">Side by Side</p>
+        <h2 id="op-compare" class="op-h2">{page.compare.title}</h2>
+        <div class="op-table op-table--dark">
+          <table>
+            <thead><tr>{page.compare.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+            <tbody>
+              {page.compare.rows.map((r) => <tr><th scope="row">{r[0]}</th>{r.slice(1).map((c) => <td>{c}</td>)}</tr>)}
+            </tbody>
+          </table>
+        </div>
+        {page.compare.note && <p class="op-after op-after--dark">{page.compare.note}</p>}
+      </div>
+    </section>
+  )}
+
+  {page.considerations && (
+    <section class="band band--light" aria-labelledby="op-cons">
+      <div class="wrap">
+        <p class="eyebrow">Before You Choose</p>
+        <h2 id="op-cons" class="op-h2">{page.considerationsTitle}</h2>
+        <div class="op-cards">
+          {page.considerations.map(([t, d, href]) => href
+            ? <a class="op-card op-card--link" href={href}><h3>{t}</h3><p>{d}</p><span>See sizes &amp; pricing →</span></a>
+            : <article class="op-card"><h3>{t}</h3><p>{d}</p></article>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {page.faqs?.length > 0 && (
+    <section class="band band--cash" aria-labelledby="op-faq">
+      <div class="wrap">
+        <p class="eyebrow">{page.name} FAQ</p>
+        <h2 id="op-faq" class="op-h2">Common Questions</h2>
+        <div class="op-faq">{page.faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="band band--dark" aria-labelledby="op-cta">
+    <div class="wrap">
+      <p class="eyebrow">Next Step</p>
+      <h2 id="op-cta" class="op-h2">{page.ctaTitle}</h2>
+      <p class="op-answer">Prices on this page are installed planning prices. Door, window and siding availability, sizes and standard-versus-upgrade status vary by building model, and your final selections and prices are confirmed in your written project scope.</p>
+      <div class="op-ctas">
+        <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+        <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
+        <a class="btn btn--secondary" href={link('/options/')}>All Options &amp; Upgrades</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .op-hero { padding-top: 40px; }
+  .op-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
+  .op-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .op-crumbs a:hover { color: var(--bronze); }
+  .op-hero h1 { margin: 0 0 18px; font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.12; }
+  .op-answer { max-width: 74ch; margin: 0 0 24px; font-size: 1.05rem; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .op-jump { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .op-jump a { display: inline-block; padding: 10px 16px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; font-weight: 800; font-size: 0.92rem; }
+  .op-jump a:hover { background: var(--bronze); color: var(--steel); }
+  .op-jump span { color: var(--bronze); margin-right: 6px; }
+  .op-jump a:hover span { color: var(--steel); }
+  .op-h2 { margin: 0 0 14px; font-size: clamp(1.55rem, 2.9vw, 2.2rem); }
+  .op-lead { max-width: 72ch; margin: 0 0 26px; font-weight: 700; }
+  .op-steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .op-steps li { counter-increment: s; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 18px 18px 18px; }
+  .op-steps li::before { content: counter(s, decimal-leading-zero); display: block; font-weight: 900; color: var(--bronze-dark); margin-bottom: 6px; }
+  .op-steps strong { display: block; margin-bottom: 4px; }
+  .op-steps span { font-weight: 700; font-size: 0.93rem; }
+  .op-fam { display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; margin-bottom: 28px; }
+  .op-fam__text p { margin: 0 0 14px; font-weight: 700; max-width: 70ch; }
+  .op-char { border-left: 4px solid var(--bronze); padding-left: 14px; }
+  .op-fam__lists h3 { margin: 0 0 8px; font-size: 1rem; }
+  .op-fam__lists ul { margin: 0 0 20px; padding-left: 20px; font-weight: 700; font-size: 0.95rem; }
+  .op-fam__lists li { margin-bottom: 4px; }
+  .op-table { overflow-x: auto; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); }
+  .op-table table { border-collapse: collapse; width: 100%; min-width: 680px; }
+  .op-table caption { text-align: left; padding: 14px 18px 8px; font-weight: 900; }
+  .op-table th, .op-table td { padding: 11px 16px; border-top: 1px solid var(--cashmere); text-align: left; vertical-align: top; font-size: 0.94rem; font-weight: 700; }
+  .op-table thead th { background: var(--steel); color: var(--ivory); font-weight: 900; font-size: 0.85rem; }
+  .op-table tbody th { font-weight: 900; }
+  .op-price { font-weight: 900 !important; white-space: nowrap; }
+  .op-table--dark { background: var(--ivory); color: var(--steel); }
+  .op-after { margin: 14px 0 0; font-size: 0.92rem; font-weight: 700; max-width: 80ch; }
+  .op-after--dark { color: var(--cashmere); font-weight: 600; }
+  .op-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .op-card { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; }
+  .op-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .op-card p { margin: 0; font-weight: 700; font-size: 0.95rem; }
+  .op-card--link { display: block; color: var(--steel); text-decoration: none; }
+  .op-card--link:hover { border-color: var(--bronze); }
+  .op-card--link span { display: block; margin-top: 10px; color: var(--bronze-dark); font-weight: 900; }
+  .op-faq details { background: #fff; border: 1px solid var(--stone); margin-bottom: 10px; }
+  .op-faq summary { cursor: pointer; padding: 18px 22px; font-weight: 900; }
+  .op-faq p { margin: 0; padding: 0 22px 20px; font-weight: 700; }
+  .op-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+  @media (max-width: 900px) { .op-fam { grid-template-columns: 1fr; gap: 10px; } }
+</style>

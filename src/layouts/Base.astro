@@ -91,13 +91,30 @@ const graph = {
       <a class="brand" href={link('/')} aria-label="Appalachian Sheds Inc. home">
         <Image src={logo} alt="Appalachian Sheds Inc." widths={[180, 270, 360]} sizes="180px" format="webp" loading="eager" />
       </a>
-      <nav aria-label="Main">
+      <div class="header-actions">
+        <a class="nav-call nav-call--mobile" href={`tel:${business.phoneLink}`}>Call Edwin</a>
+        <button type="button" class="menu-btn" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      </div>
+      <nav id="main-nav" aria-label="Main">
         <a href={link('/')}>Home</a>
         <a href={link('/buildings/')}>Buildings &amp; Pricing</a>
-        <a class="nav-call" href={`tel:${business.phoneLink}`}>Call Edwin</a>
+        <a href={link('/options/')}>Options</a>
+        <a class="nav-call nav-call--desktop" href={`tel:${business.phoneLink}`}>Call Edwin</a>
       </nav>
     </div>
   </header>
+  <script is:inline>
+    (function () {
+      var btn = document.querySelector('.menu-btn');
+      var nav = document.getElementById('main-nav');
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? 'Close' : 'Menu';
+        nav.classList.toggle('is-open', open);
+      });
+    })();
+  </script>
 
   <main id="main">
     <slot />
@@ -127,6 +144,17 @@ const graph = {
     nav a { text-decoration: none; font-weight: 800; font-size: 0.95rem; color: var(--cashmere); }
     nav a:hover { color: var(--bronze); }
     .nav-call { color: var(--bronze) !important; }
+    .header-actions { display: none; align-items: center; gap: 16px; }
+    .nav-call--mobile { text-decoration: none; font-weight: 900; font-size: 0.95rem; }
+    .menu-btn { font: inherit; font-weight: 900; font-size: 0.95rem; color: var(--ivory); background: transparent; border: 2px solid var(--bronze); padding: 8px 14px; cursor: pointer; }
+    .menu-btn[aria-expanded='true'] { background: var(--bronze); color: var(--steel); }
+    @media (max-width: 760px) {
+      .header-actions { display: flex; }
+      .nav-call--desktop { display: none; }
+      nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; border-top: 1px solid rgba(166, 138, 106, 0.4); }
+      nav.is-open { display: flex; }
+      nav a { padding: 14px 0; border-bottom: 1px solid rgba(166, 138, 106, 0.25); font-size: 1rem; }
+    }
     .site-footer { background: #1F1F1F; border-top: 3px solid var(--bronze); padding: 40px 0; color: var(--cashmere); font-size: 0.95rem; }
     .site-footer__inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .site-footer p { margin: 0 0 8px; }

@@ -1,0 +1,119 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import { link } from '../../data/site.js';
+import { series } from '../../data/catalog.js';
+import { money } from '../../data/models.js';
+
+// Model cards read their prices from the same price files as the model pages.
+const modelCards = series.flatMap((s) => s.models).map((m) => [
+  m.name,
+  `From ${money(m.prices.low)} with the standard siding, ${m.prices.sizes.length} sizes.`,
+  link(m.path),
+]);
+
+const page = {
+  path: '/options/siding-exterior-materials/',
+  name: 'Siding & Exterior Materials',
+  title: 'Shed Siding Options | LP SmartSide, DuraTemp & Vinyl | Appalachian Sheds',
+  description: 'Compare the five Appalachian Sheds siding systems: LP SmartSide Vertical Panel (standard), Roseburg DuraTemp, LP SmartSide Board & Batten, Georgia-Pacific Forest Ridge Vinyl Lap and LP SmartSide Lap.',
+  h1: 'Siding & Exterior Materials',
+  answer: 'Every Appalachian Sheds model is offered in five siding systems: LP SmartSide Vertical Panel (the standard siding), Roseburg DuraTemp Wood, LP SmartSide Board & Batten, Georgia-Pacific Forest Ridge Vinyl Lap, and LP SmartSide Lap. Siding is priced by building size on each model page, where the calculator shows all five prices side by side. Exterior trim is LP SmartSide Trim & Fascia.',
+  familyLabel: 'Siding Option',
+  stepsTitle: 'Start With the Look, Then the Construction',
+  stepsLead: 'There is no single best siding. Start with the exterior character you want, then consider maintenance and how the wall is built behind it.',
+  steps: [
+    ['Clean & traditional', 'LP SmartSide Vertical Panel'],
+    ['Real-wood character', 'Roseburg DuraTemp'],
+    ['Architectural & dimensional', 'LP SmartSide Board & Batten'],
+    ['Residential & low maintenance', 'Georgia-Pacific Forest Ridge Vinyl Lap'],
+    ['Residential engineered wood', 'LP SmartSide Lap'],
+  ],
+  families: [
+    {
+      id: 'vertical-panel',
+      name: 'LP SmartSide Vertical Panel Siding (Standard)',
+      intro: [
+        'The standard siding on every Appalachian Sheds model. It gives the straightforward character of traditional vertical wood siding with the consistency of an engineered exterior panel.',
+        'Its clean lines let the roofline, doors, windows and trim stay the main features, which suits classic sheds, garden buildings, workshops and barns.',
+      ],
+      character: 'Traditional, clean, understated and versatile.',
+      bestUses: ['Classic sheds', 'Garden buildings', 'Workshops', 'Barn-style buildings'],
+      planning: ['Field painting is not included in standard building pricing unless stated'],
+    },
+    {
+      id: 'duratemp',
+      name: 'Roseburg DuraTemp Wood Siding',
+      intro: [
+        'A plywood siding panel with a durable hardboard face and the textured look of rough-sawn cedar. It suits traditional sheds, barns and workshops where genuine wood character matters.',
+      ],
+      character: 'Authentic, traditional and textured: the look of a traditional wood shed or barn.',
+      bestUses: ['Classic sheds', 'Barns and equipment buildings', 'Workshops', 'Traditional wood-style buildings'],
+      planning: ['Needs an exterior coating system and ongoing finish upkeep', 'Field finishing is separate unless purchased'],
+    },
+    {
+      id: 'board-batten',
+      name: 'LP SmartSide Board & Batten Siding',
+      intro: [
+        'Vertical siding with raised battens creates deep shadow lines and a more architectural look, associated with barns, cottages and modern farmhouse design.',
+        'It is installed over full 1/2-inch exterior-grade plywood sheathing with the appropriate weather preparation.',
+      ],
+      character: 'Dimensional, crafted and architectural: more visual depth than flat panel siding.',
+      bestUses: ['Country cottages', 'Studios and pool houses', 'Barn-style buildings', 'Premium custom buildings'],
+      planning: ['Painted engineered-wood exterior', 'Field painting and finish caulking are separate unless included in the Turnkey Exterior Finish Package'],
+    },
+    {
+      id: 'vinyl-lap',
+      name: 'Georgia-Pacific Forest Ridge Vinyl Lap Siding',
+      intro: [
+        'Familiar horizontal residential lap siding with the low maintenance of vinyl. A natural choice when the backyard building should match a vinyl-sided home.',
+        'It is installed over full 1/2-inch exterior-grade plywood sheathing, a weather-resistive barrier, flashing and vinyl accessories.',
+      ],
+      character: 'Residential, familiar, clean and low maintenance.',
+      bestUses: ['Buildings that should match a vinyl-sided home', 'Cottages and pool houses', 'Low-maintenance storage sheds'],
+      planning: ['Vinyl color is built in and needs no routine painting', 'Trim and doors may still need finishing'],
+    },
+    {
+      id: 'lp-lap',
+      name: 'LP SmartSide Lap Siding',
+      intro: [
+        'Horizontal engineered-wood lap siding with the refined proportions of residential clapboard. It makes a shed, studio or pool house read as a small residential building rather than a utility shed.',
+        'It is installed over full 1/2-inch exterior-grade plywood sheathing with the appropriate weather barrier, flashing and starter details.',
+      ],
+      character: 'Residential, refined and warm.',
+      bestUses: ['Cottages and studios', 'Backyard offices', 'Pool houses', 'Custom buildings that complement the home'],
+      planning: ['Painted engineered-wood exterior', 'Field painting is separate unless included in the Turnkey Exterior Finish Package'],
+    },
+    {
+      id: 'trim',
+      name: 'LP SmartSide Trim & Fascia',
+      intro: [
+        'Siding sets the broad surface; trim defines the architecture. Appalachian Sheds uses LP SmartSide engineered-wood trim where the design calls for painted exterior trim: corner boards, door and window trim, and fascia.',
+        'It comes in Cedar Texture and Brushed Smooth profiles and 16-foot lengths that reduce joints, and it is treated through LP’s SmartGuard process for resistance to termites and fungal decay.',
+      ],
+      bestUses: ['Corner boards', 'Door and window trim', 'Fascia'],
+    },
+  ],
+  compare: {
+    title: 'Five Siding Systems Side by Side',
+    head: ['Siding', 'Exterior character', 'Maintenance & finish', 'Best suited for'],
+    rows: [
+      ['LP SmartSide Vertical Panel (standard)', 'Clean vertical lines, traditional shed and barn character', 'Field painting not included unless stated', 'Classic sheds, garden buildings, workshops, barns'],
+      ['Roseburg DuraTemp Wood', 'Rough-sawn wood character', 'Needs an exterior coating and ongoing upkeep', 'Classic sheds, barns, workshops, equipment buildings'],
+      ['LP SmartSide Board & Batten', 'Deep vertical shadow lines, cottage or barn character', 'Painted; field painting separate unless in the Turnkey package', 'Cottages, custom buildings, pool houses, studios'],
+      ['Georgia-Pacific Forest Ridge Vinyl Lap', 'Traditional horizontal residential look', 'Color built in; no routine painting', 'Buildings matching vinyl-sided homes, cottages'],
+      ['LP SmartSide Lap', 'Refined horizontal engineered wood', 'Painted; field painting separate unless in the Turnkey package', 'Cottages, studios, offices, pool houses'],
+    ],
+    note: 'Siding prices depend on the model and size. Open any model page and the calculator shows all five siding prices for the size you choose.',
+  },
+  considerationsTitle: 'See Siding Prices on Any Model',
+  considerations: modelCards,
+  faqs: [
+    { q: 'Which siding is standard?', a: 'LP SmartSide Vertical Panel Siding is the standard siding on every Appalachian Sheds model and has the lowest price at every size.' },
+    { q: 'How much more does upgraded siding cost?', a: 'It depends on the model and size. Each model page shows all five siding prices side by side for the size you choose.' },
+    { q: 'Is painting included?', a: 'Standard building pricing does not include field painting unless stated. Vinyl siding has built-in color and needs no routine painting.' },
+    { q: 'Which siding needs the least maintenance?', a: 'Georgia-Pacific Forest Ridge Vinyl Lap. Its color is part of the siding, so it does not need routine painting or staining.' },
+  ],
+  ctaTitle: 'Choose Your Siding With Edwin',
+};
+---
+<OptionPage page={page} />

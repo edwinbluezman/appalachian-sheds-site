@@ -1,0 +1,99 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '21',
+  subtitle: 'What to Confirm Before You Approve Your Backyard Building Project',
+  description: 'The final pre-purchase checklist for a backyard building: use, size, site, approvals, materials, options, exclusions, written price, warranty and maintenance, plus common last-minute mistakes.',
+  intro: 'A backyard building should not move forward on excitement alone. Before approval, the use, site, approvals, materials, written scope, price, warranty, maintenance and change-order process should be clear enough to protect both you and the project. This is the final confirmation before planning becomes approval.',
+  question: 'What Should You Confirm Before Buying a Backyard Building?',
+  answer: [
+    'The intended use, right size, location, drainage, access, foundation, permit or HOA questions, material standards, included features, exclusions, comfort-system plans, written price, warranty terms, maintenance responsibilities and change process.',
+    'A good checklist answers practical questions: What is being built? Where will it sit? Who handles approvals? What is included and excluded? What could change the price? What must the owner do after completion?',
+    'Because Appalachian Sheds builds on your property, the decision depends on your site, access, approvals, options and written scope, not just a model name or photo.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Confirmation Sequence', title: 'Confirm These Before You Approve the Build', nav: 'Confirmation Sequence',
+      items: [
+        { title: 'Use, Size and Layout', text: 'Primary, secondary and future use; size, walkways, storage and work zones; door and window placement. Size around what must fit, not a photo.' },
+        { title: 'Site, Access and Drainage', text: 'Placement, access route, gate width, slope, drainage, downspouts, soil, foundation area, working room and maintenance space.' },
+        { title: 'Permit, HOA and Utility Questions', text: 'Zoning, permits, setbacks, easements, HOA review, 811 marking, private lines and trade requirements for your address.' },
+        { title: 'Materials and Options', text: 'Floor, framing, siding, roof, doors, windows, trim, ventilation and each upgrade, marked as included, optional, excluded or future.' },
+        { title: 'Comfort and Future Use', text: 'Whether electric, lighting, insulation, HVAC, plumbing readiness, internet or interior finish is included now, excluded or planned later.' },
+        { title: 'Written Scope, Price and Warranty', text: 'Included and excluded work, price, payments, change orders, warranty coverage and exclusions, and your responsibilities. If it matters, it belongs in writing.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'areas', title: 'Six Areas That Should Be Clear Before Approval', nav: 'What Must Be Clear',
+      items: [
+        { title: 'Use controls the building', text: 'Storage, workshop, office or studio each call for different layouts, openings, utilities and finishes.' },
+        { title: 'The site controls the build', text: 'Drainage, slope, access, utilities and setbacks change what is practical, priced and ready.' },
+        { title: 'Written scope controls expectations', text: 'Scope, exclusions, price, changes and responsibilities should not depend on memory.' },
+        { title: 'Approvals control timing', text: 'Permit, zoning, HOA and utility requirements are identified before the build is scheduled.' },
+        { title: 'Materials control long-term value', text: 'Floor, framing, roof, siding, openings and moisture details understood before approval.' },
+        { title: 'Ownership controls long-term success', text: 'Warranty, the 30-day paint requirement, maintenance and records understood before the first season.' },
+      ],
+      note: 'A clear decision is better than a fast decision. If a major detail still feels vague, clarify it before approving.',
+    },
+    {
+      type: 'table', id: 'ready', dark: true, title: 'Project Interest vs. Purchase-Ready', nav: 'Interest vs. Ready',
+      head: ['Area', 'Project interest', 'Purchase-ready'],
+      rows: [
+        ['Use', 'You like the idea of a shed, studio or workshop', 'You can describe the primary, secondary and future use'],
+        ['Size', 'A rough model or photo in mind', 'Matched to storage, work zones, walkways and furniture'],
+        ['Site', 'You know roughly where it goes', 'Placement, drainage, access, utilities and clearance reviewed'],
+        ['Approvals', 'You assume it’s probably allowed', 'Permit, zoning, HOA, setback and utility questions identified'],
+        ['Materials', 'You like the exterior', 'Floor, framing, siding, roof, openings and upkeep understood'],
+        ['Comfort systems', 'Maybe power or HVAC someday', 'Each marked included, excluded, optional or future'],
+        ['Written scope', 'A price or estimate', 'Inclusions, exclusions, options, responsibilities and changes in writing'],
+        ['Ownership', 'You expect it to last', 'Warranty, paint deadline, maintenance and records understood'],
+      ],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'The Most Expensive Assumptions Happen Right Before Approval', nav: 'Common Mistakes',
+      items: [
+        { title: 'Buying before the use is clear', text: 'A beautiful building can still miss the mark.' },
+        { title: 'Assuming the site is ready', text: 'Review drainage, grade, access, utilities and setbacks first.' },
+        { title: 'Forgetting approval responsibility', text: 'Know who handles permits, HOA and utilities.' },
+        { title: 'Confusing options with standard features', text: 'Mark each item as included, optional or excluded.' },
+        { title: 'Not reading the warranty', text: 'Coverage, exclusions, the paint requirement and claim procedures.' },
+        { title: 'Verbal promises instead of written scope', text: 'If a detail matters, write it down.' },
+        { title: 'Choosing size from appearance', text: 'It may look big in a photo and still be too small.' },
+        { title: 'Leaving future use for later', text: 'Future utilities can affect today’s framing and placement.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Final Questions That Protect the Project', nav: 'Questions to Ask',
+      items: [
+        { title: 'What exactly am I buying?', list: ['Model and size', 'Floor and structural system', 'Siding and roofing', 'Doors, windows, trim and vents', 'Standard features and selected options'] },
+        { title: 'What is not included?', list: ['Site preparation, unless written in', 'Permits or HOA work, unless included', 'Exterior paint or stain, unless added', 'Electric, HVAC, insulation, plumbing', 'Interior finishing'] },
+        { title: 'What could change the price?', list: ['Site conditions', 'Added options or scope changes', 'Material changes', 'Utility work or permit requirements', 'Access limitations'] },
+        { title: 'What happens after completion?', list: ['Completion walkthrough', 'Exterior painted within 30 days (vinyl excepted)', 'Maintenance responsibilities', 'Warranty coverage and exclusions', 'Records to keep'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Confirm These Before You Commit', nav: 'Final Checklist',
+      items: [
+        { title: 'Purpose & site', list: ['Primary use clear', 'Future use considered', 'Size has a practical reason', 'Furniture, tools and storage fit', 'Placement reviewed', 'Access workable', 'Drainage and grade considered'] },
+        { title: 'Approvals & construction', list: ['Permit and zoning questions identified', 'HOA requirements identified', 'Easements and setbacks considered', '811 and private lines addressed', 'Foundation approach understood', 'Floor, framing and roof understood', 'Siding, doors, windows and trim confirmed'] },
+        { title: 'Scope & ownership', list: ['Standard features identified', 'Selected options identified', 'Excluded work identified', 'Comfort systems clarified', 'Written price understood', 'Change process understood', 'Warranty and paint requirement reviewed'] },
+      ],
+      note: 'Do not approve until you can explain the building’s purpose, size, site, materials, options, exclusions, price assumptions, approval responsibilities, warranty and ownership duties without relying on guesses or memory.',
+    },
+  ],
+  disclaimer: 'This checklist is educational, not a substitute for property-specific review. It does not replace permit or zoning review, HOA approval, utility marking, contract review, insurance review or licensed-trade requirements.',
+  faqs: [
+    { q: 'What is the most important thing to confirm before buying?', a: 'The intended use and the written scope. The use determines size, layout and systems; the scope confirms what is included, excluded, priced and promised.' },
+    { q: 'Should I finalize the building before checking permits or HOA rules?', a: 'No. Identify approval questions first, since they can affect size, placement, appearance and utilities.' },
+    { q: 'Does Appalachian Sheds deliver pre-built sheds?', a: 'No. Appalachian Sheds builds on your property, which is why site readiness, access, drainage and approvals are part of the purchase decision.' },
+    { q: 'What should be in the written scope?', a: 'The model, size, materials, standard features, selected options, exclusions, homeowner responsibilities, price, change process, schedule assumptions, warranty and approval responsibilities.' },
+    { q: 'What if the checklist reveals unanswered questions?', a: 'That is what it is for. A question found before approval is an opportunity to clarify the project before construction begins.' },
+  ],
+  related: ['19', '20', '10', '12'],
+  pages: [['Buildings & Pricing', 'Standard prices and specifications for every model.', '/buildings/'], ['Options & Upgrades', 'Installed planning prices for every option.', '/options/']],
+  ctaTitle: 'Use the Checklist Before You Approve the Build',
+  ctaText: 'Confirm the use, size, site, approvals, materials, options, comfort plans, written scope, price, warranty and maintenance. If the checklist reveals open questions, that is not a setback; it is the right time to clarify them.',
+};
+---
+<GuidePage page={page} />

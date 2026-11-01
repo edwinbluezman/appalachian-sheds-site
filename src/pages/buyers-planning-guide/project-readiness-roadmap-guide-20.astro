@@ -1,0 +1,97 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '20',
+  subtitle: 'How to Know When Your Project Is Ready for the Next Conversation',
+  description: 'A readiness roadmap for a backyard building project: research vs. project-ready, seven practical decisions, site, approval, design, scope and ownership readiness, and what to bring to the first conversation.',
+  intro: 'After researching site, design, budget, approvals, materials, utilities and builders, the question becomes simple: is the project clear enough to move forward? You don’t need every detail solved. You need enough clarity about the building, property, priorities and open questions to make the next conversation productive.',
+  question: 'How Do You Know a Project Is Ready for the Next Conversation?',
+  answer: [
+    'When the important decisions are clear enough to discuss specifically instead of hypothetically: the building’s purpose, preferred location, access, drainage, approval questions, rough size, layout needs, material direction, comfort expectations, budget direction, scope questions and homeowner responsibilities.',
+    'You don’t need every finish, color or option chosen before asking for help. A building should solve a real need, fit the property and work with the site, not just match an attractive photo.',
+  ],
+  sections: [
+    {
+      type: 'table', id: 'compare', eyebrow: 'From Research to Readiness', title: 'Interest vs. Project Readiness', nav: 'Research vs. Ready',
+      head: ['Area', 'Still researching', 'Project-ready direction'],
+      rows: [
+        ['Purpose', 'You know you want a backyard building', 'You can describe the primary, secondary and future use'],
+        ['Site', 'You’ve picked an open area of the yard', 'You’ve considered access, drainage, slope, utilities and clearance'],
+        ['Size', 'Chosen mainly from photos or price', 'Based on what must fit, walkways, wall space and future needs'],
+        ['Design', 'You like a model or photo', 'You know which details and openings support your use'],
+        ['Approvals', 'You assume little review is needed', 'You know which zoning, permit, setback or HOA questions to confirm'],
+        ['Budget', 'You want a rough price', 'You have a direction and know site work, options and finishes affect scope'],
+        ['Builder', 'Comparing photos and prices', 'Also comparing scope, materials, warranty, insurance and process'],
+      ],
+    },
+    {
+      type: 'steps', id: 'decisions', title: 'Turn Your Research Into Seven Clear Decisions', nav: 'Seven Decisions',
+      items: [
+        { title: 'Confirm the Use', text: 'Primary purpose, secondary uses, likely future use. Example: “Mainly a workshop, with window light and power for hobby use.”' },
+        { title: 'Confirm the Site', text: 'Preferred spot, access, drainage, slope, utilities, easements and visibility. Example: “Behind the patio; drainage and side-yard access still to confirm.”' },
+        { title: 'Confirm Size and Layout', text: 'Footprint, doors, windows, wall space, storage and work zones. Example: “About 12×16 for the bench, storage wall and mower path.”' },
+        { title: 'Confirm the Structure', text: 'Foundation, floor, framing, siding, roof, doors, windows and moisture details, understood before comparing proposals.' },
+        { title: 'Confirm Comfort and Utilities', text: 'Electric, lighting, insulation, HVAC, internet and plumbing readiness. Example: “May become an office, so plan power and HVAC readiness now.”' },
+        { title: 'Confirm the Builder', text: 'Written scope, references, insurance, warranty, communication, change orders and who does the work.' },
+        { title: 'Confirm the Next Step', text: 'A property review, design discussion, scope review or detailed pricing conversation.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'site', title: 'The Site Should Be Clear Enough to Discuss, Even If Not Fully Solved', nav: 'Site Readiness',
+      items: [
+        { title: 'Preferred location', text: 'Where you’d like it, even if drainage, setbacks or HOA review may change it.' },
+        { title: 'Access path', text: 'Gates, fences, side yards, slopes, trees, steps and staging.' },
+        { title: 'Drainage pattern', text: 'Whether water collects, flows through or comes from downspouts.' },
+        { title: 'Utility awareness', text: 'Public lines plus private irrigation, pet fencing, septic, pool or lighting lines.' },
+        { title: 'Working room', text: 'Space around the footprint for framing, siding, roofing and ladders.' },
+        { title: 'Maintenance access', text: 'Room to reach doors, windows, siding, roof edges and drainage later.' },
+      ],
+    },
+    {
+      type: 'table', id: 'approvals', dark: true, title: 'Approval Questions Should Be Identified Early', nav: 'Approval Readiness',
+      head: ['Area', 'What to identify', 'Why it matters'],
+      rows: [
+        ['Public jurisdiction', 'The city, township or county responsible for your address', 'Rules vary by address, not just building size'],
+        ['Setbacks & easements', 'Property-line distances and restricted areas', 'Open ground is not always buildable ground'],
+        ['HOA or architectural review', 'Placement, size, color, siding, roof and timing rules', 'Private approval is separate from public approval'],
+        ['Utilities & digging', '811 marking and known private lines', 'Required before digging or foundation work'],
+        ['Intended use', 'Storage, workshop, office, studio or other', 'Use can affect approvals, trades and scope'],
+        ['Homeowner responsibility', 'What you must verify, disclose, clear or coordinate', 'Clear duties prevent scheduling problems'],
+      ],
+    },
+    {
+      type: 'cards', id: 'design-scope', title: 'Design, Scope and Ownership Readiness', nav: 'Design, Scope & Ownership',
+      items: [
+        { title: 'Design', list: ['A rough size direction or clearly defined use', 'Doors and windows planned for equipment, light and furniture', 'Exterior character that fits the home', 'Views from the house, street and neighbors considered'] },
+        { title: 'Scope & budget', list: ['A budget direction: storage, premium exterior or comfort-ready', 'Included and excluded work understood', 'Deposit and payment expectations understood', 'How changes will be documented'] },
+        { title: 'Future use', list: ['Realistic future power, HVAC, insulation or plumbing mentioned now', 'Not every upgrade has to be bought now', 'Early decisions should allow for realistic future work'] },
+        { title: 'Ownership', list: ['Warranty coverage and exclusions', 'Exterior painted within 30 days of completion (vinyl excepted)', 'Drainage and vegetation care', 'Records, receipts and photos kept'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'prepare', title: 'What to Bring to the First Conversation', nav: 'Prepare for the Conversation',
+      lead: 'No drawings needed. A few practical details make the discussion far more useful.',
+      items: [
+        { title: 'Property photos', list: ['The proposed location', 'The path from the driveway', 'Gates, fences, slopes or tight side yards', 'Photos after rain if water collects'] },
+        { title: 'Project goals', list: ['Main and secondary uses', 'Rough size direction', 'Preferred model or exterior style', 'Must-haves vs. nice-to-haves'] },
+        { title: 'Site & approval notes', list: ['Drainage or low spots', 'Known private utilities', 'Trees, walls or hardscape', 'HOA requirements or property-line questions'] },
+        { title: 'Future use & budget', list: ['Electrical, lighting, HVAC or internet needs', 'Interior finish plans', 'General budget direction', 'Features that could come later'] },
+      ],
+      note: 'You don’t need every detail solved first. Identifying the open questions is itself part of being ready, and a good conversation helps sort out which ones need a site review, an authority’s answer or a design decision.',
+    },
+  ],
+  faqs: [
+    { q: 'Do I need to know the exact model before contacting Appalachian Sheds?', a: 'No. A model direction helps, but the building’s purpose, likely location, rough size and priorities matter more to start.' },
+    { q: 'What is the most important thing to know before the next conversation?', a: 'What the building needs to do. Purpose drives size, layout, doors, windows, utilities, options and budget.' },
+    { q: 'What if I don’t know whether my site is ready?', a: 'You don’t have to diagnose it yourself. Photos, access details, drainage observations, gate widths and the intended spot help identify what needs review.' },
+    { q: 'Do I need HOA approval before discussing the project?', a: 'Not necessarily, but know whether HOA review may apply, since it can affect placement, size, materials, color and timing.' },
+    { q: 'Do all my questions need answers before I call?', a: 'No. Identifying the unanswered questions is part of readiness. Edwin can help sort out which ones matter now.' },
+  ],
+  related: ['07', '19', '21', '24'],
+  pages: [['Buildings & Pricing', 'Explore models once the use and site are clear.', '/buildings/'], ['Options & Upgrades', 'Every option with installed planning prices.', '/options/']],
+  ctaTitle: 'Turn Research Into a Clear Project Conversation',
+  ctaText: 'Once you understand the purpose, likely site, access, approval questions, rough size, design direction and future needs, the project is easy to discuss. The next step is not pressure; it is a practical conversation about what still needs to be confirmed.',
+};
+---
+<GuidePage page={page} />

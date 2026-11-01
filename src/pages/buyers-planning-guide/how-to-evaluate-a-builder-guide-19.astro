@@ -1,0 +1,92 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '19',
+  subtitle: 'Compare Backyard Building Companies by What Can Be Verified',
+  description: 'How to evaluate a backyard building company before you decide: an eight-step process, what should be verifiable, red flags, sales pitch vs. verifiable standard, and the questions a serious builder should answer.',
+  intro: 'A backyard structure is still a construction project on private property. The company you choose affects site planning, materials, workmanship, communication, schedule, payment risk, warranty support and who is accountable when questions come up. A strong builder makes the project easier to understand, not harder.',
+  question: 'How Should You Evaluate a Backyard Building Company?',
+  answer: [
+    'By what it can explain, document and stand behind before construction begins: construction experience, written scope, material standards, site responsibilities, insurance, relevant completed work, warranty terms, communication, payment expectations, the change-order process, and who will actually build and supervise on your property.',
+    'A trustworthy builder makes clear what is included, what is optional, what belongs to the homeowner, and what could change the price or schedule. The lowest price is not the lowest risk when the scope is vague.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'process', eyebrow: 'A Practical Process', title: 'Eight Steps to Evaluate the Builder Before You Commit', nav: 'How to Evaluate',
+      items: [
+        { title: 'Verify Construction Experience', text: 'The builder should explain site conditions, foundations, framing, materials, drainage, roofing and long-term performance in plain terms, not just broad quality claims.' },
+        { title: 'Review the Written Scope', text: 'Size, style, materials, doors, windows, roof, siding, floor, options, inclusions, exclusions, site assumptions and owner responsibilities.' },
+        { title: 'Understand the Construction Standard', text: 'What supports the building, how the floor, walls and roof are framed, and how moisture is managed. A nice exterior is no substitute.' },
+        { title: 'Verify Insurance and Responsibilities', text: 'Ask for proof of insurance and who handles permits, zoning, setbacks, HOA, utilities and placement questions.' },
+        { title: 'Review Relevant Completed Work', text: 'Recent comparable projects, and reviews that speak to communication, follow-through, quality, site care and how problems were handled.' },
+        { title: 'Read the Warranty Before the Sale', text: 'Builder vs. manufacturer coverage, exclusions, maintenance duties and the claim process.' },
+        { title: 'Clarify Deposits, Payments and Changes', text: 'What the deposit reserves, when payments are due, and how changes to price, schedule or materials are documented.' },
+        { title: 'Know Who Will Be on Your Property', text: 'Who builds, who supervises, who communicates schedule changes and who can resolve questions in the field.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'trust', title: 'A Strong Builder Makes the Project Easy to Verify', nav: 'Foundations of Trust',
+      items: [
+        { title: 'Clear construction standards', text: 'An explanation of what is under the finished look: support, floor, framing, roof, siding and moisture details.' },
+        { title: 'Clear written expectations', text: 'Proposal, selections, exclusions, payments, owner responsibilities and the change process are understandable before signing.' },
+        { title: 'Clear accountability', text: 'You know who handles communication, site decisions, supervision and warranty questions.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Warning Signs That Should Slow the Decision Down', nav: 'Red Flags',
+      lead: 'One concern may have an innocent explanation. A pattern of vague answers, pressure or shifting terms deserves a closer look.',
+      items: [
+        { title: 'Vague “premium quality” claims', text: 'Quality language without stated framing, floor, siding, roof or moisture standards.' },
+        { title: 'Low price with unclear exclusions', text: 'Site work, assembly, options, permits or access conditions not addressed.' },
+        { title: 'Pressure to pay quickly', text: 'A deposit pushed before the scope, payments and warranty are understood.' },
+        { title: '“We’ll figure it out later”', text: 'Changes expected to proceed without written approval.' },
+        { title: 'Casual treatment of permits or HOA', text: 'Approval questions dismissed without clarifying responsibility.' },
+        { title: 'Unknown installation crew', text: 'No one can explain who will build or supervise on your property.' },
+        { title: 'A warranty number without terms', text: 'A long warranty promoted without coverage, exclusions or a claim path.' },
+        { title: 'Defensive answers', text: 'Normal questions about insurance, materials or references treated as a problem.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Polished Sales Pitch vs. Verifiable Standard', nav: 'Pitch vs. Standard',
+      head: ['Area', 'Sales-pitch version', 'Verifiable standard', 'Why it matters'],
+      rows: [
+        ['Photos', 'Attractive images with little explanation', 'Comparable projects with size, materials and site discussed', 'Photos should support the scope, not replace it'],
+        ['Price', 'Low headline number', 'Written scope with inclusions, options and exclusions', 'Omitted items make a cheap price expensive'],
+        ['Materials', '“Quality materials”', 'Specific standards from the floor to the roof', 'Value can’t be compared without knowing what is built'],
+        ['Insurance', 'Casual reassurance', 'Proof supplied when requested', 'Construction on private property carries real risk'],
+        ['Permits & HOA', '“You probably don’t need anything”', 'Exact-address caution on approvals and setbacks', 'Requirements vary by property'],
+        ['Payment', 'Pressure to pay quickly', 'Deposit and timing explained in writing', 'Payment should follow clarity'],
+        ['Changes', '“We can figure it out later”', 'Written approval before changes', 'Unwritten changes create disputes'],
+        ['Accountability', 'A salesperson sells; an unknown crew arrives', 'Clear explanation of who builds and supervises', 'You deserve to know who is responsible'],
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Clear Responsibilities on Both Sides', nav: 'Responsibilities',
+      items: [
+        { title: 'The builder should clarify', list: ['Written scope, materials, options and exclusions', 'Construction method, supervision and point of contact', 'Site access and readiness requirements', 'Schedule expectations and what affects them', 'Deposit, payment and change-order procedures', 'Warranty coverage, exclusions and service process'] },
+        { title: 'The homeowner should confirm', list: ['Exact desired placement', 'Permit, zoning, HOA and easement requirements as assigned', 'Known private utilities and hidden site conditions', 'Access, gate width and work-zone clearance', 'Future use that affects power, HVAC or foundation', 'Timely approval of selections and written changes'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Questions a Serious Builder Should Be Ready to Answer', nav: 'Questions to Ask',
+      items: [
+        { title: 'About the company and construction', list: ['What construction background supports your work?', 'Who will build and supervise my building?', 'What are your floor, wall, roof, siding and moisture standards?', 'Can you provide proof of insurance?', 'Can I see recent work like mine?', 'Who is my point of contact during construction?'] },
+        { title: 'About the agreement', list: ['What exactly is included and excluded?', 'What site conditions could change the price?', 'Who handles permits, HOA, setbacks and utilities?', 'What does the deposit reserve, and when are payments due?', 'How are changes approved and priced?', 'What does the warranty cover, exclude and require of me?'] },
+      ],
+      note: 'Ask every builder you are considering the same questions. That is the easiest way to compare companies fairly.',
+    },
+  ],
+  faqs: [
+    { q: 'Should I choose the builder with the lowest price?', a: 'Compare the same scope. A lower number may leave out site work, materials, options or assembly that another quote includes.' },
+    { q: 'Should a backyard building company provide proof of insurance?', a: 'It is reasonable to ask any company building on your property about its insurance and to request proof.' },
+    { q: 'How detailed should the written proposal be?', a: 'Specific enough that both sides understand the building, materials, options, inclusions, exclusions, site responsibilities, payments and how changes are handled.' },
+    { q: 'How important is it to know who does the work?', a: 'Very. Ask whether employees, dedicated crews or subcontractors build it, who supervises the site, and who can resolve field decisions.' },
+  ],
+  related: ['10', '11', '12', '21'],
+  pages: [['Buildings & Pricing', 'Published prices for every model, size and siding.', '/buildings/']],
+  ctaTitle: 'Compare Builders With the Same Questions and Standard',
+  ctaText: 'Ask each company to explain what is being built, how it is built, what is included, who is responsible, what your property requires, how money and changes are handled, and what happens after construction. Edwin is glad to answer every one.',
+};
+---
+<GuidePage page={page} />

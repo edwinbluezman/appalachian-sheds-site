@@ -681,5 +681,141 @@
         "note": "Turns, cabinets and landings add complexity"
       }
     ]
+  },
+  "floors": {
+    "upgrades": [
+      {
+        "item": "Standard 2×6 PT Joist Floor",
+        "price": "Included",
+        "bestFor": "Storage, garden and general-purpose buildings",
+        "note": "Included on every model; about $6–$12 per sq ft when priced separately"
+      },
+      {
+        "item": "2×8 PT Joist / Stiffness Upgrade",
+        "price": "$4–$9 per sq ft",
+        "bestFor": "Larger buildings, workshops, offices and studios",
+        "note": "Add-on; species, span, spacing and blocking"
+      },
+      {
+        "item": "Double-Layer 3/4″ PT Plywood",
+        "price": "$7–$15 per sq ft",
+        "bestFor": "Heavy-duty and finish-ready floors",
+        "note": "Add-on; second layer, fastening, floor height"
+      },
+      {
+        "item": "2×6 PT T&G Structural Decking",
+        "price": "$12–$28 per sq ft",
+        "bestFor": "Rugged premium, rustic and specialty floors",
+        "note": "Material grade, cover width, waste"
+      },
+      {
+        "item": "Finish-Floor Underlayment / Prep",
+        "price": "$1.50–$6 per sq ft",
+        "bestFor": "LVP, resilient flooring, carpet tile and finished interiors",
+        "note": "Finish product, flatness, moisture prep"
+      },
+      {
+        "item": "Concrete Slab",
+        "price": "$6–$18+ per sq ft",
+        "bestFor": "Garage-like or heavy rolling-load uses",
+        "note": "Before unusual site or engineering conditions"
+      }
+    ]
+  },
+  "ramps": {
+    "equipment": [
+      {
+        "item": "Wheelbarrow / Garden Cart Ramp",
+        "price": "$450–$750",
+        "bestFor": "Standard pressure-treated ramp",
+        "note": "Door opening, threshold and wet-weather traction"
+      },
+      {
+        "item": "Riding Mower Ramp",
+        "price": "$650–$1,100",
+        "bestFor": "Wide pressure-treated ramp",
+        "note": "Deck width, turning path and slope"
+      },
+      {
+        "item": "Zero-Turn Mower Ramp",
+        "price": "$850–$1,400+",
+        "bestFor": "Wide reinforced ramp",
+        "note": "Machine width, low deck clearance, traction"
+      },
+      {
+        "item": "ATV / Compact Equipment Ramp",
+        "price": "$1,000–$1,700+",
+        "bestFor": "Reinforced equipment ramp",
+        "note": "Operating weight, wheel loads, threshold"
+      }
+    ],
+    "steps": [
+      {
+        "item": "Simple 2–3 Step PT Entry",
+        "price": "$650–$1,000",
+        "bestFor": "Low walk-in door entries",
+        "note": "Rise, width, footing and finish"
+      },
+      {
+        "item": "PT Steps + Small Landing",
+        "price": "$950–$1,600+",
+        "bestFor": "Offices, studios and frequently used doors",
+        "note": "Landing size, door swing, site grade"
+      },
+      {
+        "item": "Finished Landing + Steps",
+        "price": "$1,400–$2,400+",
+        "bestFor": "Premium residential-style entry",
+        "note": "Trim, decking, skirting and finish"
+      },
+      {
+        "item": "Landing + Steps + Rail / Guard System",
+        "price": "$1,800–$3,000+",
+        "bestFor": "Higher entries or where railings are required",
+        "note": "Railing length, posts and infill"
+      }
+    ],
+    "premium": [
+      {
+        "item": "Composite-Surface Ramp or Premium Access",
+        "price": "$950–$2,400+",
+        "bestFor": "Offices, studios, pool houses and premium retreats",
+        "note": "Larger landings, railings and porch integration are extra"
+      }
+    ],
+    "mobility": [
+      {
+        "item": "Pressure-Treated Wood Ramp",
+        "price": "$100–$175 per linear foot",
+        "bestFor": "Mobility-oriented access",
+        "note": "Length set mainly by rise and slope"
+      },
+      {
+        "item": "Composite-Surface Ramp",
+        "price": "$125–$225 per linear foot",
+        "bestFor": "Mobility-oriented access with a premium surface",
+        "note": "Plus framing and railing"
+      },
+      {
+        "item": "Modular Aluminum Ramp",
+        "price": "$125–$200 per linear foot",
+        "bestFor": "Removable or relocatable access",
+        "note": "Useful where the ramp may move"
+      },
+      {
+        "item": "Complete Mobility-Oriented System",
+        "price": "$1,500–$6,000+",
+        "bestFor": "Longer ramps with landings and rails",
+        "note": "Turns, rails and height can raise the total"
+      }
+    ],
+    "concrete": [
+      {
+        "item": "Concrete Approach System",
+        "price": "$1,500–$4,500+",
+        "bestFor": "Permanent access with frequent equipment traffic",
+        "note": "Typical small systems; longer runs and walls priced by project"
+      }
+    ]
   }
 }

@@ -1,0 +1,82 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/floor-systems/',
+  name: 'Floor Systems & Flooring',
+  title: 'Shed Floor Upgrades: Joists, Decking & Finish Prep | Appalachian Sheds',
+  description: 'Appalachian Sheds floor systems: 2×6 pressure-treated joists at 16″ on center with 3/4″ PT plywood standard, plus 2×8 joist, double-layer, T&G decking, finish-prep and slab upgrades with planning prices.',
+  h1: 'Floor Systems & Flooring',
+  answer: 'Every Appalachian Sheds model starts with 2×6 pressure-treated floor joists at 16 inches on center and a 3/4-inch pressure-treated plywood deck. Upgrades include 2×8 joists ($4–$9 per sq ft), a second plywood layer ($7–$15), 2×6 T&G decking ($12–$28), finish-floor underlayment ($1.50–$6) and concrete slabs ($6–$18+). Choose the structural floor first and the finish surface second.',
+  familyLabel: 'Floor Topic',
+  stepsTitle: 'Use, Load, Support, Framing, Deck, Moisture, Finish',
+  stepsLead: 'A floor should be matched to the building’s real job, not upgraded by habit. Following this order keeps a decorative finish choice from driving the structure backward.',
+  steps: [
+    ['Use & load', 'Storage, workshop, office or heavy equipment. Tell us about heavy items before the floor is priced.'],
+    ['Support & span', 'Beam layout and clear span set how the floor is carried.'],
+    ['Framing & deck', 'Joist size and spacing, then a deck rated for that spacing.'],
+    ['Moisture & finish', 'Treatment for the exposure, then the finish surface.'],
+  ],
+  families: [
+    {
+      id: 'standard-floor',
+      name: 'The Standard Floor',
+      intro: [
+        'Each model is built on 6×6 ground-contact pressure-treated foundation beams with 2×6 pressure-treated joists at 16 inches on center, perpendicular to the beams, and a 3/4-inch pressure-treated plywood deck.',
+        'That is a strong starting point, not a universal promise for every size, span or load. Joist depth alone does not set a floor’s capacity: species, grade, spacing, span and support all matter, and the final assembly is set in your written proposal.',
+      ],
+      character: 'Choose the structural floor first. Choose the finish surface second.',
+    },
+    {
+      id: 'floor-upgrades',
+      name: 'Floor Upgrades',
+      intro: [
+        'Upgrades are priced against the standard floor they replace, including material, labor, fastening, blocking and any change in floor height.',
+        'Large tool chests, safes, kilns, motorcycles, golf carts and machinery need a project-specific review rather than a general square-foot assumption, so tell us about them early.',
+      ],
+      bestUses: ['Workshops with benches, carts and heavy tools', 'Offices and studios that need a stiff, finish-ready floor', 'Mowers, motorcycles and rolling equipment', 'Rustic or specialty premium floors'],
+      planning: ['Extra floor thickness affects thresholds, ramps and doors', 'Wheel loads matter, not just weight per square foot', 'A wet site needs drainage, not a thicker floor'],
+      prices: prices.floors.upgrades,
+      after: 'These are early-planning ranges, not fixed prices. Heavy loads, unusual spans, engineering, difficult access and finished-room requirements can change the cost.',
+    },
+    {
+      id: 'finish-ready',
+      name: 'Finish-Ready Floors',
+      intro: [
+        'The structural subfloor and the finish underlayment are not always the same layer. Some resilient floors, such as LVP, need a smooth underlayment over the structural deck; others have their own flatness and moisture requirements. Choose the finish before the floor is closed in.',
+        'Floor insulation is planned separately, on its own options page.',
+      ],
+      bestUses: ['LVP and resilient flooring', 'Rubber workshop flooring', 'Wood or T&G finish floors', 'Carpet and carpet tile'],
+    },
+  ],
+  compare: {
+    title: 'Floor Direction by Building Use',
+    head: ['Building use', 'Typical floor direction', 'Discuss early'],
+    rows: [
+      ['General storage', 'Standard model floor', 'Shelving, mower weight, stored equipment'],
+      ['Workshop', 'Stiffness or load upgrade review', 'Benches, machines, tool chests, point loads'],
+      ['Mower or equipment', 'Heavy-use wood floor or slab review', 'Wheel loads, weight, ramp and threshold'],
+      ['Backyard office', 'Finish-ready floor with underlayment planning', 'Floor feel, insulation, finish flooring'],
+      ['Creative or music studio', 'Stiff floor with finish and comfort planning', 'Equipment, acoustics, underlayment'],
+      ['Poolside or damp use', 'Moisture-aware deck and finish', 'Wet traffic, humidity, slip resistance'],
+    ],
+  },
+  considerationsTitle: 'Common Floor Planning Mistakes',
+  considerations: [
+    ['Choosing by joist depth alone', 'Size without species, grade, spacing and span does not establish capacity.'],
+    ['Hiding heavy loads', 'Safes, mowers and machinery can change the whole floor plan.'],
+    ['Choosing the finish first', 'The finish should follow the structural floor and moisture plan.'],
+    ['Assuming treatment fixes drainage', 'Pressure-treated wood does not correct a wet site.'],
+    ['Adding layers without checking height', 'Extra thickness affects thresholds, ramps and doors.'],
+  ],
+  faqs: [
+    { q: 'What floor comes standard?', a: '2×6 pressure-treated joists at 16 inches on center, perpendicular to 6×6 ground-contact pressure-treated beams, with a 3/4-inch pressure-treated plywood deck.' },
+    { q: 'Do I need a floor upgrade for a riding mower?', a: 'Often the standard floor is enough, but wheel loads, weight and the ramp all matter. Tell us the mower model so the floor and ramp can be checked together.' },
+    { q: 'Is a 2×8 floor always better?', a: 'Not automatically. A deeper joist helps in the right assembly, but span, spacing, support and load decide whether it is needed. It is $4 to $9 per square foot as an add-on.' },
+    { q: 'Can I put LVP on the shed floor?', a: 'Yes, with planning. Many resilient floors need a smooth underlayment over the structural deck, which runs $1.50 to $6 per square foot.' },
+  ],
+  ctaTitle: 'Plan Your Floor With Edwin',
+};
+---
+<OptionPage page={page} />

@@ -1,0 +1,96 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/ramps-steps-access/',
+  name: 'Ramps, Steps & Access',
+  title: 'Shed Ramps, Steps & Landings: Options & Prices | Appalachian Sheds',
+  description: 'Appalachian Sheds site-built ramps from $450, mower and equipment ramps, entry steps and landings from $650, composite access and concrete approaches. Planning prices for Cincinnati and the Tri-State.',
+  h1: 'Ramps, Steps & Landings',
+  answer: 'Most Appalachian Sheds access systems run $450 to $1,700 or more: a garden-cart ramp from $450, a riding-mower ramp from $650, a zero-turn or ATV ramp from $850, and entry steps from $650. Longer mobility-oriented ramps and permanent concrete approaches can cost several thousand dollars. Every ramp is site-built to the actual floor height, door width and equipment.',
+  familyLabel: 'Access Option',
+  stepsTitle: 'The Entry Should Fit What Moves Through the Door',
+  stepsLead: 'Door width, floor height, pad elevation, site grade, equipment weight, drainage and traction decide whether the entry feels easy or awkward every time you use it.',
+  steps: [
+    ['Measure the load', 'Wheelbarrow, mower, zero-turn, ATV, carts or daily foot traffic.'],
+    ['Measure the rise', 'The finished floor height above the approach.'],
+    ['Choose the run', 'A longer ramp is gentler; a shorter one saves space but is steeper.'],
+    ['Finish the approach', 'Stable base, traction, landing, drainage and lighting.'],
+  ],
+  families: [
+    {
+      id: 'equipment-ramps',
+      name: 'Equipment Ramps',
+      intro: [
+        'Pressure-treated wood is the practical standard for mower, garden-cart and equipment access. Each ramp is framed as a structural part of the entry, attached at the building and set on a stable base at the bottom.',
+        'Ramp width follows the actual clear door opening and the widest item that crosses it. Zero-turns, compact tractors and ATVs need reinforced framing chosen around the real machine, not just a "heavy-duty" label.',
+      ],
+      bestUses: ['Wheelbarrows and garden carts', 'Push and riding mowers', 'Zero-turn mowers', 'ATVs and compact equipment'],
+      planning: ['Use the machine’s actual width and operating weight', 'Low mower decks need a gentle transition', 'Traction for wet and frosty days'],
+      prices: prices.ramps.equipment,
+    },
+    {
+      id: 'steps-landings',
+      name: 'Entry Steps & Landings',
+      intro: [
+        'A house-style door, office or studio entrance usually needs steps rather than a ramp. A landing gives a stable place to stand while opening the door instead of balancing on a stair tread.',
+      ],
+      prices: prices.ramps.steps,
+    },
+    {
+      id: 'composite',
+      name: 'Composite & Premium Access',
+      intro: [
+        'Composite decking reduces surface upkeep and looks more finished at high-visibility entries. The frame underneath is still structural, and composite boards are checked for traction, since not all behave the same on a wet or frosty slope.',
+      ],
+      bestUses: ['Backyard offices and studios', 'Pool houses', 'Premium retreats', 'Porch-integrated buildings'],
+      prices: prices.ramps.premium,
+    },
+    {
+      id: 'mobility',
+      name: 'Mobility-Oriented Ramps',
+      intro: [
+        'Convenience access and accessibility access are not the same. A ramp meant for mobility use can need much more length, landings, handrails, edge protection and yard space than a mower ramp.',
+        'Appalachian Sheds does not describe a ramp as ADA compliant unless the complete project has been designed and verified to the applicable standard for your location.',
+      ],
+      prices: prices.ramps.mobility,
+    },
+    {
+      id: 'concrete',
+      name: 'Concrete & Permanent Approaches',
+      intro: [
+        'Concrete gives a durable, permanent approach for frequent equipment traffic or when the entry joins a walk or patio. It is less forgiving than wood if the floor height or drainage is wrong, so it is poured after those are final.',
+      ],
+      prices: prices.ramps.concrete,
+    },
+  ],
+  compare: {
+    title: 'Choose Access by Use',
+    head: ['Primary use', 'Recommended access', 'Planning range'],
+    rows: [
+      ['Garden and light storage', 'Standard PT ramp or low transition', '$450–$900'],
+      ['Riding mower', 'Wide PT equipment ramp', '$650–$1,100'],
+      ['Zero-turn, ATV or heavy equipment', 'Reinforced equipment ramp', '$850–$1,700+'],
+      ['Walk-in entry', 'Steps, or steps with a landing', '$650–$1,600+'],
+      ['Premium office or studio', 'Finished landing, composite ramp or architectural steps', '$950–$3,000+'],
+      ['Mobility-oriented access', 'Longer ramp system with code review', '$1,500–$6,000+'],
+      ['Permanent equipment approach', 'Concrete system', '$1,500–$4,500+'],
+    ],
+  },
+  considerationsTitle: 'Plan the Door, Floor Height and Ramp Together',
+  considerations: [
+    ['Door width', 'Size the ramp to the clear opening and the widest item you will move.'],
+    ['Floor height', 'Floor upgrades can raise the threshold and lengthen the ramp.'],
+    ['Slope & landings', 'Mobility ramps have slope, landing and handrail rules; confirm them for your address.'],
+    ['Drainage', 'The approach should shed water away from the door and the building pad.'],
+  ],
+  faqs: [
+    { q: 'How much does a shed ramp cost?', a: 'A site-built pressure-treated garden-cart ramp is $450 to $750, a riding-mower ramp $650 to $1,100, and a zero-turn ramp $850 to $1,400 or more.' },
+    { q: 'Why does a site-built ramp cost more than a factory ramp?', a: 'Factory ramps are short, standard accessories. A site-built ramp is fitted to your actual floor height, door width, equipment and approach, and set on a stable base.' },
+    { q: 'Is the ramp ADA compliant?', a: 'Not by default. A ramp is described as accessible only when the full project has been designed and verified to the applicable standard for your location.' },
+  ],
+  ctaTitle: 'Plan Your Entry With Edwin',
+};
+---
+<OptionPage page={page} />

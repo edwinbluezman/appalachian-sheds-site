@@ -1,0 +1,104 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+
+const page = {
+  path: '/options/site-foundation/',
+  name: 'Site & Foundation',
+  title: 'Shed Site Preparation, Building Pad & Foundation | Appalachian Sheds',
+  description: 'How to prepare your yard for an Appalachian Sheds build: site requirements, the optional prepared gravel building pad, 6×6 structural foundation beams, standard leveling and drainage.',
+  h1: 'Site Preparation & Foundation',
+  answer: 'Before build day, the site should be cleared and level within 6 inches, with 3 feet of working room around the building (4 feet for buildings over 160 square feet), power within 150 feet and a clear path for materials. Every building sits on 6×6 ground-contact pressure-treated foundation beams. The optional prepared gravel pad is recommended wherever drainage, soft soil or moisture is a concern.',
+  familyLabel: 'Site Topic',
+  stepsTitle: 'Six Checkpoints Before Our Crew Arrives',
+  stepsLead: 'Site preparation does not need to be complicated, but it does need to be clear. These checkpoints prevent delays, access problems and last-minute placement changes.',
+  steps: [
+    ['Clear the footprint', 'Remove debris, plants, old blocks and stored items. Level within 6 inches.'],
+    ['Keep working room', '3 feet around most buildings; 4 feet over 160 square feet. Clear low branches.'],
+    ['Stake the placement', 'Mark all four corners and the center of the doorway.'],
+    ['Confirm power', 'An outlet within 150 feet, or generator service can be arranged.'],
+    ['Clear the access path', 'Gates, walkways and tight turns from the driveway to the site.'],
+    ['Check utilities & drainage', 'Locate buried lines, avoid low spots, and review setbacks and HOA rules.'],
+  ],
+  families: [
+    {
+      id: 'building-pad',
+      name: 'The Prepared Building Pad (Optional, Recommended)',
+      intro: [
+        'For the most controlled long-term base, Appalachian Sheds recommends an excavated, compacted, drained and moisture-managed gravel pad, built before the shed’s foundation. It extends 2 feet beyond the building on all four sides. It is optional, and preferred wherever drainage, soft topsoil or moisture is a concern.',
+        'The 6×6 beams that contain the gravel are perimeter beams. They are separate from the structural 6×6 beams that carry the shed floor.',
+      ],
+      character: 'A controlled, free-draining base instead of loose stone or bare soil.',
+      planning: [
+        'Remove about 6 inches of topsoil to firm, non-organic soil, replacing soft spots',
+        'Compact the exposed soil with a plate compactor',
+        'Lay commercial-grade geotextile fabric, seams overlapped 12 inches',
+        'Set 6×6 ground-contact perimeter beams, pinned with 1/2″ × 24″ rebar every 24 inches',
+        'Fill with 6 inches of compacted 3/4″ washed limestone (no pea gravel)',
+        'Cover with a 10-mil black moisture barrier extending 2 feet past the perimeter beams',
+      ],
+    },
+    {
+      id: 'foundation',
+      name: 'The Structural Foundation',
+      intro: [
+        'Every on-site build is carried by heavy 6×6 ground-contact pressure-treated beams that support the floor evenly, raise it about 5.5 inches above its bearing surface, and keep the floor framing out of direct contact with the ground.',
+        'With the prepared pad, the complete assembly has nine layers from the ground up.',
+      ],
+      planning: [
+        '1. Compacted soil subgrade',
+        '2. Geotextile fabric',
+        '3. 6×6 PT perimeter grade beams',
+        '4. 6″ of 3/4″ washed gravel',
+        '5. 10-mil black moisture barrier',
+        '6. 16″ × 16″ × 6″ concrete bearing pads',
+        '7. 6×6 PT foundation beams',
+        '8. 2×6 PT floor joists at 16″ on center, perpendicular to the beams',
+        '9. 3/4″ PT plywood floor deck',
+      ],
+      after: 'A strong foundation does not replace drainage. Even treated materials should not sit where water collects or flows under the building.',
+    },
+    {
+      id: 'leveling',
+      name: 'Leveling & Sloped Sites',
+      intro: [
+        'Most backyards are handled cleanly when the slope is identified early. Sites within 6 inches of level are covered by standard precision leveling. Sites between 6 and 12 inches may need an extended leveling package, and sites over 12 inches need an advanced review before the build can be approved.',
+      ],
+    },
+    {
+      id: 'slab',
+      name: 'Concrete Slab Base',
+      intro: [
+        'A properly prepared concrete slab can also be an excellent permanent base. It should match the building dimensions exactly unless reviewed otherwise, be level within 1/2 inch, and be coordinated during the site assessment, since it may need special anchors and extra labor.',
+      ],
+    },
+  ],
+  compare: {
+    title: 'Site Conditions and What They Mean',
+    head: ['Site condition', 'Approach', 'What to expect'],
+    rows: [
+      ['Level within 6 inches', 'Standard precision leveling', 'Typically included when access and conditions are suitable'],
+      ['6 to 12 inches of slope', 'Extended leveling package', 'Project-specific review to protect alignment and warranty'],
+      ['Over 12 inches of slope', 'Advanced site review', 'May need piers, anchoring, grading or drainage work'],
+      ['Soft, wet or poorly drained soil', 'Drainage and base review', 'Standing water and unstable soil corrected before building'],
+      ['Water flows toward the site', 'Regrade or redirect downspouts', 'Move water away from the building, not under it'],
+    ],
+  },
+  considerationsTitle: 'Before You Pick the Spot',
+  considerations: [
+    ['Setbacks & HOA', 'Check local setback rules and HOA requirements, and confirm any permit needs early.'],
+    ['Buried utilities', 'Call 811 to mark utility lines, and identify private lines that may not be marked.'],
+    ['Future power & data', 'For offices and studios, plan conduit and trenching before build day.'],
+    ['Laurel Lean-To', 'The Laurel Lean-To can be designed to sit against an existing structure, an exception to the normal clearance rule.'],
+    ['Old shed removal', 'Site clearing and removal of an old shed can be reviewed as part of the project.'],
+    ['Weather', 'Heavy rain, saturated ground or high winds may shift the build date to protect quality.'],
+  ],
+  faqs: [
+    { q: 'How should I prepare my yard?', a: 'Clear the footprint and keep it level within 6 inches, leave the required working room, stake the four corners and the door center, keep a clear path for materials, and have power within 150 feet if possible.' },
+    { q: 'How much clearance is needed around the building?', a: 'At least 3 feet on all sides for most buildings, and 4 feet for buildings over 160 square feet. Clear overhead branches and power lines too.' },
+    { q: 'What does standard leveling include?', a: 'Sites within 6 inches of level. Steeper sites need an extended leveling package or an advanced site review.' },
+    { q: 'Can the building be moved later?', a: 'The 6×6 beam foundation can support professional relocation, but moving a finished building may affect its leveling and warranty coverage. Review the warranty terms first.' },
+  ],
+  ctaTitle: 'Have Edwin Look at Your Site',
+};
+---
+<OptionPage page={page} />

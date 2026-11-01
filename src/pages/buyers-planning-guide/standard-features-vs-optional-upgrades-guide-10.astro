@@ -1,0 +1,112 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { classicSeriesSpecs, signatureSeriesSpecs, notIncluded } from '../../data/models.js';
+
+// The included-features lists come from the same specifications shown on the model pages.
+const skip = ['Sizes', 'Roof profile', 'Construction'];
+const asList = (specs) => specs.filter(([k]) => !skip.includes(k)).map(([k, v]) => `${k}: ${v}`);
+const classic = asList(classicSeriesSpecs('', ''));
+const signature = asList(signatureSeriesSpecs([], ''));
+
+const page = {
+  n: '10',
+  subtitle: 'Know Exactly What Is Included Before You Compare Prices',
+  description: 'What the standard Appalachian Sheds building includes, what is an optional upgrade, which decisions must be made early, scope red flags, how to compare quotes and what belongs in writing.',
+  intro: 'A backyard building should never leave you guessing what is included, what is optional, what must be decided early and what can wait. The most expensive misunderstanding in shed buying is often not the published price. It is the missing scope.',
+  question: 'What Does “Standard” Mean, and What Is an Upgrade?',
+  answer: [
+    'Standard means the complete weather-tight exterior building: foundation beams, floor system, framed walls, roof system, siding, roofing, standard doors and windows, trim, vents and the 30-Year Structural Warranty.',
+    'Options and upgrades are separate selections that change comfort, utilities, finish, access, storage, exterior character, site work or future-use readiness. Exterior paint, stain and caulking are optional, as are interior finishes, insulation, electrical and HVAC.',
+    'Two buildings of the same size can differ greatly in foundation, floor, roof framing, openings, warranty and excluded work, so compare the actual scope, not just the starting price.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'standard', eyebrow: 'The Standard Building', title: 'What Every Appalachian Sheds Building Includes', nav: 'What’s Included',
+      lead: 'These are the standard specifications for each series, exactly as listed on the model pages. LP SmartSide Vertical Panel siding and standard LP SmartSide trim are standard on every model.',
+      items: [
+        { title: 'Classic Series', text: 'Appalachian Classic, Antique Saltbox and Laurel Lean-To (the Laurel has its own 3/12 single-slope roof, wall heights and no standard windows; see its page).', list: classic },
+        { title: 'Signature Series', text: 'Appalachian Country Cottage and Saltbox Overhang.', list: signature },
+      ],
+      note: `Not included unless identified in your final written price: ${notIncluded}`,
+      links: [['Compare every model and size', '/buildings/']],
+    },
+    {
+      type: 'steps', id: 'sequence', title: 'Decide the Hard-to-Change Items First', nav: 'Decision Order',
+      lead: 'Scope clarity is also about timing. The least glamorous decisions are often the most expensive to change later.',
+      items: [
+        { title: 'Site, Access & Drainage', text: 'Grade, access, staging, drainage, soil, utilities, HOA and placement come before finish upgrades.' },
+        { title: 'Foundation, Floor & Walls', text: 'Load, moisture, framing and floor strategy come before flooring, workshop loads or comfort packages.' },
+        { title: 'Roof, Openings & Weather', text: 'Roof, pitch, ventilation, doors, windows, skylights and overhangs are set before framing.' },
+        { title: 'Utility & Comfort Readiness', text: 'Electric, insulation, HVAC, plumbing readiness and interior finish are planned before walls close.' },
+        { title: 'Exterior Identity', text: 'Siding, paint or stain, trim, cupolas, shutters, flower boxes and porch details.' },
+        { title: 'Final Finish & Use Details', text: 'Storage, workbenches, shelving, smart features and finish materials that support the real use.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'upgrades', title: 'What Belongs in the Optional Upgrade Conversation', nav: 'Optional Upgrades',
+      lead: 'Some upgrades are visual. Others affect structure, comfort, utilities, site work, permits or licensed trades.',
+      items: [
+        { title: 'Site & foundation', text: 'Prepared gravel pad, extra grading, drainage, concrete, difficult access, clearing. Discuss before final pricing.' },
+        { title: 'Structural readiness', text: 'Floor upgrades, wall-height changes, loft framing, future finished-room planning. Decide before framing.' },
+        { title: 'Roof & weather', text: 'Metal roofing, roof pitch upgrades, skylights, ventilation, overhangs. Decide before roof framing.' },
+        { title: 'Access & natural light', text: 'Upgraded doors, added windows, barn sash, transoms, ramps, hardware. Plan before wall framing.' },
+        { title: 'Exterior identity', text: 'Siding upgrades, paint and stain, trim, cupolas, shutters, flower boxes, porches.' },
+        { title: 'Interior utility', text: 'Lofts, shelving, workbenches, tool walls and storage layouts.' },
+        { title: 'Comfort & utilities', text: 'Electric, lighting, insulation, HVAC, plumbing readiness, interior finish. Plan before rough-ins.' },
+        { title: 'Finished-space paths', text: 'Office, studio, workshop, hobby room or pool house, defined before the final scope.' },
+      ],
+      links: [['See every option with prices', '/options/']],
+    },
+    {
+      type: 'cards', id: 'red-flags', dark: true, title: 'What Should Never Hide Inside “Standard” or “Optional”', nav: 'Scope Red Flags',
+      items: [
+        { title: 'Unclear site work', text: 'Grading, drainage, clearing, gravel, concrete or unusual access should be discussed and priced separately.' },
+        { title: 'Shell blurred with interior', text: 'A weather-tight shell is not a finished office, studio or conditioned room.' },
+        { title: 'Casual utility language', text: 'Electric, HVAC and plumbing involve safety, code and licensed trades.' },
+        { title: 'Upgrade pressure', text: 'A storage buyer should not be pushed into finished-space upgrades they do not need.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', title: 'How to Compare Two Shed Quotes Without Being Misled', nav: 'Quote Comparison',
+      head: ['Question', 'Why it matters', 'A clear answer shows'],
+      rows: [
+        ['What foundation is included?', 'A building is only as dependable as its base', 'Beam size, treatment, leveling, moisture separation, site assumptions'],
+        ['What floor system?', 'Floor strength affects storage, workshops and finished floors', 'Joist size and spacing, decking material, any load limits'],
+        ['What roof system?', 'Water shedding, weather resistance and upkeep', 'Framing, pitch, sheathing, roofing type, ventilation, drip edge'],
+        ['What exterior finish?', 'Defines whether the building is truly finished outside', 'Siding, trim, doors, windows, vents and paint responsibilities'],
+        ['What is excluded?', 'Where low quotes become expensive', 'Interior finish, site prep, electric, insulation, concrete, permits, paint'],
+        ['How are changes handled?', 'Verbal upgrades get confusing', 'A written change order with scope, cost, timing and approval'],
+        ['What warranty?', 'Length only helps when coverage is clear', 'Structural coverage, exclusions, owner duties, claim process'],
+      ],
+    },
+    {
+      type: 'cards', id: 'writing', title: 'A Clear Scope Is Documented Before the Build Starts', nav: 'What Belongs in Writing',
+      items: [
+        { title: 'Builder documentation', list: ['Model, size, standard materials and warranty terms', 'Selected upgrades with type, placement, quantity, finish and price', 'Exclusions from the standard price', 'Written change orders with price, schedule and approval'] },
+        { title: 'Homeowner & site information', list: ['Access path, grade, drainage and staging area', 'Utility marking and known site constraints', 'Required approvals and homeowner responsibilities', 'Maintenance duties for finishes and warranty care'] },
+      ],
+      note: 'If it affects price, schedule, material, location, performance, warranty, appearance or future use, it belongs in the written scope or a written change order, not just in conversation.',
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Use This Checklist Before Approving the Final Scope', nav: 'Planning Checklist',
+      items: [
+        { title: 'Standard building', list: ['Foundation identified', 'Floor system identified', 'Wall framing identified', 'Roof system identified', 'Siding and roofing identified'] },
+        { title: 'Openings & exterior', list: ['Doors and windows confirmed', 'Ventilation confirmed', 'Trim and weatherproofing confirmed', 'Paint or stain responsibility confirmed', 'Warranty terms reviewed'] },
+        { title: 'Options & exclusions', list: ['Upgrades written into the scope', 'Site assumptions documented', 'Excluded work identified', 'Utility and permit responsibilities clear', 'Change-order process understood'] },
+      ],
+    },
+  ],
+  faqs: [
+    { q: 'What does the standard price include?', a: 'The complete weather-tight exterior building: foundation beams, floor framing, wall and roof framing, LP SmartSide Vertical Panel siding, roofing, standard doors and windows, vents, standard trim and the 30-Year Structural Warranty.' },
+    { q: 'Does the standard price include electric, insulation, drywall or paint?', a: 'No. Electrical, insulation, interior finishes, exterior paint, stain and caulking are options, priced on the Options & Upgrades pages.' },
+    { q: 'Why not include every option in the base price?', a: 'Not every buyer needs the same building. A strong standard building with clear options lets the project match its intended use.' },
+    { q: 'Can I add upgrades later?', a: 'Shelving, workbenches and some finishes can be added later. Foundation, floor, wall height, roof, doors, windows, skylights, electrical readiness, insulation and plumbing readiness should be decided before construction.' },
+    { q: 'What is a change order?', a: 'A written adjustment to the agreed scope, stating what is added, removed or changed, how the price and schedule are affected, and who approved it.' },
+  ],
+  related: ['08', '11', '12', '21'],
+  pages: [['Buildings & Pricing', 'Standard specifications and prices for every model.', '/buildings/'], ['Top 10 Most Requested Upgrades', 'The upgrades buyers choose most.', '/options/top-10-upgrades/']],
+  ctaTitle: 'Use Scope Clarity Before You Compare the Final Price',
+  ctaText: 'The strongest project is not the one with the longest options list. It is the one where the use, site, standard building, selected upgrades, exclusions and must-decide-early details are understood before construction begins.',
+};
+---
+<GuidePage page={page} />

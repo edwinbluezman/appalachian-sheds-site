@@ -1,0 +1,96 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { wallSheathing } from '../../data/models.js';
+
+const page = {
+  n: '11',
+  subtitle: 'How Hidden Materials, Moisture Details, Framing, Siding and Roof Systems Affect Long-Term Performance',
+  description: 'The materials and construction standards behind an Appalachian Sheds building, from the foundation to the roof, plus common specification mistakes, owner responsibilities and the questions to ask before approval.',
+  intro: 'A quality backyard building is not defined by one impressive product name. It is defined by how every material is selected, placed, fastened, protected, finished and maintained. The structure behind the siding, the base below the floor, the roof edges and the moisture clearances all decide how the building performs years later.',
+  question: 'What Material and Construction Standards Should a Backyard Building Have?',
+  answer: [
+    'Materials and details suited to the building’s exposure, site, use and expected life: deliberate moisture separation, ground-contact pressure-treated structural parts where required, a disciplined floor system, strong wall and roof framing, durable exterior materials, proper fasteners, roof-edge details, clear finish responsibilities and installation that follows manufacturer requirements.',
+    'Material quality is a complete system. A strong floor cannot make up for a base that traps moisture, and premium siding cannot perform when clearances are ignored.',
+    'The useful question is not “What material do you use?” but “How do the materials work together from the ground to the roof?”',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'standard', eyebrow: 'The Appalachian Sheds Standard', title: 'What Your Building Is Built From', nav: 'Our Construction Standard',
+      lead: 'These standards come from the model specifications. Each model page lists its full specifications.',
+      items: [
+        { title: 'Foundation', list: ['6×6 ground-contact pressure-treated foundation beams on every building', 'Optional prepared pad: geotextile fabric, 6″ of 3/4″ washed gravel, 10-mil moisture barrier and 16″ × 16″ concrete bearing pads'] },
+        { title: 'Floor', list: ['2×6 pressure-treated joists, 16″ on center', '3/4″ plywood floor deck: 7-ply pressure-treated on the Classic Series, exterior-grade on the Signature Series', 'Floor stiffness and decking upgrades available'] },
+        { title: 'Walls', list: ['2×4 kiln-dried framing, 16″ on center (Classic Series: Spruce, double interlocking top plates)', wallSheathing] },
+        { title: 'Roof', list: ['2×6 engineered roof trusses on the gable and saltbox models', '1/2″ exterior-grade plywood roof sheathing', 'Classic Series: 3-tab shingles in 8 colors', 'Signature Series: architectural shingles in 16 colors'] },
+      ],
+      links: [['Site & Foundation: the nine-layer assembly', '/options/site-foundation/'], ['Buildings & Pricing: full model specifications', '/buildings/']],
+    },
+    {
+      type: 'steps', id: 'sequence', title: 'The Most Important Decisions Start With the Hidden Structure', nav: 'Decision Sequence',
+      items: [
+        { title: 'Understand Site & Moisture', text: 'Drainage, slope, soil, splash-back, airflow, shade and landscaping change which materials and details fit.' },
+        { title: 'Establish Moisture Separation', text: 'Treated lumber is an important defense, but it does not replace drainage, clearance, airflow or moisture separation.' },
+        { title: 'Confirm the Floor System', text: 'Beam size, joist size and spacing, decking thickness and treatment are settled before heavy use or interior finishes are planned.' },
+        { title: 'Confirm Wall & Roof Framing', text: 'Framing decides straightness, door and window fit, roof support, siding performance and finish options.' },
+        { title: 'Build the Shell as a System', text: 'Siding, sheathing, trim, roofing, openings, vents, fasteners, flashing, drip edge and clearances work together.' },
+        { title: 'Define Finish & Maintenance', text: 'Paint, stain, sealers, caulking and owner care are understood before approval.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Generic Material Language vs. Construction-System Thinking', nav: 'System Comparison',
+      head: ['Topic', 'Generic description', 'Construction-system approach', 'Why it matters'],
+      rows: [
+        ['Foundation', '“Built on skids”', 'Support method, members, treatment, moisture separation, leveling and drainage', 'The base is the hardest part to correct later'],
+        ['Moisture', 'Treated lumber solves everything', 'Treatment plus drainage, separation, airflow, clearance and upkeep', 'Many exterior problems start as moisture problems'],
+        ['Floor', '“Strong” or “heavy duty”', 'Joist size, spacing, support, treatment, decking and expected use', 'Stiffness affects storage, workshops and finishes'],
+        ['Walls', '“Framed walls”', 'Framing, spacing, openings, backing and siding support', 'Affects straightness, cladding and insulation'],
+        ['Roof', 'Only the shingles named', 'Framing, sheathing, underlayment, pitch, ventilation, drip edge, overhangs', 'The roof is a complete weather system'],
+        ['Siding', 'A color or style choice', 'Backing, clearance, fastening, trim, finish and manufacturer rules', 'Cladding performs when the whole wall is designed'],
+        ['Finish scope', 'Everything in the photo is included', 'What is factory-finished, primed, painted, stained or excluded', 'Clear finish language prevents disputes'],
+      ],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Material Problems Often Begin With Vague Specifications', nav: 'Common Mistakes',
+      items: [
+        { title: '“Quality materials” as a specification', text: 'It names no product, thickness, grade, treatment, spacing or fastening.' },
+        { title: 'Ignoring ground exposure', text: 'Treatment category, drainage, grade clearance, airflow and splash-back all matter near the ground.' },
+        { title: 'Siding as color only', text: 'Siding affects backing, moisture, movement, fastening, clearances and trim.' },
+        { title: 'Burying the lower wall', text: 'Wet mulch, high gravel or soil against siding harms even durable materials.' },
+        { title: 'Missing finish requirements', text: 'Paint, stain, sealer and caulk duties should be known before construction.' },
+        { title: 'Not asking about wall backing', text: 'Ask what sits behind the siding. Appalachian Sheds uses 1/2″ exterior plywood where backing is required.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'A Clear Standard Explains What Is Included', nav: 'Finish Responsibilities',
+      items: [
+        { title: 'Builder scope', list: ['Foundation and structural support', 'Floor framing and decking', 'Wall and roof framing', 'Wall sheathing where required', 'Siding, roofing, doors, windows, vents and trim', 'Approved optional upgrades'] },
+        { title: 'Homeowner responsibility', list: ['Keep siding and trim clearances', 'Keep soil and mulch off the lower walls', 'Maintain drainage away from the building', 'Exterior paint or stain, if selected, and its upkeep', 'Maintain caulking and sealers', 'Follow written warranty and care requirements'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Questions That Reveal the Actual Construction Standard', nav: 'Questions to Ask',
+      items: [
+        { title: 'What floor materials are included?', text: 'Listen for beam and joist sizes, spacing, treatment, decking thickness and moisture separation.' },
+        { title: 'What is behind the siding?', text: 'Is the siding structural by itself, or does it need sheathing, and what material?' },
+        { title: 'What clearances are required?', text: 'How grade, gravel, concrete, mulch and splash-back affect the lower wall.' },
+        { title: 'What must be painted or maintained?', text: 'Primed, unfinished and factory-finished products carry different duties.' },
+        { title: 'What roof details beyond the shingles?', text: 'Framing, sheathing, underlayment, drip edge, ventilation and overhangs.' },
+        { title: 'What warranty obligations apply?', text: 'Structural coverage, manufacturer warranties, exclusions and owner care.' },
+      ],
+      note: 'Do not approve a building you cannot explain. If a proposal cannot describe its major materials in plain English, you are being asked to trust too much and verify too little.',
+    },
+  ],
+  faqs: [
+    { q: 'Which materials matter most?', a: 'The ones hardest to fix later: foundation, moisture separation, floor framing, decking, wall and roof framing, wall sheathing where required, siding, trim, fasteners and roof details.' },
+    { q: 'Why does ground-contact treated lumber matter?', a: 'Parts at or near the ground face more moisture. Ground-contact treatment is made for that exposure; above-ground-rated lumber is not.' },
+    { q: 'Does Appalachian Sheds use plywood behind siding?', a: 'Yes, where the siding needs it. LP SmartSide Vertical Panel and Roseburg DuraTemp are structural panels; Board & Batten, vinyl lap and LP lap go over 1/2″ exterior-grade plywood sheathing.' },
+    { q: 'Is engineered wood siding the same as OSB sheathing?', a: 'No. Engineered siding and commodity sheathing are different products with different uses, specifications and installation rules.' },
+    { q: 'Is siding clearance really important?', a: 'Yes. Clearance protects the lower wall from repeated wetting. Manufacturers specify clearances from grade, concrete, roofs and landscaping.' },
+  ],
+  related: ['10', '03', '04', '17'],
+  pages: [['Siding & Exterior Materials', 'The five siding systems and added materials.', '/options/siding-exterior-materials/'], ['Floor Systems', 'Floor stiffness and decking upgrades.', '/options/floor-systems/']],
+  ctaTitle: 'Build the Standard Into the Structure Before the Finish Goes On',
+  ctaText: 'The exterior appearance should sit on top of a clear construction standard, not make up for a weak one. Connect materials to site preparation, foundation, siding, roof, finish expectations and long-term care.',
+};
+---
+<GuidePage page={page} />

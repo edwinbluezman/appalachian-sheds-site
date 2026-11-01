@@ -1,0 +1,107 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '12',
+  subtitle: 'Budget Clarity Before You Commit',
+  description: 'How deposits, payment milestones, allowances, change orders and financing should work for a backyard building, the budget red flags to avoid, and the questions to ask before paying a deposit.',
+  intro: 'A backyard building budget should not start with a vague starting price and a rushed deposit. It should start with a written scope, a clear understanding of what is included, a practical conversation about upgrades, and a payment plan that fits the project’s size, materials, schedule and site.',
+  question: 'How Should Payments, Deposits and Financing Be Handled?',
+  answer: [
+    'Payment should follow clarity, not pressure. Before a deposit, you should understand the written scope, standard features, selected upgrades, exclusions, site assumptions, deposit purpose, payment timing, change-order process and final-payment expectations.',
+    'Payment milestones should match the project’s size and complexity. Financing can help you understand monthly cost and total obligation, but it never replaces a written construction scope.',
+    'The safe order: define what is being built, define what is not included, confirm site assumptions, document upgrades, explain how changes are handled, then document deposit and payment timing.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'The Right Budget Sequence', title: 'Scope Comes Before Money Changes Hands', nav: 'Budget Sequence',
+      lead: 'Budget disputes usually come less from one number than from unclear assumptions, missing exclusions, vague upgrades or undocumented changes.',
+      items: [
+        { title: 'Confirm the Intended Use', text: 'Storage, workshop, office, studio, garden, pool or a future finished space each suggests a different budget path.' },
+        { title: 'Define the Standard Scope', text: 'Model, size, foundation, floor, walls, roof, siding, standard openings and the weather-tight exterior.' },
+        { title: 'Separate Optional Upgrades', text: 'Added windows, upgraded doors, porches, metal roofing, electric, insulation, interior finish and storage.' },
+        { title: 'Review Site Conditions', text: 'Access, slope, drainage, clearing, gravel, concrete, utility marking, HOA, permits and landscaping.' },
+        { title: 'Confirm the Written Proposal', text: 'Scope, exclusions, selections, timing, deposit, payment milestones and the change process, before the deposit.' },
+        { title: 'Document Changes & Completion', text: 'Changes in writing, a final walkthrough, then final payment as the agreement states.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'categories', title: 'Separate the Structure, Site and Optional Work', nav: 'Budget Categories',
+      items: [
+        { title: 'Standard structure', text: 'The base model, size, shell, floor, walls, roof, standard siding, doors, windows and trim. Compare specifications, not just starting prices.' },
+        { title: 'Optional upgrades', text: 'Doors, windows, roofing, porches, trim, lofts, shelving and accents, each with quantity, location and price confirmed before ordering.' },
+        { title: 'Site preparation', text: 'Access, clearing, grading, drainage, gravel, concrete and leveling. Do not assume all site work is included.' },
+        { title: 'Foundation & base', text: 'Beam system, gravel or concrete path, moisture separation and level assumptions.' },
+        { title: 'Permits, HOA & utility marking', text: 'Who coordinates setbacks, neighborhood rules, local requirements and 811 before the date is set.' },
+        { title: 'Future finished-space readiness', text: 'Electric, insulation, HVAC, ventilation and plumbing planned before framing or wall closure.' },
+      ],
+      note: 'A weather-tight shell is not a finished room. Walls, ceilings, flooring, electric, insulation, HVAC, plumbing and exterior paint are separate decisions unless specifically included in the written scope.',
+    },
+    {
+      type: 'cards', id: 'payments', title: 'Payment Timing Should Match the Project', nav: 'Deposits & Payments',
+      lead: 'A small storage building and a customized studio may use different payment structures. What matters is that the timing is explained and documented before work begins.',
+      items: [
+        { title: 'What a deposit is for', text: 'Scheduling commitment, material planning, ordering and project readiness. Its purpose and treatment belong in writing.' },
+        { title: 'What a deposit is not', text: 'A substitute for scope clarity. Know the model, size, features, upgrades, exclusions and timing first.' },
+        { title: 'Progress or milestone payments', text: 'Larger projects may tie payments to order confirmation, material readiness, build start or substantial completion.' },
+        { title: 'Final payment', text: 'Tied to completion, cleanup, the walkthrough and any agreed punch-list items.' },
+        { title: 'Payment method', text: 'Confirm accepted methods, timing, receipts and any fees.' },
+        { title: 'Allowances', text: 'An estimate for a selection not yet final. The scope should say what happens if the final choice costs more or less.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Budget Mistakes Usually Begin Before the Deposit', nav: 'Budget Red Flags',
+      items: [
+        { title: 'Comparing only starting prices', text: 'Quotes may differ in materials, foundation, warranty, openings and site assumptions.' },
+        { title: 'Paying before the scope is written', text: 'If the model, features and exclusions are unclear, the payment talk is premature.' },
+        { title: 'Assuming site prep is included', text: 'Access, grading, gravel, concrete and drainage should be assigned before scheduling.' },
+        { title: 'Choosing upgrades before a budget range', text: 'Doors, porches and finishes add up quickly without a comfortable overall range.' },
+        { title: 'Treating financing approval as affordability', text: 'Review the monthly cost, term, fees and total obligation.' },
+        { title: 'Confusing a shell with a finished room', text: 'Interior finish and comfort systems are separately defined.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Unclear Budget Talk vs. Construction-Smart Clarity', nav: 'Clarity Comparison',
+      head: ['Topic', 'Unclear conversation', 'Construction-smart clarity', 'Why it matters'],
+      rows: [
+        ['Starting price', 'A number with little detail', 'Tied to a written model, size, scope and assumptions', 'A low number misleads if upgrades or site work follow'],
+        ['Deposit', 'Requested before the buyer knows what it reserves', 'Explained in writing before payment', 'A deposit should not feel like a leap of faith'],
+        ['Milestones', 'Vague or verbal', 'Matched to project size, materials and timing', 'Avoids awkward payment talk mid-project'],
+        ['Upgrades', 'Discussed casually without final pricing', 'Documented with scope, price and timing impact', 'The fastest way for a budget to drift'],
+        ['Site preparation', 'Assumed included until construction nears', 'Discussed early with responsibilities assigned', 'A common source of unexpected cost'],
+        ['Change orders', 'Handled by conversation or text', 'Written, approved and priced before work', 'Protects homeowner and builder'],
+      ],
+    },
+    {
+      type: 'cards', id: 'financing', title: 'Financing Helps With Planning but Never Replaces Scope', nav: 'Financing',
+      lead: 'This is general buyer education, not financial advice. Availability, approval, rates, terms and fees depend on the lender and borrower.',
+      items: [
+        { title: 'Common payment paths', list: ['Cash or check, with receipts and clear timing', 'Credit card where accepted, minding fees and interest', 'Personal or credit-union loan: compare rate, term and total cost', 'Home-equity loan or HELOC: uses your home as collateral; review carefully', 'Phased planning: a strong shell first, interior systems later when sequenced correctly'] },
+        { title: 'Questions to ask a lender', list: ['What is the rate and term? Fixed or variable?', 'What origination, closing or card fees apply?', 'Can it be paid off early without penalty?', 'Does it cover the full written scope?', 'Am I adding upgrades only because financing makes them feel easier?'] },
+      ],
+      note: 'A comfortable monthly payment should not hide unclear scope, unnecessary upgrades, fees or the total repayment amount. Financing should support the project plan, not grow the project beyond its purpose.',
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Questions to Answer Before the Deposit', nav: 'Before You Pay',
+      items: [
+        { title: 'Building scope', list: ['Model and size confirmed', 'Standard features confirmed', 'Upgrades documented', 'Exclusions documented', 'Future-finish assumptions identified'] },
+        { title: 'Site & responsibility', list: ['Access reviewed', 'Grade and drainage discussed', 'Foundation assumptions confirmed', 'Utility marking responsibility clear', 'Permit and HOA responsibility clear'] },
+        { title: 'Money & documentation', list: ['Deposit purpose understood', 'Payment milestones documented', 'Financing terms reviewed', 'Change-order process understood', 'Final payment and walkthrough documented'] },
+      ],
+    },
+  ],
+  disclaimer: 'This guide is general buyer education, not financial or legal advice. Deposit amounts, payment schedules and terms are set in your written project agreement.',
+  faqs: [
+    { q: 'How much deposit is normal for a backyard building?', a: 'It varies by project size, materials and schedule. What matters is that the amount, what it reserves, how it applies to the project and what happens if the scope changes are confirmed in writing before you pay.' },
+    { q: 'Should I pay a deposit before the scope is written?', a: 'No. Understand the model, size, features, upgrades, exclusions, site assumptions, payment timing and change process first.' },
+    { q: 'When are payments usually due?', a: 'It depends on the project. Smaller projects may use a deposit and final payment; larger or customized projects may use documented milestones set before work begins.' },
+    { q: 'What causes surprise costs?', a: 'Unclear site preparation, access limits, drainage, foundation assumptions, late upgrades, open allowances, permit or HOA issues, and verbal changes never written into the scope.' },
+    { q: 'Can I add upgrades later to control the budget now?', a: 'Some, like shelving, workbenches and certain interior finishes. Foundation, framing, roof, openings, electrical readiness, insulation and plumbing readiness are better decided before construction.' },
+  ],
+  related: ['10', '19', '21', '23'],
+  pages: [['Buildings & Pricing', 'Standard prices for every model, size and siding.', '/buildings/'], ['Options & Upgrades', 'Installed planning prices for every option.', '/options/']],
+  ctaTitle: 'Make Sure the Budget Is Clear Enough to Trust',
+  ctaText: 'Before a deposit, confirm the written scope, selected upgrades, exclusions, site assumptions, payment timing and change-order process. The right budget conversation leaves you more informed, not more confused.',
+};
+---
+<GuidePage page={page} />

@@ -1,0 +1,88 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '13',
+  subtitle: 'Planning Your Schedule, Preparing Your Property and Understanding the Build Sequence',
+  description: 'How Appalachian Sheds schedules a build, what affects your date, what happens on build day from arrival to walkthrough, weather rules, and the homeowner checklist for a smooth build.',
+  intro: 'A confirmed build day should feel like a well-organized construction event, not a guessing game. Knowing how scheduling works, what can affect your date and what your property needs before the crew arrives keeps the whole project moving smoothly.',
+  question: 'What Makes a Build Day Go Smoothly?',
+  answer: [
+    'Your building design, options, site, access, approvals, weather and scope all affect scheduling. Once your date is confirmed, the most important thing you can do is make sure the site is accessible, cleared and ready before the crew arrives.',
+    'Most schedule problems shrink with early communication. If anything about access, placement or site conditions changes, say so before build day, not while the crew is unloading.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'process', eyebrow: 'The Scheduling Process', title: 'How Your Build Date Is Set', nav: 'How Scheduling Works',
+      items: [
+        { title: 'Finalize the Design and Order', text: 'Once the design, options and required deposit are confirmed, the project moves into scheduling. Site conditions, season, lead times and scope set the build window.' },
+        { title: 'Set the Date and Arrival Window', text: 'You receive a build date and approximate arrival window, so build day is a scheduled appointment, not an open-ended wait.' },
+        { title: 'Pre-Build Check-In', text: 'As the date nears, weather and site conditions are reviewed. Questionable conditions are discussed before the day.' },
+        { title: 'Confirm Site Readiness', text: 'The spot is accessible, cleared and ready, and any homeowner approvals or site preparation are complete. This is the schedule factor you control most directly.' },
+        { title: 'Respond to Weather', text: 'Light weather may only pause work. Heavy rain, lightning, high winds, deep mud, snow or ice can require rescheduling. Work does not proceed in unsafe conditions or where quality would suffer.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'factors', title: 'Three Factors That Shape the Schedule', nav: 'What Affects Your Date',
+      items: [
+        { title: 'Project scope', text: 'Small and medium sheds can go faster than larger buildings with lofts, porches, many openings or custom features.', list: ['Footprint', 'Number of doors and windows', 'Lofts and porches', 'Interior framing', 'Special-order materials'] },
+        { title: 'Site readiness', text: 'A crew cannot work efficiently when the site is blocked or unprepared.', list: ['Clear working area', 'Practical access', 'Placement confirmed', 'Approvals addressed', 'Power within 150 feet, or generator service arranged'] },
+        { title: 'Season & weather', text: 'Spring and early summer bring higher demand, and weather affects safe access all year.', list: ['Heavy or prolonged rain', 'Lightning', 'High winds', 'Mud or saturated ground', 'Snow and ice'] },
+      ],
+    },
+    {
+      type: 'table', id: 'timeline', dark: true, title: 'What to Expect From Arrival Through Final Walkthrough', nav: 'Build-Day Timeline',
+      lead: 'An illustrative sequence for a typical on-site build. Timing varies with size, options, site, weather and complexity.',
+      head: ['Stage', 'Typical activity', 'What you should expect'],
+      rows: [
+        ['Arrival', 'Site walkthrough, placement, orientation and door-swing review, unloading', 'Be available to confirm final placement before work begins'],
+        ['Early construction', 'Layout, leveling, foundation beams, floor framing and decking', 'The footprint takes shape'],
+        ['Wall framing', 'Walls framed, squared and raised; door and window openings built', 'The building reaches its recognizable form'],
+        ['Roof structure', 'Roof framing and sheathing installed', 'The main structure is closed in'],
+        ['Exterior work', 'Siding, roofing, trim, fascia, doors, windows and vents', 'The exterior reaches its finished look'],
+        ['Completion', 'Final adjustments, cleanup, debris removal and walkthrough', 'Review the finished building with the crew before they leave'],
+      ],
+    },
+    {
+      type: 'cards', id: 'risks', title: 'Conditions That Can Disrupt Build Day', nav: 'Schedule Risks',
+      lead: 'Each of these is easier to solve before the crew and materials arrive.',
+      items: [
+        { title: 'The location changed', text: 'A last-minute move affects access, orientation, site prep and the work required.' },
+        { title: 'The work area isn’t clear', text: 'Furniture, stored materials, vehicles or landscaping obstacles delay setup.' },
+        { title: 'Access is tighter than expected', text: 'New fences, locked gates, soft ground or blocked driveways should be discussed ahead.' },
+        { title: 'The ground is saturated or unsafe', text: 'Deep mud, standing water or ice can make construction impractical.' },
+        { title: 'Approvals aren’t resolved', text: 'Homeowner-obtained permits or HOA approvals should be in hand first.' },
+        { title: 'No one can confirm placement', text: 'You or a trusted adult should be there at arrival to confirm location, orientation and door swing.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'What the Homeowner Handles and What the Crew Handles', nav: 'Who Is Responsible',
+      items: [
+        { title: 'Homeowner', list: ['Confirm the building location', 'Clear the work area and access route', 'Complete homeowner-managed approvals', 'Report changes in access or site conditions early', 'Be present (or a trusted adult) at arrival', 'Confirm orientation and door swing before layout'] },
+        { title: 'Construction crew', list: ['Arrive within the scheduled window', 'Review placement and orientation first', 'Unload and organize materials', 'Build to the confirmed scope', 'Respond appropriately to unsafe weather or site conditions', 'Clean up and complete the final walkthrough'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Your Final Build-Day Readiness Check', nav: 'Homeowner Checklist',
+      items: [
+        { title: 'Site', list: ['Location confirmed and staked', 'Work area cleared', 'Access route open', 'Ground suitable for safe work', 'Known concerns communicated'] },
+        { title: 'Project', list: ['Design finalized', 'Options confirmed', 'Door and window locations understood', 'Orientation understood', 'Homeowner approvals addressed'] },
+        { title: 'Build day', list: ['Arrival window understood', 'You or a trusted adult available at arrival', 'Vehicles moved off the route', 'Children and pets kept clear', 'Contact information handy'] },
+      ],
+      note: 'Passing showers do not always stop work, but heavy rain, lightning, high winds, saturated ground, snow or ice may require a delay. Safety and proper construction conditions come before keeping an unsuitable date.',
+    },
+  ],
+  faqs: [
+    { q: 'How far out is a build typically scheduled?', a: 'Many on-site builds can be scheduled within about 1 to 7 days of order confirmation. Larger or highly customized buildings may need more lead time, and spring demand can affect availability.' },
+    { q: 'Do I need to be home on build day?', a: 'You or a trusted adult should be there for the arrival walkthrough to confirm placement, orientation and door swing. After that, stay reachable in case a question comes up.' },
+    { q: 'What happens if it rains?', a: 'Light showers may cause short pauses. Heavy rain, lightning, high winds, deep mud, snow or ice can require rescheduling.' },
+    { q: 'How long does construction take?', a: 'Many small and medium sheds are finished in a single day. Larger buildings or projects with extensive options can take several days. Your expected duration is set before the build date.' },
+    { q: 'What if my site is not ready?', a: 'Construction may need to be adjusted or postponed. Resolving readiness issues before the crew arrives avoids disruption or a return trip.' },
+  ],
+  related: ['05', '01', '14', '24'],
+  pages: [['Site & Foundation', 'The six checkpoints before our crew arrives.', '/options/site-foundation/']],
+  ctaTitle: 'Prepare the Site Before the Calendar Reaches Build Day',
+  ctaText: 'A confirmed date works best when the location, access route, orientation, approvals and homeowner responsibilities are already settled, so the crew can start building when it arrives.',
+};
+---
+<GuidePage page={page} />

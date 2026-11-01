@@ -1,0 +1,90 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '14',
+  subtitle: 'Built On Site vs. Pre-Built Delivery: Why the Construction Method Matters',
+  description: 'The practical difference between a backyard building built on site and a delivered pre-built shed: access, placement, foundation fit, property protection, customization and the questions to ask.',
+  intro: 'A backyard building should be fitted to the property, planned around real site conditions and built where it will actually live. The construction method affects access, drainage, placement, foundation fit, property protection, customization and the finished look.',
+  question: 'Is Built-On-Site Construction Better Than Pre-Built Delivery?',
+  answer: [
+    'Built on site is usually the stronger method when access, placement, foundation fit, drainage, customization or finished appearance matters. Materials can move through tighter access points, and the building is planned around the property rather than around the limits of moving a finished structure.',
+    'A delivered pre-built shed can be reasonable for basic storage when the property is flat, access is wide and clear, and standardized placement is acceptable.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'How It Works', title: 'How Built-On-Site Planning Fits the Building to the Property', nav: 'How It Works',
+      items: [
+        { title: 'Review the Property and Location', text: 'Gates, side yards, fences, trees, walls, patios, slope, drainage, walkways, views and the spot that best supports daily use.' },
+        { title: 'Coordinate Foundation and Building', text: 'Bearing, level, moisture separation, floor height, grade clearance and drainage planned as one system.' },
+        { title: 'Move Materials Through Available Access', text: 'Loose materials pass through openings that would never fit a finished building or the equipment to move one.' },
+        { title: 'Build in the Final Setting', text: 'Door orientation, windows, trim, siding clearances and overhangs are judged where the building will stay.' },
+        { title: 'Check Fit and Presentation', text: 'Level, door operation, trim alignment, entry, drainage clearance and visual fit are reviewed in place.' },
+      ],
+      note: 'The right spot for the building is not always the easiest spot for delivery equipment.',
+    },
+    {
+      type: 'cards', id: 'difference', title: 'One Method Fits the Building to the Property; the Other Fits the Property to the Delivery', nav: 'The Core Difference',
+      items: [
+        { title: 'Built around the actual site', text: 'The crew responds to slope, drainage, foundation, access limits, landscaping and final orientation.' },
+        { title: 'Less dependent on access', text: 'A finished shed needs width, height, turning room and equipment clearance. Individual materials do not.' },
+        { title: 'More room for finish judgment', text: 'Fit, level, trim, clearances and entry are judged in context, not after transport.' },
+      ],
+      note: 'Appalachian Sheds builds on site because a backyard building should be planned around the actual yard, the intended use and the final setting, not forced through the limits of pre-built delivery.',
+    },
+    {
+      type: 'cards', id: 'quality', title: 'On-Site Building Protects the Details You Notice Later', nav: 'Quality Factors',
+      items: [
+        { title: 'Foundation fit', text: 'Building and foundation coordinated for bearing, clearance, moisture separation and level.' },
+        { title: 'Drainage awareness', text: 'Orientation accounts for slope, low spots, gravel height, grade clearance and roof runoff.' },
+        { title: 'Property integration', text: 'The building relates to the house, yard, views, walkways and outdoor living areas.' },
+        { title: 'Final finish control', text: 'Trim, door operation, siding, overhangs, porch and windows judged where the building sits.' },
+        { title: 'Customization', text: 'Doors, windows, orientation and use planned for the property, not a delivery-friendly configuration.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Built On Site vs. Pre-Built Delivery', nav: 'Side by Side',
+      head: ['Issue', 'Built on site', 'Pre-built delivery', 'Why it matters'],
+      rows: [
+        ['Access', 'Materials pass through tighter openings', 'A finished building must be maneuvered whole', 'Fences, gates, side yards and trees can control delivery'],
+        ['Placement', 'Built where it best serves use, appearance and drainage', 'Limited to spots the delivery route can reach', 'The best spot is not always the easiest one'],
+        ['Foundation fit', 'Base and building coordinated as one system', 'Built elsewhere, then set on a prepared area', 'Affects level, door operation and drainage clearance'],
+        ['Property protection', 'No complete building dragged across the yard', 'Equipment may cross lawn, edges or soft ground', 'Mature properties deserve care for the yard too'],
+        ['Customization', 'Openings, orientation and trim coordinated with the site', 'More tied to factory configuration', 'Buildings should respond to how they’ll be used'],
+        ['Final adjustments', 'Fit and finish judged during construction', 'Many details fixed before arrival', 'Context matters for long-term appearance'],
+      ],
+    },
+    {
+      type: 'cards', id: 'risks', title: 'When Delivery Becomes the Main Limitation', nav: 'Delivery Risks',
+      lead: 'Not reasons to reject every delivered shed, but reasons to ask better questions.',
+      items: [
+        { title: 'Compromised placement', text: 'It ends up where equipment can reach, not where it works best.' },
+        { title: 'Landscape & access damage', text: 'Moving a finished building risks lawns, gates, fences, patios and trees.' },
+        { title: 'Foundation mismatch', text: 'A finished shed set afterward may not match the base as well.' },
+        { title: 'Limited late adjustments', text: 'Door swing, windows and entry are fixed before arrival.' },
+        { title: 'Visual disconnect', text: 'It can look placed into the yard rather than planned for it.' },
+        { title: 'Use-case gaps', text: 'Workshops, studios and offices often need more planning than delivery allows.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'questions', title: 'Questions That Reveal Whether Delivery Fits the Property', nav: 'Questions to Ask',
+      items: [
+        { title: 'Access & placement', list: ['Can the crew reach the exact spot I want?', 'How wide and tall must the path be?', 'How much turning room does the equipment need?', 'Will equipment cross lawn, patios or soft ground?', 'Who is responsible if access prevents the planned placement?'] },
+        { title: 'Foundation & documentation', list: ['What happens if the site is not level?', 'Who coordinates the foundation with the building?', 'Can doors, windows and orientation be customized?', 'How are drainage and grade clearance handled?', 'What assumptions and exclusions are in writing?'] },
+      ],
+      note: 'Mature Tri-State neighborhoods often combine tight access with slopes, clay soils, landscaping, patios, retaining walls and fences, which is where on-site flexibility pays off. Pre-built delivery can still serve simple storage on an easy site.',
+    },
+  ],
+  faqs: [
+    { q: 'Can a shed be built in a backyard with narrow access?', a: 'Usually, yes. Materials can be carried through paths far narrower than a finished building could be moved through.' },
+    { q: 'Does building on site help with drainage and foundation planning?', a: 'Yes. The building, base, drainage, floor height, grade clearance and placement are considered together, which helps most on sloped, clay or wet sites.' },
+    { q: 'When can a delivered pre-built shed make sense?', a: 'For basic storage on a flat site with wide, clear access, when custom placement and a more integrated look are not priorities.' },
+    { q: 'Why does placement matter so much?', a: 'It affects daily access, views, drainage, sunlight, mowing, walkways and how naturally the building belongs on the property.' },
+  ],
+  related: ['05', '13', '01', '24'],
+  pages: [['Buildings & Pricing', 'Every Appalachian Sheds model, built on site.', '/buildings/']],
+  ctaTitle: 'Match the Build Method to Your Expectations',
+  ctaText: 'If the goal is simple storage on an open site, delivery may be enough. If you want a building that belongs on the property and supports a serious use, building on site gives the project room to respond to the real site.',
+};
+---
+<GuidePage page={page} />

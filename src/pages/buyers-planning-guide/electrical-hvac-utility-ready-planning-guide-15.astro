@@ -1,0 +1,110 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import prices from '../../data/option-prices.json';
+
+// Planning ranges are calculated from the Electrical, Lighting & HVAC page, so they always match it.
+const nums = (s) => (s.match(/\$[\d,.]+/g) ?? []).map((n) => Number(n.replace(/[$,]/g, '')));
+const span = (rows) => {
+  const priced = rows.filter((r) => nums(r.price).length);
+  const low = Math.min(...priced.map((r) => nums(r.price)[0]));
+  const high = Math.max(...priced.map((r) => nums(r.price).at(-1)));
+  const plus = priced.some((r) => r.price.includes('+')) ? '+' : '';
+  return `$${low.toLocaleString('en-US')}–$${high.toLocaleString('en-US')}${plus}`;
+};
+const e = prices.electrical;
+const priceRows = [
+  ['Service to the building', span(e.service), 'Feeder or subpanel; trench length and existing panel capacity drive the range'],
+  ['Outlets & circuits', span(e.points), 'Per outlet or circuit, from standard receptacles to 240V equipment circuits'],
+  ['Lighting', span(e.lighting), 'Per fixture or control zone, interior and exterior'],
+  ['Heating & cooling', span(e.hvac), 'From mini-split readiness to installed single-zone systems'],
+  ['Technology', span(e.tech), 'Ethernet pathways, camera readiness, smart locks and lighting controls'],
+];
+
+const page = {
+  n: '15',
+  subtitle: 'Plan Power, Lighting, Heating, Cooling and Internet Before the Walls Close',
+  description: 'Plan electrical, lighting, HVAC and internet for a backyard building: the planning sequence, needs by use, common mistakes, who handles what, planning price ranges and a preconstruction checklist.',
+  intro: 'A backyard building becomes far more useful when its comfort systems are planned before construction is complete. Outlets, lighting, HVAC readiness, internet, exterior fixtures and workshop circuits all affect framing, insulation, finishes, trenching and equipment placement. Start with how you expect to use the building.',
+  question: 'When and How Should Power and Comfort Be Planned?',
+  answer: [
+    'Before finished walls, ceilings and trim limit access. Decide how the building will be used, lay out desks, benches and equipment, then plan outlets, switches, lighting, dedicated circuits, HVAC and technology around that layout.',
+    'Electrical and HVAC work may require permits, inspections and licensed trades. Final requirements are confirmed for your property, jurisdiction and equipment.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Planning Sequence', title: 'A Practical Order for Planning Power and Comfort', nav: 'Planning Sequence',
+      items: [
+        { title: 'Define the Primary Use', text: 'Write down the main use, likely future use, major equipment, work areas and how long you’ll spend inside.' },
+        { title: 'Lay Out Furniture and Equipment', text: 'Outlets and lighting should follow the real layout of desks, benches, shelves and tools.' },
+        { title: 'Identify Electrical Loads', text: 'Office electronics, power tools, compressors, heaters and mini-splits affect circuits and capacity.' },
+        { title: 'Plan Lighting by Activity', text: 'General light plus task lighting over benches and desks, entry and security lighting, and separate zones.' },
+        { title: 'Decide on Heating or Cooling', text: 'Insulation, air sealing, ventilation, capacity, equipment location and condensate are planned together.' },
+        { title: 'Plan Internet and Low-Voltage', text: 'Wi-Fi may not reach. Ethernet, camera and technology pathways are easier before walls close.' },
+        { title: 'Review the Route From the House', text: 'Panel capacity, feeder length, conduit, grade, fences, patios and restoration. Distance can matter more than building size.' },
+        { title: 'Confirm Trades, Permits and Inspections', text: 'Know which work needs licensed electricians or HVAC professionals and which approvals apply.' },
+      ],
+    },
+    {
+      type: 'table', id: 'by-use', title: 'Match the Systems to the Building’s Use', nav: 'Planning by Use',
+      lead: 'A planning framework, not an electrical design or code specification.',
+      head: ['Use', 'Good starting point', 'Do not overlook'],
+      rows: [
+        ['Storage & garden', 'General lighting, a convenience outlet, exterior power where useful', 'Entry lighting and battery charging'],
+        ['Hobby or craft room', 'Multiple outlets, general and task lighting, work-surface power', 'Table location, storage walls, ventilation'],
+        ['Backyard office', 'Desk-wall power, internet pathway, lighting zones, HVAC readiness', 'Computer loads, glare, year-round comfort'],
+        ['Workshop', 'Bench-height outlets, shop lighting, charging zone, dedicated circuits', 'Tool loads, dust collection, possible 240V needs'],
+        ['Studio or content space', 'Equipment outlets, controlled lighting, internet, quiet HVAC', 'Cable paths, acoustics, dimming'],
+        ['Year-round retreat', 'Comfortable lighting, HVAC readiness, insulation, exterior lighting', 'Envelope performance, ventilation, moisture'],
+      ],
+    },
+    {
+      type: 'table', id: 'prices', dark: true, title: 'Planning Price Ranges', nav: 'Planning Prices',
+      lead: 'Installed planning ranges from the Electrical, Lighting & HVAC options page. Your final price follows a site review and a licensed electrician’s or HVAC contractor’s design.',
+      head: ['System', 'Planning range', 'What drives it'],
+      rows: priceRows,
+      links: [['Full Electrical, Lighting & HVAC pricing', '/options/electrical-lighting-hvac/']],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Most Comfort-System Problems Begin Before Installation', nav: 'Common Mistakes',
+      items: [
+        { title: 'Outlets without a furniture layout', text: 'Desks and benches end up blocking them.' },
+        { title: 'Waiting until after wall finishes', text: 'Late changes mean opening walls and ceilings.' },
+        { title: 'Underestimating office equipment', text: 'Computers, monitors, printers and chargers add up.' },
+        { title: 'Treating a workshop like storage', text: 'Tools may need dedicated circuits and bench-height outlets.' },
+        { title: 'HVAC without the envelope', text: 'Equipment cannot make up for poor insulation and air sealing.' },
+        { title: 'Assuming Wi-Fi will reach', text: 'Distance, walls and trees weaken the signal.' },
+        { title: 'Ignoring trench distance & panel capacity', text: 'The route and existing capacity can drive the cost.' },
+        { title: 'Assuming power changes legal use', text: 'Electricity or HVAC does not make a building an approved dwelling.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Building Plan Decisions vs. Trade Professional Decisions', nav: 'Who Handles What',
+      items: [
+        { title: 'Homeowner & building plan', list: ['Define the intended use', 'Locate desks, benches and equipment', 'Identify outlet and lighting areas', 'Decide whether year-round comfort matters', 'Identify internet and camera needs', 'Discuss future needs before walls close', 'Confirm what is in the written scope'] },
+        { title: 'Licensed trade & local authority', list: ['Load and existing panel capacity', 'Feeder, circuit, grounding and protection', 'Electrical permits and inspections', 'HVAC equipment selection and sizing', 'HVAC electrical and condensate requirements', 'Code and jurisdiction requirements'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'Review Before Interior Work Is Closed In', nav: 'Preconstruction Checklist',
+      items: [
+        { title: 'Electrical', list: ['Primary use defined', 'Furniture and equipment layout set', 'Outlet locations discussed', 'Dedicated circuits identified', 'Exterior outlets considered', 'Power route reviewed'] },
+        { title: 'Lighting & comfort', list: ['General and task lighting planned', 'Entry and exterior lighting considered', 'Heating and cooling expectations set', 'Insulation coordinated', 'HVAC equipment locations considered'] },
+        { title: 'Technology & future', list: ['Internet strategy considered', 'Ethernet or conduit pathway considered', 'Camera locations considered', 'Future equipment identified', 'Permit and inspection questions reviewed'] },
+      ],
+      note: 'Cincinnati-area buildings see hot, humid summers and cold winters. A building used year-round needs insulation, air sealing, ventilation and HVAC planned together, and clay soils, slopes and long distances from the house can shape the electrical route more than the building’s size.',
+    },
+  ],
+  faqs: [
+    { q: 'Can a backyard building have electricity?', a: 'Most can. The scope depends on the power source, panel capacity, underground route, planned loads and local permits, and the work is done by a licensed electrician.' },
+    { q: 'When should electrical planning happen?', a: 'Before interior walls, ceilings and trim are installed, while framing is still accessible.' },
+    { q: 'Do I need a separate panel in the building?', a: 'Not always. Circuit count, loads, HVAC, future use, feeder distance and existing capacity decide it. A licensed electrician determines the right design.' },
+    { q: 'Is a mini-split a good choice?', a: 'It suits many finished offices, studios and retreats, but it should be chosen for the building’s insulation, climate, sun exposure, use and actual load, not size alone.' },
+    { q: 'Does adding electricity or HVAC make the building a legal dwelling?', a: 'No. Power, heating, cooling or finished interiors do not by themselves approve a building as a dwelling, bedroom, rental or accessory dwelling unit.' },
+  ],
+  related: ['07', '16', '22', '02'],
+  pages: [['Electrical, Lighting & HVAC', 'Service, outlets, lighting, mini-splits and technology prices.', '/options/electrical-lighting-hvac/'], ['Wall & Ceiling Insulation', 'Insulation and air sealing that make HVAC work.', '/options/wall-ceiling-insulation/'], ['Plumbing & Water', 'Water and drain planning for detached buildings.', '/options/plumbing-water/']],
+  ctaTitle: 'Plan the Building Around How You Will Actually Use It',
+  ctaText: 'Write down your expected use, furniture layout, equipment, lighting, heating and cooling expectations, technology needs and likely future plans, and bring that list to the design conversation before wiring and finishes are final.',
+};
+---
+<GuidePage page={page} />

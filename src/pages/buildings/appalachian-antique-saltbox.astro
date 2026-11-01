@@ -1,0 +1,43 @@
+---
+import ModelPage from '../../components/ModelPage.astro';
+import prices from '../../data/antique-saltbox-prices.csv?raw';
+import { classicSeriesSpecs, commonFaqs } from '../../data/models.js';
+
+const name = 'Appalachian Antique Saltbox Shed';
+
+const model = {
+  path: '/buildings/appalachian-antique-saltbox/',
+  name,
+  shortName: 'Antique Saltbox',
+  series: 'Classic Series',
+  prices,
+  effective: 'September 2026',
+  title: 'Appalachian Antique Saltbox Shed | Sizes, Siding & Pricing | Appalachian Sheds',
+  description: 'Appalachian Antique Saltbox Shed: a traditional saltbox roofline in {count} sizes from {range}, five siding choices, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
+  schemaDescription: 'A traditional saltbox-roof backyard storage shed built on site, offered in {count} sizes from {range} and five siding systems.',
+  answer: 'The Appalachian Antique Saltbox is a backyard storage shed with a traditional asymmetrical saltbox roofline, built on site at your property in Cincinnati and the Tri-State. It comes in {count} sizes from {range}, five siding choices, and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  specs: classicSeriesSpecs('Traditional asymmetrical saltbox roofline', '20 sizes, from 6′ × 8′ to 12′ × 24′'),
+  optionalNote: 'The rear exterior storage bin, for firewood, garden tools or seasonal items, is an optional addition and is not included in the standard price.',
+  sidingLead: 'The structure underneath stays the same, and the saltbox roofline remains the defining feature. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',
+  fitLead: 'The Antique Saltbox is for homeowners who want more architectural character than a basic storage shed. Its asymmetrical roofline gives the building an older, more settled look while still serving everyday storage. Adding one useful option does not require a different model.',
+  fit: [
+    ['Everyday storage', 'Strong fit', 'Everyday use with more architectural character than a basic shed.'],
+    ['Lawn & garden equipment', 'Strong fit', 'Match the size and door arrangement to the equipment you will store.'],
+    ['Historic or traditional look', 'Strong fit', 'The saltbox roofline gives the building an older, settled appearance.'],
+    ['Firewood or outdoor supplies', 'Strong fit', 'The optional rear exterior storage bin adds protected outside storage.'],
+    ['Residential exterior', 'Strong fit', 'Vinyl or LP SmartSide lap siding coordinates with a house or garage.'],
+    ['Farmhouse exterior', 'Strong fit', 'LP SmartSide Board & Batten adds farmhouse character to the saltbox profile.'],
+    ['More overhead or loft volume', 'Compare models', 'The saltbox roof is intentionally restrained; compare other roof forms.'],
+    ['Porch-centered architecture', 'Compare models', 'The Antique Saltbox is built around its roofline rather than a porch.'],
+    ['Finished office or studio', 'Plan carefully', 'Plan electrical, insulation and finish together, including how the roofline shapes the interior.'],
+  ],
+  faqs: [
+    ...commonFaqs(name).slice(0, 3),
+    { q: 'What makes the Antique Saltbox different from a standard shed?', a: 'Its traditional asymmetrical saltbox roofline gives the building its distinctive character. The roof is framed with 2×6 engineered roof trusses and covered with 1/2-inch exterior-grade plywood sheathing beneath standard 3-tab asphalt shingles.' },
+    { q: 'Is the rear storage bin included?', a: 'No. The rear exterior storage bin is optional and is not part of the standard build price. If you want one, it is reviewed with your other selections and included in the final written price.' },
+    { q: 'What foundation and floor system is included?', a: 'The standard floor system uses 6×6 ground-contact pressure-treated foundation beams, 2×6 pressure-treated floor joists at 16 inches on center, and a 3/4-inch pressure-treated plywood floor deck.' },
+    ...commonFaqs(name).slice(3),
+  ],
+};
+---
+<ModelPage model={model} />

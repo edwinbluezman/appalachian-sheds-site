@@ -1,0 +1,88 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/cupolas-weathervanes/',
+  name: 'Cupolas & Weathervanes',
+  title: 'Shed Cupolas & Weathervanes: Styles, Sizing & Installed Prices | Appalachian Sheds',
+  description: 'Cupolas and weathervanes for Appalachian Sheds buildings: decorative cupolas from $900 installed, louvered, lantern and copper cupolas, and arrow, heritage and custom weathervanes from $425.',
+  h1: 'Cupolas & Weathervanes',
+  answer: 'A cupola gives a backyard building vertical character and Appalachian heritage charm, and a louvered one also releases heat. A weathervane is the finishing detail on the roofline. Installed prices run $900 to $1,750 for a small decorative cupola, $1,450 to $3,450 for a working louvered cupola, and $425 to $1,950 for a weathervane alone. Size, roof pitch, flashing and blocking are all planned before the roof is built.',
+  familyLabel: 'Roofline Accent',
+  stepsTitle: 'Decide Before the Roof Is Finalized',
+  stepsLead: 'A working cupola is a roof penetration, a flashing detail and sometimes a ventilation path. A weathervane catches wind like a lever and needs solid blocking. Both come out cleaner and usually less costly when chosen early.',
+  steps: [
+    ['Roofline length', 'Sets the cupola base width so the building does not look under-scaled.'],
+    ['Function', 'Decorative, ventilating, glazed for light, or a base for a weathervane.'],
+    ['Roof pitch', 'The cupola base is cut or ordered to match the pitch.'],
+    ['Cap material', 'Painted metal, black metal or copper.'],
+    ['Weathervane style', 'Arrow, rooster, eagle, horse, finial or custom figure.'],
+    ['Mounting method', 'Cupola, ridge, roof or post mount, each with its own blocking.'],
+  ],
+  families: [
+    {
+      id: 'sizing',
+      name: 'Proportion Comes First',
+      intro: [
+        'A small cupola on a long roof looks like an afterthought. As a starting point, allow about 1.25 to 1.5 inches of cupola base width for each foot of roofline: a 20-foot roofline usually wants a 24″ to 30″ cupola, a 24-foot roofline a 30″ to 36″ cupola, and larger buildings 36″, 42″ or 48″ units.',
+      ],
+    },
+    {
+      id: 'cupolas',
+      name: 'Cupola Types',
+      intro: [
+        'Choose by function first, style second and size always. Installed prices include the product, roof integration, blocking, flashing, mounting and labor.',
+        'An open louvered cupola over a heated and cooled office wastes conditioned air, so finished buildings get a glazed lantern or a sealed decorative cupola.',
+      ],
+      prices: prices.cupolas.cupolas,
+    },
+    {
+      id: 'weathervanes',
+      name: 'Weathervane Styles',
+      intro: [
+        'Price depends on material, size, figure detail, rod height, roof access and mounting. Hardware, rod, directionals and anchoring are included. Size the figure to the building: too small looks lost on a wide roof, too large looks theatrical.',
+      ],
+      prices: prices.cupolas.weathervanes,
+    },
+    {
+      id: 'packages',
+      name: 'Cupola & Weathervane Packages',
+      intro: [
+        'Four simple ways to specify the roofline accent. The cupola with weathervane package is the strongest visual upgrade: the cupola provides mass and proportion, and the weathervane creates the silhouette.',
+      ],
+      prices: prices.cupolas.packages,
+      after: 'Catalog prices do not equal installed prices. Installed pricing accounts for roof access, pitch, flashing, blocking, product size, copper content and whether the work is part of the original build or a later retrofit.',
+    },
+  ],
+  compare: {
+    title: 'Which Package Belongs on Which Building',
+    head: ['Building', 'Best package', 'Recommended style', 'Planning note'],
+    rows: [
+      ['Garden shed', 'Small decorative or louvered cupola', '18″ to 24″ cupola; small arrow or finial', 'Keep the scale modest so the roof is not top-heavy'],
+      ['Workshop', 'Functional louvered cupola', '24″ to 36″ louvered body with insect screen', 'Pair with intake ventilation'],
+      ['Backyard office', 'Glazed lantern or sealed decorative cupola', 'Windowed cupola with optional interior lighting', 'No open vent path wasting conditioned air'],
+      ['Country cottage', 'Cupola + copper weathervane', 'Scaled louvered cupola with rooster, horse, eagle or arrow', 'Usually the best visual return on a cottage roof'],
+      ['Pool house or retreat', 'Statement or lantern cupola', '36″ or larger with copper cap and weathervane', 'Larger units need stronger support; plan early'],
+    ],
+  },
+  considerationsTitle: 'Mistakes That Make a Premium Roofline Look Cheap',
+  considerations: [
+    ['Too small a cupola', 'It should look proportional from the driveway, not just in a catalog photo.'],
+    ['Adding a cupola after roofing', 'Retrofitting through a finished roof costs more and risks leaks.'],
+    ['Caulk as waterproofing', 'The base is integrated with flashing, underlayment and roofing so water sheds naturally.'],
+    ['No internal blocking', 'A weathervane rod needs a solid anchor; wind turns the figure into a lever.'],
+    ['Roofing & Rooflines', 'Coordinate the cupola with roof pitch, color and ventilation.', link('/options/roofing-rooflines/')],
+    ['Fascia, Trim & Accents', 'The rest of the exterior character layer.', link('/options/fascia-trim-accents/')],
+  ],
+  faqs: [
+    { q: 'How big should a cupola be?', a: 'About 1.25 to 1.5 inches of base width per foot of roofline. A 20-foot roofline usually wants a 24 to 30 inch cupola.' },
+    { q: 'Does a cupola ventilate a shed?', a: 'A louvered cupola does, when paired with soffit or low-wall intake ventilation. Decorative and glazed cupolas provide little or no ventilation.' },
+    { q: 'How much does a cupola with a weathervane cost?', a: 'A coordinated cupola and weathervane package runs $1,950 to $7,250 or more installed, depending on size, copper and roof access.' },
+    { q: 'Can I add a cupola later?', a: 'It can be done, but retrofitting through a finished roof is harder, costs more and is more prone to leaks. Planning it with the roof is cleanest.' },
+  ],
+  ctaTitle: 'Choose Your Roofline Accent With Edwin',
+};
+---
+<OptionPage page={page} />

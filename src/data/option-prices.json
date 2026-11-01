@@ -1177,8 +1177,8 @@
         "note": "Decide before site prep"
       },
       {
-        "item": "Balanced Ridge + Soffit Vent Package",
-        "price": "$550–$1,200+",
+        "item": "Balanced Ridge & Soffit Vent",
+        "price": "$18 per linear foot",
         "bestFor": "Deliberately vented gable roofs",
         "note": "Decide before roof framing"
       },
@@ -1567,6 +1567,81 @@
         "price": "Scope review",
         "bestFor": "Highly visible buildings that need a complete character layer",
         "note": "Specialty buildings, HOA-sensitive designs, custom elevations"
+      }
+    ]
+  },
+  "cupolas": {
+    "cupolas": [
+      {
+        "item": "Small Decorative Cupola",
+        "size": "18–24″",
+        "price": "$900–$1,750 installed",
+        "bestFor": "Small garden sheds and simple rooflines",
+        "note": "Vinyl, PVC, painted metal or wood-style body; little or no true ventilation"
+      },
+      {
+        "item": "Functional Louvered Cupola",
+        "size": "24–36″",
+        "price": "$1,450–$3,450 installed",
+        "bestFor": "Premium sheds, workshops and unconditioned storage where heat release matters",
+        "note": "Insect-screened louvers; works best with soffit or low-wall intake"
+      },
+      {
+        "item": "Glazed Lantern Cupola",
+        "size": "Varies",
+        "price": "$2,400–$5,200 installed",
+        "bestFor": "Backyard offices, studios, retreats and finished interiors",
+        "note": "Glass sides, sealed chase, optional electrical prep for accent lighting"
+      },
+      {
+        "item": "Oversized Copper Roof Cupola",
+        "size": "36–48″+",
+        "price": "$3,900–$8,900+ installed",
+        "bestFor": "Carriage houses, pool houses, larger studios and statement buildings",
+        "note": "Copper or custom metal cap; structural reinforcement"
+      }
+    ],
+    "weathervanes": [
+      {
+        "item": "Classic Arrow or Banner",
+        "price": "$425–$1,050 installed",
+        "bestFor": "Smaller sheds, cottage roofs and simple gables"
+      },
+      {
+        "item": "Heritage Rooster, Horse, Eagle or Deer",
+        "price": "$725–$1,950 installed",
+        "bestFor": "Farm, barn and Appalachian-style structures"
+      },
+      {
+        "item": "Custom Specialty Figure",
+        "price": "$1,300–$2,950+ installed",
+        "bestFor": "A dog, tractor, pine tree, boat, family symbol or other distinctive profile"
+      }
+    ],
+    "packages": [
+      {
+        "item": "Classic Cupola Package",
+        "price": "$900–$3,450",
+        "bestFor": "Classic sheds, garden buildings, barn-style sheds and workshops",
+        "note": "Decorative units at the low end; working louvered units higher"
+      },
+      {
+        "item": "Cupola with Weathervane Package",
+        "price": "$1,950–$7,250+",
+        "bestFor": "Cottage sheds, carriage houses, pool houses and premium barns",
+        "note": "Cupola size, copper cap, figure, blocking and roof access"
+      },
+      {
+        "item": "Weathervane Only Package",
+        "price": "$425–$1,950",
+        "bestFor": "Rooflines that already have good proportion",
+        "note": "Larger copper pieces, steep roofs and custom mounts cost more"
+      },
+      {
+        "item": "Lantern or Statement Cupola Package",
+        "price": "$2,400–$8,900+",
+        "bestFor": "Offices, studios, retreats and high-visibility buildings",
+        "note": "Glass, lighting prep, copper caps, scale and roof reinforcement"
       }
     ]
   }

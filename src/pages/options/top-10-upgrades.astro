@@ -1,0 +1,94 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+// Every range on this page is calculated from the prices already published on
+// the individual option pages, so this summary can never drift from them.
+const nums = (s) => (s.match(/\$[\d,.]+/g) ?? []).map((n) => Number(n.replace(/[$,]/g, '')));
+const fmt = (n, cents = !Number.isInteger(n)) => '$' + (cents ? n.toFixed(2) : n.toLocaleString('en-US'));
+const span = (rows, unit = '') => {
+  const priced = rows.filter((r) => nums(r.price).length);
+  const low = Math.min(...priced.map((r) => nums(r.price)[0]));
+  const high = Math.max(...priced.map((r) => nums(r.price).at(-1)));
+  const plus = priced.some((r) => r.price.includes('+')) ? '+' : '';
+  const cents = priced.some((r) => /\$[\d,]+\.\d/.test(r.price));
+  return `${fmt(low, cents)}–${fmt(high, cents)}${plus}${unit}`;
+};
+const row = (group, item) => group.find((r) => r.item === item);
+const from = (rows) => fmt(Math.min(...rows.filter((r) => nums(r.price).length).map((r) => nums(r.price)[0])));
+
+const e = prices.electrical;
+const upgrades = [
+  { n: '01', name: 'Electrical Service', range: span(e.service), covers: 'Feeder or subpanel; outlets and lights priced per point', who: 'Licensed electrician', path: '/options/electrical-lighting-hvac/' },
+  { n: '02', name: 'Mini-Split Heating & Cooling', range: row(e.hvac, 'Single-Zone Mini-Split Installed').price, covers: 'Single-zone ductless system, installed', who: 'Licensed HVAC contractor', path: '/options/electrical-lighting-hvac/' },
+  { n: '03', name: 'Wall & Ceiling Insulation', range: span(prices.insulation.walls, ' per sq ft of wall'), covers: 'Fiberglass, mineral wool or spray foam; air sealing extra', who: 'Appalachian Sheds & trade partners', path: '/options/wall-ceiling-insulation/' },
+  { n: '04', name: 'Interior Finish Package', range: span(prices.interior.packages), covers: 'Utility, office & studio, or Appalachian wood interiors', who: 'Appalachian Sheds & trade partners', path: '/options/interior-finish/' },
+  { n: '05', name: 'Floor Insulation', range: `From ${from(prices.floorInsulation.bySize.map((r) => ({ price: r.fiberglass })))}`, covers: 'Underfloor insulation priced by building size; stiffer floor systems priced per sq ft', who: 'Appalachian Sheds & trade partners', path: '/options/floor-insulation/' },
+  { n: '06', name: 'Loft', range: span(prices.lofts.platforms, ' per sq ft'), covers: 'Storage loft platform; ladders, stairs and guards extra', who: 'Appalachian Sheds', path: '/options/lofts-ladders-stairs/' },
+  { n: '07', name: 'Window & Door Upgrades', range: `Windows from ${from(prices.windows.aluminum)}; doors from ${from(prices.doors.wood)}`, covers: 'Added windows, vinyl insulated windows, house and carriage doors', who: 'Appalachian Sheds', path: '/options/windows-natural-light/' },
+  { n: '08', name: 'Built-In Storage', range: span(prices.storage.packages), covers: 'Storage walls up to full workshop packages', who: 'Appalachian Sheds', path: '/options/shelving-workbenches-storage/' },
+  { n: '09', name: 'Plumbing & Water', range: `From ${from(prices.plumbing.scope)}`, covers: 'Plumbing readiness through utility sinks and baths; site review required', who: 'Licensed plumber', path: '/options/plumbing-water/' },
+  { n: '10', name: 'Smart Technology', range: span([row(e.tech, 'Smart Lock'), row(e.tech, 'Smart Lighting / Controls')]), covers: 'Smart lock and app-controlled lighting; camera readiness per location', who: 'Licensed electrician & trade partners', path: '/options/electrical-lighting-hvac/' },
+];
+
+const page = {
+  path: '/options/top-10-upgrades/',
+  name: 'Top 10 Most Requested Upgrades',
+  title: 'Top 10 Most Requested Shed Upgrades & Installed Price Ranges | Appalachian Sheds',
+  description: 'The ten upgrades Appalachian Sheds buyers ask about most, from electrical service and mini-splits to insulation, interior finishes, lofts and storage, with installed price ranges and the order that saves money.',
+  h1: 'Top 10 Most Requested Upgrades',
+  answer: 'A backyard building can be simple, dependable storage, or a year-round office, studio or workshop. The difference is usually a handful of upgrades. These are the ten buyers ask about most, with the price ranges published on each option page, who does the work, and the order that saves money. Your standard price covers the completed building shell; everything that turns it into a comfortable room is an upgrade.',
+  familyLabel: 'Upgrade Tier',
+  stepsTitle: 'Sequence Matters',
+  stepsLead: 'Electrical runs, floor insulation, loft framing and plumbing rough-ins cost much less planned into the build than added afterward. Decide early on anything structural or hidden inside walls and floors.',
+  steps: [
+    ['Electrical first', 'Every other comfort upgrade depends on it.'],
+    ['Insulate & seal', 'Before heating and cooling are sized.'],
+    ['Heat & cool', 'A mini-split works best in a well-sealed building.'],
+    ['Finish & organize', 'Walls, floors, storage and smart features last.'],
+  ],
+  families: [
+    {
+      id: 'tier-1',
+      name: 'Tier 1: Essential for Year-Round Use',
+      intro: [
+        'Electrical service, heating and cooling, insulation and interior finishes decide whether the building becomes a daily destination or stays seasonal storage. Electrical is the first conversation, not the last: a building wired correctly from the start costs far less to upgrade later.',
+      ],
+      bestUses: ['01 Electrical service', '02 Mini-split heating & cooling', '03 Wall & ceiling insulation', '04 Interior finish package'],
+    },
+    {
+      id: 'tier-2',
+      name: 'Tier 2: Finish-Level Upgrades',
+      intro: [
+        'Once the systems are settled, these make the building feel complete: how it feels underfoot, how it opens to light, and how it organizes the way you actually use it. Windows and doors cost less when specified before the build than when changed afterward.',
+      ],
+      bestUses: ['05 Floor insulation', '06 Loft', '07 Window & door upgrades', '08 Built-in storage'],
+    },
+    {
+      id: 'tier-3',
+      name: 'Tier 3: Advanced Conveniences',
+      intro: [
+        'Water and technology add independence and polish. Plumbing is the most site-dependent upgrade on the list and benefits most from early planning. Smart features sit on top of the electrical system, so planning power and a Wi-Fi-friendly location during the build keeps them simple to add.',
+      ],
+      bestUses: ['09 Plumbing & water', '10 Smart technology'],
+    },
+  ],
+  compare: {
+    title: 'All Ten at a Glance',
+    head: ['#', 'Upgrade', 'Typical range', 'What it covers', 'Handled by'],
+    rows: upgrades.map((u) => [u.n, u.name, u.range, u.covers, u.who]),
+    note: 'Ranges are the installed planning prices published on each option page. Your final written price is confirmed after site access, placement and your selections are reviewed.',
+  },
+  considerationsTitle: 'See Full Pricing for Each Upgrade',
+  considerations: upgrades.map((u) => [`${u.n} ${u.name}`, u.range, link(u.path)]),
+  faqs: [
+    { q: 'Which upgrades add the most value?', a: 'Electrical service, insulation and a mini-split consistently have the most impact, because they decide whether the building works year-round. Interior finishes and flooring follow as the upgrades that most change how the space feels.' },
+    { q: 'Which upgrades should be decided before the build?', a: 'Electrical runs, floor insulation, loft framing, plumbing rough-ins, and windows and doors all cost less when planned into the original build.' },
+    { q: 'Can I add upgrades after the building is finished?', a: 'Yes. Interior finishes and smart technology are often added over time. Retrofit work generally costs more than the same work planned into the build, so decide early on anything structural.' },
+    { q: 'Who does the electrical, HVAC and plumbing work?', a: 'Licensed trade partners, with the permits and inspections your location requires. Edwin selects and schedules them, so you have one point of accountability from planning through the final walkthrough.' },
+  ],
+  ctaTitle: 'Build a Prioritized Upgrade Plan With Edwin',
+};
+---
+<OptionPage page={page} />

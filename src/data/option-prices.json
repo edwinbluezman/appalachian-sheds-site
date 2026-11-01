@@ -1,5 +1,5 @@
 {
-  "_note": "Installed planning prices carried over word-for-word from the October 2026 Appalachian Sheds pages (Door & Entry Options, Windows & Natural Light Options, Skylights & Overhead Daylight) and the Material Options page (additional exterior materials, priced per square foot of wall, Cincinnati Tri-State 2025-2026). Final prices are confirmed in the written project scope.",
+  "_note": "Installed planning prices carried over word-for-word from the October 2026 Appalachian Sheds options pages. Final prices are confirmed in the written project scope.",
   "doors": {
     "wood": [
       {
@@ -403,6 +403,282 @@
         "item": "Insulated Vinyl",
         "price": "$6.00–$9.00 per sq ft",
         "bestFor": "Foam backing; modest thermal improvement; quieter, more solid feel"
+      }
+    ]
+  },
+  "roofing": {
+    "systems": [
+      {
+        "item": "Architectural Shingles",
+        "price": "$4.50–$7.50 per sq ft",
+        "bestFor": "Storage, garden buildings and residential-style projects",
+        "note": "Familiar look and lowest initial cost"
+      },
+      {
+        "item": "Corrugated Metal Roofing",
+        "price": "$6.50–$11.50 per sq ft",
+        "bestFor": "Rustic sheds, barns, workshops and utility buildings",
+        "note": "Strong Appalachian character; rain is louder in unfinished interiors"
+      },
+      {
+        "item": "29-Gauge Exposed-Fastener Metal",
+        "price": "$6.75–$10.50 per sq ft",
+        "bestFor": "Standard sheds, workshops and practical buildings",
+        "note": "Entry point into metal; inspect screws and washers"
+      },
+      {
+        "item": "26-Gauge Exposed-Fastener Metal",
+        "price": "$7.75–$12.50 per sq ft",
+        "bestFor": "Premium sheds, workshops and long-term ownership",
+        "note": "Heavier metal with strong value"
+      },
+      {
+        "item": "Standing Seam Metal",
+        "price": "$10.50–$18.00 per sq ft",
+        "bestFor": "Offices, studios, pool houses and premium visible buildings",
+        "note": "Concealed fasteners; cleanest roofline; highest cost"
+      }
+    ],
+    "color": [
+      {
+        "item": "Standard roof shingles, in the colors listed for your model",
+        "price": "Included",
+        "bestFor": "Most buyers",
+        "note": "Classic Series: 3-tab in eight colors. Signature Series: architectural in 16 colors"
+      },
+      {
+        "item": "Custom Color Architectural Roof Shingles",
+        "price": "Inquire",
+        "bestFor": "Matching a specific home or exterior palette",
+        "note": "Subject to availability"
+      },
+      {
+        "item": "Custom Color 3-Tab Roof Shingles",
+        "price": "Inquire",
+        "bestFor": "Special-order profile or color needs",
+        "note": "Reviewed during design"
+      },
+      {
+        "item": "Metal Roofing Color Selection",
+        "price": "By selected metal system",
+        "bestFor": "Premium, rustic, workshop and custom buildings",
+        "note": "Coordinate with trim, siding and the home"
+      }
+    ],
+    "protection": [
+      {
+        "item": "Add PVC Soffit",
+        "price": "$8 per linear foot",
+        "bestFor": "Finished eaves and a more residential look",
+        "note": "Pairs naturally with deeper overhangs"
+      },
+      {
+        "item": "Add Ridge & Soffit Vent",
+        "price": "$18 per linear foot",
+        "bestFor": "Finished, insulated or comfort-focused buildings",
+        "note": "Supports a complete roof-ventilation plan"
+      },
+      {
+        "item": "Roofing Tar Paper",
+        "price": "$0.90 per sq ft of floor",
+        "bestFor": "A defined roof-underlayment layer",
+        "note": "Priced by floor area"
+      },
+      {
+        "item": "Ice & Water Shield",
+        "price": "$9 per linear foot",
+        "bestFor": "Weather-exposed and moisture-sensitive roof areas",
+        "note": "Location and quantity depend on the roofline"
+      }
+    ],
+    "accents": [
+      {
+        "item": "Add Shakes to Gables",
+        "price": "$60 per linear foot of each gable",
+        "bestFor": "Cottage and custom elevations",
+        "note": "Coordinate with siding and trim"
+      }
+    ]
+  },
+  "porches": {
+    "porches": [
+      {
+        "item": "Compact 4′ Entry Porch",
+        "price": "$3,500–$6,500+",
+        "bestFor": "Short covered porch, simple posts, coordinated roof",
+        "note": "Length, supports, decking, roof tie-in"
+      },
+      {
+        "item": "Full-Width 4′ Porch",
+        "price": "$5,000–$8,500+",
+        "bestFor": "Broader front with finished posts and optional ceiling",
+        "note": "Building width, columns, ceiling, trim"
+      },
+      {
+        "item": "6′ Deep Porch",
+        "price": "$6,000–$10,500+",
+        "bestFor": "Usable standing and seating depth",
+        "note": "Depth, footings, roof load, decking"
+      },
+      {
+        "item": "Premium Appalachian Porch",
+        "price": "$7,500–$14,000+",
+        "bestFor": "Timber posts, T&G or beadboard ceiling, upgraded decking and trim",
+        "note": "Wood finish, detail work, lighting"
+      }
+    ],
+    "awnings": [
+      {
+        "item": "Simple Single-Door Awning",
+        "price": "$900–$1,800+",
+        "bestFor": "Basic rain and snow protection",
+        "note": "Best framed with the original wall"
+      },
+      {
+        "item": "Architectural Entry Canopy",
+        "price": "$1,800–$3,500+",
+        "bestFor": "Main entry facing the house, patio or garden",
+        "note": "Coordinate supports, trim and flashing"
+      },
+      {
+        "item": "Timber-Style Canopy",
+        "price": "$2,500–$4,500+",
+        "bestFor": "Appalachian, cottage or barn character",
+        "note": "More material and finish labor"
+      },
+      {
+        "item": "Wide Double-Door Canopy",
+        "price": "$2,200–$5,000+",
+        "bestFor": "Double doors or equipment entries",
+        "note": "Wider span needs structural review"
+      }
+    ],
+    "dormers": [
+      {
+        "item": "Small Gable Dormer",
+        "price": "$3,500–$6,500+",
+        "bestFor": "One feature window, framed peak, matched siding and roofing",
+        "note": "Character and daylight"
+      },
+      {
+        "item": "Large Gable Dormer",
+        "price": "$5,500–$9,500+",
+        "bestFor": "Larger window and more roof integration",
+        "note": "Stronger front elevation"
+      },
+      {
+        "item": "6′ Shed Dormer",
+        "price": "$5,000–$8,000+",
+        "bestFor": "Integrated framing with transom or window package",
+        "note": "Daylight and upper-wall volume"
+      },
+      {
+        "item": "8′ Shed Dormer",
+        "price": "$6,500–$10,500+",
+        "bestFor": "Broader roof opening, multiple windows",
+        "note": "Office or studio transformation"
+      },
+      {
+        "item": "12′ Shed Dormer",
+        "price": "$9,000–$14,000+",
+        "bestFor": "Major front roof feature with multiple windows",
+        "note": "Maximum light and presence"
+      },
+      {
+        "item": "Eyebrow / Specialty Dormer",
+        "price": "$5,000–$12,000+",
+        "bestFor": "Custom curved or softened roof shape",
+        "note": "Signature appearance"
+      }
+    ],
+    "overhangs": [
+      {
+        "item": "6″ Gable Overhang",
+        "price": "$700–$1,100+ per end",
+        "bestFor": "Clean finished rake and modest shadow",
+        "note": "Rake trim, soffit, roofing edge"
+      },
+      {
+        "item": "12″ Gable Overhang",
+        "price": "$1,000–$1,500+ per end",
+        "bestFor": "Stronger architectural depth",
+        "note": "Framing projection and wind loading"
+      },
+      {
+        "item": "18″–24″ Extended Projection",
+        "price": "$1,400–$2,000+ per end",
+        "bestFor": "Custom cottage, barn and premium elevations",
+        "note": "Structural support and proportion"
+      }
+    ]
+  },
+  "lofts": {
+    "platforms": [
+      {
+        "item": "Standard Storage Loft Platform",
+        "price": "$24–$34 per sq ft",
+        "bestFor": "Seasonal storage and household overflow",
+        "note": "Size, framing, decking and timing"
+      },
+      {
+        "item": "Premium Storage Loft Platform",
+        "price": "$34–$48 per sq ft",
+        "bestFor": "More finished interiors and upgraded decking",
+        "note": "Visible finish, framing depth, edge treatment"
+      },
+      {
+        "item": "Custom / Heavy-Storage Platform",
+        "price": "Project-specific",
+        "bestFor": "Dense tools, parts or heavier storage",
+        "note": "Load, span and framing design"
+      }
+    ],
+    "guards": [
+      {
+        "item": "Simple Wood Loft Guard",
+        "price": "$90–$140 per linear foot",
+        "bestFor": "Storage lofts and utility interiors",
+        "note": "Plan blocking during framing"
+      },
+      {
+        "item": "Finished Wood Railing",
+        "price": "$140–$240+ per linear foot",
+        "bestFor": "Studios, offices and premium interiors",
+        "note": "Balusters, posts and finish affect price"
+      },
+      {
+        "item": "Access Gate",
+        "price": "$350–$850+ each",
+        "bestFor": "Ladder or stair openings",
+        "note": "Hardware and opening shape set the price"
+      }
+    ],
+    "ladders": [
+      {
+        "item": "Ship Ladder or Compact Access System",
+        "price": "$1,200–$3,200+",
+        "bestFor": "Occasional-access storage lofts where floor space matters",
+        "note": "Custom-fabricated ship ladders can cost more"
+      }
+    ],
+    "stairs": [
+      {
+        "item": "Basic Straight Wood Stair",
+        "price": "$3,000–$4,200+",
+        "bestFor": "Frequent storage access and practical finished interiors",
+        "note": "Needs meaningful floor space"
+      },
+      {
+        "item": "Finished Stair with Railings",
+        "price": "$4,200–$6,500+",
+        "bestFor": "Studios, offices and premium interiors",
+        "note": "Finish level and railing design"
+      },
+      {
+        "item": "Specialty Stair / Under-Stair Storage",
+        "price": "Project-specific",
+        "bestFor": "Custom buildings with the stair built into the room plan",
+        "note": "Turns, cabinets and landings add complexity"
       }
     ]
   }

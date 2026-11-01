@@ -1,0 +1,92 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/porches-awnings-dormers/',
+  name: 'Porches, Awnings & Dormers',
+  title: 'Shed Porches, Entry Awnings, Dormers & Overhangs | Appalachian Sheds',
+  description: 'Appalachian Sheds porches from $3,500, entry awnings from $900, dormers from $3,500 and gable overhangs from $700 per end. New-build planning prices for Cincinnati and the Tri-State.',
+  h1: 'Porches, Awnings, Dormers & Overhangs',
+  answer: 'Choose the upgrade by the problem it solves: a porch for real covered entry space (from $3,500), an awning for doorway protection without a porch (from $900), a dormer for daylight and upper-wall volume (from $3,500), or a gable overhang for roofline depth and shadow (from $700 per end). Each should look original to the building, so all four are best designed before framing.',
+  familyLabel: 'Option',
+  stepsTitle: 'These Upgrades Change the Structure, Not Just the Look',
+  stepsLead: 'A porch changes the footprint and support system. An awning changes wall loading, flashing and drainage. A dormer changes roof framing and waterproofing. A gable overhang changes the roof edge. Decide them before framing begins.',
+  steps: [
+    ['Porch', 'Covered entry space and a more residential arrival.'],
+    ['Awning', 'Doorway protection without a porch footprint.'],
+    ['Dormer', 'Daylight, upper-wall volume and character.'],
+    ['Gable overhang', 'Roof-edge depth, shadow and finish detail.'],
+  ],
+  families: [
+    {
+      id: 'porches',
+      name: 'Front Porches',
+      intro: [
+        'A porch is a structural addition: its posts need proper support, its roof needs a continuous load path, and it must drain water away from the entry and foundation. Porch depth also changes how the building sits on the site and can affect setbacks.',
+        'These ranges are for small porches built as part of a new detached building, not large house porches or remodels.',
+      ],
+      character: 'Useful covered space and a more residential arrival point.',
+      planning: ['Length and 4′ or 6′ depth', 'Support and footing system', 'Columns or timber posts, ceiling and decking as one package', 'Steps and ramps are priced on the Ramps, Steps & Access page'],
+      prices: prices.porches.porches,
+    },
+    {
+      id: 'awnings',
+      name: 'Entry Awnings & Canopies',
+      intro: [
+        'An awning protects the door and threshold without creating a full porch. It should extend far enough to cover the entry, and it must carry roof and snow loads back into the wall framing through proper blocking or posts. Decorative brackets alone are not a load path.',
+      ],
+      character: 'Door protection without the footprint of a porch.',
+      planning: ['Frame the backing into the original wall', 'Flash where the canopy meets the wall', 'Slope and drain water away from the door'],
+      prices: prices.porches.awnings,
+    },
+    {
+      id: 'dormers',
+      name: 'Dormers',
+      intro: [
+        'Dormers designed into a new building avoid most of the cost of cutting into a finished roof. They are still structural: headers, rafters, sidewalls, sheathing, windows and flashing must be coordinated before framing.',
+        'Dormer prices cover the framing, roof integration, siding and trim. Window choices are priced on the Windows & Natural Light page.',
+      ],
+      character: 'Daylight, upper-wall volume and a stronger roofline.',
+      planning: ['Width and window count', 'Roof pitch', 'A dormer that overwhelms the roof can make the building look top-heavy'],
+      prices: prices.porches.dormers,
+    },
+    {
+      id: 'overhangs',
+      name: 'Gable Overhangs',
+      intro: [
+        'Gable overhangs add depth and shadow at the roof edge and help shield the rake trim and upper siding from weather. They do not replace proper flashing, siding clearance or drainage.',
+        'Framing them with the original roof is cleaner and generally less expensive than extending a finished roof edge.',
+      ],
+      prices: prices.porches.overhangs,
+    },
+  ],
+  compare: {
+    title: 'Which Upgrade Solves Which Problem',
+    head: ['Upgrade', 'Solves', 'Planning range', 'Main cost drivers'],
+    rows: [
+      ['Front porch', 'Covered entry space', '$3,500–$14,000+', 'Length, depth, supports, columns, decking, ceiling'],
+      ['Entry awning or canopy', 'Door protection without a porch', '$900–$5,000+', 'Width, backing, supports, flashing'],
+      ['Dormer', 'Daylight and upper-wall volume', '$3,500–$14,000+', 'Width, window count, pitch, framing'],
+      ['Gable overhang', 'Roof-edge depth and protection', '$700–$2,000+ per end', 'Projection, soffit, trim, roofing edge'],
+    ],
+    note: 'Porch, dormer, canopy and overhang combinations are priced from the full elevation, because shared framing can lower or raise the total.',
+  },
+  considerationsTitle: 'Mistakes to Avoid',
+  considerations: [
+    ['Adding it too late', 'Porches, dormers and overhangs are cleaner and cheaper when designed before framing.'],
+    ['Pricing only the finish', 'Columns, flashing, headers and supports often cost more than the siding and trim.'],
+    ['Ignoring drainage', 'Every porch roof and canopy must move water away from doors and walls.'],
+    ['Weak wall attachment', 'A structural awning needs real framing behind it.'],
+    ['Assuming no permit', 'Porches, awnings and dormers can change footprint, projection or height. Confirm the rules for your address.'],
+  ],
+  faqs: [
+    { q: 'How much does a porch on a shed cost?', a: 'A compact 4-foot entry porch on a new Appalachian Sheds building is $3,500 to $6,500 or more. A 6-foot deep porch is $6,000 to $10,500 or more.' },
+    { q: 'What is the difference between an awning and a porch?', a: 'An awning protects the doorway without adding a porch footprint or floor, and starts at $900. A porch creates covered space you can stand or sit in, with its own supports and decking.' },
+    { q: 'Do porches or dormers need a permit?', a: 'They can. Porches, awnings and dormers may change a building’s footprint, projection or height, and rules vary across Ohio, Northern Kentucky and Southeast Indiana. Confirm the requirements for your address before finalizing the design.' },
+    { q: 'Are windows included in the dormer price?', a: 'No. Dormer prices cover the framing, roof integration, siding and trim. Windows are priced separately on the Windows & Natural Light page.' },
+  ],
+  ctaTitle: 'Design Your Roofline With Edwin',
+};
+---
+<OptionPage page={page} />

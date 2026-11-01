@@ -1,0 +1,85 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/lofts-ladders-stairs/',
+  name: 'Lofts, Ladders & Stairs',
+  title: 'Shed Loft, Ladder & Stair Options & Prices | Appalachian Sheds',
+  description: 'Appalachian Sheds storage lofts from $24 per sq ft, loft guards from $90 per linear foot, ship ladders from $1,200 and full stairs from $3,000. Planning prices for Cincinnati and the Tri-State.',
+  h1: 'Lofts, Ladders & Stairs',
+  answer: 'A storage loft turns unused height into storage without enlarging the building. Storage loft platforms run $24 to $48 per square foot installed, guards and railings $90 to $240 or more per linear foot, ship ladders $1,200 to $3,200 or more, and full stairs $3,000 to $6,500 or more. Choose the access by how often you will use the loft.',
+  familyLabel: 'Loft Option',
+  stepsTitle: 'The Best Loft Is Not Always the Biggest Loft',
+  stepsLead: 'A deeper platform adds storage but can darken and compress the room below and get in the way of doors, windows and workbenches. Size the loft around what you will store and how often you will reach it, while wall height and roof pitch are still flexible.',
+  steps: [
+    ['Confirm use', 'Seasonal bins, tools, workshop overflow or hobby supplies.'],
+    ['Confirm height', 'Wall height, roof pitch, platform height and headroom below.'],
+    ['Choose platform', 'Depth, width, framing, decking and intended load.'],
+    ['Choose access', 'Occasional ladder, compact stair or full stair.'],
+  ],
+  families: [
+    {
+      id: 'platforms',
+      name: 'Storage Loft Platforms',
+      intro: [
+        'Storage lofts add upper-level organization without a larger footprint. Common layouts include a small seasonal-storage loft, a full-width rear loft, front-and-rear lofts, and a loft over a workbench or storage wall.',
+        'Design for the weight you will store, not just the square footage. Light seasonal bins are very different from dense tools, parts or books.',
+      ],
+      character: 'Thoughtful sizing, framing and access make a loft genuinely usable.',
+      planning: ['Platform depth and height', 'Window and door locations', 'Lighting and electrical layout', 'Headroom and circulation below'],
+      prices: prices.lofts.platforms,
+      after: 'Platforms use structural decking for storage; tongue-and-groove decking and a finished underside are available for visible premium interiors.',
+    },
+    {
+      id: 'guards',
+      name: 'Railings, Guards & Gates',
+      intro: [
+        'Open loft edges and access openings may need guards, railings or gates depending on platform height, layout and local requirements. Plan them with the loft framing so posts and blocking are built in. In offices and studios, a finished railing becomes an architectural feature.',
+      ],
+      prices: prices.lofts.guards,
+    },
+    {
+      id: 'ladders',
+      name: 'Ship Ladders & Compact Access',
+      intro: [
+        'Compact access saves floor space and suits occasional use. Carrying large bins or heavy items up a steep ladder quickly becomes inconvenient, so frequent use usually calls for a stair.',
+      ],
+      bestUses: ['Seasonal storage lofts', 'Occasional-access upper storage', 'Buildings where floor space matters', 'Workshop overflow used infrequently'],
+      prices: prices.lofts.ladders,
+    },
+    {
+      id: 'stairs',
+      name: 'Full Stairs',
+      intro: [
+        'Full stairs give the most comfortable access but use the most floor space. They make sense when the loft is used often, the interior is finished, or the stair is part of the room design. Rise, width, treads, handrails and landings should be settled before framing.',
+      ],
+      prices: prices.lofts.stairs,
+    },
+  ],
+  compare: {
+    title: 'Compare Loft Systems',
+    head: ['Option', 'Purpose', 'Floor space used', 'Access frequency', 'Planning range'],
+    rows: [
+      ['Storage loft platform', 'Upper storage', 'Uses overhead volume', 'Varies', '$24–$48 per sq ft'],
+      ['Railings, guards & gates', 'Edge protection and finished look', 'Minimal', 'All access types', '$90–$240+ per linear foot'],
+      ['Ship ladder or compact access', 'Space-saving access', 'Lowest', 'Occasional', '$1,200–$3,200+'],
+      ['Full stair', 'Comfortable repeated access', 'Highest', 'Frequent', '$3,000–$6,500+'],
+    ],
+  },
+  considerationsTitle: 'Storage Lofts Versus Occupied Lofts',
+  considerations: [
+    ['Storage use', 'Shed lofts are for storage and occasional access unless your written scope says otherwise.'],
+    ['Open edges', 'Guard, railing and gate needs depend on height, layout and local requirements.'],
+    ['Compact access', 'Ship ladders are not an unrestricted substitute for a conventional stair.'],
+    ['Occupied use', 'Sleeping, dwelling, rental or guest use needs separate zoning, code and egress review.'],
+  ],
+  faqs: [
+    { q: 'How much does a storage loft cost?', a: 'A standard storage loft platform is $24 to $34 per square foot installed; a premium platform with upgraded decking is $34 to $48 per square foot.' },
+    { q: 'Ladder or stairs?', a: 'A ship ladder ($1,200 to $3,200 or more) saves floor space and suits occasional use. A full stair ($3,000 to $6,500 or more) is easier for frequent trips and carrying items.' },
+    { q: 'Can a loft be used for sleeping?', a: 'Not by default. Sleeping or living use requires separate zoning, building-code, egress and stair review for your location.' },
+  ],
+  ctaTitle: 'Plan Your Loft With Edwin',
+};
+---
+<OptionPage page={page} />

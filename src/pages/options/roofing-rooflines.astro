@@ -1,0 +1,91 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/roofing-rooflines/',
+  name: 'Roofing & Rooflines',
+  title: 'Shed Roofing Options: Shingles, Metal & Standing Seam | Appalachian Sheds',
+  description: 'Compare Appalachian Sheds roofing: architectural shingles from $4.50 per sq ft, exposed-fastener metal from $6.75, standing seam from $10.50, plus soffit, ventilation and ice-and-water shield prices.',
+  h1: 'Roofing & Roofline Options',
+  answer: 'Every Appalachian Sheds model includes a shingle roof. Upgrades include architectural shingles, corrugated metal, 29- and 26-gauge exposed-fastener metal, and standing seam metal, with installed planning ranges from $4.50 to $18.00 per square foot of roof. Choose the roof system first, then protection details such as ventilation and ice-and-water shield, then decorative details.',
+  familyLabel: 'Roof Category',
+  stepsTitle: 'Choose Performance First, Character Second',
+  stepsLead: 'Start with the roof system and color, then ventilation and weather protection. Add overhangs, dormers and decorative details only after those are right, so decoration never hides an incomplete roof.',
+  steps: [
+    ['Building use', 'Storage, workshop, office, studio, pool house, cottage or specialty use.'],
+    ['Roof system', 'Architectural shingles, exposed-fastener metal or standing seam.'],
+    ['Protection', 'Pitch, underlayment, ventilation, drip edge, flashing and moisture defense.'],
+    ['Architecture', 'Color, overhangs, dormers, gable details and cupolas.'],
+  ],
+  families: [
+    {
+      id: 'roof-systems',
+      name: 'Roof Covering Systems',
+      intro: [
+        'Architectural shingles are the familiar residential-style choice. Metal becomes more attractive when long-term durability, weather shedding or a premium look matters more than the lowest first cost.',
+        'Within metal roofing, the panel profile, gauge and fastener type change the look, price and upkeep, so your written proposal should name the gauge rather than just "metal roof."',
+      ],
+      character: 'Match the roof to the building’s purpose, exposure and how long you plan to own it.',
+      bestUses: ['Shingles: storage and residential-style buildings', 'Corrugated and exposed-fastener metal: barns, workshops, rustic sheds', 'Standing seam: offices, studios and premium visible buildings'],
+      planning: ['Roof area is not floor area: pitch, overhangs, porches and dormers add roof area', 'Exposed fasteners need periodic inspection', 'Finished interiors should consider rain noise and ventilation'],
+      prices: prices.roofing.systems,
+      after: 'These are planning ranges per square foot of roof. Your final price is set from the actual roof area, pitch, overhangs, trim and written scope.',
+    },
+    {
+      id: 'roof-color',
+      name: 'Roofing Color & Coordination',
+      intro: [
+        'Review roof color with the siding, trim, doors, windows, landscape and your home. A roof can be technically right and still look disconnected if its color fights the rest of the building.',
+      ],
+      prices: prices.roofing.color,
+    },
+    {
+      id: 'roof-protection',
+      name: 'Ventilation & Weather Protection',
+      intro: [
+        'These upgrades treat the roof as a complete system rather than just the visible covering. They matter most when the building will be insulated, finished, used often or exposed to hard weather.',
+      ],
+      character: 'Airflow, moisture defense and finished eaves: upgrades that solve a real need.',
+      planning: ['The written scope should name the underlayment below the covering', 'Coordinate drip edge with fascia and trim', 'Insulated ceilings deserve a deliberate ventilation plan', 'Trees, shade and freeze-thaw cycles affect roof upkeep'],
+      prices: prices.roofing.protection,
+    },
+    {
+      id: 'roof-accents',
+      name: 'Gable Details',
+      intro: [
+        'Shingle shakes in the gables add cottage character without changing the roof form. Porches, awnings, dormers and gable overhangs are planned and priced on the Porches, Awnings & Dormers page, and cupolas and weathervanes have their own category.',
+      ],
+      prices: prices.roofing.accents,
+    },
+  ],
+  compare: {
+    title: 'Compare the Main Roof Systems',
+    head: ['Roof system', 'Initial cost', 'Appearance', 'Fasteners', 'Upkeep'],
+    rows: [
+      ['Architectural shingles', 'Lowest of the systems compared', 'Familiar residential', 'Concealed under the shingles', 'Future shingle aging and replacement'],
+      ['Corrugated metal', 'Mid-range', 'Rustic, agricultural, Appalachian', 'Usually exposed', 'Inspect exposed fastening'],
+      ['29-gauge exposed-fastener metal', 'Controlled entry to metal', 'Clean utility and workshop', 'Exposed', 'Periodic screw and washer checks'],
+      ['26-gauge exposed-fastener metal', 'Higher than 29-gauge', 'Premium utility, long-term', 'Exposed', 'Periodic screw and washer checks'],
+      ['Standing seam metal', 'Highest of the systems compared', 'Most refined', 'Concealed', 'Fewest fastener concerns'],
+    ],
+  },
+  considerationsTitle: 'What a Written Roof Scope Should Name',
+  considerations: [
+    ['Roof covering', 'Shingle type, or metal profile and gauge.'],
+    ['Fastener system', 'Exposed or concealed, for metal roofs.'],
+    ['Underlayment', 'What sits below the visible covering.'],
+    ['Edges & ridge', 'Drip edge, ridge detail and trim.'],
+    ['Ventilation', 'Ridge and soffit venting where the building will be finished.'],
+    ['Exclusions', 'Anything left out that changes the finished roof.'],
+  ],
+  faqs: [
+    { q: 'What roof comes standard?', a: 'Classic Series models include 3-tab asphalt shingles in eight colors. Signature Series models include architectural shingles in 16 colors.' },
+    { q: 'Is a metal roof worth it on a shed?', a: 'Metal makes sense when durability, weather shedding or a rustic or premium look matters more than first cost. Exposed-fastener metal starts at $6.75 per square foot; standing seam runs $10.50 to $18.00.' },
+    { q: 'Why is roof pricing based on roof area, not floor area?', a: 'Pitch, overhangs, porches, gables and dormers all add roof surface beyond the building footprint, so the same floor size can have very different roof areas.' },
+    { q: 'Do I need ridge and soffit ventilation?', a: 'It matters most for insulated, finished or comfort-focused buildings. It is $18 per linear foot.' },
+  ],
+  ctaTitle: 'Plan Your Roof With Edwin',
+};
+---
+<OptionPage page={page} />

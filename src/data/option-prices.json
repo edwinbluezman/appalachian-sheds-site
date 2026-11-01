@@ -817,5 +817,257 @@
         "note": "Typical small systems; longer runs and walls priced by project"
       }
     ]
+  },
+  "electrical": {
+    "service": [
+      {
+        "item": "Small Detached-Building Feeder / Basic Utility Power",
+        "price": "$1,500–$3,500+",
+        "bestFor": "Lighting, a few receptacles and light-duty use",
+        "note": "Distance, trenching, panel access, circuit count"
+      },
+      {
+        "item": "Detached-Building Subpanel",
+        "price": "$1,500–$4,000+",
+        "bestFor": "Offices, workshops and multi-circuit buildings",
+        "note": "Amperage, feeder distance, grounding, trenching, permits"
+      },
+      {
+        "item": "Complex Feeder / Long Trench / Service-Constraint Project",
+        "price": "$4,000–$8,000+",
+        "bestFor": "Long distances, difficult sites or larger loads",
+        "note": "Trench length, restoration, wire size, house panel work"
+      }
+    ],
+    "points": [
+      {
+        "item": "Standard Interior Duplex Receptacle",
+        "price": "$125–$275 each",
+        "bestFor": "Storage, office and general-use walls",
+        "note": "Best priced during open-wall construction"
+      },
+      {
+        "item": "GFCI-Protected Receptacle",
+        "price": "$125–$325 each",
+        "bestFor": "Locations where code requires protection",
+        "note": "Protection method and circuit layout"
+      },
+      {
+        "item": "Exterior Weather-Resistant GFCI Receptacle",
+        "price": "$150–$350 each",
+        "bestFor": "Outdoor tools, garden use and seasonal equipment",
+        "note": "Weatherproof cover required"
+      },
+      {
+        "item": "Dedicated 20-Amp Circuit",
+        "price": "$300–$650+",
+        "bestFor": "Tools, office equipment and refrigerators",
+        "note": "Distance to panel and wire route"
+      },
+      {
+        "item": "240V Equipment Circuit",
+        "price": "$450–$1,500+",
+        "bestFor": "Specific tools, equipment or HVAC",
+        "note": "Actual equipment must be known first"
+      }
+    ],
+    "lighting": [
+      {
+        "item": "LED Ceiling Fixture",
+        "price": "$175–$450 each",
+        "bestFor": "General interior light",
+        "note": "Fixture grade, ceiling access, switching"
+      },
+      {
+        "item": "Linear LED Shop Light",
+        "price": "$200–$500 each",
+        "bestFor": "Workbench and workshop zones",
+        "note": "Length, layout, mounting"
+      },
+      {
+        "item": "Exterior Entry / Coach Light",
+        "price": "$200–$600 each",
+        "bestFor": "Door and approach lighting",
+        "note": "Fixture grade and switching"
+      },
+      {
+        "item": "Motion / Flood Light",
+        "price": "$250–$700 each",
+        "bestFor": "Security, driveway and equipment areas",
+        "note": "Sensor, coverage, mounting"
+      },
+      {
+        "item": "Dimming / Multi-Zone Lighting Controls",
+        "price": "$200–$750+ per zone",
+        "bestFor": "Offices, studios and finished interiors",
+        "note": "Control type and fixture count"
+      }
+    ],
+    "hvac": [
+      {
+        "item": "Mini-Split Electrical / Line-Path Readiness Only",
+        "price": "$650–$1,800+",
+        "bestFor": "Future HVAC installation",
+        "note": "Does not include the HVAC equipment"
+      },
+      {
+        "item": "Single-Zone Mini-Split Installed",
+        "price": "$2,500–$6,000+",
+        "bestFor": "Offices, studios, hobby rooms and premium flex spaces",
+        "note": "Sized by load calculation"
+      },
+      {
+        "item": "Premium / Cold-Climate / Complex Single-Zone System",
+        "price": "$4,500–$8,500+",
+        "bestFor": "Year-round use and demanding installs",
+        "note": "Efficiency and low-temperature performance"
+      }
+    ],
+    "tech": [
+      {
+        "item": "Ethernet / Low-Voltage Pathway",
+        "price": "$300–$1,500+",
+        "bestFor": "Office, studio, camera and future network use",
+        "note": "Install before walls are closed"
+      },
+      {
+        "item": "Exterior Wi-Fi Camera Readiness",
+        "price": "$150–$450+ per location",
+        "bestFor": "Tool storage, entry monitoring",
+        "note": "Needs power and/or network"
+      },
+      {
+        "item": "Smart Lock",
+        "price": "$200–$500+ installed",
+        "bestFor": "Multi-user, keyless entry",
+        "note": "Door compatibility and weather"
+      },
+      {
+        "item": "Smart Lighting / Controls",
+        "price": "$400–$1,200+ package",
+        "bestFor": "Offices, studios and convenience",
+        "note": "Works best after basic wiring is set"
+      }
+    ]
+  },
+  "insulation": {
+    "walls": [
+      {
+        "item": "Fiberglass Batt",
+        "price": "$1.50–$3.00 per sq ft",
+        "bestFor": "Value-focused workshop, storage and comfort-ready walls",
+        "note": "2×4 products around R-13 to R-15; needs separate air sealing"
+      },
+      {
+        "item": "Mineral Wool Batt",
+        "price": "$2.50–$5.00 per sq ft",
+        "bestFor": "Studios, offices and sound-conscious interiors",
+        "note": "Around R-15 for 2×4; dense, fire- and sound-resistant"
+      },
+      {
+        "item": "Open-Cell Spray Foam",
+        "price": "$2.50–$4.50 per sq ft",
+        "bestFor": "Air-sealing-focused assemblies",
+        "note": "Roughly R-3.5 to R-3.7 per inch"
+      },
+      {
+        "item": "Closed-Cell Spray Foam",
+        "price": "$4.00–$7.00+ per sq ft",
+        "bestFor": "Space-limited or moisture-sensitive assemblies",
+        "note": "Roughly R-6 to R-7 per inch"
+      },
+      {
+        "item": "Rigid Foam / Continuous Insulation",
+        "price": "$2.50–$5.50+ per sq ft",
+        "bestFor": "Thermal-bridge control and specialty walls",
+        "note": "Varies by EPS, XPS or polyiso"
+      }
+    ],
+    "roof": [
+      {
+        "item": "Fiberglass Batt Between Rafters / Ceiling Joists",
+        "price": "$1.75–$3.50 per sq ft",
+        "bestFor": "Open new construction with enough cavity depth",
+        "note": "Depth, baffles, roof shape, air sealing"
+      },
+      {
+        "item": "Mineral Wool Roof / Ceiling Batts",
+        "price": "$3.00–$5.50 per sq ft",
+        "bestFor": "Premium sound- and fire-conscious assemblies",
+        "note": "Thickness and overhead labor"
+      },
+      {
+        "item": "Open-Cell Spray Foam Roofline",
+        "price": "$3.00–$5.50+ per sq ft",
+        "bestFor": "Selected unvented roofs",
+        "note": "Thickness, pitch, access"
+      },
+      {
+        "item": "Closed-Cell Spray Foam Roofline",
+        "price": "$4.50–$8.00+ per sq ft",
+        "bestFor": "High R-value per inch, compact roofs",
+        "note": "Thickness and vapor-control design"
+      }
+    ],
+    "air": [
+      {
+        "item": "Targeted Air-Sealing Package",
+        "price": "$750–$1,800+ per building",
+        "bestFor": "Workshops and seasonal comfort upgrades",
+        "note": "Best before walls and ceiling are closed"
+      },
+      {
+        "item": "Full Comfort-Ready Air-Sealing Package",
+        "price": "$1,500–$3,500+ per building",
+        "bestFor": "Offices, studios and year-round use",
+        "note": "Size, roof shape and penetrations"
+      },
+      {
+        "item": "Assembly-Specific Vapor-Control Layer",
+        "price": "$1.00–$2.75+ per sq ft",
+        "bestFor": "Where the wall or roof design calls for it",
+        "note": "Not required on every project"
+      }
+    ]
+  },
+  "floorInsulation": {
+    "bySize": [
+      {
+        "item": "8×8 (64 sq ft)",
+        "fiberglass": "$425–$550",
+        "mineral": "$525–$650",
+        "closed": "$650–$850"
+      },
+      {
+        "item": "8×10 (80 sq ft)",
+        "fiberglass": "$450–$600",
+        "mineral": "$550–$725",
+        "closed": "$700–$900"
+      },
+      {
+        "item": "10×12 (120 sq ft)",
+        "fiberglass": "$575–$750",
+        "mineral": "$725–$975",
+        "closed": "$850–$1,200"
+      },
+      {
+        "item": "12×14 (168 sq ft)",
+        "fiberglass": "$800–$1,050",
+        "mineral": "$1,000–$1,350",
+        "closed": "$1,175–$1,700"
+      },
+      {
+        "item": "12×16 (192 sq ft)",
+        "fiberglass": "$900–$1,200",
+        "mineral": "$1,150–$1,550",
+        "closed": "$1,350–$1,925"
+      },
+      {
+        "item": "14×16 (224 sq ft)",
+        "fiberglass": "$1,050–$1,400",
+        "mineral": "$1,350–$1,800",
+        "closed": "$1,575–$2,250"
+      }
+    ]
   }
 }

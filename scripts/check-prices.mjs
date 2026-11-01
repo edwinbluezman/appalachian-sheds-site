@@ -49,8 +49,8 @@ const afterBuild = process.argv.includes('--after-build');
 // Options price list: fingerprint plus every price must appear on its options page.
 const OPTIONS = {
   file: 'src/data/option-prices.json',
-  fingerprint: '4e6ea1c7e314137e042da582ff0d2044b80bb51fccfcf15aa08b4522ec622623',
-  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html', materials: 'dist/options/siding-exterior-materials/index.html', roofing: 'dist/options/roofing-rooflines/index.html', porches: 'dist/options/porches-awnings-dormers/index.html', lofts: 'dist/options/lofts-ladders-stairs/index.html', floors: 'dist/options/floor-systems/index.html', ramps: 'dist/options/ramps-steps-access/index.html' },
+  fingerprint: 'a9b78c02b869632211567b1f57970922e6589c0906b9c7083c188b2fc8435064',
+  pages: { doors: 'dist/options/doors-entry/index.html', windows: 'dist/options/windows-natural-light/index.html', materials: 'dist/options/siding-exterior-materials/index.html', roofing: 'dist/options/roofing-rooflines/index.html', porches: 'dist/options/porches-awnings-dormers/index.html', lofts: 'dist/options/lofts-ladders-stairs/index.html', floors: 'dist/options/floor-systems/index.html', ramps: 'dist/options/ramps-steps-access/index.html', electrical: 'dist/options/electrical-lighting-hvac/index.html', insulation: 'dist/options/wall-ceiling-insulation/index.html', floorInsulation: 'dist/options/floor-insulation/index.html' },
 };
 const fail = (model, msg) => { console.error(`PRICE CHECK FAILED (${model}): ${msg}`); process.exit(1); };
 
@@ -91,12 +91,14 @@ for (const m of MODELS) {
   let count = 0;
   for (const [cat, page] of Object.entries(OPTIONS.pages)) {
     const rows = Object.values(data[cat]).flat();
-    count += rows.length;
+    count += rows.reduce((n, r) => n + Object.values(r).filter((v) => typeof v === 'string' && v.includes('$')).length, 0);
     if (afterBuild) {
       if (!existsSync(page)) fail('Options', `${page} was not built.`);
       const html = readFileSync(page, 'utf8').replace(/&amp;/g, '&');
-      const missing = rows.filter((r) => !html.includes(r.price));
-      if (missing.length) fail('Options', `${missing.length} option prices missing from ${page}, e.g. ${missing[0].item}.`);
+      // Every value containing a dollar amount must appear on the page.
+      const values = rows.flatMap((r) => Object.values(r).filter((v) => typeof v === 'string' && v.includes('$')).map((v) => ({ item: r.item, v })));
+      const missing = values.filter((x) => !html.includes(x.v));
+      if (missing.length) fail('Options', `${missing.length} option prices missing from ${page}, e.g. ${missing[0].item} ${missing[0].v}.`);
     }
   }
   console.log(`Price check passed: Options, ${count} prices${afterBuild ? ', all on the built pages' : ''}.`);

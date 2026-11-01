@@ -1,0 +1,77 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/wall-ceiling-insulation/',
+  name: 'Wall & Ceiling Insulation',
+  title: 'Shed Wall & Ceiling Insulation, Air Sealing & Vapor Control | Appalachian Sheds',
+  description: 'Insulation options for Appalachian Sheds buildings: fiberglass, mineral wool, spray foam and rigid foam for walls and roofs, plus air-sealing packages. Planning prices for Cincinnati and the Tri-State.',
+  h1: 'Wall & Ceiling Insulation',
+  answer: 'A comfortable office, studio or workshop starts with the whole enclosure, not one insulation product. Wall insulation runs $1.50 to $7.00 or more per square foot depending on the material, roof and ceiling insulation $1.75 to $8.00 or more, and air-sealing packages $750 to $3,500 or more per building. Insulation, air sealing and moisture control are planned together before the walls are covered.',
+  familyLabel: 'Envelope Option',
+  stepsTitle: 'Insulation Is Only One Part of Comfort',
+  stepsLead: 'A well-insulated wall still performs poorly if air leaks around it, roof heat is uncontrolled, the floor stays cold or moisture cannot dry. Plan the floor, walls, roof, air sealing and finishes together.',
+  steps: [
+    ['Intended use', 'Storage, workshop, office, studio or climate-controlled use.'],
+    ['Choose the assembly', 'Wall depth, roof design, floor and ventilation.'],
+    ['Seal & rough-in', 'Air sealing, wiring and HVAC paths before closing walls.'],
+    ['Finish interior', 'Plywood, drywall or tongue-and-groove wood, then trim.'],
+  ],
+  families: [
+    {
+      id: 'walls',
+      name: 'Wall Insulation',
+      intro: [
+        'Fiberglass is the value starting point, mineral wool the denser premium batt, and spray foam adds air sealing when the whole wall is designed for it. For 2×4 walls, R-13 to R-15 cavity products are common.',
+        'A batt label is not a whole-wall rating: studs, headers, corners, windows and doors all reduce real performance. Spray-foam quotes should state the foam type and installed thickness.',
+      ],
+      prices: prices.insulation.walls,
+    },
+    {
+      id: 'roof',
+      name: 'Roof & Ceiling Insulation',
+      intro: [
+        'The roof often affects summer heat and winter heat loss more than people expect. The right approach depends on whether the roof is vented, whether a flat ceiling creates an attic, and how much depth is available. Do not fill a roof cavity until the venting and moisture plan is set.',
+        'Ridge and soffit ventilation is planned with the Roofing options.',
+      ],
+      prices: prices.insulation.roof,
+    },
+    {
+      id: 'air-sealing',
+      name: 'Air Sealing & Vapor Control',
+      intro: [
+        'Air sealing stops air moving through cracks and penetrations; vapor control manages moisture moving through materials. Both matter, and neither is solved by one universal plastic sheet. Appalachian Sheds does not apply a blanket interior-polyethylene rule.',
+        'The Tri-State spans two climate zones: much of Hamilton, Clermont, Northern Kentucky and Dearborn County is mixed-humid, while Butler County is cold-humid. The vapor and drying approach is chosen for your actual location and wall assembly.',
+      ],
+      planning: ['Seal plates, window and door openings, and wiring penetrations', 'Seal wall-to-floor and wall-to-roof joints', 'Keep rain out with flashing and the exterior barrier', 'Add ventilation or dehumidification for the intended use'],
+      prices: prices.insulation.air,
+    },
+  ],
+  compare: {
+    title: 'Four Envelope Mistakes to Avoid',
+    head: ['Mistake', 'Why it matters'],
+    rows: [
+      ['Insulating walls only', 'Ignoring the roof and floor can leave the building uncomfortable.'],
+      ['Insulation without air sealing', 'Batts cannot stop drafts through gaps around framing and penetrations.'],
+      ['Automatic interior plastic', 'One vapor-barrier detail is not right for every wall or roof.'],
+      ['HVAC before the envelope', 'A bigger heater or cooler is no substitute for a well-sealed building.'],
+    ],
+    note: 'Floor insulation has its own page, and interior wall and ceiling finishes are covered with the Interior Finish options.',
+  },
+  considerationsTitle: 'Related Comfort Options',
+  considerations: [
+    ['Floor Insulation', 'Underfloor comfort by building size.', link('/options/floor-insulation/')],
+    ['Electrical, Lighting & HVAC', 'Mini-splits work best after insulation and air sealing.', link('/options/electrical-lighting-hvac/')],
+    ['Windows & Natural Light', 'Vinyl insulated windows for comfort-focused buildings.', link('/options/windows-natural-light/')],
+  ],
+  faqs: [
+    { q: 'What insulation is best for a backyard office?', a: 'Mineral wool batts are a strong choice for comfort and sound, at $2.50 to $5.00 per square foot for walls. Pair any insulation with air sealing and a roof and floor plan.' },
+    { q: 'Is spray foam always better?', a: 'Not automatically. It adds air sealing, but the wall or roof must be designed for it, and the quote should state foam type and thickness.' },
+    { q: 'Does insulating my shed make it a legal living space?', a: 'No. Insulation, finished walls, power and HVAC make a building more comfortable but do not by themselves approve bedroom, dwelling or rental use.' },
+  ],
+  ctaTitle: 'Plan Your Building’s Comfort With Edwin',
+};
+---
+<OptionPage page={page} />

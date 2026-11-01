@@ -1,0 +1,97 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+
+const page = {
+  path: '/options/electrical-lighting-hvac/',
+  name: 'Electrical, Lighting & HVAC',
+  title: 'Shed Electrical, Lighting & Mini-Split HVAC Options | Appalachian Sheds',
+  description: 'Plan power, lighting, heating and cooling for an Appalachian Sheds building: detached-building feeders and subpanels from $1,500, outlets from $125, LED lighting, mini-splits from $2,500 and network readiness.',
+  h1: 'Electrical, Lighting & HVAC',
+  answer: 'Power, lighting, heating, cooling and internet are best planned before framing, insulation and interior finishes make them harder to add. Typical planning ranges: $1,500 to $4,000 or more for power to a detached building, $125 to $350 per outlet, $175 to $700 per light, and $2,500 to $6,000 or more for a single-zone mini-split. Distance from the house panel often matters more than building size.',
+  familyLabel: 'Comfort Option',
+  stepsTitle: 'Distance Can Matter More Than Building Size',
+  stepsLead: 'A small office 120 feet from the house panel may cost more to power than a larger workshop 25 feet away. Trench length, obstacles, panel capacity and equipment loads drive the electrical budget, so the plan is built around your actual property.',
+  steps: [
+    ['Intended use', 'Storage, office, studio, workshop, pool house or retreat.'],
+    ['Power source', 'House panel capacity, feeder route, trench distance and future loads.'],
+    ['Room layout', 'Desk, bench, tools, HVAC, lighting, windows and doors.'],
+    ['Trade coordination', 'Circuits, fixtures, equipment, permits and inspection.'],
+  ],
+  families: [
+    {
+      id: 'service',
+      name: 'Electrical Service & Subpanels',
+      intro: [
+        'The electrical plan starts at your house panel. Breaker space, available capacity, feeder distance, trench route and future equipment decide whether a simple feeder or a detached-building subpanel is right. A subpanel is sized by the calculated load, not by building size.',
+        'Appalachian Sheds coordinates locations, pathways and construction sequencing. Licensed electrical and HVAC work, permits and inspections are completed by qualified trade professionals as your location requires.',
+      ],
+      planning: ['Capacity at the house panel', 'Number and type of circuits', 'Workshop tools and possible 240V loads', 'Clay, rock, roots, driveways and patios along the trench route'],
+      prices: prices.electrical.service,
+      after: 'A service or panel upgrade at the house is separate from the detached-building work and can change the total cost significantly.',
+    },
+    {
+      id: 'outlets',
+      name: 'Outlets, Circuits & Switching',
+      intro: [
+        'Place outlets where the room will actually be used: desk walls, workbenches, charging spots, outdoor work areas and equipment. Planning them before the walls close avoids extension cords and cutting finished walls later.',
+      ],
+      prices: prices.electrical.points,
+    },
+    {
+      id: 'lighting',
+      name: 'Interior & Exterior Lighting',
+      intro: [
+        'Choose lighting by task, not fixture count. Storage needs basic visibility; a workshop needs bright work-surface light; an office or studio needs glare control and zones. A simple plan of general light, task light and outdoor safety light usually beats one very bright fixture in the middle of the room.',
+      ],
+      prices: prices.electrical.lighting,
+    },
+    {
+      id: 'hvac',
+      name: 'Mini-Split Heating & Cooling',
+      intro: [
+        'A ductless mini-split efficiently heats and cools a well-planned office, studio or hobby room. Choose it only after insulation, air sealing, windows and the actual heating and cooling load are understood.',
+        'The indoor unit, outdoor condenser, drain line, line-set route, service clearance and dedicated circuit are planned before interior and exterior finishes go on.',
+      ],
+      planning: ['Insulation and air sealing come first', 'Sun exposure and shade', 'Outdoor unit location and noise', 'Dedicated circuit and disconnect'],
+      prices: prices.electrical.hvac,
+    },
+    {
+      id: 'technology',
+      name: 'Internet, Security & Smart Readiness',
+      intro: [
+        'House Wi-Fi does not always reach a detached building reliably. A conduit or Ethernet pathway installed before the walls are finished keeps future options open even if you do not need a full technology package on day one.',
+      ],
+      prices: prices.electrical.tech,
+    },
+  ],
+  compare: {
+    title: 'Comfort Priorities by Building Use',
+    head: ['Building use', 'Electrical', 'Lighting', 'HVAC', 'Technology'],
+    rows: [
+      ['Premium storage', 'Basic power and charging', 'General light and entry light', 'Usually unnecessary', 'Optional camera or smart lock'],
+      ['Workshop', 'Several circuits, bench outlets, possible 240V', 'Bright shop and task lighting', 'Depends on use', 'Optional camera or network'],
+      ['Backyard office', 'Desk circuits and charging', 'Comfortable zoned lighting', 'Strong candidate for a mini-split', 'Ethernet or reliable Wi-Fi path'],
+      ['Creative studio', 'Flexible outlet layout', 'High-quality task lighting', 'Often helpful', 'Network and equipment pathway'],
+      ['Music, podcast or video room', 'Equipment circuits, clean cable plan', 'Controlled, camera-friendly lighting', 'Quiet equipment placement', 'Hardwired network'],
+      ['Poolside flex building', 'Moisture-aware, protected wiring', 'Entry, privacy and outdoor lighting', 'Depends on use', 'Camera or smart access optional'],
+    ],
+  },
+  considerationsTitle: 'Decide These Before the Walls Are Closed',
+  considerations: [
+    ['Desk & workbench walls', 'Put outlets where equipment will actually sit.'],
+    ['HVAC wall space', 'Reserve indoor and outdoor unit locations before trim and cabinets.'],
+    ['Panel capacity', 'Check available service before assuming tools or HVAC can be added.'],
+    ['Internet path', 'Conduit or cable is easiest while walls are open.'],
+    ['Future loads', 'Chargers, compressors, heaters and refrigerators affect circuiting.'],
+    ['Legal use', 'Power, HVAC and finished walls do not by themselves approve a building for living use.'],
+  ],
+  faqs: [
+    { q: 'How much does it cost to run power to a shed?', a: 'A basic feeder for lights and a few outlets is $1,500 to $3,500 or more; a subpanel for offices and workshops is $1,500 to $4,000 or more. Long trenches and difficult sites can reach $4,000 to $8,000 or more.' },
+    { q: 'Do you do the electrical work yourselves?', a: 'Appalachian Sheds plans the layout, pathways and sequencing. Licensed electrical and HVAC work, permits and inspections are handled by qualified trade professionals as required where you live.' },
+    { q: 'How much is a mini-split?', a: 'A single-zone mini-split is $2,500 to $6,000 or more installed; cold-climate or complex systems run $4,500 to $8,500 or more. Readiness only, without equipment, is $650 to $1,800 or more.' },
+  ],
+  ctaTitle: 'Plan Power and Comfort With Edwin',
+};
+---
+<OptionPage page={page} />

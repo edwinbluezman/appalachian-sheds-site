@@ -1,0 +1,69 @@
+---
+import OptionPage from '../../components/OptionPage.astro';
+import prices from '../../data/option-prices.json';
+import { link } from '../../data/site.js';
+
+const page = {
+  path: '/options/floor-insulation/',
+  name: 'Floor Insulation',
+  title: 'Shed Floor Insulation: Fiberglass, Mineral Wool & Spray Foam | Appalachian Sheds',
+  description: 'Floor insulation for Appalachian Sheds buildings, priced by building size: protected fiberglass from $425, mineral wool from $525, and closed-cell spray foam, the preferred premium system, from $650.',
+  h1: 'Floor Insulation & Underfloor Comfort',
+  answer: 'Floor insulation is worth planning early for offices, studios and workshops used through Cincinnati winters. For an elevated floor open to outdoor air below, closed-cell spray foam is the preferred premium system, from $650 for an 8×8 building. Protected mineral wool is the premium batt choice, from $525, and protected fiberglass the value choice, from $425. All are installed before the floor deck goes down.',
+  familyLabel: 'Floor System',
+  stepsTitle: 'Install It Before the Floor Deck Hides the Work',
+  stepsLead: 'Floor insulation is cheapest and easiest to inspect during original construction. Adding it later means working overhead under a finished building, and is quoted separately.',
+  steps: [
+    ['Complete the framing', 'Beams, joists, rim and blocking square and secure.'],
+    ['Air-seal the joints', 'Rim transitions, framing joints and penetrations.'],
+    ['Support & insulate', 'Batts held by permanent underside protection, or foam applied to thickness.'],
+    ['Inspect, then deck', 'Confirm coverage, then install the floor deck.'],
+  ],
+  families: [
+    {
+      id: 'fiberglass',
+      name: 'Protected Fiberglass Batt (Value)',
+      intro: [
+        'Good thermal performance at the lowest installed cost, around R-19 to R-21 in a 2×6 floor. It must be carefully fitted, air sealed and permanently protected beneath the floor so wind, gravity and animals cannot disturb it.',
+      ],
+      bestUses: ['Budget-conscious workshops', 'Hobby spaces', 'Seasonal comfort improvements'],
+    },
+    {
+      id: 'mineral-wool',
+      name: 'Protected Mineral Wool (Premium Batt)',
+      intro: [
+        'Dense, stable and moisture resistant, with excellent sound absorption, around R-21 to R-23 in a 2×6 floor. Like fiberglass, it needs separate air sealing and underside protection.',
+      ],
+      bestUses: ['Offices and studios', 'Workshops', 'Buildings where sound control matters'],
+    },
+    {
+      id: 'closed-cell',
+      name: 'Closed-Cell Spray Foam (Preferred Premium)',
+      intro: [
+        'High insulation value per inch plus air and moisture control in one professionally applied system. About 3 inches provides roughly R-18 to R-21. This is the preferred premium system for elevated floors exposed to outdoor air below.',
+        'Open-cell spray foam is not offered as a standard underfloor system and is available only after a project-specific review.',
+      ],
+      bestUses: ['Comfort-ready offices and studios', 'Retreats', 'Buildings used often in cold weather'],
+    },
+  ],
+  compare: {
+    title: 'Floor Insulation Prices by Building Size',
+    head: ['Building size', 'Protected fiberglass', 'Protected mineral wool', 'Closed-cell spray foam'],
+    rows: prices.floorInsulation.bySize.map((r) => [r.item, r.fiberglass, r.mineral, r.closed]),
+    note: 'Planning ranges for installation during original construction, including normal air sealing and underside protection. Retrofits, unusual access and repairs are priced separately.',
+  },
+  considerationsTitle: 'Premium Floor Packages',
+  considerations: [
+    ['Appalachian Comfort Floor', '2×6 PT tongue-and-groove structural floor plus protected mineral wool: strong comfort and sound absorption. Price is the 2×6 T&G upgrade plus the mineral wool range above.', link('/options/floor-systems/')],
+    ['Appalachian Premium Climate Floor', '2×6 PT tongue-and-groove structural floor plus closed-cell spray foam: the highest-performance floor for frequent conditioned use. Price is the 2×6 T&G upgrade plus the spray foam range above.', link('/options/floor-systems/')],
+  ],
+  faqs: [
+    { q: 'Is floor insulation worth it?', a: 'For offices, studios and workshops used in winter, yes. An elevated floor is exposed to outdoor air below, and insulating it makes a noticeable difference underfoot.' },
+    { q: 'Which floor insulation is best?', a: 'Closed-cell spray foam is the preferred premium system because it insulates and controls air and moisture together. Mineral wool is the premium batt option; fiberglass is the value option.' },
+    { q: 'Can floor insulation be added later?', a: 'It can, but it costs more because the work is done overhead under a finished building. It is quoted separately.' },
+    { q: 'Does floor insulation replace the moisture barrier?', a: 'No. It works with the prepared pad, drainage and 10-mil ground-moisture barrier; it does not replace them.' },
+  ],
+  ctaTitle: 'Plan a Warm Floor With Edwin',
+};
+---
+<OptionPage page={page} />

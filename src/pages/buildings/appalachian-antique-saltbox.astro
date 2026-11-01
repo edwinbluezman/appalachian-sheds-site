@@ -1,6 +1,7 @@
 ---
 import ModelPage from '../../components/ModelPage.astro';
 import prices from '../../data/antique-saltbox-prices.csv?raw';
+import photo from '../../assets/appalachian-antique-saltbox-shed.webp';
 import { classicSeriesSpecs, commonFaqs } from '../../data/models.js';
 
 const name = 'Appalachian Antique Saltbox Shed';
@@ -16,6 +17,9 @@ const model = {
   description: 'Appalachian Antique Saltbox Shed: a traditional saltbox roofline in {count} sizes from {range}, five siding choices, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
   schemaDescription: 'A traditional saltbox-roof backyard storage shed built on site, offered in {count} sizes from {range} and five siding systems.',
   answer: 'The Appalachian Antique Saltbox is a backyard storage shed with a traditional asymmetrical saltbox roofline, built on site at your property in Cincinnati and the Tri-State. It comes in {count} sizes from {range}, five siding choices, and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  photo,
+  photoAlt: 'Appalachian Antique Saltbox Shed with natural wood lap siding, a green shingle saltbox roof, French doors and six-lite windows, set among autumn trees and fall plantings',
+  photoCaption: 'Shown with upgraded lap siding in a natural finish and optional French doors. The standard Antique Saltbox includes LP SmartSide Vertical Panel siding and a 6-panel fiberglass entry door.',
   specs: classicSeriesSpecs('Traditional asymmetrical saltbox roofline', '20 sizes, from 6′ × 8′ to 12′ × 24′'),
   optionalNote: 'The rear exterior storage bin, for firewood, garden tools or seasonal items, is an optional addition and is not included in the standard price.',
   sidingLead: 'The structure underneath stays the same, and the saltbox roofline remains the defining feature. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',

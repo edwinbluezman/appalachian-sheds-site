@@ -1,8 +1,11 @@
 ---
+import { Image, getImage } from 'astro:assets';
+import logo from '../assets/appalachian-sheds-logo.png';
 import { business, link } from '../data/site.js';
 
 const { title, description, path = '/', schema = [] } = Astro.props;
 const canonical = new URL(path, 'https://appalachiansheds.com').href;
+const logoForSchema = await getImage({ src: logo, width: 600, format: 'png' });
 
 // The business and founder are declared once here, on every page.
 const graph = {
@@ -15,6 +18,7 @@ const graph = {
       url: business.url,
       telephone: business.phoneSchema,
       email: business.email,
+      logo: new URL(logoForSchema.src, Astro.site).href,
       description: `Veteran-owned, family-operated builder of premium site-built backyard sheds and buildings serving ${business.serviceArea}.`,
       areaServed: [
         { '@type': 'City', name: 'Cincinnati' },
@@ -84,7 +88,9 @@ const graph = {
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="brand" href={link('/')}>Appalachian Sheds</a>
+      <a class="brand" href={link('/')} aria-label="Appalachian Sheds Inc. home">
+        <Image src={logo} alt="Appalachian Sheds Inc." widths={[180, 270, 360]} sizes="180px" format="webp" loading="eager" />
+      </a>
       <nav aria-label="Main">
         <a href={link('/')}>Home</a>
         <a href={link('/buildings/appalachian-classic/')}>Appalachian Classic</a>
@@ -115,7 +121,9 @@ const graph = {
   <style>
     .site-header { background: #1F1F1F; border-bottom: 3px solid var(--bronze); }
     .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; flex-wrap: wrap; }
-    .brand { font-weight: 900; font-size: 1.15rem; text-decoration: none; color: var(--ivory); letter-spacing: 0.02em; }
+    .brand { display: block; line-height: 0; }
+    .brand img { display: block; width: 180px; height: auto; }
+    @media (max-width: 560px) { .brand img { width: 150px; } }
     nav { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
     nav a { text-decoration: none; font-weight: 800; font-size: 0.95rem; color: var(--cashmere); }
     nav a:hover { color: var(--bronze); }

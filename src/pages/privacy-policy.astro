@@ -2,6 +2,18 @@
 import ContentPage from '../components/ContentPage.astro';
 import { business } from '../data/site.js';
 
+// Analytics wording follows the site setting, so the policy always matches what the site actually does.
+const ga = Boolean(business.gaId);
+const autoText = ga
+  ? 'Information collected automatically. Our hosting provider may record limited technical information when you visit, such as your IP address, browser and device type, pages requested and the date and time, to deliver the site and keep it secure. We also use Google Analytics 4, described in Section 7, to understand how visitors use our website.'
+  : 'Information collected automatically. Like most websites, our hosting provider may record limited technical information when you visit, such as your IP address, browser and device type, pages requested and the date and time, to deliver the site and keep it secure. This website does not currently use Google Analytics, advertising cookies or tracking pixels. If that changes, we will update this policy first.';
+const cookieText = ga
+  ? '7. Cookies and Google Analytics. We use Google Analytics 4, a Google service, to understand how visitors use our website. It may use cookies and measurement identifiers to collect information such as pages viewed, session information, browser or device information, approximate location, referring sources and site interactions. We do not intentionally send names, phone numbers, email addresses or other contact information to Google Analytics. Google processes this information under its own policies. You can use Google’s Analytics Opt-out Browser Add-on, or restrict or delete cookies in your browser settings.'
+  : '7. Cookies. This website does not set advertising or analytics cookies. Your browser may store basic files needed to display the site. You can restrict or delete cookies in your browser settings at any time.';
+const gaFaq = ga
+  ? 'Yes. We use Google Analytics 4 to understand how visitors use our pages. See Section 7.'
+  : 'Not currently. If we add analytics, we will update this policy first.';
+
 const page = {
   path: '/privacy-policy/',
   name: 'Privacy Policy',
@@ -28,7 +40,7 @@ const page = {
     {
       type: 'text', id: 'collect', eyebrow: 'Sections 1–3', title: 'Who We Are and What We Collect',
       paras: [
-        '1. Who we are. This policy is published by Appalachian Sheds Inc. (“Appalachian Sheds,” “we,” “us” or “our”), a veteran- and family-owned builder serving Cincinnati and the surrounding Tri-State area. It applies to information collected through appalachiansheds.com and information you provide to us by phone, text, email, project communication or in person.',
+        '1. Who we are. This policy is published by Appalachian Sheds Inc. (“Appalachian Sheds,” “we,” “us” or “our”), a veteran- and family-owned builder serving Cincinnati and the surrounding Tri-State area. It applies to information collected through appalachiansheds.com and information you provide to us through our project request form, by phone, text or email, or in person.',
         '2. Information you give us. Depending on how you contact us, you may provide:',
       ],
       list: [
@@ -36,11 +48,11 @@ const page = {
         'Property or project location and other information reasonably needed to evaluate a building site.',
         'Building size, style, options, site conditions, access information, preferences and timing.',
         'Site photos, survey plats, HOA information, permit paperwork, drawings or other documents you choose to send.',
-        'Information in calls, texts, emails or other communications with us.',
+        'Information you enter in our project request form, and in calls, texts, emails or other communications with us.',
       ],
       after: [
-        'Information collected automatically. Like most websites, our hosting provider may record limited technical information when you visit, such as your IP address, browser and device type, pages requested and the date and time, to deliver the site and keep it secure. This website does not currently use Google Analytics, advertising cookies or tracking pixels. If that changes, we will update this policy first.',
-        '3. Pricing calculators. Our pricing calculators work entirely in your web browser. Using a calculator does not send us your name, phone number, email, address or other contact information, and your selections are not recorded. We receive your information only when you choose to send it, for example by calling, emailing or sending a text. Calculator prices are planning tools; final pricing, specifications, scope, site conditions, taxes, permits and construction terms are set by your written quote, proposal or contract.',
+        autoText,
+        '3. Pricing calculators. Our pricing calculators work entirely in your web browser. Using a calculator does not send us your name, phone number, email, address or other contact information, and your selections are not recorded. We receive your information only when you choose to send it, for example by submitting our project request form, calling, emailing or sending a text. Calculator prices are planning tools; final pricing, specifications, scope, site conditions, taxes, permits and construction terms are set by your written quote, proposal or contract.',
       ],
     },
     {
@@ -59,7 +71,7 @@ const page = {
       ],
       after: [
         'We do not use automated decision-making that by itself produces legal or similarly significant effects concerning you.',
-        '5. How information may be shared. We do not sell your personal information. We may disclose information when reasonably necessary to run the business or complete your project, including to: website hosting, email, communications, data-storage and software providers that perform functions for us; crews, trade partners and suppliers involved in your project, limited to what they need for their work; permit authorities, utility locators, HOAs or similar organizations when needed for your project or when you ask us to help; and government authorities, courts, attorneys, insurers or law enforcement when required or permitted by law or reasonably necessary to protect rights, property or safety. If Appalachian Sheds Inc. is reorganized, merged or sold, relevant business records may transfer as part of that transaction, subject to applicable law.',
+        '5. How information may be shared. We do not sell your personal information. We may disclose information when reasonably necessary to run the business or complete your project, including to: website hosting, form-processing (our project request form is delivered by email through FormSubmit), email, communications, data-storage and software providers that perform functions for us; crews, trade partners and suppliers involved in your project, limited to what they need for their work; permit authorities, utility locators, HOAs or similar organizations when needed for your project or when you ask us to help; and government authorities, courts, attorneys, insurers or law enforcement when required or permitted by law or reasonably necessary to protect rights, property or safety. If Appalachian Sheds Inc. is reorganized, merged or sold, relevant business records may transfer as part of that transaction, subject to applicable law.',
         'We do not provide information you send us, or your mobile opt-in and text-message consent information, to third parties for their own marketing or promotional purposes.',
       ],
     },
@@ -67,7 +79,7 @@ const page = {
       type: 'text', id: 'texting', eyebrow: 'Sections 6–7', title: 'Text Messaging and Cookies',
       paras: [
         '6. Text messaging. If you text us or agree to receive text messages from Appalachian Sheds Inc., we may use your mobile number to respond and to communicate about the service or project you contacted us about. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Message frequency varies, and message and data rates may apply. Consent to receive marketing texts is never a condition of purchase. Reply STOP to opt out, where supported, or contact us using the information below. Reply HELP, where supported, or call ' + business.phoneDisplay + ' for assistance.',
-        '7. Cookies. This website does not set advertising or analytics cookies. Your browser may store basic files needed to display the site. You can restrict or delete cookies in your browser settings at any time.',
+        cookieText,
       ],
     },
     {
@@ -109,7 +121,6 @@ const page = {
       list: [
         'Call or text: ' + business.phoneDisplay,
         'Email: ' + business.email,
-        'Mail: Appalachian Sheds Inc., 5627 Flagstone Way, Milford, Ohio 45150',
       ],
       after: ['Applicable rights, verification requirements, exceptions and response periods may vary depending on your location, the information involved and the law that applies.'],
     },
@@ -118,7 +129,7 @@ const page = {
     { q: 'Will Appalachian Sheds sell my phone number or email address?', a: 'No. We do not sell your personal information, and we do not share mobile opt-in or text-message consent information for third-party marketing.' },
     { q: 'Why do you need my property address?', a: 'To evaluate site conditions, access, setbacks, permit considerations and construction logistics so we can prepare an accurate project.' },
     { q: 'Does the pricing calculator save my information?', a: 'No. The calculator runs entirely in your browser and records nothing. We receive your information only when you choose to contact us.' },
-    { q: 'Does this website use Google Analytics?', a: 'Not currently. If we add analytics, we will update this policy first.' },
+    { q: 'Does this website use Google Analytics?', a: gaFaq },
     { q: 'Will photos of my property appear on your website?', a: 'Only with reasonable care to avoid identifying your home or address, and you can tell us not to use photos of your project publicly.' },
     { q: 'How do I stop text messages?', a: 'Reply STOP where supported, or contact us directly. We will honor reasonable opt-out requests as required by law.' },
   ],

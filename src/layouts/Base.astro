@@ -3,7 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import logo from '../assets/appalachian-sheds-logo.png';
 import { business, link } from '../data/site.js';
 
-const { title, description, path = '/', schema = [] } = Astro.props;
+const { title, description, path = '/', schema = [], noindex = false } = Astro.props;
 const canonical = new URL(path, 'https://appalachiansheds.com').href;
 const logoForSchema = await getImage({ src: logo, width: 600, format: 'png' });
 
@@ -20,12 +20,7 @@ const graph = {
       email: business.email,
       logo: new URL(logoForSchema.src, Astro.site).href,
       description: `Veteran-owned, family-operated builder of premium site-built backyard sheds and buildings serving ${business.serviceArea}.`,
-      areaServed: [
-        { '@type': 'City', name: 'Cincinnati' },
-        { '@type': 'State', name: 'Ohio' },
-        { '@type': 'State', name: 'Kentucky' },
-        { '@type': 'State', name: 'Indiana' },
-      ],
+      areaServed: business.serviceCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c.county}, ${c.state}` })),
       founder: { '@id': business.founder.id },
     },
     {
@@ -47,6 +42,18 @@ const graph = {
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {business.gaId && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${business.gaId}`}></script>
+      <script is:inline define:vars={{ gaId: business.gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', gaId);
+      </script>
+    </>
+  )}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Montserrat:ital,wght@1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />

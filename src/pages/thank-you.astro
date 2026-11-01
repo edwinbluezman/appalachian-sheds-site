@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { business, link } from '../data/site.js';
+---
+<Base title="Thank You | Appalachian Sheds" description="Your project request was sent to Edwin." path="/thank-you/" noindex={true}>
+  <section class="band band--dark ty" aria-labelledby="ty-title">
+    <div class="wrap">
+      <p class="eyebrow">Request Received</p>
+      <h1 id="ty-title">Thank You</h1>
+      <p class="ty__lead">Your project request is on its way to Edwin, and he’ll reply personally. If you have photos of the spot or the path from your driveway, text them to {business.phoneDisplay}.</p>
+      <div class="ty__ctas">
+        <a class="btn btn--primary" href={`sms:${business.phoneLink}`}>Text Photos to Edwin</a>
+        <a class="btn btn--secondary" href={link('/buyers-planning-guide/')}>Browse the Planning Guides</a>
+        <a class="btn btn--secondary" href={link('/options/')}>Explore Options</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .ty { padding: 80px 0 100px; }
+  .ty h1 { margin: 0 0 18px; font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
+  .ty__lead { max-width: 64ch; color: var(--cashmere); font-weight: 600; font-size: 1.08rem; line-height: 1.75; margin: 0 0 26px; }
+  .ty__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+</style>

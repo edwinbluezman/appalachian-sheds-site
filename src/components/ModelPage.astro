@@ -51,7 +51,7 @@ const lowest = (groups) => Math.min(...Object.values(groups).flat().map((r) => N
 const doorFrom = money(lowest(optionPrices.doors));
 const windowFrom = money(lowest({ a: optionPrices.windows.barnSash, b: optionPrices.windows.aluminum, c: optionPrices.windows.vinyl }));
 
-const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ code, slug, name }) => ({ code, slug, name })), phone: business.phoneLink };
+const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ code, slug, name }) => ({ code, slug, name })), phone: business.phoneLink, quote: link('/start-your-project/') };
 ---
 <Base title={model.title} description={fill(model.description)} path={model.path} schema={schema}>
   <!-- 01 HERO -->
@@ -119,6 +119,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
         </div>
         <div class="calc__actions">
           <a class="btn btn--primary" href={`sms:${business.phoneLink}`} data-send>Text Edwin Your Selection</a>
+          <a class="btn btn--secondary" href={`${link('/start-your-project/')}?model=${encodeURIComponent(model.name)}#project-form`} data-quote>Request This Building</a>
           <a class="btn btn--secondary" href={`tel:${business.phoneLink}`}>Call Edwin</a>
           <button type="button" class="btn btn--secondary" data-reset>Start over</button>
         </div>
@@ -280,6 +281,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
       var lengthsBox = root.querySelector('[data-lengths]');
       var result = root.querySelector('[data-result]');
       var send = root.querySelector('[data-send]');
+      var quote = root.querySelector('[data-quote]');
       var state = { w: null, l: null, s: null };
       var fmt = function (n) { return '$' + n.toLocaleString('en-US'); };
       var bySlug = {}; data.sidings.forEach(function (s) { bySlug[s.slug] = s; });
@@ -311,6 +313,8 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
           b.querySelector('[data-price-for]').textContent = z ? fmt(z.prices[code]) : '—';
         });
         var params = new URLSearchParams();
+        var qp = new URLSearchParams({ model: data.model });
+        if (z) qp.set('size', state.w + '×' + state.l);
         if (z && state.s) {
           var sd = data.sidings.find(function (s) { return s.code === state.s; });
           var label = state.w + '′ × ' + state.l + '′';
@@ -319,6 +323,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
           var msg = 'Hi Edwin, I am interested in the ' + data.model + ', ' + state.w + 'x' + state.l + ' with ' + sd.name + ' (' + price + ' standard build price).';
           send.href = 'sms:' + data.phone + '?&body=' + encodeURIComponent(msg);
           params.set('w', state.w); params.set('l', state.l); params.set('s', sd.slug);
+          qp.set('siding', sd.name); qp.set('price', price);
         } else {
           result.innerHTML = z
             ? '<p class="calc__result-empty">' + state.w + '′ × ' + state.l + '′ selected. Choose a siding to see your price.</p>'
@@ -327,6 +332,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
           if (state.w !== null) params.set('w', state.w);
           if (z) params.set('l', state.l);
         }
+        quote.href = data.quote + '?' + qp.toString() + '#project-form';
         var q = params.toString();
         history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash);
       }

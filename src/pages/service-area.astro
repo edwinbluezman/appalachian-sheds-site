@@ -6,12 +6,12 @@ const page = {
   path: '/service-area/',
   name: 'Service Area',
   title: 'Service Area: Cincinnati, Northern Kentucky & Southeast Indiana | Appalachian Sheds',
-  description: 'Appalachian Sheds builds backyard sheds on site across Cincinnati and the Tri-State area: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana.',
+  description: 'Appalachian Sheds builds backyard sheds on site across Cincinnati and the Tri-State: Hamilton, Clermont, Warren and Butler counties in Ohio, Boone, Kenton and Campbell counties in Kentucky, and Dearborn County in Indiana.',
   eyebrow: 'Where We Build',
   h1: 'Service Area',
   subtitle: 'Built on Site Across Cincinnati and the Tri-State',
   intro: [
-    'Appalachian Sheds Inc. is based in Milford, Ohio, and builds on site across Cincinnati and the Tri-State area: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana.',
+    'Appalachian Sheds Inc. builds on site across Cincinnati and the Tri-State area: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana.',
     'Not sure whether your property is in range? Call or text Edwin with your address and he’ll let you know.',
   ],
   heroCtas: true,
@@ -24,6 +24,11 @@ const page = {
         { title: 'Northern Kentucky', text: 'Communities just across the river, where hillside lots and tight side yards are common.' },
         { title: 'Southeast Indiana', text: 'The Indiana side of the Tri-State, including more rural properties with long driveways and open sites.' },
       ],
+    },
+    {
+      type: 'cards', id: 'counties', title: 'Counties We Serve', nav: 'Counties',
+      lead: 'Appalachian Sheds builds throughout these counties. The communities listed are examples; nearby towns are welcome too.',
+      items: business.serviceCounties.map((c) => ({ kicker: c.state, title: c.county, text: c.towns.join(' · ') })),
     },
     {
       type: 'cards', id: 'local', title: 'Local Conditions We Plan For', nav: 'Local Conditions',
@@ -42,7 +47,7 @@ const page = {
   faqs: [
     { q: 'Do you build outside Cincinnati?', a: 'Yes. Appalachian Sheds builds across the Tri-State: Greater Cincinnati and Southwest Ohio, Northern Kentucky and Southeast Indiana. Call or text Edwin with your address to confirm.' },
     { q: 'Do permit rules differ across the Tri-State?', a: 'Yes. Ohio, Kentucky and Indiana communities each set their own zoning, setback and permit rules, and HOAs add their own. Check the rules for your exact address.' },
-    { q: 'Where is Appalachian Sheds based?', a: 'Milford, Ohio.' },
+    { q: 'Is my town on the list?', a: 'The towns listed are examples, not limits. If your community is in or near one of these counties, call or text Edwin with your address to confirm.' },
   ],
   ctaTitle: 'Check Whether Your Property Is in Range',
   ctaText: 'Send Edwin your address and a few photos of the spot you have in mind. He’ll confirm the service area and talk through your site.',

@@ -1,5 +1,6 @@
 ---
 import ContentPage from '../components/ContentPage.astro';
+import ProjectForm from '../components/ProjectForm.astro';
 import { business } from '../data/site.js';
 
 // Pre-written text and email so a homeowner can start the conversation in one tap.
@@ -29,15 +30,16 @@ const page = {
   path: '/start-your-project/',
   name: 'Start Your Project',
   title: 'Start Your Project: Call, Text or Email Edwin | Appalachian Sheds',
-  description: 'Start your Appalachian Sheds project: call, text or email Edwin directly, what to send, and what happens next, from the first conversation to the written scope and build day.',
+  description: 'Start your Appalachian Sheds project: send a project request form, or call, text or email Edwin directly, plus what to send and what happens next.',
   eyebrow: 'Start Your Project',
   h1: 'Start Your Project',
   subtitle: 'Talk Directly With Edwin',
   intro: [
     `Call or text Edwin at ${business.phoneDisplay}, or email ${business.email}. You don’t need drawings or every detail decided. Tell him what the building needs to do and where it might go, and he’ll help with the rest.`,
-    'The email and text buttons open a short pre-written message you can fill in.',
+    'Use the project request form below, or tap Text or Email Edwin to open a short pre-written message you can fill in.',
   ],
   heroCtas: true,
+  formJump: true,
   smsHref,
   mailHref,
   schemaType: 'ContactPage',
@@ -73,4 +75,4 @@ const page = {
   ctaText: 'Call or text Edwin, or price a building first with the calculators on each model page.',
 };
 ---
-<ContentPage page={page} />
+<ContentPage page={page}><ProjectForm /></ContentPage>

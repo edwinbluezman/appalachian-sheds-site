@@ -1,0 +1,127 @@
+---
+// Project request form. Submissions are emailed to Edwin by FormSubmit (formsubmit.co); no account or server needed.
+// The first submission sends a one-time activation email to the address in business.formEndpoint.
+import { business, link } from '../data/site.js';
+import { series } from '../data/catalog.js';
+import { sidings } from '../data/models.js';
+
+const models = series.flatMap((s) => s.models.map((m) => m.name));
+const thanks = new URL(link('/thank-you/'), Astro.site).href;
+---
+<section id="project-form" class="band band--light pf" aria-labelledby="pf-title">
+  <div class="wrap">
+    <p class="eyebrow">Project Request</p>
+    <h2 id="pf-title" class="gd-h2">Tell Edwin About Your Project</h2>
+    <p class="gd-lead">Fill in what you know; only your name, phone, email and town are required. Edwin will reply personally. If you have photos of the spot, you can text them to {business.phoneDisplay} after you send this.</p>
+
+    <form class="pf__form" action={business.formEndpoint} method="POST" data-project-form>
+      <input type="hidden" name="_subject" value="New project request from appalachiansheds.com" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value={thanks} />
+      <input type="text" name="_honey" class="pf__trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <fieldset>
+        <legend>Your contact information</legend>
+        <div class="pf__grid">
+          <label><span>Name <span class="pf__req" aria-hidden="true">*</span></span><input type="text" name="Name" autocomplete="name" required /></label>
+          <label><span>Phone <span class="pf__req" aria-hidden="true">*</span></span><input type="tel" name="Phone" autocomplete="tel" required /></label>
+          <label><span>Email <span class="pf__req" aria-hidden="true">*</span></span><input type="email" name="email" autocomplete="email" required /></label>
+          <label><span>Town or project address <span class="pf__req" aria-hidden="true">*</span></span><input type="text" name="Town or address" autocomplete="street-address" required /></label>
+          <label>Best way to reach you
+            <select name="Best way to reach me">
+              <option>Call</option><option>Text</option><option>Email</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your building</legend>
+        <div class="pf__grid">
+          <label>Main use
+            <select name="Main use">
+              <option value="">Choose one</option>
+              <option>Storage</option><option>Workshop</option><option>Garden building</option><option>Office or studio</option><option>Pool support</option><option>Other / not sure</option>
+            </select>
+          </label>
+          <label>Model
+            <select name="Model" data-field="model">
+              <option value="">Not sure yet</option>
+              {models.map((m) => <option>{m}</option>)}
+            </select>
+          </label>
+          <label>Size (if known)<input type="text" name="Size" placeholder="e.g. 10×12" data-field="size" /></label>
+          <label>Siding
+            <select name="Siding" data-field="siding">
+              <option value="">Not sure yet</option>
+              {sidings.map((s) => <option>{s.name}</option>)}
+            </select>
+          </label>
+          <label>Calculator price (if any)<input type="text" name="Calculator price" data-field="price" /></label>
+          <label>When would you like to build?
+            <select name="Timing">
+              <option value="">Not sure yet</option>
+              <option>As soon as possible</option><option>Within 1–3 months</option><option>Within 3–6 months</option><option>Just researching</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your site</legend>
+        <div class="pf__grid">
+          <label>Narrowest gate or path width<input type="text" name="Access width" placeholder="e.g. 4 ft gate" /></label>
+          <label>HOA?
+            <select name="HOA">
+              <option value="">Not sure</option><option>Yes</option><option>No</option>
+            </select>
+          </label>
+        </div>
+        <label class="pf__wide">Options you’re interested in<input type="text" name="Options of interest" placeholder="e.g. loft, electrical, extra windows, prepared gravel pad" /></label>
+        <label class="pf__wide">Anything else Edwin should know<textarea name="Message" rows="5" placeholder="Drainage, slope, trees, private utility lines, or questions you have"></textarea></label>
+      </fieldset>
+
+      <label class="pf__consent">
+        <input type="checkbox" name="Contact consent" value="Yes" required />
+        <span>I agree that Appalachian Sheds may contact me by phone, text or email about this project. Message and data rates may apply; reply STOP to opt out of texts. See the <a href={link('/privacy-policy/')}>Privacy Policy</a>.</span>
+      </label>
+
+      <button type="submit" class="btn btn--primary">Send to Edwin</button>
+    </form>
+  </div>
+</section>
+
+<script is:inline>
+  // Fill in model, size, siding and price when arriving from a price calculator.
+  (function () {
+    var form = document.querySelector('[data-project-form]');
+    if (!form) return;
+    var q = new URLSearchParams(location.search);
+    ['model', 'size', 'siding', 'price'].forEach(function (k) {
+      var v = q.get(k); var el = form.querySelector('[data-field="' + k + '"]');
+      if (!v || !el) return;
+      if (el.tagName === 'SELECT') {
+        for (var i = 0; i < el.options.length; i++) if (el.options[i].text === v) el.selectedIndex = i;
+      } else { el.value = v; }
+    });
+  })();
+</script>
+
+<style is:global>
+  .pf__form { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 26px; color: var(--steel); max-width: 980px; }
+  .pf fieldset { border: 0; margin: 0 0 22px; padding: 0; }
+  .pf legend { font-weight: 900; font-size: 1.05rem; margin-bottom: 12px; }
+  .pf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 18px; }
+  .pf label { display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 0.92rem; }
+  .pf__wide { margin-top: 14px; }
+  .pf__req { color: var(--bronze-dark); }
+  .pf input[type='text'], .pf input[type='tel'], .pf input[type='email'], .pf select, .pf textarea {
+    font: inherit; font-style: normal; font-weight: 600; font-size: 1rem; padding: 12px 14px; border: 1px solid var(--stone); border-radius: 0; background: var(--ivory); color: var(--steel); width: 100%; box-sizing: border-box;
+  }
+  .pf input:focus, .pf select:focus, .pf textarea:focus { outline: 3px solid var(--bronze); outline-offset: 1px; }
+  .pf__consent { flex-direction: row !important; align-items: flex-start; gap: 12px !important; font-weight: 700 !important; margin: 4px 0 20px; }
+  .pf__consent input { margin-top: 4px; width: 20px; height: 20px; flex: none; }
+  .pf__consent a { color: var(--bronze-dark); }
+  .pf__trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .pf button[type='submit'] { border: 0; cursor: pointer; font: inherit; }
+</style>

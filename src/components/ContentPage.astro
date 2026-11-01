@@ -41,12 +41,15 @@ const schema = [
       )}
       {page.jump !== false && page.sections.length > 2 && (
         <ul class="gd-jump" aria-label="On this page">
+          {page.formJump && <li><a href="#project-form">Project Request Form</a></li>}
           {page.sections.map((s) => <li><a href={'#' + s.id}>{s.nav ?? s.title}</a></li>)}
           {page.faqs?.length > 0 && <li><a href="#faq">Common Questions</a></li>}
         </ul>
       )}
     </div>
   </section>
+
+  <slot />
 
   {page.sections.map((s, i) => (
     <section id={s.id} class={'band ' + (s.dark ? 'band--dark' : bands[i % 2])} aria-labelledby={s.id + '-t'}>

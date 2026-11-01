@@ -1,0 +1,101 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '02',
+  subtitle: 'Know the Rules Before You Choose the Location',
+  description: 'Permits, zoning, setbacks, easements and HOA rules for a backyard building: the three approval layers, common triggers, questions to ask and what to gather before contacting any office.',
+  intro: 'A backyard building can be well designed and still be delayed when permits, zoning, setbacks, easements, utilities or private restrictions are considered too late. Approval planning starts with the exact property address, the intended use and the proposed location.',
+  question: 'Do You Need a Permit, Zoning Approval or HOA Approval for a Backyard Building?',
+  answer: [
+    'Possibly. Requirements vary by exact property, jurisdiction, building size, height, placement, foundation, utilities, intended use, setbacks, easements, drainage, HOA rules, deed restrictions and subdivision standards. A rule that applies in one Ohio city may not apply in a Kentucky county, an Indiana township or a private HOA community.',
+    'Building approval, zoning approval and private approval are separate questions, and satisfying one does not satisfy the others.',
+    'Appalachian Sheds helps organize the planning conversation, but final public and private requirements are confirmed for your property with the local authority, HOA, architectural review body or governing documents.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'layers', eyebrow: 'Three Approval Layers', title: 'Building, Zoning and Private Approval Are Not the Same Thing', nav: 'Approval Layers',
+      lead: 'Each layer has its own reviewer, its own question and its own timeline. A project can satisfy one and still have another unresolved.',
+      items: [
+        { title: 'Building & Trade Permits', text: 'A building department may review structure, anchoring, foundation, electrical, HVAC, plumbing, insulation and inspections, depending on the jurisdiction and scope.', list: ['Who decides: the local building or trade-permit office', 'The question: does this structure or its utility work need a permit or inspection?'] },
+        { title: 'Zoning, Setbacks & Placement', text: 'Zoning may control where the building sits, distance from property lines, lot coverage, height, accessory-structure limits, easements and visibility.', list: ['Who decides: the zoning or planning office for your address', 'The question: where may it sit, and how large or tall may it be?'] },
+        { title: 'HOA, Deed & Private Rules', text: 'HOAs, subdivision documents, deed restrictions and architectural boards may control size, location, siding, color, roof material and screening, even when the city or county allows the building.', list: ['Who decides: the HOA board, review body or governing documents', 'The question: do size, color, siding, roof and placement meet private rules?'] },
+      ],
+      note: 'Public approval does not override private restrictions. A city or county yes does not answer the HOA, and an HOA yes does not answer the building department.',
+    },
+    {
+      type: 'text', id: 'address', title: 'Start With the Exact Property Address', nav: 'Why the Address Matters',
+      paras: [
+        'The Cincinnati Tri-State includes cities, villages, counties, townships, unincorporated areas, HOAs and private communities across Southwest Ohio, Northern Kentucky and Southeast Indiana. The approval path can change within a short distance, and building and zoning may be handled by different offices.',
+        'A rural property may have fewer appearance rules but more access, drainage or utility questions. A subdivision may require architectural approval even when the county does not. Without the exact address, approval guidance is only general education.',
+      ],
+    },
+    {
+      type: 'cards', id: 'triggers', title: 'The Details That Can Change the Approval Path', nav: 'Approval Triggers',
+      items: [
+        { title: 'Size & height', text: 'Some jurisdictions treat accessory buildings differently once they pass a certain footprint, height or distance from property lines.' },
+        { title: 'Use', text: 'Storage raises fewer questions than a building with power, heat, cooling, plumbing, a finished interior or daily use.' },
+        { title: 'Location', text: 'Rear- and side-yard setbacks, drainage and utility easements, access limits and street visibility can affect placement.' },
+        { title: 'Utilities', text: 'Electrical, HVAC and plumbing may bring trade permits, inspections, licensed work and trenching.' },
+        { title: 'Foundation', text: 'Slab, pier, anchored or permanent-foundation conditions may be reviewed differently.' },
+        { title: 'Appearance', text: 'Siding, color, roof, windows, screening and visibility can matter in HOA communities.' },
+      ],
+    },
+    {
+      type: 'steps', id: 'path', dark: true, title: 'Six Steps From Exact Address to Confirmed Scope', nav: 'The Approval Path',
+      items: [
+        { title: 'Confirm the Address', text: 'Identifies the city, village, county or township and any layered jurisdiction.' },
+        { title: 'Define the Use', text: 'Storage, workshop, office or studio, plus any planned electric, HVAC or plumbing.' },
+        { title: 'Check Zoning & Setbacks', text: 'Yard setbacks, height and size limits, easements and drainage areas.' },
+        { title: 'Check HOA & Private Rules', text: 'Subdivision documents, deed restrictions and architectural review.' },
+        { title: 'Review Permits & Trades', text: 'Building, electrical, HVAC and plumbing permits and inspections.' },
+        { title: 'Confirm Location & Scope', text: 'Match the size, use, options and utilities to the approval path before scheduling.' },
+      ],
+    },
+    {
+      type: 'table', id: 'reviewers', title: 'Which Office or Document Answers Which Question', nav: 'Who Reviews What',
+      head: ['Approval area', 'Who may review it', 'What may be reviewed', 'Confirm before the build'],
+      rows: [
+        ['Building or trade permit', 'Local building department or trade-permit office', 'Structure, anchoring, foundation, electrical, HVAC, plumbing, safety', 'Whether a permit or inspection applies to this size, use and utility scope'],
+        ['Zoning & setbacks', 'City, village, county or township zoning office', 'Placement, property-line distance, height, lot coverage', 'Where the building may sit and how large or tall it may be'],
+        ['HOA & deed rules', 'HOA board, review body or governing documents', 'Size, color, siding, roof, screening, location, timing', 'Whether written private approval is needed and how long it takes'],
+        ['Easements & drainage', 'Plat, survey, title records and the local jurisdiction', 'Utility, drainage, sewer and access easements; no-build areas', 'That the location stays clear of recorded restrictions'],
+        ['Utilities', 'Utility owners, 811 and licensed trades', 'Underground marking, trenching, connections, licensed work', 'That utility paths are planned and marked before digging'],
+      ],
+    },
+    {
+      type: 'cards', id: 'mistakes', title: 'Approval Problems Usually Start Before the Building Is Ordered', nav: 'Common Mistakes',
+      items: [
+        { title: 'Assuming “no permit” means “no rules”', text: 'Zoning, setbacks, easements, HOA and deed rules can still apply.' },
+        { title: 'Checking the city but not the HOA', text: 'Private documents may still control size, location, color, roof and siding.' },
+        { title: 'Choosing the spot before checking setbacks', text: 'The most attractive location may not be allowed.' },
+        { title: 'Adding utilities without approval planning', text: 'Electric, HVAC, plumbing or a finished interior can change permit requirements.' },
+        { title: 'Assuming every county works the same', text: 'Expectations change across short distances in the Tri-State.' },
+        { title: 'Waiting until the last minute', text: 'HOA meetings, review cycles and inspections can affect the schedule.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'gather', title: 'What to Gather Before Contacting Any Office or HOA', nav: 'What to Gather',
+      items: [
+        { title: 'Property & use', list: ['Exact property address', 'Intended use', 'Whether electric, HVAC or plumbing is planned now or later'] },
+        { title: 'Building & location', list: ['Proposed size and height', 'Preferred and alternate location', 'Known property lines, easements or drainage areas'] },
+        { title: 'Documents', list: ['HOA, subdivision or deed documents', 'Any survey, plat or site plan', 'Siding, color and roof choices, in case review asks'] },
+      ],
+    },
+  ],
+  disclaimer: 'This guide is general planning education. It is not a permit, zoning or legal determination for any property. The local jurisdiction, HOA, review body, governing document, utility owner or licensed professional makes the final call within its area of responsibility.',
+  faqs: [
+    { q: 'Do backyard buildings always need a permit?', a: 'Not always. It depends on the jurisdiction, size, height, foundation, utilities, use and placement. Zoning, setback, easement, HOA or private rules may still apply even when a permit is not required.' },
+    { q: 'Are zoning rules different from building permits?', a: 'Yes. Building review covers construction and safety. Zoning covers placement, setbacks, lot coverage, height and accessory-structure limits.' },
+    { q: 'Can an HOA have requirements even if the city allows the building?', a: 'Yes. Private rules apply separately and may cover size, placement, siding, color, roof material, screening and review timing.' },
+    { q: 'Should approvals be checked before choosing the final location?', a: 'Yes. Setbacks, easements, drainage areas, utility corridors and HOA placement rules can all affect where the building may sit.' },
+    { q: 'Can electric, HVAC, plumbing or a finished interior change the approval path?', a: 'They can, by adding trade permits, inspections, licensed work or extra documentation.' },
+    { q: 'Who makes the final approval decision?', a: 'The applicable local authority, HOA, review body, governing document or utility owner, each within its own area. The homeowner verifies the requirements that apply to the property.' },
+  ],
+  related: ['01', '03', '18', '21'],
+  pages: [['Site & Foundation', 'Setbacks, HOA and utility checks before you pick the spot.', '/options/site-foundation/']],
+  ctaTitle: 'Confirm the Rules Before Finalizing the Location',
+  ctaText: 'The best time to review permits, zoning, setbacks, HOA rules, easements and utilities is before the location, size, use and written scope are final. Then the site and foundation can be planned around a location that is both practical and allowed.',
+};
+---
+<GuidePage page={page} />

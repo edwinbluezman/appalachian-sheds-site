@@ -1,0 +1,101 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '03',
+  subtitle: 'Structural Base, Drainage, Moisture Control and Long-Term Support',
+  description: 'Compare backyard building foundations: prepared gravel pad with 6×6 beams, concrete piers, slabs, block walls and raised supports, plus the site conditions and red flags that decide the right choice.',
+  intro: 'A backyard building should not sit on a casual base. The foundation responds to the site, slope, drainage, soil, building size, intended use, floor system, utility plans and how long you expect to own the building.',
+  question: 'What Is the Best Foundation for a Backyard Building?',
+  answer: [
+    'The best foundation keeps the structure level, supported, drained, raised above avoidable moisture and matched to the site and the way the building will be used.',
+    'For most framed-floor buildings, Appalachian Sheds uses 6×6 ground-contact pressure-treated foundation beams, ideally on the optional prepared gravel pad. Piers, slabs or raised supports can make sense for specific sites and uses.',
+    'In plain terms, the foundation must carry the building, keep the floor stable, move water away and limit moisture where the structure meets the ground.',
+  ],
+  sections: [
+    {
+      type: 'cards', id: 'jobs', eyebrow: 'Four Non-Negotiables', title: 'A Foundation Has More Than One Job', nav: 'Four Foundation Jobs',
+      items: [
+        { title: 'Carry the structure', text: 'Support the building, roof loads, people, stored items, tools and future use without uneven settlement.' },
+        { title: 'Move water away', text: 'Reduce ponding, splash-back, trapped moisture and soil contact that shorten material life.' },
+        { title: 'Keep the building level', text: 'Doors, windows, rooflines, trim and interior finishes all depend on stable support.' },
+        { title: 'Protect the floor and lower walls', text: 'Wood, siding and trim last longest with airflow, grade clearance and moisture control.' },
+      ],
+    },
+    {
+      type: 'table', id: 'options', title: 'Compare the Structural Strategy Before the Finish Details', nav: 'Foundation Options',
+      lead: 'Choose the foundation around the property and use before siding, doors, porches or interiors become the focus.',
+      head: ['Foundation', 'Best fit', 'Strengths', 'Cautions'],
+      rows: [
+        ['Prepared gravel pad + 6×6 beams', 'Most framed-floor sheds, studios and workshops', 'Drainage, practical support and a strong fit with on-site building', 'The pad must be excavated, compacted, leveled and drained, not loose stone over grass'],
+        ['6×6 beams with standard leveling', 'Firm, well-drained sites within 6″ of level', 'The standard Appalachian Sheds foundation on every building', 'Not a substitute for drainage where water collects'],
+        ['Gravel pad + concrete piers', 'Sites needing defined bearing points or slope correction', 'Drainage plus stronger bearing', 'Pier layout must match the beams; local rules may set depth'],
+        ['Poured concrete piers', 'Larger buildings, sloped sites, frost-footing needs', 'Durable support and grade adjustment', 'More layout, excavation and code review; deck blocks are not equivalent'],
+        ['Concrete slab', 'Workshops, equipment, garage-style buildings', 'Durable hard surface and permanent feel', 'Drainage, elevation, vapor, thresholds and anchoring must be planned; may need special anchors'],
+        ['Thickened-edge slab', 'Larger or heavier structures', 'Stronger perimeter support', 'More excavation, forming, cost and review'],
+        ['Concrete block wall', 'Large, garage-style or two-story structures', 'Substantial when built as a full wall-and-footing system', 'Usually more than a shed needs; not loose blocks'],
+        ['Pier-and-beam / post support', 'Steep or difficult sites', 'Solves elevation without heavy grading', 'Bracing, anchoring and stability must be designed'],
+        ['Loose blocks on bare ground', 'Not recommended', 'Low cost, quick', 'Shifts, settles unevenly, causes door and floor problems'],
+      ],
+    },
+    {
+      type: 'text', id: 'assembly', title: 'The Appalachian Sheds Foundation, Layer by Layer', nav: 'The Nine Layers',
+      paras: [
+        'With the optional prepared pad, the complete assembly has nine layers from the ground up. Geotextile fabric goes below the stone and the 10-mil moisture barrier goes on top of it; they are different materials doing different jobs.',
+      ],
+      list: ['1. Compacted soil subgrade', '2. Geotextile fabric', '3. 6×6 PT perimeter grade beams', '4. 6″ of 3/4″ washed gravel', '5. 10-mil black moisture barrier', '6. 16″ × 16″ × 6″ concrete bearing pads', '7. 6×6 PT foundation beams', '8. 2×6 PT floor joists, 16″ on center', '9. 3/4″ PT plywood floor deck'],
+      links: [['Site & Foundation options', '/options/site-foundation/'], ['Guide 01: the step-by-step sequence', '/buyers-planning-guide/site-preparation-guide-01/']],
+    },
+    {
+      type: 'text', id: 'site', dark: true, title: 'Real Backyard Conditions Matter More Than a Catalog Photo', nav: 'Site Conditions',
+      paras: [
+        'A building on a high, well-drained, level spot has a different risk profile than one near a low corner, a downspout, a shaded fence line, a swale or the bottom of a slope. Looking level on day one does not make a base good enough.',
+        'Water tells the truth about the site. If water wants to sit where the building is planned, the condition is corrected, the building is moved, or a different foundation is chosen.',
+      ],
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'Conditions That Deserve a Closer Look', nav: 'Red Flags',
+      items: [
+        { title: 'Standing water after rain', text: 'May call for relocation, grading, gravel, drainage work or piers.' },
+        { title: 'Soft fill or spongy soil', text: 'Affects settlement, bearing and long-term alignment.' },
+        { title: 'Workshop or studio use', text: 'Heavier use calls for more planning for floor performance, moisture and utilities.' },
+        { title: 'Heavy tools or equipment', text: 'Concentrated loads should be discussed before the floor is treated as standard.' },
+        { title: 'Slope or drainage swale', text: 'Understand water movement and soil before choosing the spot.' },
+        { title: 'Assuming a slab is always best', text: 'Elevation, drainage, vapor, thresholds and anchoring still need planning.' },
+        { title: 'Future utilities', text: 'Electric, HVAC and plumbing routes affect trenching and foundation details.' },
+        { title: 'Foundation chosen too late', text: 'Foundation and placement should inform each other.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'myths', title: 'Shortcut Assumptions Create Long-Term Problems', nav: 'Common Myths',
+      items: [
+        { title: '“If it looks level on day one, it’s fine.”', text: 'Moisture, settlement and seasonal movement show up later.' },
+        { title: '“Concrete is always best.”', text: 'Only when elevation, drainage, vapor, thresholds and anchoring are planned.' },
+        { title: '“Gravel is just gravel.”', text: 'A durable base depends on preparation, compaction, edges and angular stone.' },
+        { title: '“A small shed doesn’t need planning.”', text: 'Small buildings still suffer moisture, settlement and sticking doors.' },
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Who Handles What', nav: 'Who Handles What',
+      items: [
+        { title: 'Appalachian Sheds can help evaluate', list: ['Slope, drainage and wet areas', 'Foundation options for the use', 'Placement and constructability', 'Access and material paths', 'Floor support expectations', 'Future utility and finish readiness'] },
+        { title: 'The homeowner verifies', list: ['Property lines, setbacks and easements', 'HOA or private restrictions', '811 marking and private underground lines', 'Local footing, pier or slab requirements', 'Planned heavy use, utilities or finished interiors'] },
+      ],
+    },
+  ],
+  disclaimer: 'This guide does not replace site-specific engineering, drainage design, building or zoning review, HOA approval, utility marking or licensed-trade requirements.',
+  faqs: [
+    { q: 'Is gravel better than concrete for a backyard building?', a: 'It depends on the site, size, use and drainage. A well-prepared gravel pad suits most framed-floor buildings; a slab may suit some workshop or equipment uses. The details matter more than the label.' },
+    { q: 'Can a backyard building sit directly on grass or soil?', a: 'Not recommended. Grass and bare soil hold moisture, shift and settle, shortening the life of the floor and lower walls.' },
+    { q: 'What foundation is best for a workshop or studio?', a: 'One planned for the real loads, moisture control, utilities and insulation. The right choice depends on how the space will actually be used.' },
+    { q: 'Are concrete blocks on the ground a good foundation?', a: 'Not for a quality building. Loose blocks on grade can settle unevenly, concentrate loads and cause alignment problems.' },
+    { q: 'Where does the 10-mil moisture barrier go?', a: 'On top of the prepared gravel, before the bearing pads and 6×6 foundation beams. It is separate from the geotextile fabric below the gravel.' },
+    { q: 'Can the foundation affect doors and windows?', a: 'Yes. Uneven support or movement affects door alignment, window fit, trim lines and interior finishes.' },
+  ],
+  related: ['01', '02', '04', '06'],
+  pages: [['Site & Foundation', 'The prepared pad, leveling, slabs and the nine-layer foundation.', '/options/site-foundation/'], ['Floor Systems', 'Joist, decking and floor-stiffness upgrades.', '/options/floor-systems/']],
+  ctaTitle: 'Make the Site Decision Before the Style Decision',
+  ctaText: 'Before finalizing style, size, options or placement, make sure the foundation supports the way the building will live on your site. If permits and setbacks have not been reviewed, do that before the location is fixed.',
+};
+---
+<GuidePage page={page} />

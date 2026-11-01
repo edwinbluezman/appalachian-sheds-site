@@ -86,7 +86,7 @@ export const signatureSeriesSpecs = (extraFirst, sizesText) => [
   ['Warranty', 'Appalachian Sheds 30-Year Structural Warranty'],
 ];
 
-export const notIncluded = 'Interior finishes, optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless identified in the final written price.';
+export const notIncluded = 'Interior finishes, exterior paint, stain and caulking, optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless identified in the final written price.';
 
 // FAQ answers that are the same on every model page.
 export const commonFaqs = (name) => [

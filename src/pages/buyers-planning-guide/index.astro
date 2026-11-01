@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import { business, link } from '../../data/site.js';
+import { guide, guides, stages } from '../../data/guides.js';
+
+const path = '/buyers-planning-guide/';
+const url = 'https://appalachiansheds.com' + path;
+const title = "Buyer's Planning Guide: 24 Homeowner Guides to Planning a Backyard Building | Appalachian Sheds";
+const description = 'Plan your backyard building one decision at a time: 24 plain-English guides on site preparation, permits, foundations, size, design, construction, budget, utilities, ownership and the buying process.';
+
+const questions = [
+  ['Where can I put the building?', 'Site preparation, permits, setbacks, foundations, moisture and access.', 1],
+  ['What size and design do I need?', 'Use, size, customization, roof pitch and what is included.', 2],
+  ['How should my building be constructed?', 'Materials, construction standards, build day and built-on-site construction.', 3],
+  ['What should I know before I spend money?', 'Payment, deposits, financing, evaluating a builder and the final checklist.', 4],
+  ['Can I add electric, HVAC or finished space?', 'Utility-ready planning, interior finish, long-term care and value.', 5],
+  ['Am I ready to move forward?', 'Neighborhood fit, HOA, project readiness and the complete process.', 6],
+];
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': url,
+    url,
+    name: "Buyer's Planning Guide",
+    description,
+    about: { '@id': business.id },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: 24,
+      itemListElement: guides.map((g) => ({ '@type': 'ListItem', position: Number(g.n), name: g.name, ...(g.live ? { url: 'https://appalachiansheds.com' + g.path } : {}) })),
+    },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: "Buyer's Planning Guide", item: url },
+    ],
+  },
+];
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <section class="band band--dark gh-hero" aria-labelledby="gh-title">
+    <div class="wrap">
+      <nav class="gd-crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Buyer's Planning Guide</span></nav>
+      <p class="eyebrow">Homeowner Planning Center · 24 Guides</p>
+      <h1 id="gh-title">Buyer's Planning Guide</h1>
+      <p class="gh-intro">Plan your backyard building one clear decision at a time. These 24 guides explain the site, size, design, construction, cost, utilities, ownership and buying process in plain language, so you understand what matters before you commit.</p>
+      <p class="gh-intro">You do not need to read every guide. Start with the question you have today. When you want the complete picture, follow the six planning stages in order.</p>
+      <ul class="gh-jump" aria-label="Planning stages">
+        {stages.map((s) => <li><a href={'#stage-' + s.n}><span>{s.n}</span> {s.name}</a></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="gh-start">
+    <div class="wrap">
+      <p class="eyebrow">Where Should I Start?</p>
+      <h2 id="gh-start" class="gd-h2">What Are You Trying to Figure Out?</h2>
+      <p class="gd-lead">Choose the question that sounds most like yours to go straight to the stage with the most useful guides.</p>
+      <div class="gd-cards">
+        {questions.map(([q, d, n]) => <a class="gd-card gd-card--link" href={'#stage-' + n}><span class="gd-num">Stage {n}</span><h3>{q}</h3><p>{d}</p></a>)}
+      </div>
+    </div>
+  </section>
+
+  {stages.map((s, i) => (
+    <section id={'stage-' + s.n} class={'band ' + (i % 2 ? 'band--light' : 'band--cash')} aria-labelledby={'stage-' + s.n + '-t'}>
+      <div class="wrap">
+        <p class="eyebrow">Planning Stage {s.n}</p>
+        <h2 id={'stage-' + s.n + '-t'} class="gd-h2">{s.name}</h2>
+        <p class="gd-lead">{s.lead}</p>
+        <div class="gd-cards">
+          {s.guides.map((n) => {
+            const g = guide(n);
+            return g.live
+              ? <a class="gd-card gd-card--link" href={link(g.path)}><span class="gd-num">Guide {g.n}</span><h3>{g.name}</h3><p>{g.blurb}</p><span class="gh-open">Open Guide {g.n} →</span></a>
+              : <article class="gd-card gh-soon"><span class="gd-num">Guide {g.n} · Coming soon</span><h3>{g.name}</h3><p>{g.blurb}</p></article>;
+          })}
+        </div>
+        <p class="gd-note"><strong>Move on when:</strong> {s.done}</p>
+      </div>
+    </section>
+  ))}
+
+  <section class="band band--dark" aria-labelledby="gh-cta">
+    <div class="wrap">
+      <p class="eyebrow">When You Are Ready</p>
+      <h2 id="gh-cta" class="gd-h2">Turn the Planning Into a Clear Building Conversation</h2>
+      <p class="gh-intro">The guides are not meant to make you a construction expert. They help you understand the decisions well enough to ask good questions and move forward without avoidable surprises. A conversation with Edwin can clarify which decisions matter now and which can wait.</p>
+      <div class="gd-ctas">
+        <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
+        <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
+        <a class="btn btn--secondary" href={link('/buildings/')}>Buildings &amp; Pricing</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .gh-hero { padding-top: 40px; }
+  .gh-hero h1 { margin: 0 0 18px; font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.12; }
+  .gh-intro { max-width: 74ch; margin: 0 0 18px; font-size: 1.05rem; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .gh-jump { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .gh-jump a { display: inline-block; padding: 10px 16px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; font-weight: 800; font-size: 0.92rem; }
+  .gh-jump a:hover { background: var(--bronze); color: var(--steel); }
+  .gh-jump span { color: var(--bronze); margin-right: 6px; }
+  .gh-jump a:hover span { color: var(--steel); }
+  .gh-open { display: block; margin-top: 10px; color: var(--bronze-dark); font-weight: 900; }
+  .gh-soon { opacity: 0.72; }
+  .gd-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 26px; }
+  .gd-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .gd-h2 { margin: 0 0 14px; font-size: clamp(1.55rem, 2.9vw, 2.2rem); }
+  .gd-lead { max-width: 72ch; margin: 0 0 26px; font-weight: 700; }
+  .gd-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .gd-card { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; color: var(--steel); }
+  .gd-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .gd-card p { margin: 0; font-weight: 700; font-size: 0.95rem; }
+  .gd-card--link { display: block; text-decoration: none; }
+  .gd-card--link:hover { border-color: var(--bronze); }
+  .gd-num { display: block; color: var(--bronze-dark); font-weight: 900; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .gd-note { margin: 22px 0 0; max-width: 80ch; font-weight: 700; border-left: 4px solid var(--bronze); padding-left: 14px; }
+  .gd-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+</style>

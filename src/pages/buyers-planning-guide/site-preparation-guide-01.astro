@@ -1,0 +1,107 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+
+const page = {
+  n: '01',
+  subtitle: 'From Raw Backyard to a Framing-Ready Foundation',
+  description: 'What a backyard building site needs before construction: utility marking, clearing, layout, subgrade, geotextile fabric, washed stone, moisture barrier and the 6×6 beam floor platform, step by step.',
+  intro: 'A backyard building starts before the first wall is framed. The site is reviewed for access, drainage, soil, utilities, working room and foundation readiness so the structure has a dependable place to perform. This guide walks through the full path from an ordinary backyard to a stable, drained, framing-ready floor platform.',
+  question: 'What Site Preparation Is Needed Before a Backyard Building Is Built?',
+  answer: [
+    'A site is ready when it is accessible, clear of known utility conflicts, shaped for drainage, cleared of organic material, prepared with a firm subgrade and a clean stone base where the pad is used, and ready for the foundation system.',
+    'Site preparation should be reviewed before the building size, placement, options and schedule are treated as final. Water flow, slope, soil firmness, tree roots, downspouts, gate width, fencing, private utility lines and working room all belong in that review.',
+    'The simple standard: choose the building location only after the property has been considered for drainage, access, soil, utilities, approvals, foundation readiness, maintenance clearance and future use.',
+  ],
+  sections: [
+    {
+      type: 'steps', id: 'sequence', eyebrow: 'Site Preparation & Foundation', title: 'The Site-Preparation Sequence', nav: 'The Sequence',
+      lead: 'These steps follow the real construction order, from utility awareness to a framing-ready floor. Steps 4 through 10 build the optional prepared gravel pad, which Appalachian Sheds recommends wherever drainage, soft soil or moisture is a concern.',
+      items: [
+        { title: 'Mark Underground Utilities', text: 'Before any digging, stakes or grading, public utility marking is completed through 811. Private lines such as irrigation, pet fencing, landscape lighting, septic, drainage, propane or homeowner-installed wiring may not be marked and need to be disclosed.' },
+        { title: 'Clear the Building Area and Work Zone', text: 'Vegetation, brush, debris, stored items and any old shed are removed. Organic material left under a foundation can decay, compress, hold moisture and lead to settlement.' },
+        { title: 'Lay Out the Pad and Floor Height', text: 'The building footprint and pad boundary are staked before excavation. The prepared pad extends 2 feet beyond the building on every side, so a 10×12 building gets a 14×16 pad. Floor height is set in relation to drainage and the surrounding grade.' },
+        { title: 'Remove Topsoil and Organic Material', text: 'About 6 inches of sod, roots and topsoil are excavated down to firm, non-organic soil. Clay-heavy or unstable areas may need to go deeper, and soft spots are replaced.' },
+        { title: 'Compact the Subgrade', text: 'The exposed soil is checked for soft, wet or loose areas, corrected, shaped for drainage and compacted with a plate compactor into a firm, even bearing surface.' },
+        { title: 'Install Geotextile Fabric', text: 'Commercial-grade geotextile fabric covers the prepared soil, with seams overlapped 12 inches. It keeps the stone from sinking into clay or mud. It is a different material, in a different place, from the moisture barrier.' },
+        { title: 'Set the Perimeter Beams', text: '6×6 ground-contact pressure-treated perimeter beams define and contain the pad, pinned with 1/2″ × 24″ rebar every 24 inches. They are separate from the structural beams that carry the floor.' },
+        { title: 'Place the Washed Stone', text: 'Six inches of 3/4″ washed limestone fill the pad. Clean angular stone drains and locks together far better than pea gravel, round stone or dirty fill.' },
+        { title: 'Level and Seat the Stone', text: 'The stone is leveled to the planned drainage plane and compacted so the layers above do not rock or shift. High and low spots are corrected.' },
+        { title: 'Lay the 10-Mil Moisture Barrier', text: 'A 10-mil black moisture barrier covers the finished stone and extends 2 feet past the perimeter beams. Seams are overlapped, and the barrier is protected from punctures as the foundation goes on.' },
+        { title: 'Place the Concrete Bearing Pads', text: '16″ × 16″ × 6″ concrete bearing pads are set to carry the foundation beams evenly.' },
+        { title: 'Set the 6×6 Foundation Beams', text: 'Ground-contact pressure-treated 6×6 beams are aligned to the building footprint and checked for straightness, spacing and level so they bear in one plane. Every Appalachian Sheds building sits on these beams, with or without the prepared pad.' },
+        { title: 'Frame the Floor', text: '2×6 pressure-treated joists are installed 16 inches on center, perpendicular to the beams, with rim framing and blocking checked for square and full bearing.' },
+        { title: 'Install the Plywood Floor Deck', text: 'The frame is covered with 3/4″ pressure-treated plywood, fastened to the joists into a solid, square platform.' },
+        { title: 'Confirm the Platform Is Ready', text: 'Before walls go up, the platform is checked as a system: fastening, bearing, beam alignment, square, level, drainage and work-zone readiness. A weak foundation is far harder to fix once walls and roof are on.' },
+      ],
+      links: [['Site & Foundation options and the nine-layer assembly', '/options/site-foundation/']],
+    },
+    {
+      type: 'cards', id: 'property', title: 'Drainage, Access and Utilities Shape the Site Plan', nav: 'Drainage, Access & Utilities',
+      lead: 'A clear patch of yard is not automatically a build-ready location. The property around it affects how the building is prepared, built and maintained.',
+      items: [
+        { title: 'Drainage & Water Movement', text: 'Water should move away from the building area. Review low spots, downspouts, patios, driveways, neighboring slopes and swales before placement is final.', list: ['Avoid chronic standing-water spots', 'Watch the runoff after a hard rain', 'Match the foundation to the real water pattern'] },
+        { title: 'Access & Working Room', text: 'Built-on-site construction avoids moving a finished building into the yard, but materials, ladders, tools and stone still need a practical route.', list: ['Measure the narrowest gate or side yard', 'Note steps, walls, fences, trees and slopes', 'Leave room to work around the footprint'] },
+        { title: 'Utilities & No-Build Areas', text: 'Excavation, grading and trenching can involve buried lines, easements and recorded restrictions.', list: ['Call 811 before digging', 'Disclose private lines and systems', 'Check easements and setbacks'] },
+      ],
+      note: 'Built on site does not mean the site can be ignored. The real question is whether the property, access route, soil, slope and drainage support the preparation the building needs.',
+    },
+    {
+      type: 'cards', id: 'red-flags', title: 'A Red Flag Means “Review It,” Not “Reject the Site”', nav: 'Conditions to Review',
+      lead: 'Many site conditions can be handled. The point is to find them before the foundation scope and schedule are final.',
+      items: [
+        { title: 'Standing water after rain', text: 'May call for drainage work, grading, relocation, more stone or a different base.' },
+        { title: 'Downspouts aimed at the site', text: 'Roof runoff should not be concentrated at the new building.' },
+        { title: 'Soft soil, fill or spongy lawn', text: 'Affects bearing, moisture exposure, base choice and access.' },
+        { title: 'Steep or uneven grade', text: 'May need leveling, drainage, containment or a different spot.' },
+        { title: 'Roots, stumps or low branches', text: 'Can interfere with excavation, roof clearance and upkeep.' },
+        { title: 'Narrow gate or tight side yard', text: 'The crew still needs a safe route for materials and tools.' },
+        { title: 'Unknown underground lines', text: 'Private and homeowner-installed lines should be disclosed before digging.' },
+        { title: 'Easement or property-line questions', text: 'Open ground is not always buildable ground.' },
+      ],
+    },
+    {
+      type: 'table', id: 'compare', dark: true, title: 'Unprepared Site vs. Build-Ready Site', nav: 'Side by Side',
+      head: ['Topic', 'Unprepared site', 'Build-ready site', 'Why it matters'],
+      rows: [
+        ['Drainage', 'Water collects or flows toward the location', 'Water movement is understood and kept away from the foundation', 'Moisture affects the floor, lower walls and trim'],
+        ['Slope', 'Steep, uneven or soft with no base plan', 'The base plan covers leveling, support and drainage', 'Slope affects foundation scope, steps and appearance'],
+        ['Access', 'Blocked by gates, fencing, steps or debris', 'A known route for materials, tools and crew', 'On-site construction still needs a path'],
+        ['Utilities', 'Buried lines and systems unknown', '811 marking done; private lines disclosed', 'A safety and schedule issue'],
+        ['Foundation', 'Base chosen before the site is understood', 'Base matched to drainage, slope, soil and use', 'The hardest part to correct later'],
+        ['Work zone', 'Footprint clear but no room to work', 'Room for framing, siding, roofing and ladders', 'The crew needs more than the footprint'],
+        ['Future use', 'Power or HVAC left for later', 'Utility paths discussed before placement', 'Affects trenching, orientation and site prep'],
+      ],
+    },
+    {
+      type: 'cards', id: 'responsibility', title: 'Clear Responsibility Prevents Build-Day Surprises', nav: 'Who Handles What',
+      items: [
+        { title: 'Appalachian Sheds can help evaluate', list: ['Access from the driveway to the site', 'Slope, drainage and wet areas', 'Working room around the building', 'Likely foundation, stone or leveling needs', 'Downspout, patio and runoff conflicts', 'Placement for the size and use', 'Future utility readiness'] },
+        { title: 'The homeowner verifies or coordinates', list: ['811 utility marking before digging', 'Private lines, irrigation, pet fencing, septic', 'HOA or architectural approval', 'Zoning, setbacks, easements and property lines', 'Permits and local approvals', 'Clearing furniture, toys, planters and stored items', 'Known drainage, slope or underground conditions'] },
+      ],
+    },
+    {
+      type: 'cards', id: 'checklist', title: 'What to Have Ready Before the Site Conversation', nav: 'Homeowner Checklist',
+      items: [
+        { title: 'Property basics', list: ['Exact address', 'Proposed size, if known', 'Intended use', 'Preferred and alternate location'] },
+        { title: 'Access details', list: ['Narrowest gate or path width', 'Fences, steps, slopes, retaining walls', 'Overhead branches or wires', 'Parking and staging limits'] },
+        { title: 'Water & grade', list: ['Known low or wet spots', 'Where downspouts discharge', 'Driveway, patio or neighbor runoff', 'Soft soil, fill or slope'] },
+        { title: 'Utilities & approvals', list: ['Private or homeowner-installed lines', 'Planned electric, HVAC or plumbing', 'HOA requirements', 'Easements, setbacks or permit questions'] },
+      ],
+      note: 'Properties across Greater Cincinnati, Northern Kentucky and Southeast Indiana vary widely: flat lawns, wooded slopes, tight fenced yards, clay soils, swales and retaining walls. The exact property controls the site plan.',
+    },
+  ],
+  faqs: [
+    { q: 'Does the site need to be perfectly level?', a: 'No. Sites within 6 inches of level are covered by standard leveling. Steeper sites may need extended leveling, more stone, drainage work or a different placement.' },
+    { q: 'Can a building go where water collects?', a: 'Chronic standing water should be addressed first. Concentrated water increases moisture exposure at the foundation, floor and lower walls.' },
+    { q: 'Does building on site eliminate access concerns?', a: 'No. It removes the need to move a finished building into the yard, but materials, tools, ladders and the crew still need a safe, practical path.' },
+    { q: 'Where does the geotextile fabric go, and where does the moisture barrier go?', a: 'The fabric goes on the compacted soil, below the stone, to keep stone and soil separate. The 10-mil moisture barrier goes on top of the finished stone, below the foundation.' },
+    { q: 'Why is the prepared pad larger than the building?', a: 'Extending 2 feet beyond the building on every side improves drainage, splash-back control and maintenance access around the structure.' },
+    { q: 'Can site preparation affect the final price?', a: 'Yes. Slope, drainage, clearing, stone, leveling, access limits, utility conflicts and foundation conditions can all change the final scope.' },
+  ],
+  related: ['02', '03', '04', '05'],
+  pages: [['Site & Foundation', 'Site checkpoints, the prepared pad and the nine-layer foundation.', '/options/site-foundation/']],
+  ctaTitle: 'Review the Site Before the Plan Becomes Final',
+  ctaText: 'The right location, foundation, access path, drainage and site preparation should be understood before construction begins. The site keeps affecting the building long after the crew leaves.',
+};
+---
+<GuidePage page={page} />

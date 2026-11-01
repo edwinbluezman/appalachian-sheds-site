@@ -1,6 +1,7 @@
 ---
 import ModelPage from '../../components/ModelPage.astro';
 import prices from '../../data/country-cottage-prices.csv?raw';
+import photo from '../../assets/appalachian-country-cottage.jpg';
 import { signatureSeriesSpecs, commonFaqs } from '../../data/models.js';
 
 const name = 'Appalachian Country Cottage';
@@ -16,6 +17,9 @@ const model = {
   description: 'Appalachian Country Cottage: cottage-style storage with extended eaves and transom glass, in {count} sizes from {range}, built on site in Cincinnati and the Tri-State. Standard build prices from {low}.',
   schemaDescription: 'A cottage-style backyard building with extended eaves, transom glass and larger windows, built on site in {count} sizes from {range} and five siding systems.',
   answer: 'The Appalachian Country Cottage is a cottage-style backyard building with extended eaves, a transom window over its double door and larger side windows, built on site at your property in Cincinnati and the Tri-State. It comes in {count} sizes from {range}, five siding choices, and the Appalachian Sheds 30-Year Structural Warranty. Standard build prices start at {low}.',
+  photo,
+  photoAlt: 'Appalachian Country Cottage in natural vertical wood siding with a brown shingle roof, extended eaves, transom windows above glass-panel double doors, and three side windows with flower boxes, beneath a large autumn oak',
+  photoCaption: 'Shown with optional glass-panel double doors, a third side window and window boxes, in a natural wood finish. The standard Country Cottage includes LP SmartSide Vertical Panel siding, a six-panel double door and two side windows.',
   specs: signatureSeriesSpecs([], '23 sizes, from 8′ × 10′ to 14′ × 24′'),
   sidingLead: 'The Signature Series construction and cottage details stay the same. Your siding choice sets the exterior character, from a practical painted panel to a residential lap or a farmhouse board and batten.',
   fitLead: 'The Country Cottage is for storage that looks finished and belongs on the property, especially where the building is visible from the house, patio or garden. Adding one useful option does not require a different model.',

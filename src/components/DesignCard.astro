@@ -1,0 +1,45 @@
+---
+// A custom design card: rendering, name, use, starting model and (once confirmed) its price range.
+import DesignFigure from './DesignFigure.astro';
+import { link } from '../data/site.js';
+import { useLabels } from '../data/custom-designs.js';
+
+const { d } = Astro.props;
+const p = d.price;
+const request = `${link('/start-your-project/')}?model=${encodeURIComponent('Custom building')}&size=${encodeURIComponent(p.size)}&design=${encodeURIComponent(d.name)}#project-form`;
+---
+<article class="dc" id={d.slug}>
+  <DesignFigure imageKey={d.images[0].key} alt={d.images[0].alt} label="short" sizes="(max-width: 700px) 94vw, (max-width: 1100px) 46vw, 31vw" />
+  <div class="dc__body">
+    <p class="dc__use">{useLabels[d.use]} · Custom Design</p>
+    <h3>{d.name}</h3>
+    <p class="dc__sum">{d.summary}</p>
+    {d.confirmed ? (
+      <dl class="dc__price">
+        <div><dt>Base building</dt><dd>{p.text.base}</dd></div>
+        <div><dt>As shown, about</dt><dd>{p.text.asShown}</dd></div>
+      </dl>
+    ) : (
+      <p class="dc__ask">Ask Edwin for this design’s price</p>
+    )}
+    <p class="dc__from">Starts from the <a href={link(p.model.path)}>{p.model.name.replace('Appalachian ', '')}</a> · {p.size}</p>
+    <a class="btn btn--primary dc__btn" href={request}>Request This Design</a>
+  </div>
+</article>
+
+<style is:global>
+  .dc { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); color: var(--steel); display: flex; flex-direction: column; }
+  .dc .df figcaption { padding: 0 18px; }
+  .dc__body { padding: 14px 18px 20px; display: flex; flex-direction: column; flex: 1; }
+  .dc__use { margin: 0 0 6px; color: var(--bronze-dark); font-weight: 900; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .dc h3 { margin: 0 0 8px; font-size: 1.2rem; }
+  .dc__sum { margin: 0 0 14px; font-weight: 700; font-size: 0.93rem; }
+  .dc__price { margin: 0 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dc__price div { background: var(--ivory); padding: 10px 12px; }
+  .dc__price dt { font-size: 0.78rem; font-weight: 800; color: #6f6a62; }
+  .dc__price dd { margin: 2px 0 0; font-weight: 900; font-size: 1.05rem; }
+  .dc__ask { margin: 0 0 10px; font-weight: 900; color: var(--bronze-dark); }
+  .dc__from { margin: 0 0 16px; font-size: 0.88rem; font-weight: 700; }
+  .dc__from a { color: var(--bronze-dark); }
+  .dc__btn { margin-top: auto; text-align: center; }
+</style>

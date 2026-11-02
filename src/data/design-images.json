@@ -1,0 +1,117 @@
+{
+  "appalachian-classic-awning-autumn": {
+    "width": 928,
+    "height": 1152,
+    "sizes": [
+      {
+        "w": 480,
+        "h": 596,
+        "src": "designs/appalachian-classic-awning-autumn-480.webp"
+      },
+      {
+        "w": 800,
+        "h": 993,
+        "src": "designs/appalachian-classic-awning-autumn-800.webp"
+      },
+      {
+        "w": 928,
+        "h": 1152,
+        "src": "designs/appalachian-classic-awning-autumn-928.webp"
+      }
+    ],
+    "share": "designs/appalachian-classic-awning-autumn-share.jpg"
+  },
+  "creekside-pool-house-autumn": {
+    "width": 1122,
+    "height": 1402,
+    "sizes": [
+      {
+        "w": 480,
+        "h": 600,
+        "src": "designs/creekside-pool-house-autumn-480.webp"
+      },
+      {
+        "w": 800,
+        "h": 1000,
+        "src": "designs/creekside-pool-house-autumn-800.webp"
+      },
+      {
+        "w": 1122,
+        "h": 1402,
+        "src": "designs/creekside-pool-house-autumn-1122.webp"
+      }
+    ],
+    "share": "designs/creekside-pool-house-autumn-share.jpg"
+  },
+  "creekside-pool-house-summer": {
+    "width": 1672,
+    "height": 941,
+    "sizes": [
+      {
+        "w": 480,
+        "h": 270,
+        "src": "designs/creekside-pool-house-summer-480.webp"
+      },
+      {
+        "w": 800,
+        "h": 450,
+        "src": "designs/creekside-pool-house-summer-800.webp"
+      },
+      {
+        "w": 1200,
+        "h": 675,
+        "src": "designs/creekside-pool-house-summer-1200.webp"
+      },
+      {
+        "w": 1600,
+        "h": 900,
+        "src": "designs/creekside-pool-house-summer-1600.webp"
+      }
+    ],
+    "share": "designs/creekside-pool-house-summer-share.jpg"
+  },
+  "harvest-cottage-autumn": {
+    "width": 928,
+    "height": 1152,
+    "sizes": [
+      {
+        "w": 480,
+        "h": 596,
+        "src": "designs/harvest-cottage-autumn-480.webp"
+      },
+      {
+        "w": 800,
+        "h": 993,
+        "src": "designs/harvest-cottage-autumn-800.webp"
+      },
+      {
+        "w": 928,
+        "h": 1152,
+        "src": "designs/harvest-cottage-autumn-928.webp"
+      }
+    ],
+    "share": "designs/harvest-cottage-autumn-share.jpg"
+  },
+  "holt-workshop-autumn": {
+    "width": 1120,
+    "height": 1400,
+    "sizes": [
+      {
+        "w": 480,
+        "h": 600,
+        "src": "designs/holt-workshop-autumn-480.webp"
+      },
+      {
+        "w": 800,
+        "h": 1000,
+        "src": "designs/holt-workshop-autumn-800.webp"
+      },
+      {
+        "w": 1120,
+        "h": 1400,
+        "src": "designs/holt-workshop-autumn-1120.webp"
+      }
+    ],
+    "share": "designs/holt-workshop-autumn-share.jpg"
+  }
+}

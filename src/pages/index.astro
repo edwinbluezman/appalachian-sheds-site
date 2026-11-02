@@ -1,8 +1,36 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import DesignFigure from '../components/DesignFigure.astro';
 import hero from '../assets/asi-hero.jpg';
 import { business, link } from '../data/site.js';
+import { series } from '../data/catalog.js';
+import { money } from '../data/models.js';
+import { pricedDesigns, useLabels } from '../data/custom-designs.js';
+import { guides } from '../data/guides.js';
+
+// Home page order follows how buyers decide: the five featured models come first and carry the
+// published prices; custom designs follow as the third path, priced from those same published prices,
+// so they read as "more of the same building" rather than a competing product line.
+const all = series.flatMap((s) => s.models);
+const fromPrice = (s) => Math.min(...s.models.map((m) => m.prices.low));
+const [classicSeries, signatureSeries] = series;
+
+const designs = pricedDesigns()
+  .sort((a, b) => (b.confirmed - a.confirmed) || (a.price.asShown.low - b.price.asShown.low))
+  .slice(0, 6);
+const confirmed = designs.filter((d) => d.confirmed);
+const customRange = confirmed.length
+  ? `${money(Math.min(...confirmed.map((d) => d.price.asShown.low)))}–${money(Math.max(...confirmed.map((d) => d.price.asShown.high)))}`
+  : '';
+
+const paths = [
+  { key: 'Classic Series', price: `From ${money(fromPrice(classicSeries))}`, text: 'Dependable storage with straightforward rooflines. Three models, priced by size and siding.', href: '/buildings/', cta: 'See Classic models' },
+  { key: 'Signature Series', price: `From ${money(fromPrice(signatureSeries))}`, text: 'More finished buildings with extended eaves, transom glass and architectural shingles.', href: '/buildings/', cta: 'See Signature models' },
+  { key: 'Custom Buildings', price: customRange ? `Popular designs ${customRange}` : 'Built from published prices', text: 'Offices, workshops, pool houses and retreats: a model’s published price plus the options you choose.', href: '/custom-buildings/', cta: 'See custom designs' },
+];
+
+const firstGuides = guides.slice(0, 3);
 
 const schema = [
   {
@@ -12,11 +40,17 @@ const schema = [
     name: 'Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State',
     about: { '@id': business.id },
   },
+  {
+    '@type': 'ItemList',
+    '@id': 'https://appalachiansheds.com/#featured-models',
+    name: 'Featured Appalachian Sheds models',
+    itemListElement: all.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.name, url: 'https://appalachiansheds.com' + m.path })),
+  },
 ];
 ---
 <Base
   title="Appalachian Sheds | Premium Site-Built Sheds in Cincinnati and the Tri-State"
-  description="Veteran-owned, family-operated builder of premium site-built sheds for Cincinnati and the Tri-State. Built on site and backed by a 30-Year Structural Warranty."
+  description="Veteran-owned, family-operated builder of premium site-built sheds and custom backyard buildings for Cincinnati and the Tri-State. Published prices, built on site and backed by a 30-Year Structural Warranty."
   path="/"
   schema={schema}
 >
@@ -27,8 +61,8 @@ const schema = [
         <h1 id="hero-title" class="hero__title">Premium Site-Built Sheds, Built to Outlast the Neighborhood</h1>
         <p class="hero__answer">
           Appalachian Sheds is a veteran-owned, family-operated builder of premium backyard
-          buildings for Cincinnati and the Tri-State. Every building is framed on site, set on
-          a 9-layer engineered foundation, and backed by a 30-Year Structural Warranty.
+          buildings for Cincinnati and the Tri-State. Every building is built on site at your
+          property, priced from published price lists and backed by a 30-Year Structural Warranty.
         </p>
         <div class="hero__ctas">
           <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin&nbsp;·&nbsp;{business.phoneDisplay}</a>
@@ -56,6 +90,110 @@ const schema = [
       </figure>
     </div>
   </section>
+
+  <section class="band band--light" aria-labelledby="paths-title">
+    <div class="wrap">
+      <p class="eyebrow">Three Ways to Build</p>
+      <h2 id="paths-title" class="h-h2">Start With a Model. Make It Yours. Or Design Something New.</h2>
+      <p class="h-lead">Every Appalachian building is priced the same clear way: a published model price for your size and siding, plus any options at their published installed prices.</p>
+      <ol class="paths">
+        {paths.map((p, i) => (
+          <li class={'paths__item' + (i === 2 ? ' paths__item--custom' : '')}>
+            <span class="paths__step">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{p.key}</h3>
+            <p class="paths__price">{p.price}</p>
+            <p>{p.text}</p>
+            <a href={link(p.href)}>{p.cta} →</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--cash" aria-labelledby="models-title">
+    <div class="wrap">
+      <p class="eyebrow">Featured Models</p>
+      <h2 id="models-title" class="h-h2">The Five Appalachian Models</h2>
+      <p class="h-lead">Each model page shows the standard build price for every size and siding, with a calculator and the full specifications.</p>
+      <div class="models">
+        {all.map((m) => (
+          <a class="model" href={link(m.path)}>
+            {m.photo
+              ? <Image src={m.photo} alt="" widths={[400, 700]} sizes="(max-width: 700px) 94vw, (max-width: 1200px) 46vw, 19vw" format="webp" quality={78} class="model__img" />
+              : <div class="model__noimg" aria-hidden="true">Photo coming soon</div>}
+            <div class="model__body">
+              <h3>{m.name.replace('Appalachian ', '')}</h3>
+              <p>{m.blurb}</p>
+              <p class="model__price">From <strong>{money(m.prices.low)}</strong></p>
+              <span class="model__go">Sizes &amp; pricing →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="custom-title">
+    <div class="wrap">
+      <div class="h-head">
+        <div>
+          <p class="eyebrow">Custom Buildings · Popular Designs</p>
+          <h2 id="custom-title" class="h-h2">Popular Custom Designs</h2>
+          <p class="h-lead">Each design starts from one of the five models above and adds published options. {customRange ? 'Prices shown are for the design as rendered, before site work.' : 'Ask Edwin for a written price on any design.'}</p>
+        </div>
+        <a class="btn btn--secondary h-head__btn" href={link('/custom-buildings/')}>All Custom Buildings</a>
+      </div>
+      <div class="strip">
+        {designs.map((d) => (
+          <a class="strip__card" href={link('/custom-buildings/#' + d.slug)}>
+            <DesignFigure imageKey={d.images[0].key} alt={d.images[0].alt} label="short" cls="df--card" sizes="(max-width: 700px) 80vw, 30vw" />
+            <div class="strip__body">
+              <p class="strip__use">{useLabels[d.use]}</p>
+              <h3>{d.name}</h3>
+              <p class="strip__from">From the {d.price.model.name.replace('Appalachian ', '')} · {d.price.size}</p>
+              <p class="strip__price">{d.confirmed ? <>As shown, about <strong>{d.price.text.asShown}</strong></> : 'Ask for this design’s price'}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="h-note">Renderings are AI-visualized from original Appalachian Sheds designs and may show optional upgrades and landscaping.</p>
+    </div>
+  </section>
+
+  <section class="band band--dark" aria-labelledby="lwp-title">
+    <div class="wrap">
+      <p class="eyebrow">Beyond Storage</p>
+      <h2 id="lwp-title" class="h-h2">Built Around How You Want to Live, Work and Play</h2>
+      <div class="lwp">
+        <a href={link('/custom-buildings/#live')}><strong>Live</strong><span>Garden houses, cottage retreats, exercise rooms and guest-ready flex space.</span></a>
+        <a href={link('/custom-buildings/#work')}><strong>Work</strong><span>Home offices, workshops, studios and equipment storage.</span></a>
+        <a href={link('/custom-buildings/#play')}><strong>Play</strong><span>Pool houses, game rooms, music studios and backyard hangouts.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="guides-title">
+    <div class="wrap">
+      <p class="eyebrow">Buyer’s Planning Guides</p>
+      <h2 id="guides-title" class="h-h2">Plan It Right Before You Buy</h2>
+      <p class="h-lead">Twenty-four short guides on placement, permits, foundations, sizing, materials and the building process.</p>
+      <div class="glist">
+        {firstGuides.map((g) => <a href={link(g.path)}><span>Guide {g.n}</span><strong>{g.topic}</strong></a>)}
+      </div>
+      <p class="h-more"><a href={link('/buyers-planning-guide/')}>See all 24 planning guides →</a></p>
+    </div>
+  </section>
+
+  <section class="band band--dark" aria-labelledby="talk-title">
+    <div class="wrap">
+      <h2 id="talk-title" class="h-h2">Talk With Edwin About Your Building</h2>
+      <p class="h-lead h-lead--dark">Share what you plan to use it for, where it will sit and the look you want. Edwin will help you choose a model or shape a custom design, then confirm your price in writing.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href={link('/start-your-project/')}>Start Your Project</a>
+        <a class="btn btn--secondary" href={`tel:${business.phoneLink}`}>Call {business.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -72,9 +210,66 @@ const schema = [
   .hero__byline { margin: 0; font-weight: 800; font-size: 0.9rem; color: var(--stone); }
   .hero__media { margin: 0; border: 2px solid var(--bronze); }
   .hero__media img { display: block; width: 100%; height: auto; }
+
+  .h-h2 { margin: 0 0 12px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+  .h-lead { max-width: 74ch; margin: 0 0 28px; font-weight: 700; }
+  .h-lead--dark { color: var(--cashmere); font-weight: 600; }
+  .h-note { margin: 18px 0 0; font-size: 0.85rem; font-weight: 600; color: #6f6a62; }
+  .h-more a { color: var(--bronze-dark); font-weight: 900; text-decoration: none; }
+  .h-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  .h-head__btn { flex-shrink: 0; margin-bottom: 28px; }
+
+  .paths { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .paths__item { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 22px; display: flex; flex-direction: column; }
+  .paths__item--custom { background: var(--steel); color: var(--ivory); border-color: var(--steel); border-top-color: var(--bronze); }
+  .paths__step { color: var(--bronze-dark); font-weight: 900; font-size: 0.85rem; letter-spacing: 0.1em; }
+  .paths__item--custom .paths__step, .paths__item--custom a { color: var(--bronze); }
+  .paths h3 { margin: 6px 0 4px; font-size: 1.3rem; }
+  .paths__price { margin: 0 0 10px; font-weight: 900; font-size: 1.1rem; }
+  .paths p { margin: 0 0 14px; font-weight: 700; font-size: 0.95rem; }
+  .paths a { margin-top: auto; color: var(--bronze-dark); font-weight: 900; text-decoration: none; }
+
+  .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .model { display: flex; flex-direction: column; background: #fff; color: var(--steel); text-decoration: none; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); }
+  .model:hover { border-color: var(--bronze); }
+  .model__img { display: block; width: 100%; height: 180px; object-fit: cover; }
+  .model__noimg { height: 180px; display: grid; place-items: center; background: var(--steel); color: var(--stone); font-weight: 800; font-size: 0.85rem; }
+  .model__body { padding: 16px 16px 18px; display: flex; flex-direction: column; flex: 1; }
+  .model h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .model p { margin: 0 0 10px; font-weight: 700; font-size: 0.9rem; }
+  .model__price strong { font-size: 1.1rem; }
+  .model__go { margin-top: auto; color: var(--bronze-dark); font-weight: 900; font-size: 0.9rem; }
+
+  .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .strip__card { display: flex; flex-direction: column; text-decoration: none; color: var(--steel); background: #fff; border: 1px solid var(--stone); }
+  .strip__card:hover { border-color: var(--bronze); }
+  .strip__card :global(.df figcaption) { padding: 0 14px; }
+  .strip__body { padding: 8px 14px 16px; }
+  .strip__use { margin: 0; color: var(--bronze-dark); font-weight: 900; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .strip h3 { margin: 4px 0 6px; font-size: 1.05rem; }
+  .strip__from { margin: 0 0 6px; font-size: 0.85rem; font-weight: 700; }
+  .strip__price { margin: 0; font-weight: 800; font-size: 0.92rem; }
+
+  .lwp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .lwp a { text-decoration: none; color: var(--ivory); border: 1px solid rgba(200, 195, 186, 0.3); border-top: 3px solid var(--bronze); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .lwp a:hover { border-color: var(--bronze); }
+  .lwp strong { font-size: 2rem; color: var(--bronze); font-weight: 900; }
+  .lwp span { color: var(--cashmere); font-weight: 600; }
+
+  .glist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+  .glist a { text-decoration: none; color: var(--steel); background: #fff; border: 1px solid var(--stone); border-left: 4px solid var(--bronze); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+  .glist span { color: var(--bronze-dark); font-weight: 900; font-size: 0.8rem; }
+
+  @media (max-width: 1200px) { .models { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 900px) {
     .hero { padding: 48px 0 56px; }
     .hero__inner { grid-template-columns: 1fr; gap: 36px; }
     .hero__media { order: -1; }
+    .paths, .lwp, .glist { grid-template-columns: 1fr; }
+    .models { grid-template-columns: 1fr 1fr; }
+    .h-head { flex-direction: column; align-items: stretch; gap: 0; }
+    .strip { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .strip__card { scroll-snap-align: start; }
   }
+  @media (max-width: 560px) { .models { grid-template-columns: 1fr; } }
 </style>

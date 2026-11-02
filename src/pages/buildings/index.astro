@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import { business, link } from '../../data/site.js';
 import { series } from '../../data/catalog.js';
 import { money } from '../../data/models.js';
+import DesignFigure from '../../components/DesignFigure.astro';
 
 const url = 'https://appalachiansheds.com/buildings/';
 const all = series.flatMap((s) => s.models);
@@ -32,7 +33,7 @@ const schema = [
 ---
 <Base
   title="Buildings & Pricing | Appalachian Sheds"
-  description={`Five Appalachian Sheds models in the Classic and Signature Series, each built on site in Cincinnati and the Tri-State with transparent standard build pricing from ${money(low)}.`}
+  description={`Five Appalachian Sheds models in the Classic and Signature Series, plus custom buildings, each built on site in Cincinnati and the Tri-State with transparent standard build pricing from ${money(low)}.`}
   path="/buildings/"
   schema={schema}
 >
@@ -73,10 +74,25 @@ const schema = [
     </section>
   ))}
 
-  <section class="band band--dark" aria-labelledby="bp-cta">
+  <section class="band band--dark" aria-labelledby="bp-custom">
+    <div class="wrap bp-custom">
+      <div>
+        <p class="eyebrow">Custom Buildings</p>
+        <h2 id="bp-custom" class="bp-series">Need Something Beyond the Five Models?</h2>
+        <p class="bp-lead">Offices, workshops, pool houses, studios and retreats. A custom building starts from the closest model’s published price at your size and siding, then adds your options at their published installed prices, so custom work is priced the same clear way.</p>
+        <div class="bp-ctas">
+          <a class="btn btn--primary" href={link('/custom-buildings/')}>See Custom Buildings</a>
+          <a class="btn btn--secondary" href={link('/custom-buildings/#pricing')}>How Custom Pricing Works</a>
+        </div>
+      </div>
+      <DesignFigure imageKey="holt-workshop-autumn" alt="The Holt Workshop custom design: board-and-batten workshop with a large covered side porch and double glass doors" caption="The Holt Workshop, a custom design" />
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="bp-cta">
     <div class="wrap">
       <h2 id="bp-cta" class="bp-series">Not Sure Which Model Fits?</h2>
-      <p class="bp-lead">Tell Edwin what you plan to store, where the building will sit and how it should look. He will point you to the right model and size.</p>
+      <p class="bp-series-lead">Tell Edwin what you plan to store, where the building will sit and how it should look. He will point you to the right model and size.</p>
       <div class="bp-ctas">
         <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin · {business.phoneDisplay}</a>
         <a class="btn btn--secondary" href={`sms:${business.phoneLink}`}>Text Edwin</a>
@@ -103,5 +119,7 @@ const schema = [
   .bp-card p { margin: 0 0 12px; font-weight: 700; }
   .bp-card ul { margin: 0 0 16px; padding-left: 18px; font-weight: 700; font-size: 0.95rem; }
   .bp-card__go { margin-top: auto; color: var(--bronze-dark); font-weight: 900; }
+  .bp-custom { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 900px) { .bp-custom { grid-template-columns: 1fr; gap: 28px; } }
   .bp-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
 </style>

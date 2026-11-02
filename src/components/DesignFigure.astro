@@ -1,0 +1,43 @@
+---
+// Shows a prepared design rendering (watermarked web copies from scripts/prepare-designs.mjs)
+// with the standard honest label beneath it.
+import manifest from '../data/design-images.json';
+import { link } from '../data/site.js';
+
+const { imageKey, alt, caption, label = 'long', sizes = '(max-width: 900px) 94vw, 50vw', eager = false, cls = '' } = Astro.props;
+const img = manifest[imageKey];
+if (!img) throw new Error(`Design image not prepared: ${imageKey}`);
+const largest = img.sizes.at(-1);
+const srcset = img.sizes.map((s) => `${link('/' + s.src)} ${s.w}w`).join(', ');
+const labels = {
+  long: 'Design rendering · AI-visualized from an Appalachian Sheds design',
+  short: 'AI-visualized design',
+};
+---
+<figure class={'df ' + cls}>
+  <img
+    src={link('/' + largest.src)}
+    srcset={srcset}
+    sizes={sizes}
+    width={largest.w}
+    height={largest.h}
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    decoding="async"
+  />
+  <figcaption>
+    {caption && <span class="df__cap">{caption}</span>}
+    {label && <span class="df__label">{labels[label]}</span>}
+  </figcaption>
+</figure>
+
+<style is:global>
+  .df { margin: 0; }
+  .df img { display: block; width: 100%; height: auto; }
+  .df--card img, .dc .df img { aspect-ratio: 4 / 3; object-fit: cover; }
+  .df figcaption { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+  .df__cap { font-weight: 700; font-size: 0.92rem; }
+  .df__label { font-weight: 600; font-size: 0.8rem; color: var(--stone); letter-spacing: 0.02em; }
+  .band--light .df__label, .band--cash .df__label { color: #6f6a62; }
+</style>

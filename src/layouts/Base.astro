@@ -3,7 +3,9 @@ import { Image, getImage } from 'astro:assets';
 import logo from '../assets/appalachian-sheds-logo.png';
 import { business, link } from '../data/site.js';
 
-const { title, description, path = '/', schema = [], noindex = false } = Astro.props;
+const { title, description, path = '/', schema = [], noindex = false, ogImage = '' } = Astro.props;
+// Share image (path inside public/, e.g. 'designs/x-share.jpg'); shown when the page link is shared.
+const ogImageUrl = ogImage ? new URL(link('/' + ogImage), Astro.site).href : '';
 const canonical = new URL(path, 'https://appalachiansheds.com').href;
 const logoForSchema = await getImage({ src: logo, width: 600, format: 'png' });
 
@@ -43,6 +45,15 @@ const graph = {
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   {noindex && <meta name="robots" content="noindex" />}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Appalachian Sheds" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+  {ogImageUrl && <meta property="og:image:width" content="1200" />}
+  {ogImageUrl && <meta property="og:image:height" content="630" />}
+  <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
   {business.gaId && (
     <>
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${business.gaId}`}></script>
@@ -105,6 +116,7 @@ const graph = {
       <nav id="main-nav" aria-label="Main">
         <a href={link('/')}>Home</a>
         <a href={link('/buildings/')}>Buildings &amp; Pricing</a>
+        <a href={link('/custom-buildings/')}>Custom Buildings</a>
         <a href={link('/options/')}>Options</a>
         <a href={link('/buyers-planning-guide/')}>Planning Guides</a>
         <a class="nav-call nav-call--desktop" href={`tel:${business.phoneLink}`}>Call Edwin</a>
@@ -140,6 +152,7 @@ const graph = {
         <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
       </div>
       <div class="site-footer__links" role="navigation" aria-label="Company">
+        <a href={link('/custom-buildings/')}>Custom Buildings</a>
         <a href={link('/about/')}>About</a>
         <a href={link('/faqs/')}>FAQs</a>
         <a href={link('/service-area/')}>Service Area</a>

@@ -41,13 +41,14 @@ const thanks = new URL(link('/thank-you/'), Astro.site).href;
           <label>Main use
             <select name="Main use">
               <option value="">Choose one</option>
-              <option>Storage</option><option>Workshop</option><option>Garden building</option><option>Office or studio</option><option>Pool support</option><option>Other / not sure</option>
+              <option>Storage</option><option>Workshop</option><option>Garden building</option><option>Office or studio</option><option>Pool house or recreation</option><option>Guest or hobby space</option><option>Other / not sure</option>
             </select>
           </label>
           <label>Model
             <select name="Model" data-field="model">
               <option value="">Not sure yet</option>
               {models.map((m) => <option>{m}</option>)}
+              <option>Custom building</option>
             </select>
           </label>
           <label>Size (if known)<input type="text" name="Size" placeholder="e.g. 10×12" data-field="size" /></label>
@@ -65,6 +66,7 @@ const thanks = new URL(link('/thank-you/'), Astro.site).href;
             </select>
           </label>
         </div>
+        <label class="pf__wide pf__design">Custom design you liked (if any)<input type="text" name="Custom design" data-field="design" placeholder="e.g. The Creekside Pool House, or describe your idea" /></label>
       </fieldset>
 
       <fieldset>
@@ -97,7 +99,7 @@ const thanks = new URL(link('/thank-you/'), Astro.site).href;
     var form = document.querySelector('[data-project-form]');
     if (!form) return;
     var q = new URLSearchParams(location.search);
-    ['model', 'size', 'siding', 'price'].forEach(function (k) {
+    ['model', 'size', 'siding', 'price', 'design'].forEach(function (k) {
       var v = q.get(k); var el = form.querySelector('[data-field="' + k + '"]');
       if (!v || !el) return;
       if (el.tagName === 'SELECT') {
@@ -110,6 +112,7 @@ const thanks = new URL(link('/thank-you/'), Astro.site).href;
 <style is:global>
   .pf__form { background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 26px; color: var(--steel); max-width: 980px; }
   .pf fieldset { border: 0; margin: 0 0 22px; padding: 0; }
+  .pf__design { margin-top: 14px; }
   .pf legend { font-weight: 900; font-size: 1.05rem; margin-bottom: 12px; }
   .pf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 18px; }
   .pf label { display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 0.92rem; }

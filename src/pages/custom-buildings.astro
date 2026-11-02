@@ -1,0 +1,251 @@
+---
+import Base from '../layouts/Base.astro';
+import DesignFigure from '../components/DesignFigure.astro';
+import DesignCard from '../components/DesignCard.astro';
+import ProjectForm from '../components/ProjectForm.astro';
+import manifest from '../data/design-images.json';
+import { business, link } from '../data/site.js';
+import { pricedDesigns } from '../data/custom-designs.js';
+
+// Kept at /custom-buildings/, the same address as the existing page, so its search standing carries over.
+const path = '/custom-buildings/';
+const url = 'https://appalachiansheds.com' + path;
+const designs = pricedDesigns();
+const byUse = (u) => designs.filter((d) => d.use === u);
+
+const faqs = [
+  { q: 'How much does a custom building cost?', a: 'A custom building starts with the published price of the closest Appalachian Sheds model at your size and siding, then adds the options you choose at their published installed planning prices. Each custom design on this page shows how it is built up, and Edwin confirms your written price after reviewing your site.' },
+  { q: 'Are these photos of finished buildings?', a: 'Not yet. Appalachian Sheds is a new company, and these images are AI-visualized renderings of our own original designs, created so you can see each design clearly before you buy. Every feature shown is offered as standard or as an option. As we complete projects for customers, real photos will be added in a separate Completed Projects section, clearly labeled.' },
+  { q: 'Can you build my own idea?', a: 'Yes. Bring a sketch, a photo of a detail you like, or simply the problem you want the building to solve. Edwin will help turn it into a size, layout and option list, then a written price.' },
+  { q: 'Can a custom building be used as an office, studio or guest space?', a: 'It can be designed and finished for those uses. Conditioned, overnight or commercial uses should be reviewed against local zoning, permit, utility and building-code requirements before the design is final. A finished interior does not by itself make a building approved living space.' },
+  { q: 'How is a custom building framed?', a: 'With the same conventional framing and materials described in each model’s standard specifications and in the Materials & Construction Standards guide, built on site at your property.' },
+];
+
+const schema = [
+  { '@type': 'WebPage', '@id': url, url, name: 'Custom Sheds & Small Buildings', about: { '@id': business.id } },
+  {
+    '@type': 'Service', '@id': url + '#service', name: 'Custom shed and small building construction',
+    serviceType: 'Custom backyard buildings built on site', provider: { '@id': business.id },
+    areaServed: business.serviceCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c.county}, ${c.state}` })),
+    description: 'Custom sheds and small buildings designed around how you want to live, work and play, built on site at your property in Cincinnati and the Tri-State.',
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Custom Buildings', item: url },
+    ],
+  },
+  { '@type': 'FAQPage', '@id': url + '#faq', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+
+const sections = [
+  {
+    id: 'live', use: 'live', word: 'Live', title: 'Make More Room for the Life You Enjoy.', dark: false, imageFirst: true,
+    image: { key: 'harvest-cottage-autumn', alt: 'The Harvest Cottage design: natural board-and-batten siding, dark metal roof and covered entry with double glass doors in an autumn setting', caption: 'The Harvest Cottage' },
+    paras: [
+      'Create a backyard destination that feels separate from the pace of the house while staying connected to the way you live. From a quiet garden retreat or exercise room to a cottage-inspired space for hobbies, conversation or occasional guests, your building can be shaped around the experience you want.',
+      'Thoughtful window placement, welcoming doors, distinctive rooflines, coordinated siding and other available details give the building a finished presence that belongs beside your home.',
+    ],
+    list: ['Cottage-Inspired Retreat', 'Garden House', 'Entertainment Space', 'Exercise & Wellness Room', 'Hobby or Recreation Room', 'Guest-Ready Flex Space'],
+    note: 'Conditioned or overnight-use plans should be reviewed against local zoning, permit, utility and building-code requirements before the design is final.',
+    guides: [['Interior Finish Packages Guide', '/buyers-planning-guide/interior-finish-packages-guide-16/'], ['Neighborhood Fit & HOA Guide', '/buyers-planning-guide/neighborhood-fit-hoa-property-aesthetics-guide-18/']],
+  },
+  {
+    id: 'work', use: 'work', word: 'Work', title: 'Give Serious Work a Place of Its Own.', dark: true, imageFirst: false,
+    image: { key: 'holt-workshop-autumn', alt: 'The Holt Workshop design: natural board-and-batten workshop with a large covered side porch, double glass doors and divided-light windows', caption: 'The Holt Workshop' },
+    paras: [
+      'Move focused work, tools, equipment and active projects out of the house or garage and into a building planned around the way you work. From a quiet backyard office or organized workshop to storage for equipment, motorcycles or a small boat, the right building helps your property work harder.',
+      'A productive building begins with more than square footage. Door placement, circulation, daylight, storage and future utility needs are considered together from the beginning.',
+    ],
+    cards: [['Access', 'Door sizes and locations planned around people, tools, equipment and everyday movement.'], ['Natural Light', 'Windows placed around the work surface, the activity, privacy and the view.'], ['Organization', 'A floor plan shaped around storage zones, open work areas and future flexibility.']],
+    list: ['Home Office', 'Workshop or Maker Space', 'Art or Design Studio', 'Garden Workroom', 'Equipment & Tool Storage', 'Boat or Motorcycle Storage', 'Farm or Animal Support', 'Small Retail or Service Space'],
+    note: 'Electrical, climate-control, plumbing, vehicle-storage, animal-use or commercial-use requirements should be identified early and reviewed against local codes and approvals.',
+    guides: [['Electrical, HVAC & Utility-Ready Planning Guide', '/buyers-planning-guide/electrical-hvac-utility-ready-planning-guide-15/'], ['Use Case Planning Guide', '/buyers-planning-guide/use-case-planning-guide-07/']],
+  },
+  {
+    id: 'play', use: 'play', word: 'Play', title: 'Create a Backyard Destination Worth Looking Forward To.', dark: false, imageFirst: true,
+    image: { key: 'creekside-pool-house-autumn', alt: 'The Creekside Pool House design: dark green lap siding, white columned porch, three pairs of glass French doors and a gable dormer beside a creek in autumn', caption: 'The Creekside Pool House' },
+    paras: [
+      'Give pool days, hobbies, music, games and unhurried time with family and friends a place of their own. A custom Appalachian building can turn an underused corner of the yard into a welcoming destination while keeping recreational equipment, creative supplies and seasonal gear organized.',
+      'The best recreational spaces balance atmosphere with everyday function: windows, doors, covered entries, storage zones, privacy and connections to the patio or pool.',
+    ],
+    cards: [['Gather', 'Room for games, conversation, celebrations and relaxed time together.'], ['Create', 'A dedicated home for art, music, crafts, collections or hands-on hobbies.'], ['Unwind', 'A private retreat, poolside escape or quiet place to recharge.']],
+    list: ['Poolside Shed or Cabana', 'Recreation or Game Room', 'Art or Music Studio', 'Hobby or Craft Room', 'Personal Backyard Retreat', 'Family or Teen Hangout'],
+    note: 'Poolside placement, changing areas, electrical service, plumbing, climate control and entertainment equipment should be considered early and reviewed against local requirements.',
+    guides: [['Plumbing & Water options', '/options/plumbing-water/'], ['Ventilation & Moisture Control options', '/options/ventilation-moisture-control/']],
+  },
+];
+---
+<Base
+  title="Custom Sheds & Small Buildings | Appalachian Sheds"
+  description="Custom sheds and small buildings designed around how you want to live, work and play: offices, workshops, pool houses, studios and retreats, built on site across Cincinnati and the Tri-State, priced from published model and option prices."
+  path={path}
+  schema={schema}
+  ogImage={manifest['creekside-pool-house-summer'].share}
+>
+  <section class="band band--dark cb-hero" aria-labelledby="cb-title">
+    <div class="wrap cb-hero__grid">
+      <div>
+        <nav class="cb-crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Custom Buildings</span></nav>
+        <p class="eyebrow">Appalachian Sheds Inc. · Custom Buildings</p>
+        <h1 id="cb-title">Custom Sheds &amp; Small Buildings</h1>
+        <p class="cb-sub">Create Your Own Place for Work, Play and Everything You Love</p>
+        <p class="cb-intro">Beyond storage, a custom Appalachian building starts with your property, the way you want to use the space and the character you want it to carry. Choose the doors, windows, wall heights, roof pitch, siding and other options that support how you want to live, work, play or protect what matters.</p>
+        <div class="cb-ctas">
+          <a class="btn btn--primary" href="#designs">See Custom Designs</a>
+          <a class="btn btn--secondary" href="#pricing">How Custom Pricing Works</a>
+        </div>
+        <ul class="cb-jump" aria-label="On this page">
+          <li><a href="#live">Live</a></li><li><a href="#work">Work</a></li><li><a href="#play">Play</a></li><li><a href="#start">Start a Conversation</a></li>
+        </ul>
+      </div>
+      <DesignFigure imageKey="creekside-pool-house-summer" alt="The Creekside Pool House design in summer: dark lap siding, white columned porch and three pairs of glass French doors beside a creek" caption="The Creekside Pool House" eager={true} sizes="(max-width: 900px) 94vw, 52vw" />
+    </div>
+  </section>
+
+  <section id="pricing" class="band band--light" aria-labelledby="cb-pricing">
+    <div class="wrap">
+      <p class="eyebrow">Clear Pricing, Even for Custom Work</p>
+      <h2 id="cb-pricing" class="cb-h2">How Custom Pricing Works</h2>
+      <p class="cb-lead">Custom doesn’t have to mean mystery pricing. Every custom building is built up from the same published prices as the rest of this website.</p>
+      <ol class="cb-steps">
+        <li><strong>Start with a model’s published price.</strong><span>Pick the closest model at your size and siding. Every size and siding is priced on its model page.</span></li>
+        <li><strong>Add the options you choose.</strong><span>Porches, doors, windows, dormers, lofts, electrical and more, each with a published installed planning price.</span></li>
+        <li><strong>Get your written price.</strong><span>Edwin reviews your site and selections and confirms your price in writing before anything is built.</span></li>
+      </ol>
+      <p class="cb-note">Each custom design below shows two numbers: the <strong>base building</strong> price of the model it starts from, and an <strong>as-shown</strong> range that adds the published prices of the options in the rendering.</p>
+      <p class="cb-links"><a href={link('/buildings/')}>Model prices →</a> <a href={link('/options/')}>Option prices →</a></p>
+    </div>
+  </section>
+
+  <section class="band band--dark" aria-labelledby="cb-beyond">
+    <div class="wrap cb-split">
+      <div>
+        <p class="eyebrow">Appalachian Custom Sheds &amp; Buildings</p>
+        <h2 id="cb-beyond" class="cb-h2">Beyond Storage. Built Around What You Want to Do.</h2>
+        <p class="cb-p">Some buildings begin with a standard purpose. A custom Appalachian building begins with your property, the way you intend to use the space and the architectural character you want it to carry. The result can be practical, personal and far more versatile than an ordinary backyard shed.</p>
+        <p class="cb-p">Bring the idea, the need or even the problem you want the building to solve, and Edwin will help organize those priorities into a clear direction.</p>
+        <h3 class="cb-h3">Possibilities Include</h3>
+        <ul class="cb-checks">
+          {['Cottage-Style Retreat', 'Home Office', 'Garden House', 'Workshop or Maker Space', 'Entertainment Room', 'Art or Music Studio', 'Exercise or Wellness Room', 'Equipment or Vehicle Storage', 'Poolside Building', 'Farm or Animal Support', 'Guest House', 'Retail or Ticket Booth'].map((x) => <li>{x}</li>)}
+        </ul>
+      </div>
+      <DesignFigure imageKey="appalachian-classic-awning-autumn" alt="An Appalachian Classic shed with board-and-batten siding, shown with an optional entry awning, glass French doors and flower boxes in an autumn setting" caption="Appalachian Classic, shown with optional awning, French doors and flower boxes" />
+    </div>
+  </section>
+
+  {sections.map((s) => (
+    <section id={s.id} class={'band ' + (s.dark ? 'band--dark' : 'band--light')} aria-labelledby={s.id + '-t'}>
+      <div class={'wrap cb-split' + (s.imageFirst ? ' cb-split--rev' : '')}>
+        <div>
+          <p class="eyebrow">Custom Buildings</p>
+          <p class="cb-word" aria-hidden="true">{s.word}</p>
+          <h2 id={s.id + '-t'} class="cb-h2"><span class="sr">{s.word}: </span>{s.title}</h2>
+          {s.paras.map((p) => <p class="cb-p">{p}</p>)}
+          {s.cards && <div class="cb-mini">{s.cards.map(([t, d]) => <div><strong>{t}</strong><span>{d}</span></div>)}</div>}
+          <ul class="cb-checks">{s.list.map((x) => <li>{x}</li>)}</ul>
+          <p class="cb-note">{s.note}</p>
+          <p class="cb-links">{s.guides.map(([t, h]) => <a href={link(h)}>{t} →</a>)}</p>
+        </div>
+        <DesignFigure imageKey={s.image.key} alt={s.image.alt} caption={s.image.caption} />
+      </div>
+    </section>
+  ))}
+
+  <section id="designs" class="band band--cash" aria-labelledby="cb-designs">
+    <div class="wrap">
+      <p class="eyebrow">Custom Designs</p>
+      <h2 id="cb-designs" class="cb-h2">Popular Custom Designs</h2>
+      <p class="cb-lead">Every building here is an original Appalachian Sheds design, shown as an AI-visualized rendering so you can see it before it’s built. Renderings may show optional upgrades and landscaping; your building is built on site at your property to your selected model, size, siding and options.</p>
+      <div class="cb-grid">{designs.map((d) => <DesignCard d={d} />)}</div>
+      <p class="cb-note">More custom designs are being added. Don’t see your idea? <a href="#start">Tell Edwin about it.</a></p>
+    </div>
+  </section>
+
+  <section class="band band--dark" aria-labelledby="cb-diff">
+    <div class="wrap">
+      <p class="eyebrow">Built-On-Site Quality · Clear Choices</p>
+      <h2 id="cb-diff" class="cb-h2">What Makes an Appalachian Building Different?</h2>
+      <p class="cb-lead cb-lead--dark">The difference is not one decorative upgrade. It is how construction, proportions, options and on-site workmanship come together as one complete building.</p>
+      <div class="cb-diff">
+        {[
+          ['Construction You Can Compare', 'Look beyond appearance and compare the foundation, floor, walls, roof, openings and hardware that shape long-term performance.', '/buyers-planning-guide/materials-construction-standards-guide-11/'],
+          ['Options Chosen with Purpose', 'Doors, windows, siding, rooflines, access and storage are chosen around how the building needs to function.', '/options/'],
+          ['Built on Your Property', 'On-site construction keeps the building connected to your property, placement, access and requirements.', '/buyers-planning-guide/built-on-site-construction-guide-14/'],
+          ['Architecture with Presence', 'Balanced proportions and Appalachian character help the building feel intentional beside the home.', '/buyers-planning-guide/neighborhood-fit-hoa-property-aesthetics-guide-18/'],
+        ].map(([t, d, h], i) => <a class="cb-diff__card" href={link(h)}><span>Difference {String(i + 1).padStart(2, '0')}</span><strong>{t}</strong><p>{d}</p></a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--light" aria-labelledby="cb-faq">
+    <div class="wrap">
+      <p class="eyebrow">Custom Buildings FAQ</p>
+      <h2 id="cb-faq" class="cb-h2">Common Questions</h2>
+      <div class="cb-faq">{faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+    </div>
+  </section>
+
+  <div id="start">
+    <ProjectForm />
+  </div>
+</Base>
+
+<style is:global>
+  .cb-hero { padding-top: 40px; }
+  .cb-hero__grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
+  .cb-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 22px; }
+  .cb-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .cb-hero h1 { margin: 0 0 8px; font-size: clamp(2.1rem, 4.2vw, 3.3rem); line-height: 1.1; }
+  .cb-sub { margin: 0 0 18px; color: var(--bronze); font-weight: 900; font-size: clamp(1.05rem, 1.9vw, 1.3rem); }
+  .cb-intro { margin: 0 0 24px; color: var(--cashmere); font-weight: 600; font-size: 1.05rem; line-height: 1.75; max-width: 62ch; }
+  .cb-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
+  .cb-jump { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .cb-jump a { display: inline-block; padding: 9px 15px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; font-weight: 800; font-size: 0.9rem; }
+  .cb-jump a:hover { background: var(--bronze); color: var(--steel); }
+  .cb-h2 { margin: 0 0 14px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+  .cb-h3 { margin: 24px 0 10px; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .cb-lead { max-width: 76ch; margin: 0 0 24px; font-weight: 700; }
+  .cb-lead--dark { color: var(--cashmere); font-weight: 600; }
+  .cb-p { max-width: 64ch; margin: 0 0 14px; font-weight: 600; line-height: 1.75; }
+  .band--light .cb-p, .band--cash .cb-p { font-weight: 700; }
+  .cb-split { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+  .cb-split--rev > :last-child { order: -1; }
+  .cb-word { margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-style: italic; font-weight: 900; font-size: clamp(3.2rem, 7vw, 5.4rem); line-height: 1; color: var(--bronze); }
+  .band--light .cb-word { color: var(--bronze-dark); }
+  .cb-checks { list-style: none; margin: 18px 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; font-weight: 800; font-size: 0.95rem; }
+  .cb-checks li::before { content: '✓'; display: inline-block; width: 22px; height: 22px; margin-right: 8px; border-radius: 50%; background: var(--bronze); color: var(--steel); text-align: center; line-height: 22px; font-size: 0.8rem; font-style: normal; }
+  .cb-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
+  .cb-mini div { border: 1px solid var(--stone); border-top: 3px solid var(--bronze); padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .band--dark .cb-mini div { border-color: rgba(200, 195, 186, 0.35); border-top-color: var(--bronze); background: rgba(255, 255, 255, 0.03); }
+  .cb-mini strong { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem; }
+  .cb-mini span { font-size: 0.88rem; font-weight: 600; }
+  .cb-note { margin: 16px 0 0; max-width: 78ch; font-weight: 700; font-size: 0.93rem; border-left: 4px solid var(--bronze); padding: 10px 14px; background: rgba(166, 138, 106, 0.1); }
+  .cb-note a { color: inherit; }
+  .cb-links { display: flex; flex-wrap: wrap; gap: 18px; margin: 18px 0 0; }
+  .cb-links a { color: var(--bronze-dark); font-weight: 900; text-decoration: none; }
+  .band--dark .cb-links a { color: var(--bronze); }
+  .cb-steps { list-style: none; counter-reset: s; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cb-steps li { counter-increment: s; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .cb-steps li::before { content: 'Step ' counter(s, decimal-leading-zero); font-weight: 900; color: var(--bronze-dark); font-size: 0.85rem; letter-spacing: 0.08em; }
+  .cb-steps span { font-weight: 700; font-size: 0.95rem; }
+  .cb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .cb-diff { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .cb-diff__card { display: block; text-decoration: none; color: var(--ivory); border: 1px solid rgba(200, 195, 186, 0.3); border-top: 3px solid var(--bronze); padding: 18px; background: rgba(255, 255, 255, 0.03); }
+  .cb-diff__card:hover { border-color: var(--bronze); }
+  .cb-diff__card span { display: block; color: var(--bronze); font-weight: 900; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .cb-diff__card strong { display: block; margin-bottom: 8px; font-size: 1.02rem; }
+  .cb-diff__card p { margin: 0; color: var(--cashmere); font-weight: 600; font-size: 0.9rem; }
+  .cb-faq details { background: #fff; border: 1px solid var(--stone); margin-bottom: 10px; color: var(--steel); }
+  .cb-faq summary { cursor: pointer; padding: 18px 22px; font-weight: 900; }
+  .cb-faq p { margin: 0; padding: 0 22px 20px; font-weight: 700; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 1000px) { .cb-diff { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 900px) {
+    .cb-hero__grid, .cb-split { grid-template-columns: 1fr; gap: 30px; }
+    .cb-split--rev > :last-child { order: 0; }
+    .cb-steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) { .cb-checks, .cb-mini, .cb-diff { grid-template-columns: 1fr; } }
+</style>

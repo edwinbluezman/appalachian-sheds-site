@@ -5,6 +5,7 @@ import { business, link } from '../../data/site.js';
 import { series } from '../../data/catalog.js';
 import { money } from '../../data/models.js';
 import DesignFigure from '../../components/DesignFigure.astro';
+import ScopeNote from '../../components/ScopeNote.astro';
 
 const url = 'https://appalachiansheds.com/buildings/';
 const all = series.flatMap((s) => s.models);
@@ -43,6 +44,7 @@ const schema = [
       <p class="eyebrow">Appalachian Sheds · Buildings &amp; Pricing</p>
       <h1 id="bp-title">Buildings &amp; Pricing</h1>
       <p class="bp-lead">Appalachian Sheds builds five models in two series, each built on site at your property in Cincinnati and the Tri-State and backed by the 30-Year Structural Warranty. Every model page shows the standard build price for every size and siding, starting at {money(low)}.</p>
+      <ScopeNote dark={true} />
     </div>
   </section>
 

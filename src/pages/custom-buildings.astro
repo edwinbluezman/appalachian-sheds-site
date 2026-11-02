@@ -3,21 +3,24 @@ import Base from '../layouts/Base.astro';
 import DesignFigure from '../components/DesignFigure.astro';
 import DesignCard from '../components/DesignCard.astro';
 import ProjectForm from '../components/ProjectForm.astro';
+import ScopeNote from '../components/ScopeNote.astro';
 import manifest from '../data/design-images.json';
-import { business, link } from '../data/site.js';
+import { business, link, shellScope } from '../data/site.js';
 import { pricedDesigns } from '../data/custom-designs.js';
 
 // Kept at /custom-buildings/, the same address as the existing page, so its search standing carries over.
 const path = '/custom-buildings/';
 const url = 'https://appalachiansheds.com' + path;
-const designs = pricedDesigns();
+// Confirmed designs first, lowest as-shown price first (same order as the home page).
+const designs = pricedDesigns().sort((a, b) => (b.confirmed - a.confirmed) || (a.price.asShown.low - b.price.asShown.low));
 const byUse = (u) => designs.filter((d) => d.use === u);
 
 const faqs = [
   { q: 'How much does a custom building cost?', a: 'A custom building starts with the published price of the closest Appalachian Sheds model at your size and siding, then adds the options you choose at their published installed planning prices. Each custom design on this page shows how it is built up, and Edwin confirms your written price after reviewing your site.' },
+  shellScope.faq,
   { q: 'Are these photos of finished buildings?', a: 'Not yet. Appalachian Sheds is a new company, and these images are AI-visualized renderings of our own original designs, created so you can see each design clearly before you buy. Every feature shown is offered as standard or as an option. As we complete projects for customers, real photos will be added in a separate Completed Projects section, clearly labeled.' },
   { q: 'Can you build my own idea?', a: 'Yes. Bring a sketch, a photo of a detail you like, or simply the problem you want the building to solve. Edwin will help turn it into a size, layout and option list, then a written price.' },
-  { q: 'Can a custom building be used as an office, studio or guest space?', a: 'It can be designed and finished for those uses. Conditioned, overnight or commercial uses should be reviewed against local zoning, permit, utility and building-code requirements before the design is final. A finished interior does not by itself make a building approved living space.' },
+  { q: 'Can a custom building be used as an office, studio or guest space?', a: 'It can be designed and finished for those uses. Interior finish, insulation, electrical and climate control are added as options, since every building is built as a weather-tight exterior shell. Conditioned, overnight or commercial uses should be reviewed against local zoning, permit, utility and building-code requirements before the design is final. A finished interior does not by itself make a building approved living space.' },
   { q: 'How is a custom building framed?', a: 'With the same conventional framing and materials described in each model’s standard specifications and in the Materials & Construction Standards guide, built on site at your property.' },
 ];
 
@@ -115,6 +118,7 @@ const sections = [
         <li><strong>Get your written price.</strong><span>Edwin reviews your site and selections and confirms your price in writing before anything is built.</span></li>
       </ol>
       <p class="cb-note">Each custom design below shows two numbers: the <strong>base building</strong> price of the model it starts from, and an <strong>as-shown</strong> range that adds the published prices of the options in the rendering.</p>
+      <ScopeNote />
       <p class="cb-links"><a href={link('/buildings/')}>Model prices →</a> <a href={link('/options/')}>Option prices →</a></p>
     </div>
   </section>
@@ -157,7 +161,7 @@ const sections = [
     <div class="wrap">
       <p class="eyebrow">Custom Designs</p>
       <h2 id="cb-designs" class="cb-h2">Popular Custom Designs</h2>
-      <p class="cb-lead">Every building here is an original Appalachian Sheds design, shown as an AI-visualized rendering so you can see it before it’s built. Renderings may show optional upgrades and landscaping; your building is built on site at your property to your selected model, size, siding and options.</p>
+      <p class="cb-lead">Every building here is an original Appalachian Sheds design, shown as an AI-visualized rendering so you can see it before it’s built. Renderings may show optional upgrades and landscaping; your building is built on site at your property to your selected model, size, siding and options. As-shown prices cover the weather-tight exterior shown, with no interior work.</p>
       <div class="cb-grid">{designs.map((d) => <DesignCard d={d} />)}</div>
       <p class="cb-note">More custom designs are being added. Don’t see your idea? <a href="#start">Tell Edwin about it.</a></p>
     </div>

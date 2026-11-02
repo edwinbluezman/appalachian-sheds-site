@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { business, link } from '../../data/site.js';
+import { optionRange } from '../../data/option-ranges.js';
+import ScopeNote from '../../components/ScopeNote.astro';
 
 const url = 'https://appalachiansheds.com/options/';
 
@@ -11,48 +13,48 @@ const groups = [
     when: 'Decide before site work and floor framing',
     items: [
       { name: 'Site & Foundation Options', path: '/options/site-foundation/', text: 'Placement, drainage, building pad and support.' },
-      { name: 'Floor Systems & Flooring', path: '/options/floor-systems/', text: 'Structural floor upgrades and heavy-use floors.' },
-      { name: 'Floor Insulation', path: '/options/floor-insulation/', text: 'Underfloor comfort for finished buildings.' },
+      { name: 'Floor Systems & Flooring', path: '/options/floor-systems/', cat: 'floors', text: 'Structural floor upgrades and heavy-use floors.' },
+      { name: 'Floor Insulation', path: '/options/floor-insulation/', cat: 'floorInsulation', text: 'Underfloor comfort for finished buildings.' },
     ],
   },
   {
     name: 'Openings & Access',
     when: 'Decide before the walls are framed',
     items: [
-      { name: 'Doors & Entry', path: '/options/doors-entry/', text: 'Wood, fiberglass slab, house and carriage-style doors.' },
-      { name: 'Windows, Skylights & Natural Light', path: '/options/windows-natural-light/', text: 'Barn sash, aluminum, vinyl insulated, transoms and skylights.' },
-      { name: 'Lofts, Ladders & Stairs', path: '/options/lofts-ladders-stairs/', text: 'Overhead storage and access.' },
-      { name: 'Ramps, Steps & Access', path: '/options/ramps-steps-access/', text: 'Ramps, steps and landings matched to the door.' },
+      { name: 'Doors & Entry', path: '/options/doors-entry/', cat: 'doors', text: 'Wood, fiberglass slab, house and carriage-style doors.' },
+      { name: 'Windows, Skylights & Natural Light', path: '/options/windows-natural-light/', cat: 'windows', text: 'Barn sash, aluminum, vinyl insulated, transoms and skylights.' },
+      { name: 'Lofts, Ladders & Stairs', path: '/options/lofts-ladders-stairs/', cat: 'lofts', text: 'Overhead storage and access.' },
+      { name: 'Ramps, Steps & Access', path: '/options/ramps-steps-access/', cat: 'ramps', text: 'Ramps, steps and landings matched to the door.' },
     ],
   },
   {
     name: 'Roof & Exterior',
     when: 'Decide before roofing and siding',
     items: [
-      { name: 'Siding & Exterior Materials', path: '/options/siding-exterior-materials/', text: 'The five siding systems and LP SmartSide trim.' },
-      { name: 'Roofing & Rooflines', path: '/options/roofing-rooflines/', text: 'Roofing materials, pitch and roof details.' },
-      { name: 'Porches, Awnings & Dormers', path: '/options/porches-awnings-dormers/', text: 'Entry awnings, porch roofs and dormers.' },
-      { name: 'Paint, Stain & Finish Systems', path: '/options/paint-stain-finish/', text: 'Exterior finish packages and upkeep.' },
-      { name: 'Fascia, Trim & Decorative Accents', path: '/options/fascia-trim-accents/', text: 'Trim upgrades and decorative details.' },
-      { name: 'Cupolas & Weathervanes', path: '/options/cupolas-weathervanes/', text: 'Rooftop character and ventilation.' },
+      { name: 'Siding & Exterior Materials', path: '/options/siding-exterior-materials/', cat: 'materials', text: 'The five siding systems and LP SmartSide trim.' },
+      { name: 'Roofing & Rooflines', path: '/options/roofing-rooflines/', cat: 'roofing', text: 'Roofing materials, pitch and roof details.' },
+      { name: 'Porches, Awnings & Dormers', path: '/options/porches-awnings-dormers/', cat: 'porches', text: 'Entry awnings, porch roofs and dormers.' },
+      { name: 'Paint, Stain & Finish Systems', path: '/options/paint-stain-finish/', cat: 'finish', text: 'Exterior finish packages and upkeep.' },
+      { name: 'Fascia, Trim & Decorative Accents', path: '/options/fascia-trim-accents/', cat: 'trim', text: 'Trim upgrades and decorative details.' },
+      { name: 'Cupolas & Weathervanes', path: '/options/cupolas-weathervanes/', cat: 'cupolas', text: 'Rooftop character and ventilation.' },
     ],
   },
   {
     name: 'Comfort & Utilities',
     when: 'Decide before the walls are closed in',
     items: [
-      { name: 'Electrical, Lighting & HVAC', path: '/options/electrical-lighting-hvac/', text: 'Power, lighting, heating and cooling.' },
-      { name: 'Plumbing & Water', path: '/options/plumbing-water/', text: 'Water and utility readiness.' },
-      { name: 'Wall & Ceiling Insulation', path: '/options/wall-ceiling-insulation/', text: 'Insulation for comfort-focused buildings.' },
-      { name: 'Ventilation & Moisture Control', path: '/options/ventilation-moisture-control/', text: 'Airflow and moisture management.' },
+      { name: 'Electrical, Lighting & HVAC', path: '/options/electrical-lighting-hvac/', cat: 'electrical', text: 'Power, lighting, heating and cooling.' },
+      { name: 'Plumbing & Water', path: '/options/plumbing-water/', cat: 'plumbing', text: 'Water and utility readiness.' },
+      { name: 'Wall & Ceiling Insulation', path: '/options/wall-ceiling-insulation/', cat: 'insulation', text: 'Insulation for comfort-focused buildings.' },
+      { name: 'Ventilation & Moisture Control', path: '/options/ventilation-moisture-control/', cat: 'ventilation', text: 'Airflow and moisture management.' },
     ],
   },
   {
     name: 'Interior',
     when: 'Decide before interior finish',
     items: [
-      { name: 'Interior Finish Packages', path: '/options/interior-finish/', text: 'Turning a weather-tight shell into a finished room.' },
-      { name: 'Shelving, Workbenches & Storage', path: '/options/shelving-workbenches-storage/', text: 'Organized storage and work surfaces.' },
+      { name: 'Interior Finish Packages', path: '/options/interior-finish/', cat: 'interior', text: 'Turning a weather-tight shell into a finished room.' },
+      { name: 'Shelving, Workbenches & Storage', path: '/options/shelving-workbenches-storage/', cat: 'storage', text: 'Organized storage and work surfaces.' },
       { name: 'Top 10 Most Requested Upgrades', path: '/options/top-10-upgrades/', text: 'The options buyers choose most often.' },
     ],
   },
@@ -68,6 +70,11 @@ const timing = [
 ];
 
 const live = groups.flatMap((g) => g.items).filter((i) => i.path);
+// Price range for each card, from the published option prices.
+for (const it of live) it.range = it.cat ? optionRange(it.cat) : null;
+// Interior work is never included in a building price, so its ranges get their own summary.
+const interiorCats = ['wall-ceiling-insulation', 'interior-finish', 'electrical-lighting-hvac', 'plumbing-water', 'floor-insulation', 'shelving-workbenches-storage', 'ventilation-moisture-control']
+  .map((slug) => live.find((i) => i.path === `/options/${slug}/`));
 const schema = [
   {
     '@type': 'CollectionPage',
@@ -98,6 +105,24 @@ const schema = [
       <p class="eyebrow">Appalachian Sheds · Options &amp; Upgrades</p>
       <h1 id="oh-title">Options &amp; Upgrades</h1>
       <p class="oh-lead">The best building is not the one with the most upgrades. It is the one where the site, structure, openings, comfort systems and finishes were chosen in the right order for how you will use it. Start with your intended use, decide the hard-to-change items first, and open only the categories that apply to your project.</p>
+      <ScopeNote dark={true} />
+    </div>
+  </section>
+
+  <section id="interior-ranges" class="band band--cash" aria-labelledby="oh-interior">
+    <div class="wrap">
+      <p class="eyebrow">Interior Work · Always Optional</p>
+      <h2 id="oh-interior" class="oh-h2">Interior Option Price Ranges</h2>
+      <p class="oh-sub">No interior work is included in any building price. These are the published installed planning price ranges for adding it; each category page lists every item.</p>
+      <table class="oh-table">
+        <thead><tr><th scope="col">Interior option category</th><th scope="col">Published price range</th></tr></thead>
+        <tbody>
+          {interiorCats.map((it) => (
+            <tr><th scope="row"><a href={link(it.path)}>{it.name}</a></th><td>{it.range.text}{it.range.extra && <span class="oh-table__extra"> · {it.range.extra}</span>}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="oh-small">Ranges run from the smallest single item to the largest package in each category. Your written project price is based on your building and selections.</p>
     </div>
   </section>
 
@@ -119,7 +144,7 @@ const schema = [
         <h2 id={'g' + i} class="oh-h2">{g.name}</h2>
         <div class="oh-grid">
           {g.items.map((it) => it.path
-            ? <a class="oh-card" href={link(it.path)}><h3>{it.name}</h3><p>{it.text}</p><span class="oh-go">See options &amp; prices →</span></a>
+            ? <a class="oh-card" href={link(it.path)}><h3>{it.name}</h3><p>{it.text}</p>{it.range && <p class="oh-range"><strong>{it.range.text}</strong>{it.range.extra && <span> · {it.range.extra}</span>}</p>}<span class="oh-go">See options &amp; prices →</span></a>
             : <div class="oh-card oh-card--soon"><h3>{it.name}</h3><p>{it.text}</p><span class="oh-soon">Coming soon</span></div>)}
         </div>
       </div>
@@ -156,6 +181,16 @@ const schema = [
   a.oh-card:hover { border-color: var(--bronze); }
   .oh-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
   .oh-card p { margin: 0 0 14px; font-weight: 700; font-size: 0.95rem; }
+  .oh-range { font-size: 0.88rem !important; }
+  .oh-range span { font-weight: 600; }
+  .oh-table { width: 100%; max-width: 980px; border-collapse: collapse; background: #fff; border: 1px solid var(--stone); border-top: 4px solid var(--bronze); }
+  .oh-table th, .oh-table td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--cashmere); font-size: 0.95rem; }
+  .oh-table thead th { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-dark); }
+  .oh-table tbody th a { color: var(--steel); }
+  .oh-table td { font-weight: 900; }
+  .oh-table__extra { font-weight: 600; font-size: 0.85rem; }
+  .oh-small { margin: 14px 0 0; max-width: 80ch; font-size: 0.88rem; font-weight: 600; }
+  @media (max-width: 560px) { .oh-table th, .oh-table td { display: block; border-bottom: 0; padding: 6px 14px; } .oh-table tr { display: block; border-bottom: 1px solid var(--cashmere); padding: 6px 0; } .oh-table thead { display: none; } }
   .oh-go { margin-top: auto; color: var(--bronze-dark); font-weight: 900; }
   .oh-card--soon { border-top-color: var(--stone); }
   .oh-soon { margin-top: auto; color: #5f5a52; font-weight: 800; font-size: 0.88rem; }

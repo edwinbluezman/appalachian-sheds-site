@@ -86,12 +86,12 @@ export const signatureSeriesSpecs = (extraFirst, sizesText) => [
   ['Warranty', 'Appalachian Sheds 30-Year Structural Warranty'],
 ];
 
-export const notIncluded = 'Interior finishes, exterior paint, stain and caulking, optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless identified in the final written price.';
+export const notIncluded = 'All interior work (insulation, interior walls and ceilings, flooring, electrical, lighting, HVAC, plumbing, shelving and interior trim or paint), exterior paint, stain and caulking, other optional upgrades, site preparation, delivery, site-specific requirements, custom details and applicable taxes, unless identified in the final written price.';
 
 // FAQ answers that are the same on every model page.
 export const commonFaqs = (name) => [
   { q: 'What exactly does the pricing calculator show?', a: `The calculator shows the standard build price for the exact ${name} size and siding selected. Site conditions, access, placement and requested upgrades are reviewed before the final written project price is confirmed.` },
-  { q: 'Does the price include any interior finishes?', a: 'No. The price covers the standard exterior structure only: foundation, framing, roofing, siding, exterior doors and windows. It does not include insulation, drywall or wall finish, flooring, electrical or lighting, HVAC, interior trim or interior paint. Interior finish work is priced separately as an option.' },
+  { q: 'Does the price include any interior work?', a: 'No. The price covers the complete exterior shell, finished to a 100% weather-tight condition: foundation, framing, roofing, siding, exterior doors and windows. No interior work is included: no insulation, interior walls or ceilings, flooring, electrical or lighting, HVAC, plumbing, shelving, interior trim or interior paint. All of these can be added as options, each with a published price range on the Options & Upgrades page.' },
   { q: 'Which siding gives the lowest price?', a: `LP SmartSide Vertical Panel Siding is the standard siding and has the lowest standard build price at every ${name} size. Once a size is selected, the calculator shows the prices for all five siding systems side by side.` },
   { q: `Is the ${name} built at my property?`, a: `Yes. The ${name} is built on site at its intended location rather than delivered as a completed prebuilt structure.` },
   { q: 'Can I add windows, doors, lofts, electrical or insulation?', a: 'Yes. Options and upgrades are reviewed after the standard size and siding are selected, and the features you request are included in the final written project price.' },

@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import DesignFigure from '../components/DesignFigure.astro';
+import ScopeNote from '../components/ScopeNote.astro';
 import hero from '../assets/asi-hero.jpg';
 import { business, link } from '../data/site.js';
 import { series } from '../data/catalog.js';
@@ -62,7 +63,7 @@ const schema = [
         <p class="hero__answer">
           Appalachian Sheds is a veteran-owned, family-operated builder of premium backyard
           buildings for Cincinnati and the Tri-State. Every building is built on site at your
-          property, priced from published price lists and backed by a 30-Year Structural Warranty.
+          property as a weather-tight exterior shell, priced from published price lists and backed by a 30-Year Structural Warranty.
         </p>
         <div class="hero__ctas">
           <a class="btn btn--primary" href={`tel:${business.phoneLink}`}>Call Edwin&nbsp;·&nbsp;{business.phoneDisplay}</a>
@@ -107,6 +108,7 @@ const schema = [
           </li>
         ))}
       </ol>
+      <ScopeNote />
     </div>
   </section>
 

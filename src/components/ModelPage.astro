@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { business, link } from '../data/site.js';
 import { sidings, readPrices, money, sizeLabel, notIncluded } from '../data/models.js';
+import ScopeNote from './ScopeNote.astro';
 import optionPrices from '../data/option-prices.json';
 
 const { model } = Astro.props;
@@ -125,6 +126,7 @@ const calcData = { model: model.name, sizes: p.sizes, sidings: sidings.map(({ co
         </div>
         <p class="calc__note">{priceNote} Prices are standard build estimates for the exterior structure. Your final written price is confirmed after site access, placement, finish selections and any requested upgrades are reviewed.</p>
       </div>
+      <ScopeNote />
     </div>
   </section>
 

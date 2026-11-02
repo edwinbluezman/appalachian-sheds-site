@@ -1,6 +1,7 @@
 ---
 import ContentPage from '../components/ContentPage.astro';
 import { notIncluded } from '../data/models.js';
+import { shellScope } from '../data/site.js';
 
 const page = {
   path: '/faqs/',
@@ -16,7 +17,8 @@ const page = {
       type: 'faq', id: 'pricing', eyebrow: 'Pricing', title: 'Pricing & What’s Included', nav: 'Pricing',
       items: [
         { q: 'Are your prices published?', a: 'Yes. Every model page has a calculator with the standard price for every size and siding, and the Options & Upgrades pages list installed planning prices for every option.' },
-        { q: 'What does the standard price include?', a: 'The complete weather-tight exterior building: 6×6 ground-contact pressure-treated foundation beams, 2×6 pressure-treated floor joists 16″ on center, 3/4″ pressure-treated plywood decking, framed walls, roof, LP SmartSide Vertical Panel siding, roofing, standard doors and windows, standard trim, vents and the 30-Year Structural Warranty.' },
+        { q: 'What does the standard price include?', a: 'The complete weather-tight exterior building: 6×6 ground-contact pressure-treated foundation beams, 2×6 pressure-treated floor joists 16″ on center, 3/4″ pressure-treated plywood decking, framed walls, roof, LP SmartSide Vertical Panel siding, roofing, standard doors and windows, standard trim, vents and the 30-Year Structural Warranty. No interior work is included.' },
+        shellScope.faq,
         { q: 'What is not included?', a: notIncluded },
         { q: 'Which siding is standard?', a: 'LP SmartSide Vertical Panel is standard on every model and has the lowest price. Board & Batten, Georgia-Pacific vinyl lap, LP SmartSide lap and Roseburg DuraTemp are also offered.' },
       ],

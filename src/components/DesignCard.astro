@@ -1,7 +1,8 @@
 ---
-// A custom design card: rendering, name, use, starting model and (once confirmed) its price range.
+// A custom design card: rendering, name, use, starting model and (once confirmed) its price range,
+// with an open list of every line counted in the as-shown price.
 import DesignFigure from './DesignFigure.astro';
-import { link } from '../data/site.js';
+import { link, shellScope } from '../data/site.js';
 import { useLabels } from '../data/custom-designs.js';
 
 const { d } = Astro.props;
@@ -15,14 +16,25 @@ const request = `${link('/start-your-project/')}?model=${encodeURIComponent('Cus
     <h3>{d.name}</h3>
     <p class="dc__sum">{d.summary}</p>
     {d.confirmed ? (
-      <dl class="dc__price">
-        <div><dt>Base building</dt><dd>{p.text.base}</dd></div>
-        <div><dt>As shown, about</dt><dd>{p.text.asShown}</dd></div>
-      </dl>
+      <>
+        <dl class="dc__price">
+          <div><dt>Base building</dt><dd>{p.text.base}</dd></div>
+          <div><dt>As shown, about</dt><dd>{p.text.asShown}</dd></div>
+        </dl>
+        <details class="dc__lines">
+          <summary>What the as-shown price counts</summary>
+          <ul>
+            <li><span><a href={link(p.model.path)}>{p.model.name.replace('Appalachian ', '')}</a>, {p.size}, {p.siding}</span><strong>{p.text.base}</strong></li>
+            {p.lines.map((l) => <li><span><a href={link(l.path)}>{l.label}</a></span><strong>{l.text}</strong></li>)}
+          </ul>
+          <p>Published installed planning prices, rounded to the nearest $500. Site work, paint or stain, and any interior work are not included.</p>
+        </details>
+      </>
     ) : (
       <p class="dc__ask">Ask Edwin for this design’s price</p>
     )}
     <p class="dc__from">Starts from the <a href={link(p.model.path)}>{p.model.name.replace('Appalachian ', '')}</a> · {p.size}</p>
+    <p class="dc__scope">{shellScope.short}</p>
     <a class="btn btn--primary dc__btn" href={request}>Request This Design</a>
   </div>
 </article>
@@ -38,8 +50,16 @@ const request = `${link('/start-your-project/')}?model=${encodeURIComponent('Cus
   .dc__price div { background: var(--ivory); padding: 10px 12px; }
   .dc__price dt { font-size: 0.78rem; font-weight: 800; color: #6f6a62; }
   .dc__price dd { margin: 2px 0 0; font-weight: 900; font-size: 1.05rem; }
+  .dc__lines { margin: 0 0 12px; font-size: 0.85rem; }
+  .dc__lines summary { cursor: pointer; font-weight: 900; color: var(--bronze-dark); }
+  .dc__lines ul { list-style: none; margin: 8px 0; padding: 0; }
+  .dc__lines li { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--cashmere); font-weight: 700; }
+  .dc__lines li a { color: var(--steel); }
+  .dc__lines li strong { white-space: nowrap; }
+  .dc__lines p { margin: 6px 0 0; font-weight: 600; color: #6f6a62; }
   .dc__ask { margin: 0 0 10px; font-weight: 900; color: var(--bronze-dark); }
-  .dc__from { margin: 0 0 16px; font-size: 0.88rem; font-weight: 700; }
+  .dc__from { margin: 0 0 6px; font-size: 0.88rem; font-weight: 700; }
   .dc__from a { color: var(--bronze-dark); }
+  .dc__scope { margin: 0 0 16px; font-size: 0.82rem; font-weight: 700; color: #6f6a62; }
   .dc__btn { margin-top: auto; text-align: center; }
 </style>

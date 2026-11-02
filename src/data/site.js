@@ -34,6 +34,18 @@ export const business = {
 };
 
 // Builds a link that works both on the test address and on the final domain.
+// What every price covers: one statement, used on the home page, model pages, custom buildings,
+// the Options hub and the FAQs, so the wording never drifts (confirmed by Edwin, November 2, 2026).
+export const shellScope = {
+  title: 'Weather-Tight Outside. Interior Is Your Choice.',
+  text: 'Every Appalachian building, from the smallest standard model to a fully custom design, is priced and built as a complete exterior shell, finished to a 100% weather-tight condition. No interior work is included in any building price. Insulation, interior walls and ceilings, electrical, lighting, plumbing, shelving and other interior work can all be added as options, each with a published price range.',
+  short: 'Weather-tight exterior shell. All interior work is optional.',
+  faq: {
+    q: 'Is any interior work included?',
+    a: 'No. Every Appalachian building, standard or custom, is priced and built as a complete exterior shell, finished to a 100% weather-tight condition, with no interior work. Insulation, interior walls and ceilings, flooring, electrical, lighting, HVAC, plumbing, shelving and interior trim or paint can all be added as options. Each has a published price range on the Options & Upgrades page, and your selections go into your written project price.',
+  },
+};
+
 export const link = (path = '') => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   return `${base}/${path.replace(/^\//, '')}`;

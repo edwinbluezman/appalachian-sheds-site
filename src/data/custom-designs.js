@@ -89,7 +89,7 @@ export const designs = [
     slug: 'holt-workshop',
     name: 'The Holt Workshop',
     use: 'work',
-    summary: 'A board-and-batten workshop with a large covered side porch and railing, double glass doors and divided-light windows.',
+    summary: 'A board-and-batten workshop with a large covered side porch and railing, double glass doors, divided-light windows and a 10/12 roof for extra loft headroom.',
     images: [
       { key: 'holt-workshop-autumn', alt: 'The Holt Workshop design: natural board-and-batten siding, steep gable roof with green architectural shingles, double glass doors, divided-light windows and a large covered side porch with wood railing' },
     ],
@@ -99,10 +99,9 @@ export const designs = [
       ['doors', 'prehung', 'Double House Doors — 9-Lite', 1],
       ['windows', 'barnSash', 'Medium Pine Barn Sash with Grids', 4],
     ],
-    // Shows a steeper roof than standard. Waiting on the Country Cottage's standard pitch and the pitch shown,
-    // then add e.g. ['pitch', 8, 10] here and set confirmed: true.
-    adjust: [],
-    confirmed: false,
+    // Standard Country Cottage pitch is 9/12; most customers choose 10/12 for loft headroom (Edwin, November 2, 2026).
+    adjust: [['pitch', 9, 10]],
+    confirmed: true,
   },
   {
     slug: 'harvest-cottage',

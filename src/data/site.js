@@ -30,6 +30,10 @@ export const business = {
     id: 'https://appalachiansheds.com/#edwin',
     name: 'Edwin R. Shackelford',
     role: 'Founder',
+    // Confirmed by Edwin: U.S. Army veteran, Construction Management degree, three decades of commercial construction leadership.
+    description: 'U.S. Army veteran with a Construction Management degree and three decades of commercial construction leadership, now founder of Appalachian Sheds Inc.',
+    credential: 'Construction Management degree',
+    referencesPath: '/professional-references/',
   },
 };
 

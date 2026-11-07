@@ -1,0 +1,168 @@
+---
+import Base from '../layouts/Base.astro';
+import { business, link } from '../data/site.js';
+import { references, credentials, founderSummary } from '../data/references.js';
+
+const path = '/professional-references/';
+const url = 'https://appalachiansheds.com' + path;
+
+const faqs = [
+  { q: 'Are these reviews of Appalachian Sheds Inc. backyard buildings?', a: 'No. These are professional references from Edwin Shackelford’s earlier commercial construction work. They are shared to explain his professional experience and should not be confused with customer reviews of Appalachian Sheds Inc. buildings.' },
+  { q: 'Who are the people quoted on this page?', a: 'Real owners, executives, architects and project managers Edwin has worked with over the past three decades. Each person approved the wording of their reference for publication. Names are shown as initials, with their role and the type of project, to respect their privacy.' },
+  { q: 'Can I contact a professional reference?', a: 'You can ask Edwin about an introduction to a relevant reference. Contact information is shared only with that person’s consent and when they are available.' },
+  { q: 'Why does commercial construction experience matter for a backyard building?', a: 'Large and small projects use different techniques, but both benefit from a clear written scope, realistic schedules, material accountability, steady communication and a careful completion review. Those are the habits these references describe.' },
+  { q: 'How can I evaluate the specific building I want to buy?', a: 'Start with Buildings & Pricing, review your chosen model’s standard features and options, discuss site access and preparation, and get a written proposal for your building and property before construction begins.' },
+];
+
+const schema = [
+  {
+    '@type': 'ProfilePage', '@id': url, url, name: 'Professional References | Edwin R. Shackelford',
+    description: founderSummary,
+    mainEntity: { '@id': business.founder.id },
+    about: { '@id': business.founder.id },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://appalachiansheds.com/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://appalachiansheds.com/about/' },
+      { '@type': 'ListItem', position: 3, name: 'Professional References', item: url },
+    ],
+  },
+  { '@type': 'FAQPage', '@id': url + '#faq', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Base
+  title="Professional Construction References | Edwin R. Shackelford, Appalachian Sheds"
+  description="Ten professional references from Edwin R. Shackelford’s three decades of commercial construction leadership, on projects up to $75 million, and how that experience shapes every Appalachian Sheds building."
+  path={path}
+  schema={schema}
+>
+  <section class="band band--dark pr-hero" aria-labelledby="pr-title">
+    <div class="wrap">
+      <nav class="pr-crumbs" aria-label="Breadcrumb"><a href={link('/')}>Home</a> <span aria-hidden="true">/</span> <a href={link('/about/')}>About</a> <span aria-hidden="true">/</span> <span aria-current="page">Professional References</span></nav>
+      <p class="eyebrow">Appalachian Sheds Inc. · Professional References</p>
+      <h1 id="pr-title">Professional References. Proven Construction Leadership.</h1>
+      <p class="pr-answer">{founderSummary}</p>
+      <p class="pr-p">A backyard building is a personal investment. Before you choose who builds it, you deserve to understand the experience and accountability behind the company. These references relate to Edwin’s <strong>prior commercial construction work</strong>, not to purchases of Appalachian Sheds buildings. They describe the communication, scheduling, oversight and cost control that shape how every Appalachian building is planned and built today.</p>
+      <ul class="pr-cred" aria-label="Construction experience and qualifications">
+        {credentials.map(([a, b]) => <li><strong>{a}</strong><span>{b}</span></li>)}
+      </ul>
+      <ul class="pr-jump" aria-label="On this page">
+        <li><a href="#references">Reference Profiles</a></li><li><a href="#what-to-ask">What to Ask a Builder</a></li><li><a href="#faq">Questions &amp; Answers</a></li><li><a href="#contact">Talk With Edwin</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="references" class="band band--cash" aria-labelledby="pr-dir">
+    <div class="wrap">
+      <p class="eyebrow">Professional Reference Directory</p>
+      <h2 id="pr-dir" class="pr-h2">Ten Perspectives from Prior Commercial Projects</h2>
+      <p class="pr-lead">Each profile describes a professional relationship from Edwin’s commercial construction career. Every person approved their words for publication. Names appear as initials to respect their privacy; introductions are arranged privately when a reference is available and agrees.</p>
+      <div class="pr-grid">
+        {references.map((r, i) => (
+          <article class="pr-ref" id={'reference-' + String(i + 1).padStart(2, '0')}>
+            <p class="pr-ref__id">Professional reference {String(i + 1).padStart(2, '0')} of {references.length}</p>
+            <figure>
+              <blockquote>“{r.quote}”</blockquote>
+              <figcaption><strong>{r.name}</strong><span>{r.role}</span></figcaption>
+            </figure>
+            <dl class="pr-project">
+              <div><dt>Prior commercial project</dt><dd>{r.project}</dd></div>
+              <div><dt>Value</dt><dd>{r.value}</dd></div>
+              <div><dt>Location</dt><dd>{r.place}</dd></div>
+              <div><dt>Duration</dt><dd>{r.span}</dd></div>
+            </dl>
+            <ul class="pr-tags" aria-label="Experience this reference can speak to">{r.tags.map((t) => <li>{t}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+      <p class="pr-note">These are professional references concerning Edwin Shackelford’s earlier commercial construction career. They are not reviews of an Appalachian Sheds Inc. building or a statement that the organizations described employed Appalachian Sheds Inc.</p>
+    </div>
+  </section>
+
+  <section id="what-to-ask" class="band band--light" aria-labelledby="pr-ask">
+    <div class="wrap">
+      <p class="eyebrow">A More Useful Way to Evaluate a Builder</p>
+      <h2 id="pr-ask" class="pr-h2">Ask About the Work Behind the Words</h2>
+      <p class="pr-lead">A professional reference helps you understand process and character, but it is not a substitute for current product specifications, a written project scope or a clear construction agreement.</p>
+      <div class="pr-three">
+        <div><h3>Planning &amp; Communication</h3><p>Ask how changes were documented, how updates were delivered and what happened when problems arose.</p></div>
+        <div><h3>Schedule &amp; Cost Discipline</h3><p>Ask whether important decisions were made early, how budget concerns were reported and how timelines were managed.</p></div>
+        <div><h3>Quality &amp; Accountability</h3><p>Ask how materials, workmanship, inspections and completion details were reviewed before the work was accepted.</p></div>
+      </div>
+      <p class="pr-lead pr-lead--after">For your Appalachian Sheds project, compare the model’s published specifications, review the site and foundation plan, understand the options and exclusions, and get a written agreement before construction begins.</p>
+      <p class="pr-links"><a href={link('/buildings/')}>Buildings &amp; Pricing →</a> <a href={link('/buyers-planning-guide/how-to-evaluate-a-builder-guide-19/')}>How to Evaluate a Builder Guide →</a> <a href={link('/about/')}>About Appalachian Sheds →</a></p>
+    </div>
+  </section>
+
+  <section id="faq" class="band band--dark" aria-labelledby="pr-faq">
+    <div class="wrap">
+      <p class="eyebrow">Questions Homeowners Ask</p>
+      <h2 id="pr-faq" class="pr-h2">Understanding These Professional References</h2>
+      <div class="pr-faq">{faqs.map((f, i) => <details open={i === 0}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+    </div>
+  </section>
+
+  <section id="contact" class="band band--light" aria-labelledby="pr-contact">
+    <div class="wrap">
+      <p class="eyebrow">Your Property · Your Project</p>
+      <h2 id="pr-contact" class="pr-h2">Experience Matters. So Does a Straightforward Conversation.</h2>
+      <p class="pr-lead">Tell Edwin what you are planning for your backyard. He will help you choose the right model or custom design, review site access and next steps, and confirm your price in writing.</p>
+      <div class="pr-ctas">
+        <a class="btn btn--primary" href={link('/start-your-project/')}>Start Your Project</a>
+        <a class="btn btn--secondary" href={`tel:${business.phoneLink}`}>Call {business.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .pr-hero { padding-top: 40px; }
+  .pr-crumbs { font-size: 0.85rem; color: var(--stone); margin-bottom: 22px; }
+  .pr-crumbs a { color: var(--cashmere); text-decoration: none; }
+  .pr-hero h1 { margin: 0 0 18px; font-size: clamp(2rem, 4.2vw, 3.3rem); line-height: 1.1; max-width: 22ch; }
+  .pr-answer { margin: 0 0 16px; max-width: 80ch; color: var(--ivory); font-weight: 700; font-size: 1.08rem; line-height: 1.75; }
+  .pr-p { margin: 0 0 26px; max-width: 80ch; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .pr-p strong { color: var(--ivory); }
+  .pr-cred { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .pr-cred li { border: 1px solid rgba(166, 138, 106, 0.35); border-top: 3px solid var(--bronze); background: rgba(255, 255, 255, 0.04); padding: 16px 12px; text-align: center; }
+  .pr-cred strong { display: block; color: var(--bronze); font-size: 1.3rem; font-weight: 900; }
+  .pr-cred span { display: block; margin-top: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ivory); }
+  .pr-jump { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .pr-jump a { display: inline-block; padding: 9px 15px; border: 1px solid rgba(166, 138, 106, 0.6); color: var(--ivory); text-decoration: none; font-weight: 800; font-size: 0.9rem; }
+  .pr-jump a:hover { background: var(--bronze); color: var(--steel); }
+
+  .pr-h2 { margin: 0 0 12px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+  .pr-lead { max-width: 80ch; margin: 0 0 26px; font-weight: 700; }
+  .pr-lead--after { margin: 26px 0 14px; }
+  .pr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .pr-ref { background: var(--ivory); border: 1px solid var(--stone); border-top: 4px solid var(--bronze); padding: 24px; color: var(--steel); display: flex; flex-direction: column; }
+  .pr-ref__id { margin: 0 0 10px; color: var(--bronze-dark); font-weight: 900; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .pr-ref figure { margin: 0 0 16px; }
+  .pr-ref blockquote { margin: 0 0 14px; padding: 4px 0 4px 18px; border-left: 4px solid var(--bronze); font-weight: 800; line-height: 1.75; }
+  .pr-ref figcaption strong { display: block; font-size: 1.1rem; }
+  .pr-ref figcaption span { display: block; font-size: 0.88rem; font-weight: 700; color: #544c43; }
+  .pr-project { margin: 0 0 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--stone); border: 1px solid var(--stone); }
+  .pr-project div { background: var(--cashmere); padding: 8px 12px; }
+  .pr-project dt { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5a5148; }
+  .pr-project dd { margin: 2px 0 0; font-weight: 900; font-size: 0.9rem; }
+  .pr-tags { list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+  .pr-tags li { border: 1px solid #b2a99c; padding: 5px 9px; font-size: 0.75rem; font-weight: 800; color: #49413a; }
+  .pr-note { margin: 22px 0 0; max-width: 85ch; font-size: 0.88rem; font-weight: 700; color: #5a5148; }
+
+  .pr-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .pr-three div { background: #fff; border: 1px solid var(--stone); border-top: 3px solid var(--bronze); padding: 20px; }
+  .pr-three h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .pr-three p { margin: 0; font-weight: 700; font-size: 0.93rem; }
+  .pr-links { display: flex; flex-wrap: wrap; gap: 18px; margin: 0; }
+  .pr-links a { color: var(--bronze-dark); font-weight: 900; text-decoration: none; }
+
+  .pr-faq details { border: 1px solid rgba(166, 138, 106, 0.5); background: rgba(255, 255, 255, 0.04); margin-bottom: 10px; }
+  .pr-faq summary { cursor: pointer; padding: 18px 22px; font-weight: 900; color: var(--ivory); }
+  .pr-faq p { margin: 0; padding: 0 22px 20px; color: var(--cashmere); font-weight: 600; }
+  .pr-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  @media (max-width: 950px) { .pr-grid, .pr-three { grid-template-columns: 1fr; } .pr-cred { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .pr-project { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,44 @@
+---
+// Home page trust band: Edwin's credentials and a short path to the Professional References page.
+import { link } from '../data/site.js';
+import { credentials, references } from '../data/references.js';
+
+// One short approved quotation as a preview (word for word from references.js).
+const preview = references[1];
+---
+<section class="band band--dark hr" aria-labelledby="hr-title">
+  <div class="wrap">
+    <p class="eyebrow">Appalachian Sheds Inc. · Professional References</p>
+    <h2 id="hr-title" class="hr__title">A Professional Track Record Worth Exploring</h2>
+    <p class="hr__intro">Your backyard building deserves more than a sales promise. <strong>Appalachian Sheds Inc. is veteran-owned and family-operated, led by Edwin R. Shackelford, a U.S. Army veteran with a Construction Management degree and three decades of commercial construction leadership.</strong> Ten professional references from that career describe the planning, communication and accountability behind every Appalachian building.</p>
+    <ul class="hr__cred" aria-label="Construction experience and qualifications">
+      {credentials.map(([a, b]) => <li><strong>{a}</strong><span>{b}</span></li>)}
+    </ul>
+    <figure class="hr__quote">
+      <blockquote>“{preview.quote}”</blockquote>
+      <figcaption><strong>{preview.name}</strong>, {preview.role} · {preview.project}</figcaption>
+    </figure>
+    <div class="hr__ctas">
+      <a class="btn btn--primary" href={link('/professional-references/')}>Explore Professional References</a>
+      <a class="btn btn--secondary" href={link('/buildings/')}>View Buildings &amp; Pricing</a>
+    </div>
+    <p class="hr__note">These references relate to Edwin’s prior commercial construction work and are not reviews of Appalachian Sheds Inc. buildings.</p>
+  </div>
+</section>
+
+<style>
+  .hr__title { margin: 0 0 14px; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+  .hr__intro { margin: 0 0 24px; max-width: 80ch; color: var(--cashmere); font-weight: 600; line-height: 1.75; }
+  .hr__intro strong { color: var(--ivory); }
+  .hr__cred { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .hr__cred li { border: 1px solid rgba(166, 138, 106, 0.35); border-top: 3px solid var(--bronze); background: rgba(255, 255, 255, 0.04); padding: 16px 12px; text-align: center; }
+  .hr__cred strong { display: block; color: var(--bronze); font-size: 1.3rem; font-weight: 900; }
+  .hr__cred span { display: block; margin-top: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ivory); }
+  .hr__quote { margin: 0 0 24px; max-width: 900px; border-left: 4px solid var(--bronze); padding: 4px 0 4px 20px; }
+  .hr__quote blockquote { margin: 0 0 8px; color: var(--ivory); font-weight: 700; font-size: 1.02rem; line-height: 1.7; }
+  .hr__quote figcaption { color: var(--stone); font-size: 0.88rem; font-weight: 700; }
+  .hr__quote figcaption strong { color: var(--cashmere); }
+  .hr__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
+  .hr__note { margin: 0; color: var(--stone); font-size: 0.85rem; font-weight: 600; }
+  @media (max-width: 900px) { .hr__cred { grid-template-columns: 1fr 1fr; } }
+</style>

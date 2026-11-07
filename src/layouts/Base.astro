@@ -30,6 +30,10 @@ const graph = {
       '@id': business.founder.id,
       name: business.founder.name,
       jobTitle: business.founder.role,
+      description: business.founder.description,
+      hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: business.founder.credential },
+      knowsAbout: ['Commercial construction management', 'Construction scheduling and cost control', 'Backyard building construction'],
+      subjectOf: { '@type': 'ProfilePage', url: 'https://appalachiansheds.com' + business.founder.referencesPath },
       worksFor: { '@id': business.id },
     },
     ...schema,
@@ -154,6 +158,7 @@ const graph = {
       <div class="site-footer__links" role="navigation" aria-label="Company">
         <a href={link('/custom-buildings/')}>Custom Buildings</a>
         <a href={link('/about/')}>About</a>
+        <a href={link('/professional-references/')}>Professional References</a>
         <a href={link('/faqs/')}>FAQs</a>
         <a href={link('/service-area/')}>Service Area</a>
         <a href={link('/start-your-project/')}>Start Your Project</a>

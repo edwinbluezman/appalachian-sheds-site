@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import DesignFigure from '../components/DesignFigure.astro';
 import ScopeNote from '../components/ScopeNote.astro';
+import HomeReferences from '../components/HomeReferences.astro';
 import hero from '../assets/asi-hero.jpg';
 import { business, link } from '../data/site.js';
 import { series } from '../data/catalog.js';
@@ -186,10 +187,12 @@ const schema = [
     </div>
   </section>
 
-  <section class="band band--dark" aria-labelledby="talk-title">
+  <HomeReferences />
+
+  <section class="band band--cash" aria-labelledby="talk-title">
     <div class="wrap">
       <h2 id="talk-title" class="h-h2">Talk With Edwin About Your Building</h2>
-      <p class="h-lead h-lead--dark">Share what you plan to use it for, where it will sit and the look you want. Edwin will help you choose a model or shape a custom design, then confirm your price in writing.</p>
+      <p class="h-lead">Share what you plan to use it for, where it will sit and the look you want. Edwin will help you choose a model or shape a custom design, then confirm your price in writing.</p>
       <div class="hero__ctas">
         <a class="btn btn--primary" href={link('/start-your-project/')}>Start Your Project</a>
         <a class="btn btn--secondary" href={`tel:${business.phoneLink}`}>Call {business.phoneDisplay}</a>

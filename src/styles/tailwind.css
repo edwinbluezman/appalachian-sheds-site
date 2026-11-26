@@ -1,0 +1,9 @@
+/* Imported only by components that opt into Tailwind (e.g. SitePrepCalculator).
+   Deliberately omits `@tailwind base` (Tailwind's global reset/Preflight) —
+   that layer resets headings, buttons, links etc. page-wide with unscoped
+   selectors, which would clash with the rest of the site's hand-built CSS
+   system on any page this component is dropped into. Utilities and
+   components layers are scoped to the classes actually used, so they're
+   safe to load alongside the existing design system. */
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,432 @@
+---
+// src/components/SitePrepCalculator.astro
+//
+// Interactive site-preparation / gravel-pad calculator.
+//
+// Flow:
+//   1. Visitor enters building Width, Length, Site Condition, Zip Code.
+//   2. "Calculate" reveals a lead-capture form (Name, Phone, Email) —
+//      nothing from the report is shown until this is submitted.
+//   3. On submit, the lead is emailed to Edwin via FormSubmit's AJAX
+//      endpoint (no backend needed), and the full report is revealed
+//      in place with no page reload.
+//
+// IMPORTANT ONE-TIME SETUP: the first submission to a new FormSubmit
+// address requires a confirmation click in that inbox before messages
+// start delivering. Edwin should send one test lead through this
+// calculator after it goes live and confirm the activation email from
+// FormSubmit.
+//
+// Styling uses Tailwind (see tailwind.config.mjs for the ASI color
+// mapping) and is scoped to this component via src/styles/tailwind.css —
+// the rest of the site's hand-built CSS system is untouched.
+import '../styles/tailwind.css';
+
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/edwin@appalachiansheds.com';
+---
+
+<section
+  id="site-prep-calculator"
+  class="not-prose mx-auto w-full max-w-2xl rounded-sm border border-asi-sand bg-asi-cream p-5 text-asi-ink sm:p-8"
+  aria-labelledby="spc-heading"
+>
+  <header class="mb-6 text-center">
+    <p class="mb-1 text-xs font-bold uppercase tracking-widest text-asi-gold">
+      Free Instant Estimate
+    </p>
+    <h2 id="spc-heading" class="text-2xl font-bold leading-tight sm:text-3xl">
+      Site Preparation Calculator
+    </h2>
+    <p class="mt-2 text-sm text-asi-ink/80 sm:text-base">
+      Estimate the gravel pad size, material, and site-prep cost for your
+      new building in under a minute.
+    </p>
+  </header>
+
+  <!-- STEP 1: Inputs -->
+  <div id="spc-step-inputs">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <label class="flex flex-col gap-1 text-sm font-semibold">
+        Building Width (ft)
+        <input
+          id="spc-width"
+          type="number"
+          inputmode="decimal"
+          min="4"
+          max="100"
+          step="0.5"
+          placeholder="e.g. 12"
+          required
+          class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+        />
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm font-semibold">
+        Building Length (ft)
+        <input
+          id="spc-length"
+          type="number"
+          inputmode="decimal"
+          min="4"
+          max="100"
+          step="0.5"
+          placeholder="e.g. 16"
+          required
+          class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+        />
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm font-semibold sm:col-span-2">
+        Site Condition
+        <select
+          id="spc-condition"
+          required
+          class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+        >
+          <option value="level">Level ground, minimal grading needed</option>
+          <option value="moderate">Moderate slope, some grading needed</option>
+          <option value="heavy">Heavy slope, wooded, or needs clearing</option>
+        </select>
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm font-semibold sm:col-span-2">
+        Zip Code
+        <input
+          id="spc-zip"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]{5}"
+          maxlength="5"
+          placeholder="e.g. 40701"
+          required
+          class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+        />
+      </label>
+    </div>
+
+    <p id="spc-input-error" class="mt-3 hidden text-sm font-semibold text-red-700"></p>
+
+    <button
+      id="spc-calculate-btn"
+      type="button"
+      class="mt-5 w-full rounded-sm bg-asi-pine px-6 py-3.5 text-base font-bold text-white transition hover:bg-asi-ink-dark sm:w-auto"
+    >
+      Calculate My Estimate
+    </button>
+  </div>
+
+  <!-- STEP 2: Lead capture gate (hidden until Calculate is pressed) -->
+  <div id="spc-step-lead" class="hidden">
+    <div class="mb-5 rounded-sm border border-asi-gold/50 bg-white p-4 sm:p-5">
+      <h3 class="text-lg font-bold">Get Your Free Site Prep Report</h3>
+      <p class="mt-1 text-sm text-asi-ink/80">
+        Enter your contact info and we'll unlock your personalized report
+        below. A local Appalachian Sheds representative can follow up with
+        an exact, on-site quote.
+      </p>
+    </div>
+
+    <form id="spc-lead-form" class="grid grid-cols-1 gap-4">
+      <label class="flex flex-col gap-1 text-sm font-semibold">
+        Full Name
+        <input
+          id="spc-name"
+          name="Name"
+          type="text"
+          autocomplete="name"
+          required
+          class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+        />
+      </label>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <label class="flex flex-col gap-1 text-sm font-semibold">
+          Phone
+          <input
+            id="spc-phone"
+            name="Phone"
+            type="tel"
+            autocomplete="tel"
+            required
+            class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+          />
+        </label>
+
+        <label class="flex flex-col gap-1 text-sm font-semibold">
+          Email
+          <input
+            id="spc-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+          />
+        </label>
+      </div>
+
+      <label class="flex flex-row items-start gap-3 text-sm font-medium">
+        <input
+          id="spc-consent"
+          type="checkbox"
+          required
+          class="mt-1 h-5 w-5 flex-none rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold"
+        />
+        <span>
+          I agree that Appalachian Sheds may contact me by phone, text, or
+          email about this project.
+        </span>
+      </label>
+
+      <!-- Honeypot spam trap -->
+      <input
+        type="text"
+        name="_honey"
+        class="absolute left-[-9999px] h-px w-px opacity-0"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      />
+
+      <p id="spc-lead-error" class="hidden text-sm font-semibold text-red-700"></p>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <button
+          type="submit"
+          class="w-full rounded-sm bg-asi-gold px-6 py-3.5 text-base font-bold text-asi-ink-dark transition hover:brightness-95 sm:w-auto"
+        >
+          Show My Report
+        </button>
+        <button
+          type="button"
+          id="spc-back-btn"
+          class="w-full rounded-sm border border-asi-sand bg-transparent px-6 py-3.5 text-base font-semibold text-asi-ink transition hover:bg-asi-sand/40 sm:w-auto"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- STEP 3: Report (hidden until the lead form is submitted) -->
+  <div id="spc-step-report" class="hidden">
+    <h3 class="mb-4 text-lg font-bold">Your Site Preparation Estimate</h3>
+
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div class="rounded-sm border border-asi-sand bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-asi-ink/60">
+          Recommended Pad Size
+        </p>
+        <p id="spc-out-pad" class="mt-1 text-xl font-bold text-asi-pine"></p>
+      </div>
+
+      <div class="rounded-sm border border-asi-sand bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-asi-ink/60">
+          Gravel Needed
+        </p>
+        <p id="spc-out-yards" class="mt-1 text-xl font-bold text-asi-pine"></p>
+      </div>
+
+      <div class="rounded-sm border border-asi-sand bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-asi-ink/60">
+          Estimated Tonnage
+        </p>
+        <p id="spc-out-tons" class="mt-1 text-xl font-bold text-asi-pine"></p>
+      </div>
+
+      <div class="rounded-sm border border-asi-sand bg-white p-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-asi-ink/60">
+          Est. Site Prep Cost
+        </p>
+        <p id="spc-out-cost" class="mt-1 text-xl font-bold text-asi-pine"></p>
+      </div>
+    </div>
+
+    <p class="mt-4 text-xs leading-relaxed text-asi-ink/70">
+      This is a planning estimate based on standard gravel-base practices
+      and the information you entered. Actual material quantities and
+      pricing are confirmed after an on-site visit, since soil, drainage,
+      and access can all affect the final scope.
+    </p>
+
+    <a
+      href="/buildings/#the-collection"
+      class="mt-5 inline-block w-full rounded-sm bg-asi-pine px-6 py-3.5 text-center text-base font-bold text-white transition hover:bg-asi-ink-dark sm:w-auto"
+    >
+      See Your Building Price
+    </a>
+  </div>
+</section>
+
+<script>
+  type SiteCondition = 'level' | 'moderate' | 'heavy';
+
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/edwin@appalachiansheds.com';
+
+  const stepInputs = document.getElementById('spc-step-inputs')!;
+  const stepLead = document.getElementById('spc-step-lead')!;
+  const stepReport = document.getElementById('spc-step-report')!;
+
+  const widthEl = document.getElementById('spc-width') as HTMLInputElement;
+  const lengthEl = document.getElementById('spc-length') as HTMLInputElement;
+  const conditionEl = document.getElementById('spc-condition') as HTMLSelectElement;
+  const zipEl = document.getElementById('spc-zip') as HTMLInputElement;
+  const inputError = document.getElementById('spc-input-error')!;
+
+  const leadForm = document.getElementById('spc-lead-form') as HTMLFormElement;
+  const leadError = document.getElementById('spc-lead-error')!;
+  const backBtn = document.getElementById('spc-back-btn')!;
+
+  // Depth of gravel base by site condition — rougher sites need a deeper,
+  // better-compacted base.
+  const DEPTH_INCHES: Record<SiteCondition, number> = {
+    level: 4,
+    moderate: 5,
+    heavy: 6,
+  };
+
+  // Installed cost per cubic yard (material + delivery + spreading/grading),
+  // as a low–high range. Rougher sites cost more due to extra clearing/grading.
+  const COST_PER_YARD: Record<SiteCondition, [number, number]> = {
+    level: [55, 75],
+    moderate: [70, 95],
+    heavy: [90, 130],
+  };
+
+  const TONS_PER_CUBIC_YARD = 1.4; // typical for compacted crushed stone
+  const OVERHANG_FT = 1; // gravel pad extends 1 ft past the building on each side
+  const WASTE_FACTOR = 1.1; // 10% extra for compaction/waste
+
+  let lastResult: {
+    padWidth: number;
+    padLength: number;
+    cubicYards: number;
+    tons: number;
+    costLow: number;
+    costHigh: number;
+  } | null = null;
+
+  function roundUpToHalf(n: number): number {
+    return Math.ceil(n * 2) / 2;
+  }
+
+  function roundToNearest(n: number, nearest: number): number {
+    return Math.round(n / nearest) * nearest;
+  }
+
+  function calculate(width: number, length: number, condition: SiteCondition) {
+    const padWidth = Math.ceil(width + OVERHANG_FT * 2);
+    const padLength = Math.ceil(length + OVERHANG_FT * 2);
+    const areaSqFt = padWidth * padLength;
+
+    const depthInches = DEPTH_INCHES[condition];
+    const rawCubicYards = (areaSqFt * depthInches) / 324;
+    const cubicYards = roundUpToHalf(rawCubicYards * WASTE_FACTOR);
+
+    const tons = Math.round(cubicYards * TONS_PER_CUBIC_YARD * 10) / 10;
+
+    const [lowRate, highRate] = COST_PER_YARD[condition];
+    const costLow = roundToNearest(cubicYards * lowRate, 25);
+    const costHigh = roundToNearest(cubicYards * highRate, 25);
+
+    return { padWidth, padLength, areaSqFt, cubicYards, tons, costLow, costHigh };
+  }
+
+  function showStep(step: 'inputs' | 'lead' | 'report') {
+    stepInputs.classList.toggle('hidden', step !== 'inputs');
+    stepLead.classList.toggle('hidden', step !== 'lead');
+    stepReport.classList.toggle('hidden', step !== 'report');
+  }
+
+  document.getElementById('spc-calculate-btn')!.addEventListener('click', () => {
+    inputError.classList.add('hidden');
+
+    const width = parseFloat(widthEl.value);
+    const length = parseFloat(lengthEl.value);
+    const condition = conditionEl.value as SiteCondition;
+    const zip = zipEl.value.trim();
+
+    if (!width || !length || width <= 0 || length <= 0) {
+      inputError.textContent = 'Please enter a valid width and length.';
+      inputError.classList.remove('hidden');
+      return;
+    }
+    if (!/^\d{5}$/.test(zip)) {
+      inputError.textContent = 'Please enter a valid 5-digit zip code.';
+      inputError.classList.remove('hidden');
+      return;
+    }
+
+    const result = calculate(width, length, condition);
+    lastResult = {
+      padWidth: result.padWidth,
+      padLength: result.padLength,
+      cubicYards: result.cubicYards,
+      tons: result.tons,
+      costLow: result.costLow,
+      costHigh: result.costHigh,
+    };
+
+    showStep('lead');
+  });
+
+  backBtn.addEventListener('click', () => {
+    showStep('inputs');
+  });
+
+  leadForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    leadError.classList.add('hidden');
+
+    if (!lastResult) return;
+
+    const submitBtn = leadForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(leadForm);
+    formData.append('_subject', 'New Site Prep Calculator lead from appalachiansheds.com');
+    formData.append('Building Width (ft)', widthEl.value);
+    formData.append('Building Length (ft)', lengthEl.value);
+    formData.append('Site Condition', conditionEl.options[conditionEl.selectedIndex].text);
+    formData.append('Zip Code', zipEl.value);
+    formData.append(
+      'Recommended Pad Size',
+      `${lastResult.padWidth} ft x ${lastResult.padLength} ft`
+    );
+    formData.append('Cubic Yards', String(lastResult.cubicYards));
+    formData.append('Estimated Tons', String(lastResult.tons));
+    formData.append(
+      'Estimated Cost Range',
+      `$${lastResult.costLow} - $${lastResult.costHigh}`
+    );
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      // Reveal the report.
+      document.getElementById('spc-out-pad')!.textContent =
+        `${lastResult.padWidth} ft × ${lastResult.padLength} ft`;
+      document.getElementById('spc-out-yards')!.textContent =
+        `${lastResult.cubicYards} cubic yards`;
+      document.getElementById('spc-out-tons')!.textContent = `${lastResult.tons} tons`;
+      document.getElementById('spc-out-cost')!.textContent =
+        `$${lastResult.costLow.toLocaleString()} - $${lastResult.costHigh.toLocaleString()}`;
+
+      showStep('report');
+    } catch (err) {
+      leadError.textContent =
+        "Something went wrong sending your info. Please check your connection and try again, or call us directly.";
+      leadError.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Show My Report';
+    }
+  });
+</script>

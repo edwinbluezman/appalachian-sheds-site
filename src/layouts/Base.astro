@@ -1,0 +1,146 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Appalachian Sheds Inc. — veteran-owned, family-operated backyard buildings built on site in the Greater Cincinnati Tri-State area." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700&family=Montserrat:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="asi-global-header" role="banner">
+    <div class="asi-nav-shell">
+      <a href="/" class="asi-brand" aria-label="Appalachian Sheds home">
+        <strong>APPALACHIAN SHEDS INC.</strong>
+        <span>VETERAN &amp; FAMILY-OWNED &middot; BUILT ON SITE</span>
+      </a>
+      <button type="button" class="asi-menu-toggle" aria-controls="asi-nav-primary" aria-expanded="false">&#9776; Menu</button>
+      <nav class="asi-nav-links" id="asi-nav-primary" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/buildings/">Buildings &amp; Pricing</a>
+        <a href="/planning-guides/">Building Guides</a>
+        <a href="/options-upgrades/">Options &amp; Upgrades</a>
+        <a href="/craft/">Built Better</a>
+        <a href="/buildings/#the-collection" class="asi-nav-cta">See Your Price</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="asi-site-footer">
+    <div class="asi-footer-inner">
+      <p class="asi-footer-brand">Appalachian Sheds Inc.</p>
+      <p>Veteran-Owned &middot; Family-Operated &middot; Serving Greater Cincinnati and the Ohio, Kentucky &amp; Indiana Tri-State</p>
+      <p><a href="tel:+15133792421">(513) 379-2421</a> &middot; <a href="mailto:edwin@appalachiansheds.com">edwin@appalachiansheds.com</a></p>
+      <p class="asi-footer-copy">&copy; 2026 Appalachian Sheds Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var header = document.querySelector('.asi-global-header');
+        var toggle = document.querySelector('.asi-menu-toggle');
+        var links = document.querySelector('.asi-nav-links');
+        if (toggle && links) {
+          toggle.addEventListener('click', function () {
+            var open = toggle.getAttribute('aria-expanded') !== 'true';
+            toggle.setAttribute('aria-expanded', String(open));
+            links.classList.toggle('asi-open', open);
+          });
+          links.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              links.classList.remove('asi-open');
+              toggle.setAttribute('aria-expanded', 'false');
+            });
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              links.classList.remove('asi-open');
+              toggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+        var button = document.createElement('button');
+        button.className = 'asi-back-to-top';
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Back to top');
+        button.textContent = '↑';
+        document.body.appendChild(button);
+        function update() {
+          var y = Math.max(window.scrollY || 0, document.documentElement.scrollTop || 0);
+          button.classList.toggle('asi-show', y > 480);
+          if (header) header.classList.toggle('asi-is-scrolled', y > 36);
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update, { passive: true });
+        update();
+        button.addEventListener('click', function () {
+          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          window.scrollTo({ top: 0, behavior: reduce ? 'instant' : 'smooth' });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+      else boot();
+    })();
+  </script>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --asi-ink: #2B3030;
+    --asi-ink-dark: #202827;
+    --asi-cream: #F8F7F4;
+    --asi-paper: #FFFFFF;
+    --asi-sand: #E1DED8;
+    --asi-gold: #C9A06C;
+    --asi-pine: #2E473A;
+    font-family: 'Montserrat', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--asi-cream); color: var(--asi-ink); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* Shared site header — built fresh; the recovered pages referenced this
+     markup for its nav-toggle behavior but never actually styled it. */
+  .asi-global-header { position: sticky; top: 0; z-index: 100; background: var(--asi-ink); border-bottom: 1px solid rgba(248,247,244,.12); }
+  .asi-nav-shell { width: 94%; max-width: 1440px; margin: 0 auto; min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 10px 0; }
+  .asi-brand { text-decoration: none; color: var(--asi-cream); line-height: 1.2; }
+  .asi-brand strong { display: block; font-size: 16px; letter-spacing: .04em; }
+  .asi-brand span { display: block; font-size: 10px; letter-spacing: .12em; color: var(--asi-gold); margin-top: 3px; }
+  .asi-menu-toggle { display: none; background: transparent; border: 1px solid rgba(248,247,244,.3); color: var(--asi-cream); padding: 10px 14px; font-size: 13px; }
+  .asi-nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); flex-wrap: wrap; }
+  .asi-nav-links a { color: var(--asi-cream); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+  .asi-nav-links a:hover { color: var(--asi-gold); }
+  .asi-nav-cta { border: 1px solid var(--asi-gold); color: var(--asi-gold) !important; padding: 9px 14px; }
+  @media (max-width: 980px) {
+    .asi-menu-toggle { display: block; }
+    .asi-nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; }
+    .asi-nav-links.asi-open { display: flex; }
+    .asi-nav-links a { display: block; width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(248,247,244,.1); }
+  }
+
+  .asi-site-footer { background: var(--asi-ink-dark); color: var(--asi-cream); margin-top: 60px; }
+  .asi-footer-inner { width: 94%; max-width: 1440px; margin: 0 auto; padding: 40px 0; font-size: 13px; line-height: 1.8; }
+  .asi-footer-brand { font-weight: 700; font-size: 15px; letter-spacing: .03em; margin: 0 0 8px; }
+  .asi-footer-inner a { color: var(--asi-gold); text-decoration: none; }
+  .asi-footer-copy { opacity: .6; margin-top: 14px; }
+
+  .asi-back-to-top { position: fixed; right: 18px; bottom: 18px; width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--asi-ink); color: var(--asi-cream); font-size: 18px; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 90; }
+  .asi-back-to-top.asi-show { opacity: .9; pointer-events: auto; }
+</style>

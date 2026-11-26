@@ -39,7 +39,7 @@ const { title, description = "Appalachian Sheds Inc. — veteran-owned, family-o
     <slot />
   </main>
 
-  <footer class="asi-site-footer">
+  <footer class="footer">
     <div class="asi-footer-inner">
       <p class="asi-footer-brand">Appalachian Sheds Inc.</p>
       <p>Veteran-Owned &middot; Family-Operated &middot; Serving Greater Cincinnati and the Ohio, Kentucky &amp; Indiana Tri-State</p>
@@ -116,31 +116,44 @@ const { title, description = "Appalachian Sheds Inc. — veteran-owned, family-o
   img { max-width: 100%; display: block; }
   a { color: inherit; }
 
-  /* Shared site header — built fresh; the recovered pages referenced this
-     markup for its nav-toggle behavior but never actually styled it. */
-  .asi-global-header { position: sticky; top: 0; z-index: 100; background: var(--asi-ink); border-bottom: 1px solid rgba(248,247,244,.12); }
-  .asi-nav-shell { width: 94%; max-width: 1440px; margin: 0 auto; min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 10px 0; }
-  .asi-brand { text-decoration: none; color: var(--asi-cream); line-height: 1.2; }
-  .asi-brand strong { display: block; font-size: 16px; letter-spacing: .04em; }
-  .asi-brand span { display: block; font-size: 10px; letter-spacing: .12em; color: var(--asi-gold); margin-top: 3px; }
-  .asi-menu-toggle { display: none; background: transparent; border: 1px solid rgba(248,247,244,.3); color: var(--asi-cream); padding: 10px 14px; font-size: 13px; }
-  .asi-nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); flex-wrap: wrap; }
-  .asi-nav-links a { color: var(--asi-cream); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
-  .asi-nav-links a:hover { color: var(--asi-gold); }
-  .asi-nav-cta { border: 1px solid var(--asi-gold); color: var(--asi-gold) !important; padding: 9px 14px; }
-  @media (max-width: 980px) {
-    .asi-menu-toggle { display: block; }
-    .asi-nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; }
-    .asi-nav-links.asi-open { display: flex; }
-    .asi-nav-links a { display: block; width: 100%; padding: 12px 0; border-bottom: 1px solid rgba(248,247,244,.1); }
+  /* Shared site header — this is the ASI "site-controls.css" stylesheet found
+     alongside the options/guides pages (the later, finished iteration of this
+     build); the homepage/model pages referenced this same nav markup but had
+     no stylesheet for it. Using the real one here, site-wide. */
+  .asi-global-header { display:block!important; padding:0!important; margin:0!important; flex-wrap:nowrap!important; position:sticky!important; top:0!important; z-index:2147481000!important; background:var(--asi-ink); color:var(--asi-cream); box-shadow:0 2px 12px rgba(0,0,0,.18); width:100%; font:italic 500 13px/1.45 'Montserrat',Arial,sans-serif; transition:box-shadow .18s ease; }
+  .asi-global-header * { box-sizing:border-box; }
+  .asi-global-header a { color:#F8F7F4; text-decoration:none; }
+  .asi-global-header .asi-nav-shell { width:94%; max-width:1440px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:22px; min-height:78px; padding:12px 0; transition:min-height .18s ease,padding .18s ease; }
+  .asi-global-header.asi-is-scrolled .asi-nav-shell { min-height:57px; padding:7px 0; }
+  .asi-brand { display:flex; flex-direction:column; gap:3px; line-height:1.2; white-space:nowrap; }
+  .asi-brand strong { font-size:16px; letter-spacing:.03em; font-weight:700; }
+  .asi-brand span { font-size:9px; letter-spacing:.10em; color:#E3C6A1; }
+  .asi-nav-links { display:flex; align-items:center; justify-content:flex-end; gap:clamp(12px,2vw,27px); }
+  .asi-nav-links a { padding:10px 1px; font-size:12px; font-weight:600; }
+  .asi-nav-links a:hover, .asi-nav-links a[aria-current="page"] { color:#E8C99E; }
+  .asi-nav-links .asi-nav-cta { background:#D8BB93; color:#24302B; padding:11px 17px; border-radius:4px; font-weight:700; text-align:center; }
+  .asi-nav-links .asi-nav-cta:hover { background:#F0D2AA; color:#24302B; }
+  .asi-global-header a:focus-visible, .asi-global-header button:focus-visible, .asi-back-to-top:focus-visible { outline:3px solid #F1BC76; outline-offset:3px; }
+  .asi-menu-toggle { display:none; appearance:none; border:1px solid #8F9691; border-radius:4px; padding:9px 13px; background:transparent; color:white; font:inherit; cursor:pointer; }
+  .asi-back-to-top { position:fixed; bottom:24px; right:24px; width:50px; height:50px; border:1px solid #C7AC8D; border-radius:50%; background:#29312F; color:#FFFFFF; box-shadow:0 4px 16px rgba(0,0,0,.3); z-index:2147483000; display:flex; align-items:center; justify-content:center; font:700 24px/1 Arial,sans-serif; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(10px); transition:opacity .15s ease,transform .15s ease,visibility .15s; }
+  .asi-back-to-top.asi-show { opacity:1; visibility:visible; transform:translateY(0); }
+  .asi-back-to-top:hover { background:#43534A; }
+  @media (max-width:780px) {
+    .asi-global-header .asi-nav-shell { min-height:62px; padding:9px 0; flex-wrap:wrap; }
+    .asi-brand strong { font-size:13px; }
+    .asi-brand span { font-size:8px; }
+    .asi-menu-toggle { display:block; margin-left:auto; }
+    .asi-nav-links { display:none; flex-direction:column; align-items:stretch; gap:0; width:100%; padding:7px 0 13px; border-top:1px solid #58615B; }
+    .asi-nav-links.asi-open { display:flex; }
+    .asi-nav-links a { padding:11px 10px; }
+    .asi-back-to-top { right:14px; bottom:15px; width:44px; height:44px; }
   }
+  @media (prefers-reduced-motion:reduce) { .asi-global-header .asi-nav-shell, .asi-back-to-top { transition:none!important; } }
+  html { scroll-padding-top:85px; }
 
-  .asi-site-footer { background: var(--asi-ink-dark); color: var(--asi-cream); margin-top: 60px; }
-  .asi-footer-inner { width: 94%; max-width: 1440px; margin: 0 auto; padding: 40px 0; font-size: 13px; line-height: 1.8; }
-  .asi-footer-brand { font-weight: 700; font-size: 15px; letter-spacing: .03em; margin: 0 0 8px; }
-  .asi-footer-inner a { color: var(--asi-gold); text-decoration: none; }
+  .footer { background:#1e2624; color:#ecede9; padding:48px 0; font-size:13px; margin-top: 60px; }
+  .footer a { color:#e2bd8d; }
+  .asi-footer-inner { width: 94%; max-width: 1440px; margin: 0 auto; line-height: 1.8; }
+  .asi-footer-brand { font-weight: 700; font-size: 15px; letter-spacing: .03em; margin: 0 0 8px; color: #fff; }
   .asi-footer-copy { opacity: .6; margin-top: 14px; }
-
-  .asi-back-to-top { position: fixed; right: 18px; bottom: 18px; width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--asi-ink); color: var(--asi-cream); font-size: 18px; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 90; }
-  .asi-back-to-top.asi-show { opacity: .9; pointer-events: auto; }
 </style>

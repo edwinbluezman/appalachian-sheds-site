@@ -1,0 +1,42 @@
+{
+  "root_cause": "Earlier website displayed approved pages in nested iframes; scrolling happened in child document, while sticky nav was only in parent. Back-to-top on parent never saw child scroll.",
+  "fix": "Add shared navigation and back-to-top to the actual approved HTML documents; replace iframe-based route wrappers with same-origin redirects to the actual pages. Hub V14 retains direct page layout.",
+  "approved_pages_patched": [
+    "antique-saltbox.html",
+    "appalachian-barn.html",
+    "appalachian-farmhouse.html",
+    "appalachian-firewood-shed.html",
+    "buildings-hub-v13.html",
+    "built-better.html",
+    "carriage-lane.html",
+    "country-cottage-with-shed-dormer.html",
+    "foxfire-cottage.html",
+    "grand-depot.html",
+    "homepage-v12.html",
+    "laurel-ridge.html",
+    "nordic-retreat.html",
+    "pine-ridge-shed.html",
+    "urban-studio.html"
+  ],
+  "routes_redirected": {
+    "index.html": "approved-pages/homepage-v12.html",
+    "craft/index.html": "../approved-pages/built-better.html",
+    "buildings/grand-depot/index.html": "../../approved-pages/grand-depot.html",
+    "buildings/appalachian-barn/index.html": "../../approved-pages/appalachian-barn.html",
+    "buildings/foxfire-cottage/index.html": "../../approved-pages/foxfire-cottage.html",
+    "buildings/pine-ridge-shed/index.html": "../../approved-pages/pine-ridge-shed.html",
+    "buildings/urban-studio/index.html": "../../approved-pages/urban-studio.html",
+    "buildings/laurel-ridge/index.html": "../../approved-pages/laurel-ridge.html",
+    "buildings/nordic-retreat/index.html": "../../approved-pages/nordic-retreat.html",
+    "buildings/country-cottage-with-shed-dormer/index.html": "../../approved-pages/country-cottage-with-shed-dormer.html",
+    "buildings/antique-saltbox/index.html": "../../approved-pages/antique-saltbox.html",
+    "buildings/appalachian-firewood-shed/index.html": "../../approved-pages/appalachian-firewood-shed.html",
+    "buildings/carriage-lane/index.html": "../../approved-pages/carriage-lane.html",
+    "buildings/appalachian-farmhouse/index.html": "../../approved-pages/appalachian-farmhouse.html"
+  },
+  "assets": [
+    "assets/ui/site-controls.css",
+    "assets/ui/site-controls.js"
+  ],
+  "production_note": "Staging review only; model pricing and content unchanged."
+}

@@ -1,0 +1,133 @@
+{
+  "files_modified": [
+    [
+      "Hub_V14_Standalone_Review.html",
+      "global header + back-to-top"
+    ],
+    [
+      "approved-pages/antique-saltbox.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/appalachian-barn.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/appalachian-farmhouse.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/appalachian-firewood-shed.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/buildings-hub-v13.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/built-better.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/carriage-lane.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/country-cottage-with-shed-dormer.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/foxfire-cottage.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/grand-depot.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/homepage-v12.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/laurel-ridge.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/nordic-retreat.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/pine-ridge-shed.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "approved-pages/urban-studio.html",
+      "back-to-top only; approved design preserved"
+    ],
+    [
+      "buildings/antique-saltbox/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/appalachian-barn/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/appalachian-farmhouse/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/appalachian-firewood-shed/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/carriage-lane/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/country-cottage-with-shed-dormer/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/foxfire-cottage/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/grand-depot/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/laurel-ridge/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/nordic-retreat/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/pine-ridge-shed/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "buildings/urban-studio/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "craft/index.html",
+      "global header + back-to-top"
+    ],
+    [
+      "index.html",
+      "global header + back-to-top"
+    ]
+  ],
+  "shared_assets": [
+    "assets/ui/site-controls.css",
+    "assets/ui/site-controls.js"
+  ],
+  "note": "Sticky header on all integrated primary routes; independent back-to-top on embedded approved HTML and hub. Existing price calculators unchanged."
+}

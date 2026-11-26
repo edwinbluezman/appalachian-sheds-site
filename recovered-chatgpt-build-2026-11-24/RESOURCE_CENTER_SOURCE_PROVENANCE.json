@@ -1,0 +1,606 @@
+{
+  "guide-02": {
+    "type": "guide",
+    "title": "Backyard Building Permits, Zoning & Setbacks Guide",
+    "source_file": "Backyard Building Permits, Zoning and Setbacks Guide.json",
+    "old_words": 1494,
+    "new_words": 1474,
+    "source_sections": 12,
+    "reference_urls": [
+      "https://codes.ohio.gov/ohio-revised-code/section-519.17"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-permits-zoning-and-setbacks-guide/"
+  },
+  "guide-04": {
+    "type": "guide",
+    "title": "Backyard Building Moisture Protection & Ground Contact Guide",
+    "source_file": "Backyard Building Moisture Protection.json",
+    "old_words": 2054,
+    "new_words": 1709,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-moisture-protection-and-ground-contact-guide/"
+  },
+  "guide-05": {
+    "type": "guide",
+    "title": "Backyard Building Access Planning Guide",
+    "source_file": "Backyard Building Access Planning Guide.json",
+    "old_words": 2024,
+    "new_words": 1648,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-access-planning-guide/"
+  },
+  "guide-06": {
+    "type": "guide",
+    "title": "Choosing the Right Size Guide",
+    "source_file": "Choosing the Right Size Guide.json",
+    "old_words": 2233,
+    "new_words": 1771,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/choosing-the-right-size-guide/"
+  },
+  "guide-07": {
+    "type": "guide",
+    "title": "Backyard Building Use Case Planning Guide",
+    "source_file": "Backyard Building Use Case Planning Guide.json",
+    "old_words": 1749,
+    "new_words": 1358,
+    "source_sections": 13,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-use-case-planning-guide/"
+  },
+  "guide-08": {
+    "type": "guide",
+    "title": "Backyard Building Customization Planning Guide",
+    "source_file": "Backyard Building Customization Planning Guide.json",
+    "old_words": 2042,
+    "new_words": 1782,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-customization-planning-guide/"
+  },
+  "guide-09": {
+    "type": "guide",
+    "title": "Roof Pitch Selection Guide",
+    "source_file": "Roof Pitch Selection Guide.json",
+    "old_words": 4221,
+    "new_words": 1392,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://www.asphaltroofing.org/installation-of-asphalt-shingles-on-lower-sloped-roofs/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/roof-pitch-selection-guide/"
+  },
+  "guide-10": {
+    "type": "guide",
+    "title": "Standard Features vs Optional Upgrades Guide",
+    "source_file": "Standard Features vs Optional Upgrades Guide..json",
+    "old_words": 1440,
+    "new_words": 1471,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/standard-features-vs-optional-upgrades-guide/"
+  },
+  "guide-11": {
+    "type": "guide",
+    "title": "Materials & Construction Standards Guide",
+    "source_file": "Materials.json",
+    "old_words": 2013,
+    "new_words": 1706,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/materials-and-construction-standards-guide/"
+  },
+  "guide-12": {
+    "type": "guide",
+    "title": "Payment, Deposits & Financing Options Guide",
+    "source_file": "Payment, Deposits.json",
+    "old_words": 2180,
+    "new_words": 1643,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/payment-deposits-and-financing-options-guide/"
+  },
+  "guide-13": {
+    "type": "guide",
+    "title": "Scheduling & What to Expect on Build Day",
+    "source_file": "Scheduling.json",
+    "old_words": 1643,
+    "new_words": 1306,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/scheduling-and-what-to-expect-on-build-day/"
+  },
+  "guide-14": {
+    "type": "guide",
+    "title": "Built-On-Site Construction Guide",
+    "source_file": "Built-On-Site Construction Guide.json",
+    "old_words": 1701,
+    "new_words": 1529,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/",
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/built-on-site-construction-guide/"
+  },
+  "guide-15": {
+    "type": "guide",
+    "title": "Electrical, HVAC & Utility-Ready Planning Guide",
+    "source_file": "Electrical, HVAC.json",
+    "old_words": 2087,
+    "new_words": 1488,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/electrical-hvac-and-utility-ready-planning-guide/"
+  },
+  "guide-16": {
+    "type": "guide",
+    "title": "Interior Finish Packages Guide",
+    "source_file": "Interior Finish Packages_ Turning a Weather-Tight Shell into a Finished Backyard Space.json",
+    "old_words": 2336,
+    "new_words": 1946,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/interior-finish-packages-guide/"
+  },
+  "guide-17": {
+    "type": "guide",
+    "title": "Ownership \u2014 Warranty, Maintenance & Long-Term Care",
+    "source_file": "Warranty, Maintenance.json",
+    "old_words": 2117,
+    "new_words": 1500,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/ownership-warranty-maintenance-and-long-term-care/"
+  },
+  "guide-18": {
+    "type": "guide",
+    "title": "Neighborhood Fit, HOA & Property Aesthetics Guide",
+    "source_file": "Neighborhood Fit, HOA.json",
+    "old_words": 1802,
+    "new_words": 1459,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://codes.ohio.gov/ohio-revised-code/section-519.17"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/neighborhood-fit-hoa-and-property-aesthetics-guide/"
+  },
+  "guide-19": {
+    "type": "guide",
+    "title": "How to Evaluate a Backyard Building Company",
+    "source_file": "How to Evaluate a Backyard Building Company Before You Decide.json",
+    "old_words": 1842,
+    "new_words": 1479,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/how-to-evaluate-a-backyard-building-company/"
+  },
+  "guide-20": {
+    "type": "guide",
+    "title": "Project Readiness Roadmap",
+    "source_file": "Project Readiness Roadmap.json",
+    "old_words": 2040,
+    "new_words": 1682,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/project-readiness-roadmap/"
+  },
+  "guide-21": {
+    "type": "guide",
+    "title": "Pre-Purchase Checklist",
+    "source_file": "Pre-Purchase Checklist.json",
+    "old_words": 2044,
+    "new_words": 1538,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/pre-purchase-checklist/"
+  },
+  "guide-22": {
+    "type": "guide",
+    "title": "Backyard Building Value Impact Guide",
+    "source_file": "Backyard Building Value Impact Guide.json",
+    "old_words": 1481,
+    "new_words": 1324,
+    "source_sections": 13,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-value-impact-guide/"
+  },
+  "guide-23": {
+    "type": "guide",
+    "title": "Expanded Buyer FAQ \u2014 Tough Questions",
+    "source_file": "Expanded Buyer FAQ \u2014 Tough Questions.json",
+    "old_words": 722,
+    "new_words": 754,
+    "source_sections": 7,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/expanded-buyer-faq-tough-questions/"
+  },
+  "guide-24": {
+    "type": "guide",
+    "title": "Backyard Building Process Guide",
+    "source_file": "Backyard Building Process Guide.json",
+    "old_words": 1780,
+    "new_words": 1440,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-process-guide/"
+  },
+  "option-01": {
+    "type": "option",
+    "title": "Options & Upgrades Pricing Overview",
+    "source_file": "Premium Options.json",
+    "old_words": 918,
+    "new_words": 1092,
+    "source_sections": 11,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/options-and-upgrades-pricing-overview/"
+  },
+  "option-02": {
+    "type": "option",
+    "title": "Site & Foundation Options",
+    "source_file": "Site.json",
+    "old_words": 2105,
+    "new_words": 1328,
+    "source_sections": 10,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/",
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/site-and-foundation-options/"
+  },
+  "option-03": {
+    "type": "option",
+    "title": "Flooring & Subfloor Options",
+    "source_file": "Floor Options.json",
+    "old_words": 1381,
+    "new_words": 1002,
+    "source_sections": 14,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/flooring-and-subfloor-options/"
+  },
+  "option-04": {
+    "type": "option",
+    "title": "Construction Materials & Structural Standards",
+    "source_file": "Construction Materials.json",
+    "old_words": 972,
+    "new_words": 1122,
+    "source_sections": 6,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/construction-materials-and-structural-standards/"
+  },
+  "option-06": {
+    "type": "option",
+    "title": "Electrical, Lighting, HVAC & Comfort Systems",
+    "source_file": "Electrical, Lighting, HVAC.json",
+    "old_words": 1964,
+    "new_words": 1018,
+    "source_sections": 7,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/electrical-lighting-hvac-and-comfort-systems/"
+  },
+  "option-07": {
+    "type": "option",
+    "title": "Floor Insulation & Underfloor Comfort Systems",
+    "source_file": "Floor Insulation.json",
+    "old_words": 775,
+    "new_words": 958,
+    "source_sections": 4,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/floor-insulation-and-underfloor-comfort-systems/"
+  },
+  "option-08": {
+    "type": "option",
+    "title": "Interior Finish Options",
+    "source_file": "Interior Finish Options.json",
+    "old_words": 441,
+    "new_words": 721,
+    "source_sections": 3,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/interior-finish-options/"
+  },
+  "option-09": {
+    "type": "option",
+    "title": "Interior Insulation \u2014 Wall & Ceiling Systems",
+    "source_file": "Interior Insulation, Wall.json",
+    "old_words": 1084,
+    "new_words": 1210,
+    "source_sections": 5,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/interior-insulation-wall-and-ceiling-systems/"
+  },
+  "option-10": {
+    "type": "option",
+    "title": "Lofts, Ladders & Stairs Options",
+    "source_file": "Lofts, Ladders.json",
+    "old_words": 855,
+    "new_words": 836,
+    "source_sections": 3,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/lofts-ladders-and-stairs-options/"
+  },
+  "option-11": {
+    "type": "option",
+    "title": "Plumbing & Water Utility Readiness",
+    "source_file": "Plumbing, Water.json",
+    "old_words": 1029,
+    "new_words": 1020,
+    "source_sections": 5,
+    "reference_urls": [
+      "https://ohio811.org/homeowners/",
+      "https://ohio811.org/private-utility-locating/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/plumbing-and-water-utility-readiness/"
+  },
+  "option-12": {
+    "type": "option",
+    "title": "Porches, Awnings, Dormers & Architectural Roofline Options",
+    "source_file": "Porches, Awnings, Dormers.json",
+    "old_words": 866,
+    "new_words": 1013,
+    "source_sections": 5,
+    "reference_urls": [
+      "https://www.asphaltroofing.org/installation-of-asphalt-shingles-on-lower-sloped-roofs/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/porches-awnings-dormers-and-architectural-roofline-options/"
+  },
+  "option-13": {
+    "type": "option",
+    "title": "Ramps, Steps & Landings \u2014 Building Access",
+    "source_file": "Ramps, Steps, Landings.json",
+    "old_words": 1795,
+    "new_words": 747,
+    "source_sections": 5,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/ramps-steps-and-landings-building-access/"
+  },
+  "option-14": {
+    "type": "option",
+    "title": "Roofing & Roofline Upgrades",
+    "source_file": "Roofing.json",
+    "old_words": 1811,
+    "new_words": 1146,
+    "source_sections": 8,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts",
+      "https://www.asphaltroofing.org/installation-of-asphalt-shingles-on-lower-sloped-roofs/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/roofing-and-roofline-upgrades/"
+  },
+  "option-15": {
+    "type": "option",
+    "title": "Shelving, Workbenches & Storage Options",
+    "source_file": "Shelving, Workbenches.json",
+    "old_words": 1064,
+    "new_words": 956,
+    "source_sections": 4,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/shelving-workbenches-and-storage-options/"
+  },
+  "option-17": {
+    "type": "option",
+    "title": "Ventilation & Moisture Control",
+    "source_file": "Ventilation.json",
+    "old_words": 815,
+    "new_words": 949,
+    "source_sections": 5,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/ventilation-and-moisture-control/"
+  },
+  "option-18": {
+    "type": "option",
+    "title": "Skylights & Overhead Daylight",
+    "source_file": "Skylights.json",
+    "old_words": 1079,
+    "new_words": 1201,
+    "source_sections": 7,
+    "reference_urls": [
+      "https://www.asphaltroofing.org/installation-of-asphalt-shingles-on-lower-sloped-roofs/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/skylights-and-overhead-daylight/"
+  },
+  "option-19": {
+    "type": "option",
+    "title": "Windows & Natural Light Options",
+    "source_file": "Windows Options.json",
+    "old_words": 2032,
+    "new_words": 1257,
+    "source_sections": 14,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/windows-and-natural-light-options/"
+  },
+  "option-20": {
+    "type": "option",
+    "title": "Paint, Stain & Exterior Finish Systems",
+    "source_file": "Paint, Stain, Exterior Finish Systems.json",
+    "old_words": 752,
+    "new_words": 861,
+    "source_sections": 6,
+    "reference_urls": [
+      "https://www.roseburg.com/wp-content/uploads/2021/01/DuraTemp_Install_081717-2.pdf",
+      "https://www.lpcorp.com/product-literature"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/paint-stain-and-exterior-finish-systems/"
+  },
+  "option-21": {
+    "type": "option",
+    "title": "Cupolas & Weathervanes",
+    "source_file": "CUPOLAS.json",
+    "old_words": 1436,
+    "new_words": 900,
+    "source_sections": 3,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/cupolas-and-weathervanes/"
+  },
+  "option-22": {
+    "type": "option",
+    "title": "Metal Roofing vs Architectural Shingles",
+    "source_file": "Metal Roofing vs Architectural Shingles.json",
+    "old_words": 1606,
+    "new_words": 1410,
+    "source_sections": 11,
+    "reference_urls": [
+      "https://www.asphaltroofing.org/installation-of-asphalt-shingles-on-lower-sloped-roofs/"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/metal-roofing-vs-architectural-shingles/"
+  },
+  "option-23": {
+    "type": "option",
+    "title": "Fascia & Trim Options",
+    "source_file": "Fascia.json",
+    "old_words": 1096,
+    "new_words": 1163,
+    "source_sections": 7,
+    "reference_urls": [
+      "https://www.roseburg.com/wp-content/uploads/2021/01/DuraTemp_Install_081717-2.pdf",
+      "https://www.lpcorp.com/product-literature"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/fascia-and-trim-options/"
+  },
+  "option-24": {
+    "type": "option",
+    "title": "Decorative Exterior Accents",
+    "source_file": "DECORATIVE EXTERIOR ACCENTS.json",
+    "old_words": 1469,
+    "new_words": 977,
+    "source_sections": 4,
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/decorative-exterior-accents/"
+  },
+  "option-25": {
+    "type": "option",
+    "title": "Flooring & Structural Floor Systems",
+    "source_file": "FLOORING.json",
+    "old_words": 915,
+    "new_words": 704,
+    "source_sections": 3,
+    "reference_urls": [
+      "https://bsesc.energy.gov/energy-basics/site-excavated-final-grade-sloped-away-home",
+      "https://bsesc.energy.gov/energy-basics/foundation-drain-gutters-downspouts"
+    ],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/flooring-and-structural-floor-systems/"
+  },
+  "guide-01": {
+    "type": "guide",
+    "title": "Backyard Building Site Preparation Guide",
+    "source_file": "Site Preparation-Guide-01 of 24.json",
+    "old_words": 2726,
+    "new_words": 596,
+    "source_sections": "hand-edited",
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-site-preparation-guide/"
+  },
+  "guide-03": {
+    "type": "guide",
+    "title": "Backyard Building Foundation Options Guide",
+    "source_file": "Backyard Building Foundation Options Guide.json",
+    "old_words": 1529,
+    "new_words": 555,
+    "source_sections": "hand-edited",
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/planning-guides/backyard-building-foundation-options-guide/"
+  },
+  "option-05": {
+    "type": "option",
+    "title": "Door & Entry Options",
+    "source_file": "Door Options.json",
+    "old_words": 1988,
+    "new_words": 520,
+    "source_sections": "hand-edited",
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/door-and-entry-options/"
+  },
+  "option-16": {
+    "type": "option",
+    "title": "Siding & Exterior Finishes",
+    "source_file": "Siding.json",
+    "old_words": 7490,
+    "new_words": 640,
+    "source_sections": "hand-edited",
+    "reference_urls": [],
+    "publication_status": "DRAFT \u2014 technical/editorial review required",
+    "route": "/options-upgrades/siding-and-exterior-finishes/"
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "version": "1.0",
+  "files_modified": 84,
+  "total_headings": 1990,
+  "records": [
+    {
+      "file": "Hub_V14_Standalone_Review.html",
+      "stylesheet": "assets/ui/asi-typography.css",
+      "headings": 16
+    },
+    {
+      "file": "planning-guides/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 34
+    },
+    {
+      "file": "planning-guides/built-on-site-construction-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 38
+    },
+    {
+      "file": "planning-guides/scheduling-and-what-to-expect-on-build-day/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 37
+    },
+    {
+      "file": "planning-guides/backyard-building-use-case-planning-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 34
+    },
+    {
+      "file": "planning-guides/backyard-building-access-planning-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 47
+    },
+    {
+      "file": "planning-guides/roof-pitch-selection-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 15
+    },
+    {
+      "file": "planning-guides/materials-and-construction-standards-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 45
+    },
+    {
+      "file": "planning-guides/payment-deposits-and-financing-options-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 46
+    },
+    {
+      "file": "planning-guides/backyard-building-site-preparation-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 21
+    },
+    {
+      "file": "planning-guides/backyard-building-foundation-options-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 21
+    },
+    {
+      "file": "planning-guides/neighborhood-fit-hoa-and-property-aesthetics-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 39
+    },
+    {
+      "file": "planning-guides/interior-finish-packages-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 43
+    },
+    {
+      "file": "planning-guides/pre-purchase-checklist/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 45
+    },
+    {
+      "file": "planning-guides/backyard-building-value-impact-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 34
+    },
+    {
+      "file": "planning-guides/backyard-building-moisture-protection-and-ground-contact-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 48
+    },
+    {
+      "file": "planning-guides/standard-features-vs-optional-upgrades-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 41
+    },
+    {
+      "file": "planning-guides/backyard-building-customization-planning-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 40
+    },
+    {
+      "file": "planning-guides/project-readiness-roadmap/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 51
+    },
+    {
+      "file": "planning-guides/ownership-warranty-maintenance-and-long-term-care/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 42
+    },
+    {
+      "file": "planning-guides/backyard-building-permits-zoning-and-setbacks-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 44
+    },
+    {
+      "file": "planning-guides/electrical-hvac-and-utility-ready-planning-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 45
+    },
+    {
+      "file": "planning-guides/how-to-evaluate-a-backyard-building-company/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 38
+    },
+    {
+      "file": "planning-guides/expanded-buyer-faq-tough-questions/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 18
+    },
+    {
+      "file": "planning-guides/backyard-building-process-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 44
+    },
+    {
+      "file": "planning-guides/choosing-the-right-size-guide/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 47
+    },
+    {
+      "file": "galleries/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 25
+    },
+    {
+      "file": "buildings/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 16
+    },
+    {
+      "file": "buildings/appalachian-farmhouse/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/antique-saltbox/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/laurel-ridge/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/urban-studio/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/grand-depot/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/appalachian-firewood-shed/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/foxfire-cottage/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/nordic-retreat/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/country-cottage-with-shed-dormer/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/pine-ridge-shed/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/appalachian-barn/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "buildings/carriage-lane/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 0
+    },
+    {
+      "file": "approved-pages/antique-saltbox.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 26
+    },
+    {
+      "file": "approved-pages/appalachian-farmhouse.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 10
+    },
+    {
+      "file": "approved-pages/laurel-ridge.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 14
+    },
+    {
+      "file": "approved-pages/built-better.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 25
+    },
+    {
+      "file": "approved-pages/urban-studio.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 21
+    },
+    {
+      "file": "approved-pages/homepage-v12.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 25
+    },
+    {
+      "file": "approved-pages/foxfire-cottage.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 13
+    },
+    {
+      "file": "approved-pages/buildings-hub-v13.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 11
+    },
+    {
+      "file": "approved-pages/appalachian-barn.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 8
+    },
+    {
+      "file": "approved-pages/appalachian-firewood-shed.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 13
+    },
+    {
+      "file": "approved-pages/pine-ridge-shed.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 12
+    },
+    {
+      "file": "approved-pages/country-cottage-with-shed-dormer.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 22
+    },
+    {
+      "file": "approved-pages/nordic-retreat.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 13
+    },
+    {
+      "file": "approved-pages/grand-depot.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 13
+    },
+    {
+      "file": "approved-pages/carriage-lane.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 22
+    },
+    {
+      "file": "options-gallery/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 18
+    },
+    {
+      "file": "resources/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 6
+    },
+    {
+      "file": "options-upgrades/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 29
+    },
+    {
+      "file": "options-upgrades/decorative-exterior-accents/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 23
+    },
+    {
+      "file": "options-upgrades/interior-insulation-wall-and-ceiling-systems/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 27
+    },
+    {
+      "file": "options-upgrades/windows-and-natural-light-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 27
+    },
+    {
+      "file": "options-upgrades/floor-insulation-and-underfloor-comfort-systems/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 25
+    },
+    {
+      "file": "options-upgrades/flooring-and-structural-floor-systems/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 19
+    },
+    {
+      "file": "options-upgrades/lofts-ladders-and-stairs-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 21
+    },
+    {
+      "file": "options-upgrades/options-and-upgrades-pricing-overview/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 41
+    },
+    {
+      "file": "options-upgrades/fascia-and-trim-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 35
+    },
+    {
+      "file": "options-upgrades/skylights-and-overhead-daylight/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 35
+    },
+    {
+      "file": "options-upgrades/plumbing-and-water-utility-readiness/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 25
+    },
+    {
+      "file": "options-upgrades/roofing-and-roofline-upgrades/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 31
+    },
+    {
+      "file": "options-upgrades/cupolas-and-weathervanes/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 20
+    },
+    {
+      "file": "options-upgrades/flooring-and-subfloor-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 24
+    },
+    {
+      "file": "options-upgrades/electrical-lighting-hvac-and-comfort-systems/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 27
+    },
+    {
+      "file": "options-upgrades/siding-and-exterior-finishes/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 24
+    },
+    {
+      "file": "options-upgrades/ramps-steps-and-landings-building-access/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 18
+    },
+    {
+      "file": "options-upgrades/paint-stain-and-exterior-finish-systems/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 30
+    },
+    {
+      "file": "options-upgrades/construction-materials-and-structural-standards/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 29
+    },
+    {
+      "file": "options-upgrades/metal-roofing-vs-architectural-shingles/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 36
+    },
+    {
+      "file": "options-upgrades/shelving-workbenches-and-storage-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 24
+    },
+    {
+      "file": "options-upgrades/ventilation-and-moisture-control/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 26
+    },
+    {
+      "file": "options-upgrades/door-and-entry-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 22
+    },
+    {
+      "file": "options-upgrades/porches-awnings-dormers-and-architectural-roofline-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 28
+    },
+    {
+      "file": "options-upgrades/interior-finish-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 20
+    },
+    {
+      "file": "options-upgrades/site-and-foundation-options/index.html",
+      "stylesheet": "../../assets/ui/asi-typography.css",
+      "headings": 38
+    },
+    {
+      "file": "craft/index.html",
+      "stylesheet": "../assets/ui/asi-typography.css",
+      "headings": 0
+    }
+  ]
+}

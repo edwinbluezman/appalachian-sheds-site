@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "carriage-lane",
+    "name": "The Carriage Lane",
+    "filename": "superior_standard_features_infographic.png",
+    "dimensions": "1448x1086",
+    "bytes": 2647941,
+    "sha256": "056471837692c55387783eacd47cf10d02165119b73e415afc0b02db1a248bbc"
+  },
+  {
+    "slug": "country-cottage-with-shed-dormer",
+    "name": "The Country Cottage with Shed Dormer",
+    "filename": "country_cottage_feature_showcase.png",
+    "dimensions": "1448x1086",
+    "bytes": 2601681,
+    "sha256": "12857ee2e021171c18f1971b2f08644e86eb475975fa09463ff9a75e34ee0bba"
+  },
+  {
+    "slug": "urban-studio",
+    "name": "The Urban Studio",
+    "filename": "ASI_Urban_Studio_Superior_Standard_Features_Original_Photo_Review.png",
+    "dimensions": "2000x1220",
+    "bytes": 1718743,
+    "sha256": "1242190a86dff49f23b2fade11434a533429d4ed5d1b90afacbda3d54af8b3bc"
+  },
+  {
+    "slug": "appalachian-farmhouse",
+    "name": "The Appalachian Farmhouse",
+    "filename": "appalachian_farmhouse_feature_guide.png",
+    "dimensions": "1448x1086",
+    "bytes": 2741671,
+    "sha256": "8ba52a565e88ef36a82983f39d522104d3f89f55fd88c274e827f90f8869b324"
+  },
+  {
+    "slug": "pine-ridge-shed",
+    "name": "The Pine Ridge Shed",
+    "filename": "pine_ridge_shed_superior_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2712414,
+    "sha256": "d037e9ec5a8dedd1cd045dd0549f97032765c803702f8efd68ffcdbda516236d"
+  },
+  {
+    "slug": "laurel-ridge",
+    "name": "The Laurel Ridge",
+    "filename": "the_laurel_ridge_standard_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2481893,
+    "sha256": "e0dd7b1674e54accc5380ddb2179b7b52f57f337b01d3ad560e48ba39de7b641"
+  },
+  {
+    "slug": "nordic-retreat",
+    "name": "The Nordic Retreat",
+    "filename": "nordic_retreat_superior_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2497468,
+    "sha256": "821201a22562d078bd11ea202da9b9a5cff470cd538a50af7093d352d376e4e7"
+  },
+  {
+    "slug": "foxfire-cottage",
+    "name": "The Foxfire Cottage",
+    "filename": "foxfire_cottage_standard_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2653582,
+    "sha256": "4dcdb3d632f1679705be6ff27918f0a474b692c346b82303bc5f2d558e508a34"
+  },
+  {
+    "slug": "grand-depot",
+    "name": "The Grand Depot",
+    "filename": "the_grand_depot_superior_standard_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2672925,
+    "sha256": "7eb5e8f73eca5fdfc8b7a6145e2551e9e092593a455e9c5a058d75922f1bfda5"
+  },
+  {
+    "slug": "appalachian-barn",
+    "name": "The Appalachian Barn",
+    "filename": "appalachian_barn_standard_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2625700,
+    "sha256": "cc967ab57f7e472028c0e187906c379115d3ca73fa60839c21f6477544cdc1d7"
+  },
+  {
+    "slug": "antique-saltbox",
+    "name": "The Antique Saltbox",
+    "filename": "appalachian_saltbox_features_infographic.png",
+    "dimensions": "1448x1086",
+    "bytes": 2767319,
+    "sha256": "c849bbef9fde39520e3cfaaf922d1ac3e21bcd49d2ccfdec9f1f63e4668d566e"
+  },
+  {
+    "slug": "appalachian-firewood-shed",
+    "name": "The Appalachian Firewood Shed",
+    "filename": "appalachian_firewood_shed_features.png",
+    "dimensions": "1448x1086",
+    "bytes": 2678784,
+    "sha256": "0bf796ba84301fe8355e2d253abd02dd7ecf6916efbc5e46409007d889b41969"
+  }
+]

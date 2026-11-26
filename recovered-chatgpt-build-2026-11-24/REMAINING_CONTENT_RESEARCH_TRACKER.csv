@@ -1,0 +1,50 @@
+type,no,title,priority,content_status,legacy_source,draft_route
+guide,1,Backyard Building Site Preparation Guide,P0,Detailed revised review draft completed,Site Preparation-Guide-01 of 24.json,/planning-guides/backyard-building-site-preparation-guide/
+guide,2,"Backyard Building Permits, Zoning & Setbacks Guide",P1,Short draft only — full editorial rewrite pending,"Backyard Building Permits, Zoning and Setbacks Guide.json",/planning-guides/backyard-building-permits-zoning-and-setbacks-guide/
+guide,3,Backyard Building Foundation Options Guide,P0,Detailed revised review draft completed,Backyard Building Foundation Options Guide.json,/planning-guides/backyard-building-foundation-options-guide/
+guide,4,Backyard Building Moisture Protection & Ground Contact Guide,P1,Short draft only — full editorial rewrite pending,Backyard Building Moisture Protection.json,/planning-guides/backyard-building-moisture-protection-and-ground-contact-guide/
+guide,5,Backyard Building Access Planning Guide,P2,Short draft only — full editorial rewrite pending,Backyard Building Access Planning Guide.json,/planning-guides/backyard-building-access-planning-guide/
+guide,6,Choosing the Right Size Guide,P2,Short draft only — full editorial rewrite pending,Choosing the Right Size Guide.json,/planning-guides/choosing-the-right-size-guide/
+guide,7,Backyard Building Use Case Planning Guide,P2,Short draft only — full editorial rewrite pending,Backyard Building Use Case Planning Guide.json,/planning-guides/backyard-building-use-case-planning-guide/
+guide,8,Backyard Building Customization Planning Guide,P2,Short draft only — full editorial rewrite pending,Backyard Building Customization Planning Guide.json,/planning-guides/backyard-building-customization-planning-guide/
+guide,9,Roof Pitch Selection Guide,P1,Short draft only — full editorial rewrite pending,Roof Pitch Selection Guide.json,/planning-guides/roof-pitch-selection-guide/
+guide,10,Standard Features vs Optional Upgrades Guide,P2,Short draft only — full editorial rewrite pending,Standard Features vs Optional Upgrades Guide..json,/planning-guides/standard-features-vs-optional-upgrades-guide/
+guide,11,Materials & Construction Standards Guide,P2,Short draft only — full editorial rewrite pending,Materials.json,/planning-guides/materials-and-construction-standards-guide/
+guide,12,"Payment, Deposits & Financing Options Guide",P2,Short draft only — full editorial rewrite pending,"Payment, Deposits.json",/planning-guides/payment-deposits-and-financing-options-guide/
+guide,13,Scheduling & What to Expect on Build Day,P2,Short draft only — full editorial rewrite pending,Scheduling.json,/planning-guides/scheduling-and-what-to-expect-on-build-day/
+guide,14,Built-On-Site Construction Guide,P1,Short draft only — full editorial rewrite pending,Built-On-Site Construction Guide.json,/planning-guides/built-on-site-construction-guide/
+guide,15,"Electrical, HVAC & Utility-Ready Planning Guide",P1,Short draft only — full editorial rewrite pending,"Electrical, HVAC.json",/planning-guides/electrical-hvac-and-utility-ready-planning-guide/
+guide,16,Interior Finish Packages Guide,P2,Short draft only — full editorial rewrite pending,Interior Finish Packages_ Turning a Weather-Tight Shell into a Finished Backyard Space.json,/planning-guides/interior-finish-packages-guide/
+guide,17,"Ownership — Warranty, Maintenance & Long-Term Care",P1,Short draft only — full editorial rewrite pending,"Warranty, Maintenance.json",/planning-guides/ownership-warranty-maintenance-and-long-term-care/
+guide,18,"Neighborhood Fit, HOA & Property Aesthetics Guide",P2,Short draft only — full editorial rewrite pending,"Neighborhood Fit, HOA.json",/planning-guides/neighborhood-fit-hoa-and-property-aesthetics-guide/
+guide,19,How to Evaluate a Backyard Building Company,P2,Short draft only — full editorial rewrite pending,How to Evaluate a Backyard Building Company Before You Decide.json,/planning-guides/how-to-evaluate-a-backyard-building-company/
+guide,20,Project Readiness Roadmap,P2,Short draft only — full editorial rewrite pending,Project Readiness Roadmap.json,/planning-guides/project-readiness-roadmap/
+guide,21,Pre-Purchase Checklist,P2,Short draft only — full editorial rewrite pending,Pre-Purchase Checklist.json,/planning-guides/pre-purchase-checklist/
+guide,22,Backyard Building Value Impact Guide,P2,Short draft only — full editorial rewrite pending,Backyard Building Value Impact Guide.json,/planning-guides/backyard-building-value-impact-guide/
+guide,23,Expanded Buyer FAQ — Tough Questions,P2,Short draft only — full editorial rewrite pending,Expanded Buyer FAQ — Tough Questions.json,/planning-guides/expanded-buyer-faq-tough-questions/
+guide,24,Backyard Building Process Guide,P2,Short draft only — full editorial rewrite pending,Backyard Building Process Guide.json,/planning-guides/backyard-building-process-guide/
+option,1,Options & Upgrades Pricing Overview,P1,Short draft only — full editorial rewrite pending,Premium Options.json,/options-upgrades/options-and-upgrades-pricing-overview/
+option,2,Site & Foundation Options,P1,Short draft only — full editorial rewrite pending,Site.json,/options-upgrades/site-and-foundation-options/
+option,3,Flooring & Subfloor Options,P2,Short draft only — full editorial rewrite pending,Floor Options.json,/options-upgrades/flooring-and-subfloor-options/
+option,4,Construction Materials & Structural Standards,P1,Short draft only — full editorial rewrite pending,Construction Materials.json,/options-upgrades/construction-materials-and-structural-standards/
+option,5,Door & Entry Options,P0,Detailed revised review draft completed,Door Options.json,/options-upgrades/door-and-entry-options/
+option,6,"Electrical, Lighting, HVAC & Comfort Systems",P1,Short draft only — full editorial rewrite pending,"Electrical, Lighting, HVAC.json",/options-upgrades/electrical-lighting-hvac-and-comfort-systems/
+option,7,Floor Insulation & Underfloor Comfort Systems,P1,Short draft only — full editorial rewrite pending,Floor Insulation.json,/options-upgrades/floor-insulation-and-underfloor-comfort-systems/
+option,8,Interior Finish Options,P2,Short draft only — full editorial rewrite pending,Interior Finish Options.json,/options-upgrades/interior-finish-options/
+option,9,Interior Insulation — Wall & Ceiling Systems,P1,Short draft only — full editorial rewrite pending,"Interior Insulation, Wall.json",/options-upgrades/interior-insulation-wall-and-ceiling-systems/
+option,10,"Lofts, Ladders & Stairs Options",P2,Short draft only — full editorial rewrite pending,"Lofts, Ladders.json",/options-upgrades/lofts-ladders-and-stairs-options/
+option,11,Plumbing & Water Utility Readiness,P1,Short draft only — full editorial rewrite pending,"Plumbing, Water.json",/options-upgrades/plumbing-and-water-utility-readiness/
+option,12,"Porches, Awnings, Dormers & Architectural Roofline Options",P1,Short draft only — full editorial rewrite pending,"Porches, Awnings, Dormers.json",/options-upgrades/porches-awnings-dormers-and-architectural-roofline-options/
+option,13,"Ramps, Steps & Landings — Building Access",P2,Short draft only — full editorial rewrite pending,"Ramps, Steps, Landings.json",/options-upgrades/ramps-steps-and-landings-building-access/
+option,14,Roofing & Roofline Upgrades,P1,Short draft only — full editorial rewrite pending,Roofing.json,/options-upgrades/roofing-and-roofline-upgrades/
+option,15,"Shelving, Workbenches & Storage Options",P2,Short draft only — full editorial rewrite pending,"Shelving, Workbenches.json",/options-upgrades/shelving-workbenches-and-storage-options/
+option,16,Siding & Exterior Finishes,P0,Detailed revised review draft completed,Siding.json,/options-upgrades/siding-and-exterior-finishes/
+option,17,Ventilation & Moisture Control,P1,Short draft only — full editorial rewrite pending,Ventilation.json,/options-upgrades/ventilation-and-moisture-control/
+option,18,Skylights & Overhead Daylight,P2,Short draft only — full editorial rewrite pending,Skylights.json,/options-upgrades/skylights-and-overhead-daylight/
+option,19,Windows & Natural Light Options,P2,Short draft only — full editorial rewrite pending,Windows Options.json,/options-upgrades/windows-and-natural-light-options/
+option,20,"Paint, Stain & Exterior Finish Systems",P2,Short draft only — full editorial rewrite pending,"Paint, Stain, Exterior Finish Systems.json",/options-upgrades/paint-stain-and-exterior-finish-systems/
+option,21,Cupolas & Weathervanes,P2,Short draft only — full editorial rewrite pending,CUPOLAS.json,/options-upgrades/cupolas-and-weathervanes/
+option,22,Metal Roofing vs Architectural Shingles,P1,Short draft only — full editorial rewrite pending,Metal Roofing vs Architectural Shingles.json,/options-upgrades/metal-roofing-vs-architectural-shingles/
+option,23,Fascia & Trim Options,P2,Short draft only — full editorial rewrite pending,Fascia.json,/options-upgrades/fascia-and-trim-options/
+option,24,Decorative Exterior Accents,P2,Short draft only — full editorial rewrite pending,DECORATIVE EXTERIOR ACCENTS.json,/options-upgrades/decorative-exterior-accents/
+option,25,Flooring & Structural Floor Systems,P1,Short draft only — full editorial rewrite pending,FLOORING.json,/options-upgrades/flooring-and-structural-floor-systems/

@@ -1,0 +1,27 @@
+[
+  {
+    "url": "/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8890/\nCall log:\n  - navigating to \"http://127.0.0.1:8890/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "url": "/buildings/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8890/buildings/\nCall log:\n  - navigating to \"http://127.0.0.1:8890/buildings/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "url": "/buildings/carriage-lane/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8890/buildings/carriage-lane/\nCall log:\n  - navigating to \"http://127.0.0.1:8890/buildings/carriage-lane/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "url": "/buildings/urban-studio/",
+    "width": 390,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8890/buildings/urban-studio/\nCall log:\n  - navigating to \"http://127.0.0.1:8890/buildings/urban-studio/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "url": "/buildings/laurel-ridge/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8890/buildings/laurel-ridge/\nCall log:\n  - navigating to \"http://127.0.0.1:8890/buildings/laurel-ridge/\", waiting until \"domcontentloaded\"\n"
+  }
+]

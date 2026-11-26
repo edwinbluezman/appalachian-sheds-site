@@ -1,0 +1,97 @@
+model_slug,model_name,slot_id,requested_view,photo_file,photo_verified,visible_upgrades,caption,status
+carriage-lane,The Carriage Lane,carriage-lane-01,Three-quarter front view,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-02,Alternate front view,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-03,Side elevation,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-04,Rear elevation,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-05,Alternate siding & color,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-06,Doors and windows detail,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-07,Roofline and trim detail,,No,,,Awaiting photo
+carriage-lane,The Carriage Lane,carriage-lane-08,Residential backyard context,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-01,Three-quarter front view,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-02,Alternate front view,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-03,Side elevation,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-04,Rear elevation,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-05,Alternate siding & color,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-06,Doors and windows detail,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-07,Roofline and trim detail,,No,,,Awaiting photo
+country-cottage-with-shed-dormer,The Country Cottage with Shed Dormer,country-cottage-with-shed-dormer-08,Residential backyard context,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-01,Three-quarter front view,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-02,Alternate front view,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-03,Side elevation,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-04,Rear elevation,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-05,Alternate siding & color,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-06,Doors and windows detail,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-07,Roofline and trim detail,,No,,,Awaiting photo
+urban-studio,The Urban Studio,urban-studio-08,Residential backyard context,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-01,Three-quarter front view,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-02,Alternate front view,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-03,Side elevation,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-04,Rear elevation,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-05,Alternate siding & color,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-06,Doors and windows detail,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-07,Roofline and trim detail,,No,,,Awaiting photo
+appalachian-farmhouse,The Appalachian Farmhouse,appalachian-farmhouse-08,Residential backyard context,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-01,Three-quarter front view,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-02,Alternate front view,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-03,Side elevation,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-04,Rear elevation,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-05,Alternate siding & color,,No,,,Awaiting photo
+pine-ridge-shed,The Pine Ridge Shed,pine-ridge-shed-06,Doors and windows detail,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-01,Attached configuration,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-02,Stand-alone configuration,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-03,Three-quarter front view,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-04,Alternate front view,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-05,Side elevation,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-06,Rear elevation,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-07,Alternate siding & color,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-08,Doors and windows detail,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-09,Roofline and trim detail,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-10,Residential backyard context,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-11,Attached configuration,,No,,,Awaiting photo
+laurel-ridge,The Laurel Ridge,laurel-ridge-12,Stand-alone configuration,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-01,Three-quarter front view,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-02,Alternate front view,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-03,Side elevation,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-04,Rear elevation,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-05,Alternate siding & color,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-06,Doors and windows detail,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-07,Roofline and trim detail,,No,,,Awaiting photo
+nordic-retreat,The Nordic Retreat,nordic-retreat-08,Residential backyard context,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-01,Three-quarter front view,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-02,Alternate front view,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-03,Side elevation,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-04,Rear elevation,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-05,Alternate siding & color,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-06,Doors and windows detail,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-07,Roofline and trim detail,,No,,,Awaiting photo
+foxfire-cottage,The Foxfire Cottage,foxfire-cottage-08,Residential backyard context,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-01,Three-quarter front view,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-02,Alternate front view,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-03,Side elevation,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-04,Rear elevation,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-05,Alternate siding & color,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-06,Doors and windows detail,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-07,Roofline and trim detail,,No,,,Awaiting photo
+grand-depot,The Grand Depot,grand-depot-08,Residential backyard context,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-01,Three-quarter front view,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-02,Alternate front view,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-03,Side elevation,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-04,Rear elevation,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-05,Alternate siding & color,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-06,Doors and windows detail,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-07,Roofline and trim detail,,No,,,Awaiting photo
+appalachian-barn,The Appalachian Barn,appalachian-barn-08,Residential backyard context,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-01,Three-quarter front view,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-02,Alternate front view,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-03,Side elevation,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-04,Rear elevation,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-05,Alternate siding & color,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-06,Doors and windows detail,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-07,Roofline and trim detail,,No,,,Awaiting photo
+antique-saltbox,The Antique Saltbox,antique-saltbox-08,Residential backyard context,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-01,Three-quarter front view,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-02,Alternate front view,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-03,Side elevation,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-04,Rear elevation,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-05,Alternate siding & color,,No,,,Awaiting photo
+appalachian-firewood-shed,The Appalachian Firewood Shed,appalachian-firewood-shed-06,Doors and windows detail,,No,,,Awaiting photo

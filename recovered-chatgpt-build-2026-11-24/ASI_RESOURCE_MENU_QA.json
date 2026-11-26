@@ -1,0 +1,31 @@
+{
+  "headers_updated": 69,
+  "links_validated": 414,
+  "new_items": [
+    [
+      "Home",
+      "/"
+    ],
+    [
+      "Buildings & Pricing",
+      "/buildings/"
+    ],
+    [
+      "Building Guides",
+      "/planning-guides/"
+    ],
+    [
+      "Options & Upgrades",
+      "/options-upgrades/"
+    ],
+    [
+      "Built Better",
+      "/craft/"
+    ],
+    [
+      "See Your Price",
+      "/buildings/#the-collection"
+    ]
+  ],
+  "errors": []
+}

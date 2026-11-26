@@ -1,0 +1,38 @@
+/* Appalachian Sheds Inc. — Shared Type System v1.0 | 2026-11-23
+   Last-in-cascade stabilization for staging HTML; migrate to Astro global.css.
+   H1 = Merriweather Italic. H2/H3 = Montserrat Italic. Body = Montserrat Italic.
+   Capitalization affects visible headings only, without rewriting source copy. */
+:root{
+  --asi-type-heading-serif:'Merriweather',Georgia,serif;
+  --asi-type-sans:'Montserrat',Arial,sans-serif;
+  --asi-h1-size:clamp(2.05rem,4.05vw,4.15rem);
+  --asi-h2-size:clamp(1.48rem,2.6vw,2.45rem);
+  --asi-h3-size:clamp(1.08rem,1.45vw,1.35rem);
+}
+/* Keep brand/navigation/forms typography untouched. */
+body{font-family:var(--asi-type-sans)!important;font-style:italic;}
+main h1,main h2,main h3,
+body > section h1,body > section h2,body > section h3,
+.hero h1,.hero h2,.section-title h1,.section-title h2,
+h1,h2,h3{
+  font-style:italic!important;
+  text-transform:capitalize!important;
+  font-variant:normal!important;
+  hyphens:none;
+  overflow-wrap:normal;
+}
+h1{font-family:var(--asi-type-heading-serif)!important;font-weight:700!important;font-size:var(--asi-h1-size)!important;line-height:1.22!important;letter-spacing:-.025em!important;}
+h2{font-family:var(--asi-type-sans)!important;font-weight:700!important;font-size:var(--asi-h2-size)!important;line-height:1.30!important;letter-spacing:-.015em!important;}
+h3{font-family:var(--asi-type-sans)!important;font-weight:650!important;font-size:var(--asi-h3-size)!important;line-height:1.40!important;letter-spacing:-.005em!important;}
+/* Smaller model-card/FAQ headings retain hierarchy while sharing typeface. */
+.asi-cost-review h2,.asi-option-mini-gallery h2{font-size:clamp(1.38rem,2vw,1.9rem)!important;}
+.tile h3,.card h3,.model-card h3,.asi-card h3,.feature-card h3,.faq h3{font-size:clamp(1rem,1.3vw,1.24rem)!important;}
+/* Supporting prose: same family, lighter than headings, naturally italic. */
+body p,body li,body td,body th,body label,body figcaption,body blockquote{font-family:var(--asi-type-sans);font-style:italic;}
+/* Never force headline styles onto the site navigation, badge labels or button text. */
+.asi-global-header,.asi-global-header *{font-family:var(--asi-type-sans);}
+@media(max-width:650px){
+ :root{--asi-h1-size:clamp(1.95rem,8vw,2.8rem);--asi-h2-size:clamp(1.35rem,5.2vw,1.95rem);--asi-h3-size:1.08rem;}
+ h1,h2,h3{overflow-wrap:break-word;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

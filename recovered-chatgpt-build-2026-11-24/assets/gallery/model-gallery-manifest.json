@@ -1,0 +1,446 @@
+{
+  "carriage-lane": {
+    "name": "The Carriage Lane",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/carriage-lane/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Carriage Lane \u2014 full exterior view derived from the approved Carriage Lane photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Previously approved Carriage Lane gallery"
+      },
+      {
+        "src": "/assets/gallery/model-photos/carriage-lane/02-craftsman-double-doors.jpg",
+        "label": "Craftsman Double Doors",
+        "alt": "The Carriage Lane \u2014 craftsman double doors derived from the approved Carriage Lane photograph",
+        "width": 335,
+        "height": 395,
+        "source": "Previously approved Carriage Lane gallery"
+      },
+      {
+        "src": "/assets/gallery/model-photos/carriage-lane/03-paired-windows-shutters.jpg",
+        "label": "Paired Windows & Shutters",
+        "alt": "The Carriage Lane \u2014 paired windows & shutters derived from the approved Carriage Lane photograph",
+        "width": 258,
+        "height": 314,
+        "source": "Previously approved Carriage Lane gallery"
+      },
+      {
+        "src": "/assets/gallery/model-photos/carriage-lane/04-roofline-cedar-trim.jpg",
+        "label": "Roofline & Cedar Trim",
+        "alt": "The Carriage Lane \u2014 roofline & cedar trim derived from the approved Carriage Lane photograph",
+        "width": 845,
+        "height": 218,
+        "source": "Previously approved Carriage Lane gallery"
+      }
+    ]
+  },
+  "country-cottage-with-shed-dormer": {
+    "name": "The Country Cottage with Shed Dormer",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/country-cottage-with-shed-dormer/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Country Cottage with Shed Dormer \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/country-cottage-with-shed-dormer/02-craftsman-double-doors.jpg",
+        "label": "Craftsman Double Doors",
+        "alt": "The Country Cottage with Shed Dormer \u2014 craftsman double doors cropped from the approved model pricing photograph",
+        "width": 622,
+        "height": 466,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/country-cottage-with-shed-dormer/03-dormer-upper-windows.jpg",
+        "label": "Dormer & Upper Windows",
+        "alt": "The Country Cottage with Shed Dormer \u2014 dormer & upper windows cropped from the approved model pricing photograph",
+        "width": 684,
+        "height": 513,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/country-cottage-with-shed-dormer/04-gable-roof-cedar-details.jpg",
+        "label": "Gable Roof & Cedar Details",
+        "alt": "The Country Cottage with Shed Dormer \u2014 gable roof & cedar details cropped from the approved model pricing photograph",
+        "width": 540,
+        "height": 405,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "urban-studio": {
+    "name": "The Urban Studio",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/urban-studio/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Urban Studio \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/urban-studio/02-craftsman-double-doors.jpg",
+        "label": "Craftsman Double Doors",
+        "alt": "The Urban Studio \u2014 craftsman double doors cropped from the approved model pricing photograph",
+        "width": 562,
+        "height": 422,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/urban-studio/03-windows-cedar-surrounds.jpg",
+        "label": "Windows & Cedar Surrounds",
+        "alt": "The Urban Studio \u2014 windows & cedar surrounds cropped from the approved model pricing photograph",
+        "width": 502,
+        "height": 377,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/urban-studio/04-2-12-single-slope-roofline.jpg",
+        "label": "2/12 Single-Slope Roofline",
+        "alt": "The Urban Studio \u2014 2/12 single-slope roofline cropped from the approved model pricing photograph",
+        "width": 900,
+        "height": 675,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "appalachian-farmhouse": {
+    "name": "The Appalachian Farmhouse",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/appalachian-farmhouse/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Appalachian Farmhouse \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-farmhouse/02-front-entry-porch.jpg",
+        "label": "Front Entry & Porch",
+        "alt": "The Appalachian Farmhouse \u2014 front entry & porch cropped from the approved model pricing photograph",
+        "width": 622,
+        "height": 466,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-farmhouse/03-windows-shutters.jpg",
+        "label": "Windows & Shutters",
+        "alt": "The Appalachian Farmhouse \u2014 windows & shutters cropped from the approved model pricing photograph",
+        "width": 466,
+        "height": 349,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-farmhouse/04-8-12-roof-porch-trim.jpg",
+        "label": "8/12 Roof & Porch Trim",
+        "alt": "The Appalachian Farmhouse \u2014 8/12 roof & porch trim cropped from the approved model pricing photograph",
+        "width": 840,
+        "height": 630,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "pine-ridge-shed": {
+    "name": "The Pine Ridge Shed",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/pine-ridge-shed/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Pine Ridge Shed \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/pine-ridge-shed/02-craftsman-double-doors.jpg",
+        "label": "Craftsman Double Doors",
+        "alt": "The Pine Ridge Shed \u2014 craftsman double doors cropped from the approved model pricing photograph",
+        "width": 562,
+        "height": 422,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/pine-ridge-shed/03-window-timber-trim.jpg",
+        "label": "Window & Timber Trim",
+        "alt": "The Pine Ridge Shed \u2014 window & timber trim cropped from the approved model pricing photograph",
+        "width": 514,
+        "height": 386,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/pine-ridge-shed/04-8-12-gable-roof-brackets.jpg",
+        "label": "8/12 Gable Roof & Brackets",
+        "alt": "The Pine Ridge Shed \u2014 8/12 gable roof & brackets cropped from the approved model pricing photograph",
+        "width": 912,
+        "height": 684,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "laurel-ridge": {
+    "name": "The Laurel Ridge",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/laurel-ridge/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Laurel Ridge \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1300,
+        "height": 975,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/laurel-ridge/02-cedar-double-doors.jpg",
+        "label": "Cedar Double Doors",
+        "alt": "The Laurel Ridge \u2014 cedar double doors cropped from the approved model pricing photograph",
+        "width": 676,
+        "height": 507,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/laurel-ridge/03-siding-door-hardware.jpg",
+        "label": "Siding & Door Hardware",
+        "alt": "The Laurel Ridge \u2014 siding & door hardware cropped from the approved model pricing photograph",
+        "width": 533,
+        "height": 399,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/laurel-ridge/04-lean-to-roof-wall-flashing.jpg",
+        "label": "Lean-To Roof & Wall Flashing",
+        "alt": "The Laurel Ridge \u2014 lean-to roof & wall flashing cropped from the approved model pricing photograph",
+        "width": 715,
+        "height": 536,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "nordic-retreat": {
+    "name": "The Nordic Retreat",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/nordic-retreat/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Nordic Retreat \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1195,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/nordic-retreat/02-recessed-entry-glass-door.jpg",
+        "label": "Recessed Entry & Glass Door",
+        "alt": "The Nordic Retreat \u2014 recessed entry & glass door cropped from the approved model pricing photograph",
+        "width": 597,
+        "height": 448,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/nordic-retreat/03-expansive-corner-glazing.jpg",
+        "label": "Expansive Corner Glazing",
+        "alt": "The Nordic Retreat \u2014 expansive corner glazing cropped from the approved model pricing photograph",
+        "width": 622,
+        "height": 466,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/nordic-retreat/04-10-12-roofline-dark-cladding.jpg",
+        "label": "10/12 Roofline & Dark Cladding",
+        "alt": "The Nordic Retreat \u2014 10/12 roofline & dark cladding cropped from the approved model pricing photograph",
+        "width": 801,
+        "height": 600,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "foxfire-cottage": {
+    "name": "The Foxfire Cottage",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/foxfire-cottage/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Foxfire Cottage \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1448,
+        "height": 1086,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/foxfire-cottage/02-craftsman-double-doors.jpg",
+        "label": "Craftsman Double Doors",
+        "alt": "The Foxfire Cottage \u2014 craftsman double doors cropped from the approved model pricing photograph",
+        "width": 753,
+        "height": 564,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/foxfire-cottage/03-window-timber-accents.jpg",
+        "label": "Window & Timber Accents",
+        "alt": "The Foxfire Cottage \u2014 window & timber accents cropped from the approved model pricing photograph",
+        "width": 593,
+        "height": 445,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/foxfire-cottage/04-9-12-roofline-gable-detail.jpg",
+        "label": "9/12 Roofline & Gable Detail",
+        "alt": "The Foxfire Cottage \u2014 9/12 roofline & gable detail cropped from the approved model pricing photograph",
+        "width": 1115,
+        "height": 836,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "grand-depot": {
+    "name": "The Grand Depot",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/grand-depot/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Grand Depot \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 896,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/grand-depot/02-red-craftsman-double-doors.jpg",
+        "label": "Red Craftsman Double Doors",
+        "alt": "The Grand Depot \u2014 red craftsman double doors cropped from the approved model pricing photograph",
+        "width": 538,
+        "height": 403,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/grand-depot/03-windows-shutters.jpg",
+        "label": "Windows & Shutters",
+        "alt": "The Grand Depot \u2014 windows & shutters cropped from the approved model pricing photograph",
+        "width": 502,
+        "height": 377,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/grand-depot/04-9-12-gable-roof-upper-window.jpg",
+        "label": "9/12 Gable Roof & Upper Window",
+        "alt": "The Grand Depot \u2014 9/12 gable roof & upper window cropped from the approved model pricing photograph",
+        "width": 624,
+        "height": 468,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "appalachian-barn": {
+    "name": "The Appalachian Barn",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/appalachian-barn/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Appalachian Barn \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1448,
+        "height": 1086,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-barn/02-barn-double-doors.jpg",
+        "label": "Barn Double Doors",
+        "alt": "The Appalachian Barn \u2014 barn double doors cropped from the approved model pricing photograph",
+        "width": 840,
+        "height": 629,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-barn/03-firewood-storage-bay.jpg",
+        "label": "Firewood Storage Bay",
+        "alt": "The Appalachian Barn \u2014 firewood storage bay cropped from the approved model pricing photograph",
+        "width": 681,
+        "height": 511,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-barn/04-gambrel-roof-profile.jpg",
+        "label": "Gambrel Roof Profile",
+        "alt": "The Appalachian Barn \u2014 gambrel roof profile cropped from the approved model pricing photograph",
+        "width": 883,
+        "height": 662,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "antique-saltbox": {
+    "name": "The Antique Saltbox",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/antique-saltbox/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Antique Saltbox \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 1200,
+        "height": 739,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/antique-saltbox/02-double-glass-entry-doors.jpg",
+        "label": "Double Glass Entry Doors",
+        "alt": "The Antique Saltbox \u2014 double glass entry doors cropped from the approved model pricing photograph",
+        "width": 472,
+        "height": 354,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/antique-saltbox/03-windows-cedar-trim.jpg",
+        "label": "Windows & Cedar Trim",
+        "alt": "The Antique Saltbox \u2014 windows & cedar trim cropped from the approved model pricing photograph",
+        "width": 420,
+        "height": 315,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/antique-saltbox/04-historic-saltbox-roofline.jpg",
+        "label": "Historic Saltbox Roofline",
+        "alt": "The Antique Saltbox \u2014 historic saltbox roofline cropped from the approved model pricing photograph",
+        "width": 876,
+        "height": 657,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  },
+  "appalachian-firewood-shed": {
+    "name": "The Appalachian Firewood Shed",
+    "slots": [
+      {
+        "src": "/assets/gallery/model-photos/appalachian-firewood-shed/01-full-exterior-view.jpg",
+        "label": "Full Exterior View",
+        "alt": "The Appalachian Firewood Shed \u2014 full exterior view cropped from the approved model pricing photograph",
+        "width": 2048,
+        "height": 1529,
+        "source": "Exact approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-firewood-shed/02-open-firewood-storage.jpg",
+        "label": "Open Firewood Storage",
+        "alt": "The Appalachian Firewood Shed \u2014 open firewood storage cropped from the approved model pricing photograph",
+        "width": 999,
+        "height": 750,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-firewood-shed/03-cedar-sidewall-trim.jpg",
+        "label": "Cedar Sidewall & Trim",
+        "alt": "The Appalachian Firewood Shed \u2014 cedar sidewall & trim cropped from the approved model pricing photograph",
+        "width": 1040,
+        "height": 780,
+        "source": "Crop of approved pricing-page hero image"
+      },
+      {
+        "src": "/assets/gallery/model-photos/appalachian-firewood-shed/04-5-12-gable-roof-fascia.jpg",
+        "label": "5/12 Gable Roof & Fascia",
+        "alt": "The Appalachian Firewood Shed \u2014 5/12 gable roof & fascia cropped from the approved model pricing photograph",
+        "width": 1495,
+        "height": 1121,
+        "source": "Crop of approved pricing-page hero image"
+      }
+    ]
+  }
+}

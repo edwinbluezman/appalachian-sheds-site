@@ -1,0 +1,130 @@
+[
+  {
+    "id": 5,
+    "title": "Door styles",
+    "desc": "Compare wood Craftsman, glazed fiberglass, glass doors and opening configurations.",
+    "page": "/options-upgrades/door-and-entry-options/",
+    "group": "Openings & Access",
+    "slots": 3
+  },
+  {
+    "id": 19,
+    "title": "Window choices",
+    "desc": "Compare daylight, proportions, muntins, opening types and placement.",
+    "page": "/options-upgrades/windows-and-natural-light-options/",
+    "group": "Openings & Access",
+    "slots": 3
+  },
+  {
+    "id": 16,
+    "title": "Exterior siding",
+    "desc": "Compare surface texture, horizontal vs vertical patterns and color character.",
+    "page": "/options-upgrades/siding-and-exterior-finishes/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 20,
+    "title": "Finish systems",
+    "desc": "Show painted/stained cedar and two-tone schemes on true-to-material samples.",
+    "page": "/options-upgrades/paint-stain-and-exterior-finish-systems/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 14,
+    "title": "Roof finish",
+    "desc": "Compare visible shingle/metal profiles and eaves, not hidden underlayments.",
+    "page": "/options-upgrades/roofing-and-roofline-upgrades/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 22,
+    "title": "Metal vs shingle",
+    "desc": "Show close details of panel seams, fasteners and architectural shingles.",
+    "page": "/options-upgrades/metal-roofing-vs-architectural-shingles/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 21,
+    "title": "Cupolas",
+    "desc": "Show proportion, size and style on different roof profiles.",
+    "page": "/options-upgrades/cupolas-and-weathervanes/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 24,
+    "title": "Decorative accents",
+    "desc": "Show shutters, flower boxes and gable bracket details at scale.",
+    "page": "/options-upgrades/decorative-exterior-accents/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 23,
+    "title": "Exterior trim",
+    "desc": "Show cedar/PVC trim differences at actual corner, fascia and opening conditions.",
+    "page": "/options-upgrades/fascia-and-trim-options/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 12,
+    "title": "Roofline features",
+    "desc": "Show dormers, porches and awnings on real and accurate rooflines.",
+    "page": "/options-upgrades/porches-awnings-dormers-and-architectural-roofline-options/",
+    "group": "Structure & Exterior",
+    "slots": 3
+  },
+  {
+    "id": 13,
+    "title": "Ramps and steps",
+    "desc": "Show ramp width, rise, clear door width and equipment scale.",
+    "page": "/options-upgrades/ramps-steps-and-landings-building-access/",
+    "group": "Openings & Access",
+    "slots": 3
+  },
+  {
+    "id": 18,
+    "title": "Skylights",
+    "desc": "Compare curb, glazing and roof integration details.",
+    "page": "/options-upgrades/skylights-and-overhead-daylight/",
+    "group": "Openings & Access",
+    "slots": 3
+  },
+  {
+    "id": 10,
+    "title": "Loft configurations",
+    "desc": "Illustrate storage loft layout, guarding and clearance.",
+    "page": "/options-upgrades/lofts-ladders-and-stairs-options/",
+    "group": "Storage & Function",
+    "slots": 3
+  },
+  {
+    "id": 15,
+    "title": "Shelving and workbenches",
+    "desc": "Show storage capacity, height, spacing and support methods.",
+    "page": "/options-upgrades/shelving-workbenches-and-storage-options/",
+    "group": "Storage & Function",
+    "slots": 3
+  },
+  {
+    "id": 8,
+    "title": "Interior finish options",
+    "desc": "Show clearly marked optional finishes only, not standard shells.",
+    "page": "/options-upgrades/interior-finish-options/",
+    "group": "Comfort & Utilities",
+    "slots": 3
+  },
+  {
+    "id": 25,
+    "title": "Floor finishes",
+    "desc": "Compare visible decking/finish surfaces and threshold transitions.",
+    "page": "/options-upgrades/flooring-and-structural-floor-systems/",
+    "group": "Cost & Site",
+    "slots": 3
+  }
+]

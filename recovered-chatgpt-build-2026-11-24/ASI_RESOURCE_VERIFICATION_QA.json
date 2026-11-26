@@ -1,0 +1,32 @@
+{
+  "source_package": "ASI_Cloudflare_Resource_Center_Navigation_Fixed_2026-11-22.zip",
+  "resource_articles": 49,
+  "risk_register_rows": 258,
+  "missing_local_links": 0,
+  "pages_with_duplicate_adjacent_headings": 19,
+  "editorial_corrections": [
+    [
+      "/planning-guides/ownership-warranty-maintenance-and-long-term-care/",
+      "Removed legacy 30-year reference and internal policy-direction wording; clarified written-document authority."
+    ]
+  ],
+  "pricing_pages_count": 15,
+  "sha256_original_pricing_pages": {
+    "antique-saltbox.html": "1214d2d38576e3ed24fefae7ecf52eb1801850f9dee06e2a172e4da0c11e229e",
+    "appalachian-farmhouse.html": "7b4d9edab995491177134579c0e7b521121a77304f81eaafe982bf1521fd6182",
+    "laurel-ridge.html": "c1dceef4758015084a5621a508e8b83181bea22898bca2dd6956ab44e5ae6224",
+    "built-better.html": "40c3b83b0f432d7c70916f1b0b21f27412af5dde932e50cee77c67bcde9dbdc8",
+    "urban-studio.html": "0350ea8bca5f5ee181aa7cbc824c2f65b86473d65be3859973c605df20647a67",
+    "homepage-v12.html": "ae9e154839bfe5d1b138bebc9990a3822864471460f138e33e1a52b82c67ae0c",
+    "foxfire-cottage.html": "ff26572213010b3980ea2b479a00e2be5f8947b5b13436056cfd1d632834c5e8",
+    "buildings-hub-v13.html": "e48c7ead49687bc8067e6d0ef12a127fbdc6cd9d145254b08be6478446fd55fb",
+    "appalachian-barn.html": "40d17770e1f4fb8e168f9d090a75f721539f8553eb1517ecbf8cd66dfc720a61",
+    "appalachian-firewood-shed.html": "29bdae1130798989b89efa00d4717dcdfab166030ff1f3bc2940e24df5c763ce",
+    "pine-ridge-shed.html": "fb95cbfd687e1c26abb976770ee71890bcdd6ee45022635ba261c6d8cb8f67ee",
+    "country-cottage-with-shed-dormer.html": "6cf680f72b9b0ac610fafec202e4a761675478cd6e01471363777c9addcdee75",
+    "nordic-retreat.html": "e68c5b58692308a87de56719d2dc09c3b1a2f4acf3358ef5542116938775cdd0",
+    "grand-depot.html": "d3fb68134fe04069ee2c1f0eeb9a2cfcc2ecb55cbb80eb5f6a3c68746e1c3b88",
+    "carriage-lane.html": "dc8c5e0b38c71ec9870cebaaffaf3871ff7caf51611a23247d564a0e3f9d5e3e"
+  },
+  "duplicated_subheadings_removed": 80
+}

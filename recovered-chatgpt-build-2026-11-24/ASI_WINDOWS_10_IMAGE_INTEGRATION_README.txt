@@ -1,0 +1,1 @@
+Windows & Natural Light Options: replaced the generic planned-photo slot block with ten supplied illustrative photos and approved captions. All other staging site files are preserved. No deployment has been performed.

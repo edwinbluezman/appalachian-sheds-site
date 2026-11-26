@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/buildings/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8763/buildings/\nCall log:\n  - navigating to \"http://127.0.0.1:8763/buildings/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "path": "/buildings/",
+    "width": 390,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8763/buildings/\nCall log:\n  - navigating to \"http://127.0.0.1:8763/buildings/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "path": "/buildings/carriage-lane/",
+    "width": 1440,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8763/buildings/carriage-lane/\nCall log:\n  - navigating to \"http://127.0.0.1:8763/buildings/carriage-lane/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "path": "/index.html",
+    "width": 390,
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:8763/index.html\nCall log:\n  - navigating to \"http://127.0.0.1:8763/index.html\", waiting until \"domcontentloaded\"\n"
+  }
+]

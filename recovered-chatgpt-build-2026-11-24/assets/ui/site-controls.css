@@ -1,0 +1,50 @@
+/* ASI shared navigation/accessibility controls; review build 2026-11-22 */
+:root { --asi-header-dark:#2B3030; --asi-header-cream:#F8F7F4; --asi-copper:#CEAE85; }
+.asi-global-header {display:block!important;padding:0!important;margin:0!important;flex-wrap:nowrap!important;position:sticky!important;top:0!important;z-index:2147481000!important;background:var(--asi-header-dark);color:var(--asi-header-cream);box-shadow:0 2px 12px rgba(0,0,0,.18);width:100%;font:italic 500 13px/1.45 'Montserrat',Arial,sans-serif;transition:box-shadow .18s ease;}
+.asi-global-header * {box-sizing:border-box;}
+.asi-global-header a {color:#F8F7F4;text-decoration:none;}
+.asi-global-header .asi-nav-shell {width:94%;max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:78px;padding:12px 0;transition:min-height .18s ease,padding .18s ease;}
+.asi-global-header.asi-is-scrolled .asi-nav-shell {min-height:57px;padding:7px 0;}
+.asi-brand {display:flex;flex-direction:column;gap:3px;line-height:1.2;white-space:nowrap;}
+.asi-brand strong {font-size:16px;letter-spacing:.03em;font-weight:700;}
+.asi-brand span {font-size:9px;letter-spacing:.10em;color:#E3C6A1;}
+.asi-nav-links {display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,2vw,27px);}
+.asi-nav-links a {padding:10px 1px;font-size:12px;font-weight:600;}
+.asi-nav-links a:hover,.asi-nav-links a[aria-current="page"] {color:#E8C99E;}
+.asi-nav-links .asi-nav-cta {background:#D8BB93;color:#24302B;padding:11px 17px;border-radius:4px;font-weight:700;text-align:center;}
+.asi-nav-links .asi-nav-cta:hover {background:#F0D2AA;color:#24302B;}
+.asi-global-header a:focus-visible,.asi-global-header button:focus-visible,.asi-back-to-top:focus-visible {outline:3px solid #F1BC76;outline-offset:3px;}
+.asi-menu-toggle {display:none;appearance:none;border:1px solid #8F9691;border-radius:4px;padding:9px 13px;background:transparent;color:white;font:inherit;cursor:pointer;}
+.asi-back-to-top {position:fixed;bottom:24px;right:24px;width:50px;height:50px;border:1px solid #C7AC8D;border-radius:50%;background:#29312F;color:#FFFFFF;box-shadow:0 4px 16px rgba(0,0,0,.3);z-index:2147483000;display:flex;align-items:center;justify-content:center;font:700 24px/1 Arial,sans-serif;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .15s ease,transform .15s ease,visibility .15s;}
+.asi-back-to-top.asi-show {opacity:1;visibility:visible;transform:translateY(0);}
+.asi-back-to-top:hover {background:#43534A;}
+@media(max-width:780px) {
+ .asi-global-header .asi-nav-shell {min-height:62px;padding:9px 0;flex-wrap:wrap;}
+ .asi-brand strong {font-size:13px;}
+ .asi-brand span {font-size:8px;}
+ .asi-menu-toggle {display:block;margin-left:auto;}
+ .asi-nav-links {display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;padding:7px 0 13px;border-top:1px solid #58615B;}
+ .asi-nav-links.asi-open {display:flex;}
+ .asi-nav-links a {padding:11px 10px;}
+ .asi-back-to-top {right:14px;bottom:15px;width:44px;height:44px;}
+}
+@media(prefers-reduced-motion:reduce) {.asi-global-header .asi-nav-shell,.asi-back-to-top {transition:none!important;}}
+
+/* Ensure original legacy page header styling cannot hide shared nav */
+body > .asi-global-header {isolation:isolate;left:auto;right:auto;max-width:none!important;border:0!important;border-radius:0!important;transform:none!important;filter:none!important;opacity:1!important;visibility:visible!important;}
+body > .asi-global-header .asi-nav-shell{max-width:1440px!important;width:94%!important;}
+body > .asi-global-header .asi-nav-links{margin-left:auto;}
+body > .asi-back-to-top{position:fixed!important;display:flex!important;pointer-events:none;}
+body > .asi-back-to-top.asi-show{pointer-events:auto;}
+html{scroll-padding-top:85px;}
+
+/* Resource Center: six-item navigation with both libraries visible */
+.asi-global-header .asi-nav-links {gap:clamp(9px,1.3vw,19px);}
+.asi-global-header .asi-nav-links a {white-space:nowrap;font-size:clamp(10px,.78vw,12px);}
+@media(max-width:1160px){
+ .asi-global-header .asi-nav-shell{min-height:62px;padding:9px 0;flex-wrap:wrap;}
+ .asi-global-header .asi-menu-toggle{display:block;margin-left:auto;}
+ .asi-global-header .asi-nav-links{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;padding:7px 0 13px;border-top:1px solid #58615B;margin-left:0!important;}
+ .asi-global-header .asi-nav-links.asi-open{display:flex;}
+ .asi-global-header .asi-nav-links a{padding:11px 10px;font-size:13px;}
+}

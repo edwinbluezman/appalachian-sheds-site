@@ -1,0 +1,75 @@
+{
+  "updated_pages": [
+    {
+      "file": "Hub_V14_Standalone_Review.html",
+      "links_changed": 5
+    },
+    {
+      "file": "approved-pages/antique-saltbox.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/appalachian-barn.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/appalachian-farmhouse.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/appalachian-firewood-shed.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/buildings-hub-v13.html",
+      "links_changed": 5
+    },
+    {
+      "file": "approved-pages/built-better.html",
+      "links_changed": 5
+    },
+    {
+      "file": "approved-pages/carriage-lane.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/country-cottage-with-shed-dormer.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/foxfire-cottage.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/grand-depot.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/homepage-v12.html",
+      "links_changed": 24
+    },
+    {
+      "file": "approved-pages/laurel-ridge.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/nordic-retreat.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/pine-ridge-shed.html",
+      "links_changed": 6
+    },
+    {
+      "file": "approved-pages/urban-studio.html",
+      "links_changed": 6
+    },
+    {
+      "file": "buildings/index.html",
+      "links_changed": 5
+    }
+  ],
+  "global_links_verified": 85,
+  "missing_or_invalid": [],
+  "notes": "Navigation links repaired; pricing data and calculator logic unchanged. Existing static redirects remain staging-only."
+}

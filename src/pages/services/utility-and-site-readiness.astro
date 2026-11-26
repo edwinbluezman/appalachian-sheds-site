@@ -1,0 +1,270 @@
+---
+// src/pages/services/utility-and-site-readiness.astro
+//
+// Dedicated pricing page for add-on trade services: Electrical Rough-In,
+// Plumbing Rough-In, Insulation, and Site Prep. Linked from all 12 model
+// pages and from the Options & Upgrades hub.
+//
+// Electrical, plumbing, and insulation are performed by ASI's own licensed
+// in-house crews (lead mechanic $65/hr + helper $30/hr = $95/hr crew rate).
+// Site Prep links to the existing SitePrepCalculator instead of showing a
+// static number, since that tool already gives a condition-specific estimate.
+//
+// Pricing ranges below are labor estimates derived from that $95/hr crew
+// rate across a typical range of hours for a shed/workshop-scale project
+// (not a whole-house job), cross-checked against Cincinnati Tri-State
+// market data. Edwin should treat these as a starting point to confirm or
+// adjust, not a final locked-in price list.
+import Base from '../../layouts/Base.astro';
+import '../../styles/tailwind.css';
+
+const pageTitle = 'Utility & Site Readiness Pricing | Appalachian Sheds Inc.';
+const pageDescription =
+  'Electrical, plumbing, insulation, and site prep pricing for your Appalachian Sheds building — performed by our own licensed in-house crews, Cincinnati Tri-State area.';
+
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/edwin@appalachiansheds.com';
+
+const services = [
+  {
+    name: 'Electrical Rough-In',
+    range: '$750 – $1,900',
+    sub: 'plus materials, typically $200–$600',
+    blurb:
+      'Power run from your home or panel, sub-panel tie-in if needed, and basic outlets and lighting sized for a shed or workshop.',
+    drivers: 'Driven mainly by distance from your main panel and the number of circuits.',
+  },
+  {
+    name: 'Plumbing Rough-In',
+    range: '$950 – $2,850',
+    sub: 'plus materials, which vary the most of any service here',
+    blurb:
+      'Anything from a simple sink or utility drain stub-out up to a full small-bathroom rough-in (water supply, drain, and vent).',
+    drivers: 'Driven mainly by fixture count and distance to your existing water/sewer line.',
+  },
+  {
+    name: 'Insulation',
+    range: '$570 – $1,520',
+    sub: 'plus material, roughly $0.50–$1.25 per sq ft',
+    blurb:
+      'Batt insulation in the walls and ceiling of your building, sized to your model and chosen R-value.',
+    drivers: 'Driven mainly by building size and insulation thickness/R-value selected.',
+  },
+];
+---
+<Base title={pageTitle} description={pageDescription}>
+  <section class="bg-asi-ink-dark py-14 text-white sm:py-20">
+    <div class="mx-auto max-w-4xl px-5 text-center sm:px-8">
+      <p class="mb-2 text-xs font-bold uppercase tracking-widest text-asi-gold">
+        Performed by Our Own Licensed Crews
+      </p>
+      <h1 class="text-3xl font-bold leading-tight sm:text-4xl">
+        Utility &amp; Site Readiness Pricing
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
+        Many of our customers ask for electrical, plumbing, insulation, or
+        site prep alongside their new building. All of it is handled by
+        Appalachian Sheds' own licensed in-house crews — never
+        subcontracted out — at a transparent crew rate of
+        <strong class="text-asi-gold">$65/hr lead mechanic + $30/hr helper</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-asi-cream py-14 sm:py-20">
+    <div class="mx-auto max-w-5xl px-5 sm:px-8">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {services.map((s) => (
+          <div class="flex flex-col rounded-sm border border-asi-sand bg-white p-5 sm:p-6">
+            <h2 class="text-lg font-bold text-asi-ink">{s.name}</h2>
+            <p class="mt-3 text-2xl font-bold text-asi-pine">{s.range}</p>
+            <p class="text-xs text-asi-ink/60">{s.sub}</p>
+            <p class="mt-3 text-sm leading-relaxed text-asi-ink/80">{s.blurb}</p>
+            <p class="mt-3 text-xs italic leading-relaxed text-asi-ink/60">{s.drivers}</p>
+          </div>
+        ))}
+
+        <div class="flex flex-col rounded-sm border border-asi-sand bg-white p-5 sm:p-6">
+          <h2 class="text-lg font-bold text-asi-ink">Site Preparation</h2>
+          <p class="mt-3 text-2xl font-bold text-asi-pine">Instant Estimate</p>
+          <p class="text-xs text-asi-ink/60">gravel pad, cubic yards, tonnage &amp; cost</p>
+          <p class="mt-3 text-sm leading-relaxed text-asi-ink/80">
+            Handled by ASI's own forces and equipment. Use our calculator for
+            a condition-specific estimate based on your building size and
+            site.
+          </p>
+          <a
+            href="/planning-guides/backyard-building-site-preparation-guide/#calculator"
+            class="mt-4 inline-block rounded-sm bg-asi-pine px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-asi-ink-dark"
+          >
+            Open Site Prep Calculator
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-sm border-2 border-asi-gold bg-white p-6 text-center sm:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-asi-gold">
+          Bundle &amp; Save
+        </p>
+        <h2 class="mt-2 text-2xl font-bold text-asi-ink sm:text-3xl">
+          Save 12% When You Book Electrical, Plumbing &amp; Insulation Together
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-asi-ink/80 sm:text-base">
+          One crew, one visit, one coordinated schedule. Bundling these three
+          services is the most popular way customers finish their building
+          ready to use from day one.
+        </p>
+      </div>
+
+      <p class="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-asi-ink/60">
+        Ranges shown are planning estimates based on typical project scope
+        for our shed and workshop buildings. Your exact price depends on
+        your site, fixture choices, and building size, and is confirmed in
+        your written proposal.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-20" id="request-quote">
+    <div class="mx-auto max-w-xl px-5 sm:px-8">
+      <h2 class="text-center text-2xl font-bold text-asi-ink sm:text-3xl">
+        Request Your Utility &amp; Site Readiness Quote
+      </h2>
+      <p class="mt-2 text-center text-sm text-asi-ink/70">
+        Tell us which services you're interested in and we'll follow up
+        with exact pricing for your project.
+      </p>
+
+      <form id="usr-lead-form" class="mt-8 grid grid-cols-1 gap-4">
+        <label class="flex flex-col gap-1 text-sm font-semibold">
+          Full Name
+          <input
+            name="Name"
+            type="text"
+            autocomplete="name"
+            required
+            class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+          />
+        </label>
+
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <label class="flex flex-col gap-1 text-sm font-semibold">
+            Phone
+            <input
+              name="Phone"
+              type="tel"
+              autocomplete="tel"
+              required
+              class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+            />
+          </label>
+          <label class="flex flex-col gap-1 text-sm font-semibold">
+            Email
+            <input
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="w-full rounded-sm border border-asi-sand bg-white px-3 py-2.5 text-base text-asi-ink focus:border-asi-gold focus:outline-none focus:ring-2 focus:ring-asi-gold/40"
+            />
+          </label>
+        </div>
+
+        <fieldset class="flex flex-col gap-2 text-sm font-semibold">
+          <legend class="mb-1">Interested In (check all that apply)</legend>
+          <label class="flex items-center gap-2 font-medium">
+            <input type="checkbox" name="Interested - Electrical" value="Yes" class="h-5 w-5 rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold" />
+            Electrical Rough-In
+          </label>
+          <label class="flex items-center gap-2 font-medium">
+            <input type="checkbox" name="Interested - Plumbing" value="Yes" class="h-5 w-5 rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold" />
+            Plumbing Rough-In
+          </label>
+          <label class="flex items-center gap-2 font-medium">
+            <input type="checkbox" name="Interested - Insulation" value="Yes" class="h-5 w-5 rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold" />
+            Insulation
+          </label>
+          <label class="flex items-center gap-2 font-medium">
+            <input type="checkbox" name="Interested - Site Prep" value="Yes" class="h-5 w-5 rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold" />
+            Site Preparation
+          </label>
+          <label class="flex items-center gap-2 font-medium">
+            <input type="checkbox" name="Interested - Bundle" value="Yes" class="h-5 w-5 rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold" />
+            The bundled package (Electrical + Plumbing + Insulation)
+          </label>
+        </fieldset>
+
+        <label class="flex flex-row items-start gap-3 text-sm font-medium">
+          <input
+            type="checkbox"
+            required
+            class="mt-1 h-5 w-5 flex-none rounded-sm border-asi-sand text-asi-pine focus:ring-asi-gold"
+          />
+          <span>
+            I agree that Appalachian Sheds may contact me by phone, text, or
+            email about this project.
+          </span>
+        </label>
+
+        <input
+          type="text"
+          name="_honey"
+          class="absolute left-[-9999px] h-px w-px opacity-0"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <p id="usr-error" class="hidden text-sm font-semibold text-red-700"></p>
+        <p id="usr-success" class="hidden text-sm font-semibold text-asi-pine">
+          Thank you — we've received your request and will follow up shortly.
+        </p>
+
+        <button
+          type="submit"
+          class="w-full rounded-sm bg-asi-pine px-6 py-3.5 text-base font-bold text-white transition hover:bg-asi-ink-dark"
+        >
+          Request My Quote
+        </button>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script define:vars={{ FORM_ENDPOINT }}>
+  const form = document.getElementById('usr-lead-form');
+  const errorEl = document.getElementById('usr-error');
+  const successEl = document.getElementById('usr-success');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    errorEl.classList.add('hidden');
+    successEl.classList.add('hidden');
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(form);
+    formData.append('_subject', 'New Utility & Site Readiness lead from appalachiansheds.com');
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      form.reset();
+      successEl.classList.remove('hidden');
+    } catch (err) {
+      errorEl.textContent =
+        'Something went wrong sending your info. Please check your connection and try again, or call us directly.';
+      errorEl.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Request My Quote';
+    }
+  });
+</script>
